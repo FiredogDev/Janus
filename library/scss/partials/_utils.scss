@@ -1,0 +1,129 @@
+/*************************************************************
+* Aspect Ratios
+*************************************************************/
+[data-fit-ratio] { position:relative; }
+[data-fit-ratio="4:3"] { padding: 75% 0 0 0; }
+[data-fit-ratio="16:9"] { padding: 56.25% 0 0 0; }
+[data-fit-ratio] * {
+    position:absolute; left:0; top:0;
+    height:100%; margin:0; padding:0; border:0; 
+}
+
+/*************************************************************
+* Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/
+*************************************************************/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+
+/*************
+* Hide/Show
+**************/
+.hide {
+	display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+/****************
+* Text alignment
+****************/
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.sup_script{
+  vertical-align: super;
+  font-size: 70%;
+}
+.highlight{
+  background-color: #00afff !important;
+  color: #fff !important;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+
+/***********
+* Floating
+************/
+.fl{
+  float: left;
+}
+.fr{
+  float: right !important;
+}
+.fn{
+  float: none !important;
+}
+.clr {
+  clear: both !important;
+}
+
+/*************
+* Positioning
+*************/
+.pabs{
+  position: absolute !important;
+}
+.prel{
+  position: relative !important;
+}
+.pfix{
+  position: fixed !important;
+}
+.pcover{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*************
+* Dimenions
+*************/
+.width{
+  &--full,
+  &--half{ 
+    width: 100%;
+  }
+  &--parent{ width: inherit; }
+}
+.height{
+  &--full,
+  &--half{
+    height: 100%;
+  }
+  &--parent{ height: inherit; }
+}
+
+@include media(">phone_landscape"){
+  .width{
+    &--half{ 
+      width: 50%;
+    }
+  }
+  .height{ 
+    &--half{ 
+      height: 50%;
+    }
+  }
+}
+
+/*************
+* Misc
+*************/
+.ovh{
+  overflow: hidden;
+}

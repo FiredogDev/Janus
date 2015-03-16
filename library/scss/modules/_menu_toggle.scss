@@ -1,0 +1,57 @@
+// Color Variants
+.nav__toggle{
+	width: 32px;
+	height: 25px;
+	cursor: pointer;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+
+	// Child Elems
+    &__bar{
+		position: absolute;
+		border-bottom: 5px solid #333;
+		width: 100%;
+		&--1{
+			top: 0;
+		}
+		&--2{
+			top: 10px;
+		}
+		&--3{
+			top: 20px;
+		}
+		
+		// Modifiers
+		.is--open__primary-nav &{
+			// Level Bars
+			&--1, &--3{
+				top: 8px;
+			}
+			// Twist Bars
+			&--1{
+				@include transform(rotateZ(45deg));
+			}
+			&--2{
+				@include transform(rotateY(90deg));
+			}
+			&--3{
+				@include transform(rotateZ(-45deg));
+			}
+
+			// Fallbacks - [transform]
+		}
+
+		// Themify
+		// @each $theme, $map in $nav__toggle--variants {
+		// 	.#{$theme} & {
+		// 		border-color: map-get($map, borderColor);
+		// 	}
+		// }
+
+	}
+}
+
+// @Media
+@include media(">tablet"){
+}

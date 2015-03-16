@@ -1,0 +1,62 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+******************************************************************/
+
+// -------
+// Colors
+// -------
+
+// Neutral color palette
+$white: #fff;
+$black: #000;
+$red: #ff0000;
+$yellow: #ffff00;
+$green: #00ff84;
+
+// -----------
+// Breakpoints
+// -----------
+$breakpoints: (
+	phone: 320px, phone_landscape: 480px, 
+	tablet: 600px, tablet_large: 700px, 
+	desktop: 1024px, large_desktop: 1600px
+);
+$media-expressions: (
+	'>height460': (
+		'(min-height: 460px)'
+	),
+	'>height600': (
+		'(min-height: 600px)'
+	)
+);
+
+// -----
+// Type
+// -----
+$font__family--body			: 'circular';
+$font__family--headings		: $font__family--body;
+$font__size--body			: 14px;
+$font__line-height--body	: 1;
+
+
+// Transition times
+$trnsn_tme_navtoggle : 0.2s;
+
+// 
+.disnfy{
+	-webkit-transition: all 500ms cubic-bezier(1.000, 0, 0.525, 1); /* older webkit */
+	-webkit-transition: all 500ms cubic-bezier(1.000, -0.600, 0.525, 1.490); 
+	   -moz-transition: all 500ms cubic-bezier(1.000, -0.600, 0.525, 1.490); 
+	     -o-transition: all 500ms cubic-bezier(1.000, -0.600, 0.525, 1.490); 
+	        transition: all 500ms cubic-bezier(1.000, -0.600, 0.525, 1.490); /* custom */
+
+	-webkit-transition-timing-function: cubic-bezier(1.000, 0, 0.525, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(1.000, -0.600, 0.525, 1.490); 
+	   -moz-transition-timing-function: cubic-bezier(1.000, -0.600, 0.525, 1.490); 
+	     -o-transition-timing-function: cubic-bezier(1.000, -0.600, 0.525, 1.490); 
+	        transition-timing-function: cubic-bezier(1.000, -0.600, 0.525, 1.490); /* custom */
+}

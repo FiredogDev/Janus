@@ -1,0 +1,46 @@
+// Color Variants
+$variants: ( 
+  is--onBlack: (fill: $white),
+  is--onWhite: (fill: $black)
+);
+
+// Brand - Base Definition
+.logo{
+
+  // Child Elems
+  svg{}
+
+  // Modifiers
+  &--primary{
+    width: 110px;
+    margin-left: -10px;
+    fill: #fff;
+  }
+  &--alternative{}
+  
+  // Themify
+  @each $theme, $map in $variants {
+    .#{$theme} & { fill: map-get($map, fill); }
+  }
+
+  // Fallbacks - [svg]
+  .no-svg &{
+    // Child Elems
+    svg{ 
+      display: none;
+    }
+    &.is--fallback{
+      display: block;
+    }
+  }
+
+}
+
+// @Media
+@include media(">tablet"){
+  .logo{
+    &--primary{
+      width: 156px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+/*********************
+HEADER STYLES
+*********************/
+// Color Variants
+$header-variants: ( 
+);
+
+// Brand - Base Definition
+.header{
+  z-index: 3;
+  // Child Elems
+ 	
+	// Modifiers
+	&--page{
+		margin-top: 15px;
+		padding: 0 25px;
+	}
+  	&--alternative{}
+  
+	// Fallbacks - []
+  
+
+}
+
+// @Media
+@include media(">tablet"){
+  .header{
+    &--page{
+      	margin-top: 20px;
+		padding: 0 18px;
+    }
+  }
+}
+
+

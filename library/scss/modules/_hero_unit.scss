@@ -1,0 +1,194 @@
+/*********************
+Front/Home Page
+*********************/
+// Color Variants
+
+// Module
+$module: 'hero_unit';
+.#{$module}{
+	// Child Elems
+	&__wrapper{
+		padding: 8.2vh 25px 0;
+	}
+	&__header{
+		margin-bottom: 2.9vh;
+	}
+	&__category_byline{
+		.hentry__byline{}
+	}
+	&__title{
+		&--super{}
+		&--main{
+			font-size: 11.7vw;
+			letter-spacing: -4px;
+			word-spacing: -1px;
+		}
+	}
+	&__copy{
+		p{
+			font-size: 1.6vw;
+			word-spacing: -1px;
+			line-height: 1.25;
+			letter-spacing: -1px;
+			margin-bottom: 2.7vh;
+		}
+		strong{
+			// font-size: 30px;
+			// font-size: 9vw;
+			// word-spacing: -2px;
+			// letter-spacing: -1px;
+			line-height: 1;
+			font-size: 4.65vw;
+			letter-spacing: -3px;
+  			word-spacing: 2px;
+		}
+	}
+	&__footer{}
+	&__bgmedia{
+		z-index: -1;
+	}
+
+	// Modifiers
+	// Fallbacks - []
+}
+
+// Breakpoints
+// 	'phone': 			320px,
+// 	'phone_landscape': 	480px,
+// 	'tablet': 			600px,
+// 	'tablet_large': 	800px,
+// 	'desktop': 			1024px,
+// 	'large_desktop': 	1600px
+
+// @Media
+@include media("<phone"){
+	// Module
+	.#{$module}{
+		// Child Elems
+		&__wrapper{
+		}
+		&__header{}
+		&__category_byline{
+			.hentry__byline{}
+		}
+		&__title{
+			&--super{}
+			&--main{}
+		}
+		&__copy{
+			p{
+				// font-size: 12px;
+				// font-size: 8vw;
+			}
+			strong{
+				// font-size: 20px;
+				// font-size: 14vw;
+			}
+		}
+		&__footer{}
+		&__bgmedia{}
+
+		// Modifiers
+		// Fallbacks - []
+	}
+}
+@include media("<phone"){
+}
+@include media(">phone_landscape"){
+	// Module
+	.#{$module}{
+		// Child Elems
+		&__wrapper{
+		}
+		&__header{}
+		&__category_byline{
+			.hentry__byline{}
+		}
+		&__title{
+			&--super{}
+			&--main{
+			}
+		}
+		&__copy{
+			p{
+				// font-size: 28px;
+				// font-size: 4vw;
+			}
+			strong{
+				// font-size: 40px;
+				// font-size: 7vw;
+			}
+		}
+		&__footer{}
+		&__bgmedia{
+		}
+
+		// Modifiers
+		// Fallbacks - []
+	}
+}
+@include media(">tablet"){
+}
+@include media(">tablet_large"){
+	.#{$module}{
+		// Child Elems
+		&__wrapper{
+		}
+		&__header{}
+		&__category_byline{
+			.hentry__byline{}
+		}
+		&__title{
+			&--super{}
+			&--main{}
+		}
+		&__copy{
+			p{
+				// font-size: 40px;
+				// font-size: 2.3vw;
+			}
+			strong{
+				// font-size: 124px;
+				// font-size: 7vw;
+			}
+		}
+		&__footer{}
+		&__bgmedia{
+		}
+
+		// Modifiers
+		// Fallbacks - []
+	}
+}
+@include media(">desktop"){
+}
+@include media(">large_desktop"){
+	.#{$module}{
+		// Child Elems
+		&__wrapper{
+		}
+		&__header{}
+		&__category_byline{
+			.hentry__byline{}
+		}
+		&__title{
+			&--super{}
+			&--main{
+			}
+		}
+		&__copy{
+			p{
+			}
+			strong{
+			}
+		}
+		&__footer{}
+		&__bgmedia{
+		}
+
+		// Modifiers
+		// Fallbacks - []
+	}
+}
+@include media(">height600"){
+}

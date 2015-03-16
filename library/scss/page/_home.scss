@@ -1,0 +1,92 @@
+/*********************
+Front/Home Page
+*********************/
+
+// Module
+$page: 'home';
+.#{$page}{
+	background-color: #141414;
+	// Child Elems
+	// Modifiers
+	// Fallbacks - []
+	// 
+	
+	// Homepage Navigation Toggle
+	.nav__toggle{
+		// Child Elems
+	    &__bar{
+			border-color: #fff;
+		}
+	}
+	// Homepage Hero Unit
+	.hero_unit{
+		padding-top: 20vh;
+		padding-bottom: 30px;
+	}
+	// Latest
+	.latest{
+
+	}
+}
+
+// Breakpoints
+// 	'phone': 			320px,
+// 	'phone_landscape': 	480px,
+// 	'tablet': 			600px,
+// 	'tablet_large': 	800px,
+// 	'desktop': 			1024px,
+// 	'large_desktop': 	1600px
+
+// @Media
+@include media(">phone"){}
+@include media(">phone_landscape"){
+	// Module
+	$page: 'home';
+	.#{$page}{
+		// Child Elems
+		// Modifiers
+		// Fallbacks - []
+
+		// Homepage Hero Unit
+		.hero_unit{
+			padding-top: 22vh;
+			padding-bottom: 30px;
+		}
+	}
+}
+@include media(">tablet"){
+	// Module
+	.#{$page}{
+		// Child Elems
+		// Modifiers
+		// Fallbacks - []
+		.hero_unit{}
+	}
+}
+@include media(">1400px"){
+	.#{$page}{
+		.hero_unit{
+			&__wrapper{
+				padding: 0 80px;
+			}
+		}
+		.latest{
+			.hentry{
+				&--as-block{
+					width: 25%;
+				}
+			}
+		}
+	}
+}
+@include media('<tablet_large'){
+	.#{$page}{
+		.hero_unit{
+			&__wrapper{}
+			br{ display: none; }
+		}
+	}
+}
+@include media(">desktop"){}
+@include media(">large_desktop"){}
+
