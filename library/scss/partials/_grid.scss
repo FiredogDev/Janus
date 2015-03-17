@@ -19,6 +19,27 @@ Stylesheet: Grid Stylesheet
 
 .wrap{
 	padding-left: 25px;
-	padding-right: 25px;
+	padding-right: 68px;
 }
 
+
+// Breakpoints
+// 	'phone': 			320px,
+// 	'phone_landscape': 	480px,
+// 	'tablet': 			600px,
+// 	'tablet_large': 	800px,
+// 	'desktop': 			1024px,
+// 	'large_desktop': 	1600px
+@include media(">height460"){
+	.wrap{
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+}
+
+@include media(">phone_landscape"){
+	.wrap{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

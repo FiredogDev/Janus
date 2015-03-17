@@ -21,7 +21,8 @@ $page: 'home';
 	// Homepage Hero Unit
 	.hero_unit{
 		&__wrapper{
-			// padding: 8.2vh 25px 30px;
+			@include span(22 of 24);
+			padding-bottom: 30px;
 		}
 		&__header{
 			margin-bottom: 2.9vh;
@@ -37,10 +38,15 @@ $page: 'home';
 		&__copy{
 			color: #ddd;
 			p{
-				font-size: 5vw;
+				font-size: 3.4vw;
+				letter-spacing: 0;
+				word-spacing: -1px;
 			}
 			strong{
-				font-size: 9vw;
+				font-size: 5.8vw;
+			  	letter-spacing: 0px;
+			  	word-spacing: -1px;
+			  	line-height: 0.8;
 			}
 		}
 	}
@@ -59,7 +65,24 @@ $page: 'home';
 // 	'large_desktop': 	1600px
 
 // @Media
-@include media(">phone"){}
+@include media("<phone"){
+	.#{$page}{
+		// Homepage Hero Unit
+		.hero_unit{
+			&__copy{
+				p{
+					font-size: 7vw;
+					word-spacing: 0;
+				}
+				strong{
+					font-size: 10vw;
+					word-spacing: 0px;
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+}
 @include media(">phone_landscape"){
 	// Module
 	$page: 'home';
@@ -70,7 +93,7 @@ $page: 'home';
 
 		// Homepage Hero Unit
 		.hero_unit{
-			padding-bottom: 30px;
+
 		}
 	}
 }
@@ -86,9 +109,7 @@ $page: 'home';
 @include media(">1400px"){
 	.#{$page}{
 		.hero_unit{
-			&__wrapper{
-				padding: 0 80px;
-			}
+			&__wrapper{}
 		}
 		.latest{
 			.hentry{
@@ -99,6 +120,7 @@ $page: 'home';
 		}
 	}
 }
+
 @include media('<tablet_large'){
 	.#{$page}{
 		.hero_unit{
@@ -107,6 +129,30 @@ $page: 'home';
 		}
 	}
 }
+@include media('>tablet_large'){
+	// Homepage Hero Unit
+	.#{$page}{
+		.hero_unit{
+			&__wrapper{
+				@include push(1 of 24);
+			}
+			&__header{}
+			&__category_byline{}
+			&__title{}
+			&__copy{
+				p{
+					font-size: 1.72vw;
+					line-height: 1.37;
+				}
+				strong{
+					font-size: 6.5vw;
+					letter-spacing: -2px;
+					word-spacing: -5px;
+					line-height: 0.9;
+				}
+			}
+		}
+	}
+}
 @include media(">desktop"){}
 @include media(">large_desktop"){}
-

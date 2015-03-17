@@ -933,9 +933,23 @@ Stylesheet: Grid Stylesheet
 /* line 20, ../scss/partials/_grid.scss */
 .wrap {
   padding-left: 25px;
-  padding-right: 25px;
+  padding-right: 68px;
 }
 
+@media (min-height: 460px) {
+  /* line 34, ../scss/partials/_grid.scss */
+  .wrap {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media (min-width: 481px) {
+  /* line 41, ../scss/partials/_grid.scss */
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1630,43 +1644,76 @@ Front/Home Page
 .home .nav__toggle__bar {
   border-color: #fff;
 }
-/* line 26, ../scss/page/_home.scss */
+/* line 23, ../scss/page/_home.scss */
+.home .hero_unit__wrapper {
+  width: 91.59664%;
+  float: left;
+  margin-right: 0.84034%;
+  padding-bottom: 30px;
+}
+/* line 27, ../scss/page/_home.scss */
 .home .hero_unit__header {
   margin-bottom: 2.9vh;
 }
-/* line 37, ../scss/page/_home.scss */
+/* line 38, ../scss/page/_home.scss */
 .home .hero_unit__copy {
   color: #ddd;
 }
-/* line 39, ../scss/page/_home.scss */
+/* line 40, ../scss/page/_home.scss */
 .home .hero_unit__copy p {
-  font-size: 5vw;
+  font-size: 3.4vw;
+  letter-spacing: 0;
+  word-spacing: -1px;
 }
-/* line 42, ../scss/page/_home.scss */
+/* line 45, ../scss/page/_home.scss */
 .home .hero_unit__copy strong {
-  font-size: 9vw;
+  font-size: 5.8vw;
+  letter-spacing: 0px;
+  word-spacing: -1px;
+  line-height: 0.8;
 }
 
-@media (min-width: 481px) {
-  /* line 72, ../scss/page/_home.scss */
-  .home .hero_unit {
-    padding-bottom: 30px;
+@media (max-width: 319px) {
+  /* line 73, ../scss/page/_home.scss */
+  .home .hero_unit__copy p {
+    font-size: 7vw;
+    word-spacing: 0;
+  }
+  /* line 77, ../scss/page/_home.scss */
+  .home .hero_unit__copy strong {
+    font-size: 10vw;
+    word-spacing: 0px;
+    line-height: 1.2;
   }
 }
 @media (min-width: 1401px) {
-  /* line 89, ../scss/page/_home.scss */
-  .home .hero_unit__wrapper {
-    padding: 0 80px;
-  }
-  /* line 95, ../scss/page/_home.scss */
+  /* line 116, ../scss/page/_home.scss */
   .home .latest .hentry--as-block {
     width: 25%;
   }
 }
 @media (max-width: 699px) {
-  /* line 106, ../scss/page/_home.scss */
+  /* line 128, ../scss/page/_home.scss */
   .home .hero_unit br {
     display: none;
+  }
+}
+@media (min-width: 701px) {
+  /* line 136, ../scss/page/_home.scss */
+  .home .hero_unit__wrapper {
+    margin-left: 4.20168%;
+  }
+  /* line 143, ../scss/page/_home.scss */
+  .home .hero_unit__copy p {
+    font-size: 1.72vw;
+    line-height: 1.37;
+  }
+  /* line 147, ../scss/page/_home.scss */
+  .home .hero_unit__copy strong {
+    font-size: 6.5vw;
+    letter-spacing: -2px;
+    word-spacing: -5px;
+    line-height: 0.9;
   }
 }
 /*********************
