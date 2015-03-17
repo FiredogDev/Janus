@@ -9,8 +9,8 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-			<header class="article-header hero_unit cf">
-				<div class="hero_unit__wrapper width--full fl cf">
+			<header class="article-header hero_unit wrap cf">
+				<div class="hero_unit__wrapper width--full cf">
 					<div class="hero_unit__header cf">
 						<h1 class="hero_unit__title text-center width--full" itemprop="headline">
 							<!-- Main title -->

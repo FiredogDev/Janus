@@ -124,11 +124,10 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-family: "circular";
-  font-weight: bold;
   padding: 0;
   margin: 0;
 }
-/* line 97, ../scss/partials/_typography.scss */
+/* line 96, ../scss/partials/_typography.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }

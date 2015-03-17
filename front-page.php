@@ -3,7 +3,7 @@
 	<main id="main" class="width--full fl" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<section id="intro" class="hero_unit cf">
+		<section id="intro" class="hero_unit wrap cf">
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'hero_unit__wrapper width--full fl cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 			

@@ -25,9 +25,7 @@
 				</div>
 			</header><?php // end article header ?>
 
-			<section class="entry-content cf" itemprop="articleBody">
-
-			</section><?php // end article section ?>
+			<section class="entry-content cf" itemprop="articleBody"></section><?php // end article section ?>
 
 			<footer class="article-footer cf"></footer>
 

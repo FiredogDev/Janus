@@ -20,8 +20,29 @@ $page: 'home';
 	}
 	// Homepage Hero Unit
 	.hero_unit{
-		padding-top: 20vh;
-		padding-bottom: 30px;
+		&__wrapper{
+			// padding: 8.2vh 25px 30px;
+		}
+		&__header{
+			margin-bottom: 2.9vh;
+		}
+		&__category_byline{
+			.hentry__byline{}
+		}
+		&__title{
+			&--super{}
+			&--main{
+			}
+		}
+		&__copy{
+			color: #ddd;
+			p{
+				font-size: 5vw;
+			}
+			strong{
+				font-size: 9vw;
+			}
+		}
 	}
 	// Latest
 	.latest{
@@ -49,7 +70,6 @@ $page: 'home';
 
 		// Homepage Hero Unit
 		.hero_unit{
-			padding-top: 22vh;
 			padding-bottom: 30px;
 		}
 	}

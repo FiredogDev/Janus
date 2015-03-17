@@ -11,5 +11,14 @@ Stylesheet: Grid Stylesheet
 // Container padding: 20
 // Num of Cols: 24
 
+@import "../../../bower_components/susy/sass/susy";
+
 .container{
+	@include container(100%);
 }
+
+.wrap{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
