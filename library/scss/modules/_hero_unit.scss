@@ -8,35 +8,33 @@ $module: 'hero_unit';
 .#{$module}{
 	// Child Elems
 	&__wrapper{
-		padding-top: 8.2vh;
+		padding-top: 30px;
 	}
 	&__header{
-		margin-bottom: 3.4vh;
+		margin-bottom: 1.1vh;
 	}
 	&__category_byline{
 		.hentry__byline{}
 	}
 	&__title{
-		&--super{}
 		&--main{
-			font-size: 11.7vw;
+			font-size: 18.6vw;
 			letter-spacing: -3px;
 		}
 	}
 	&__copy{
 		p{
 			font-size: 14px;
-			line-height: 1.2;
-			letter-spacing: -1px;
-			margin-bottom: 2.7vh;
+			line-height: 1.3;
+			margin-bottom: 2.2vh;
 		}
 		strong{
 			line-height: 1;
-			font-size: 9vw;
+			font-size: 8vw;
+			letter-spacing: -1px;
 
 		}
 	}
-	&__footer{}
 	&__bgmedia{
 		z-index: -1;
 	}
@@ -74,9 +72,19 @@ $module: 'hero_unit';
 	// Module
 	.#{$module}{
 		// Child Elems
+		&__title{
+			&--main{
+				font-size: 11.7vw;
+				letter-spacing: -4px;
+				word-spacing: -1px;
+			}
+		}
 		&__copy{
-			p{}
+			p{
+			}
 			strong{
+				font-size: 4.3vw;
+				word-spacing: 3px;
 			}
 		}
 	}
@@ -109,18 +117,14 @@ $module: 'hero_unit';
 		&__title{
 			&--super{}
 			&--main{
-				letter-spacing: -4px;
-				word-spacing: -1px;
+				
 			}
 		}
 		&__copy{
 			p{
-				font-size: 18px;
-  				letter-spacing: 0px;
+				font-size: 16px;
 			}
 			strong{
-				font-size: 4.3vw;
-				word-spacing: 3px;
 			}
 		}
 		&__footer{}
@@ -133,35 +137,14 @@ $module: 'hero_unit';
 @include media(">desktop"){
 	.#{$module}{
 		// Child Elems
-		&__wrapper{
-		}
-		&__header{
-		}
-		&__category_byline{
-			.hentry__byline{}
-		}
-		&__title{
-			&--super{}
-			&--main{
-				letter-spacing: -4px;
-				word-spacing: -1px;
-			}
-		}
 		&__copy{
 			p{
-  				  font-size: 24px;
+				font-size: 24px;
+				margin-bottom: 2.8vh;
 			}
 			strong{
-				font-size: 4.3vw;
-				word-spacing: 3px;
 			}
 		}
-		&__footer{}
-		&__bgmedia{
-		}
-
-		// Modifiers
-		// Fallbacks - []
 	}
 }
 @include media(">large_desktop"){
@@ -186,8 +169,6 @@ $module: 'hero_unit';
   				font-size: 30px;
 			}
 			strong{
-				font-size: 4.3vw;
-				word-spacing: 3px;
 			}
 		}
 		&__footer{}

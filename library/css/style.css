@@ -750,6 +750,19 @@ Stylesheet: Variables
   overflow: hidden;
 }
 
+/* draw any selected text yellow on red background */
+/* line 131, ../scss/partials/_utils.scss */
+::-moz-selection {
+  color: #ffff00;
+  background: #ff0000;
+}
+
+/* line 132, ../scss/partials/_utils.scss */
+::selection {
+  color: #ffff00;
+  background: #ff0000;
+}
+
 /******************************************************************
 Site Name:
 Author:
@@ -943,7 +956,7 @@ Stylesheet: Grid Stylesheet
     padding-right: 25px;
   }
 }
-@media (min-width: 481px) {
+@media (min-width: 601px) {
   /* line 41, ../scss/partials/_grid.scss */
   .wrap {
     padding-left: 20px;
@@ -1384,102 +1397,90 @@ Front/Home Page
 *********************/
 /* line 10, ../scss/modules/_hero_unit.scss */
 .hero_unit__wrapper {
-  padding-top: 8.2vh;
+  padding-top: 30px;
 }
 /* line 13, ../scss/modules/_hero_unit.scss */
 .hero_unit__header {
-  margin-bottom: 3.4vh;
+  margin-bottom: 1.1vh;
 }
-/* line 21, ../scss/modules/_hero_unit.scss */
+/* line 20, ../scss/modules/_hero_unit.scss */
 .hero_unit__title--main {
-  font-size: 11.7vw;
+  font-size: 18.6vw;
   letter-spacing: -3px;
 }
-/* line 27, ../scss/modules/_hero_unit.scss */
+/* line 26, ../scss/modules/_hero_unit.scss */
 .hero_unit__copy p {
   font-size: 14px;
-  line-height: 1.2;
-  letter-spacing: -1px;
-  margin-bottom: 2.7vh;
+  line-height: 1.3;
+  margin-bottom: 2.2vh;
 }
-/* line 33, ../scss/modules/_hero_unit.scss */
+/* line 31, ../scss/modules/_hero_unit.scss */
 .hero_unit__copy strong {
   line-height: 1;
-  font-size: 9vw;
+  font-size: 8vw;
+  letter-spacing: -1px;
 }
-/* line 40, ../scss/modules/_hero_unit.scss */
+/* line 38, ../scss/modules/_hero_unit.scss */
 .hero_unit__bgmedia {
   z-index: -1;
 }
 
 @media (max-width: 479px) {
-  /* line 63, ../scss/modules/_hero_unit.scss */
+  /* line 61, ../scss/modules/_hero_unit.scss */
   .hero_unit__title {
     text-align: left;
   }
-  /* line 67, ../scss/modules/_hero_unit.scss */
+  /* line 65, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     text-align: left !important;
   }
 }
+@media (min-width: 481px) {
+  /* line 76, ../scss/modules/_hero_unit.scss */
+  .hero_unit__title--main {
+    font-size: 11.7vw;
+    letter-spacing: -4px;
+    word-spacing: -1px;
+  }
+  /* line 85, ../scss/modules/_hero_unit.scss */
+  .hero_unit__copy strong {
+    font-size: 4.3vw;
+    word-spacing: 3px;
+  }
+}
 @media (min-width: 601px) {
-  /* line 89, ../scss/modules/_hero_unit.scss */
+  /* line 97, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 16px;
   }
 }
 @media (min-width: 701px) {
-  /* line 100, ../scss/modules/_hero_unit.scss */
+  /* line 108, ../scss/modules/_hero_unit.scss */
   .hero_unit__wrapper {
     width: 70.58824%;
     margin: 0 auto;
   }
-  /* line 111, ../scss/modules/_hero_unit.scss */
-  .hero_unit__title--main {
-    letter-spacing: -4px;
-    word-spacing: -1px;
-  }
-  /* line 117, ../scss/modules/_hero_unit.scss */
+  /* line 124, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
-    font-size: 18px;
-    letter-spacing: 0px;
-  }
-  /* line 121, ../scss/modules/_hero_unit.scss */
-  .hero_unit__copy strong {
-    font-size: 4.3vw;
-    word-spacing: 3px;
+    font-size: 16px;
   }
 }
 @media (min-width: 1025px) {
-  /* line 145, ../scss/modules/_hero_unit.scss */
-  .hero_unit__title--main {
-    letter-spacing: -4px;
-    word-spacing: -1px;
-  }
-  /* line 151, ../scss/modules/_hero_unit.scss */
+  /* line 141, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 24px;
-  }
-  /* line 154, ../scss/modules/_hero_unit.scss */
-  .hero_unit__copy strong {
-    font-size: 4.3vw;
-    word-spacing: 3px;
+    margin-bottom: 2.8vh;
   }
 }
 @media (min-width: 1601px) {
-  /* line 179, ../scss/modules/_hero_unit.scss */
+  /* line 162, ../scss/modules/_hero_unit.scss */
   .hero_unit__title--main {
     letter-spacing: -4px;
     word-spacing: -1px;
   }
-  /* line 185, ../scss/modules/_hero_unit.scss */
+  /* line 168, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 30px;
-  }
-  /* line 188, ../scss/modules/_hero_unit.scss */
-  .hero_unit__copy strong {
-    font-size: 4.3vw;
-    word-spacing: 3px;
   }
 }
 /* line 2, ../scss/modules/_menu_toggle.scss */
@@ -1673,42 +1674,75 @@ Front/Home Page
   line-height: 0.8;
 }
 
+@media (min-height: 600px) {
+  /* line 74, ../scss/page/_home.scss */
+  .home .hero_unit__wrapper {
+    padding-top: 95px;
+  }
+  /* line 86, ../scss/page/_home.scss */
+  .home .hero_unit__copy {
+    color: #ddd;
+  }
+  /* line 88, ../scss/page/_home.scss */
+  .home .hero_unit__copy p {
+    font-size: 3.4vw;
+    letter-spacing: 0;
+    word-spacing: -1px;
+  }
+  /* line 93, ../scss/page/_home.scss */
+  .home .hero_unit__copy strong {
+    font-size: 5.8vw;
+    letter-spacing: 0px;
+    word-spacing: -1px;
+    line-height: 0.8;
+  }
+}
 @media (max-width: 319px) {
-  /* line 73, ../scss/page/_home.scss */
+  /* line 108, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 7vw;
     word-spacing: 0;
   }
-  /* line 77, ../scss/page/_home.scss */
+  /* line 112, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 10vw;
     word-spacing: 0px;
     line-height: 1.2;
   }
 }
+@media (min-width: 601px) {
+  /* line 141, ../scss/page/_home.scss */
+  .home .hero_unit__copy {
+    color: #ddd;
+  }
+  /* line 143, ../scss/page/_home.scss */
+  .home .hero_unit__copy p {
+    margin-bottom: 5.7vh;
+  }
+}
 @media (min-width: 1401px) {
-  /* line 116, ../scss/page/_home.scss */
+  /* line 159, ../scss/page/_home.scss */
   .home .latest .hentry--as-block {
     width: 25%;
   }
 }
 @media (max-width: 699px) {
-  /* line 128, ../scss/page/_home.scss */
+  /* line 171, ../scss/page/_home.scss */
   .home .hero_unit br {
     display: none;
   }
 }
 @media (min-width: 701px) {
-  /* line 136, ../scss/page/_home.scss */
+  /* line 179, ../scss/page/_home.scss */
   .home .hero_unit__wrapper {
     margin-left: 4.20168%;
   }
-  /* line 143, ../scss/page/_home.scss */
+  /* line 186, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 1.72vw;
     line-height: 1.37;
   }
-  /* line 147, ../scss/page/_home.scss */
+  /* line 190, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 6.5vw;
     letter-spacing: -2px;

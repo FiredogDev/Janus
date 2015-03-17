@@ -65,6 +65,41 @@ $page: 'home';
 // 	'large_desktop': 	1600px
 
 // @Media
+
+
+@include media(">height600"){
+	// Homepage Hero Unit
+	.#{$page}{
+		.hero_unit{
+			&__wrapper{
+				padding-top: 95px;
+			}
+			&__header{}
+			&__category_byline{
+				.hentry__byline{}
+			}
+			&__title{
+				&--super{}
+				&--main{
+				}
+			}
+			&__copy{
+				color: #ddd;
+				p{
+					font-size: 3.4vw;
+					letter-spacing: 0;
+					word-spacing: -1px;
+				}
+				strong{
+					font-size: 5.8vw;
+				  	letter-spacing: 0px;
+				  	word-spacing: -1px;
+				  	line-height: 0.8;
+				}
+			}
+		}
+	}
+}
 @include media("<phone"){
 	.#{$page}{
 		// Homepage Hero Unit
@@ -85,7 +120,6 @@ $page: 'home';
 }
 @include media(">phone_landscape"){
 	// Module
-	$page: 'home';
 	.#{$page}{
 		// Child Elems
 		// Modifiers
@@ -103,7 +137,16 @@ $page: 'home';
 		// Child Elems
 		// Modifiers
 		// Fallbacks - []
-		.hero_unit{}
+		.hero_unit{
+			&__copy{
+				color: #ddd;
+				p{
+					margin-bottom: 5.7vh;
+				}
+				strong{
+				}
+			}
+		}
 	}
 }
 @include media(">1400px"){

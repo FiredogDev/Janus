@@ -127,3 +127,6 @@
 .ovh{
   overflow: hidden;
 }
+/* draw any selected text yellow on red background */
+::-moz-selection { color: $yellow;  background: $red; }
+::selection      { color: $yellow;  background: $red; } 
