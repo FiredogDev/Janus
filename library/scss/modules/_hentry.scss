@@ -318,7 +318,7 @@ $module: 'hentry';
 }
 
 // @Media height
-@include media(">height460"){
+@include media("portrait"){
 	.#{$module}{
 		// Modifiers
 		&--as-block{

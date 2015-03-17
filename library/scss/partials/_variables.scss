@@ -31,7 +31,13 @@ $media-expressions: (
 	),
 	'>height600': (
 		'(min-height: 600px)'
-	)
+	),
+	'portrait': (
+		'(orientation:portrait)'
+	),
+	'landscape': (
+		'(orientation:landscape)'
+	),
 );
 
 // -----

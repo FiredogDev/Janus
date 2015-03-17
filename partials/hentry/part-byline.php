@@ -1,5 +1,6 @@
 <p class="hentry__byline vcard">
 	<span class="hentry__author">
+		<span class="hentry__author__label"><?php echo get_the_category_list(','); ?> |</span>
 		<span class="hentry__author__label">Words: </span>
 		<span class="hentry__author__title" itemprop="author" itemscope itemptype="http://schema.org/Person">
 			<?php the_author_posts_link() ?>, 

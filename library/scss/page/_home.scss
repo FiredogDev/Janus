@@ -65,9 +65,7 @@ $page: 'home';
 // 	'large_desktop': 	1600px
 
 // @Media
-
-
-@include media(">height600"){
+@include media("portrait"){
 	// Homepage Hero Unit
 	.#{$page}{
 		.hero_unit{

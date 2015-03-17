@@ -579,7 +579,7 @@ body#tinymce.wp-editor span.amp {
   font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
   font-style: italic;
 }
-/* line 50, ../scss/partials/_variables.scss */
+/* line 56, ../scss/partials/_variables.scss */
 body#tinymce.wp-editor .disnfy {
   -webkit-transition: all 500ms cubic-bezier(1, 0, 0.525, 1);
   /* older webkit */

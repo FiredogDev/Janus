@@ -30,7 +30,7 @@ Stylesheet: Grid Stylesheet
 // 	'tablet_large': 	800px,
 // 	'desktop': 			1024px,
 // 	'large_desktop': 	1600px
-@include media(">height460"){
+@include media("portrait"){
 	.wrap{
 		padding-left: 25px;
 		padding-right: 25px;
@@ -40,6 +40,10 @@ Stylesheet: Grid Stylesheet
 @include media(">tablet"){
 	.wrap{
 		padding-left: 20px;
+	}
+}
+@include media("portrait", ">tablet"){
+	.wrap{
 		padding-right: 20px;
 	}
 }

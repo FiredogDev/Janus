@@ -37,6 +37,9 @@ $module: 'hero_unit';
 	}
 	&__bgmedia{
 		z-index: -1;
+		&__video{
+			display: none;
+		}
 	}
 
 	// Modifiers
@@ -52,8 +55,7 @@ $module: 'hero_unit';
 // 	'large_desktop': 	1600px
 
 // @Media
-@include media(">phone"){
-}
+@include media(">phone"){}
 @include media("<phone_landscape"){
 	// Module
 	.#{$module}{
@@ -97,8 +99,7 @@ $module: 'hero_unit';
 			p{
 				font-size: 16px;
 			}
-			strong{
-			}
+			strong{}
 		}
 	}
 }
@@ -106,7 +107,7 @@ $module: 'hero_unit';
 	.#{$module}{
 		// Child Elems
 		&__wrapper{
-			width: 70.58824%;
+			width: 74.78992%;
 			margin: 0 auto;
 		}
 		&__header{
@@ -116,9 +117,7 @@ $module: 'hero_unit';
 		}
 		&__title{
 			&--super{}
-			&--main{
-				
-			}
+			&--main{}
 		}
 		&__copy{
 			p{
@@ -128,7 +127,8 @@ $module: 'hero_unit';
 			}
 		}
 		&__footer{}
-		&__bgmedia{}
+		&__bgmedia{
+		}
 
 		// Modifiers
 		// Fallbacks - []

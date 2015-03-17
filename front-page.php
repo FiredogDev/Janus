@@ -23,14 +23,12 @@
 							<time class="hentry__pub_time" datetime="<?php echo get_the_time('Y-m-d'); ?>" itemprop="datePublished"><?php echo get_the_time(get_option('date_format')); ?> </time>
 						</p>
 					</div>
-
 					<h1 class="hero_unit__title" itemprop="headline">
 						<!-- Super title -->
 						<span class="hero_unit__title--super">Our Thinking:</span><br>
 						<!-- Main title -->
 						<span class="hero_unit__title--main"><?php the_title(); ?></span>
 					</h1>
-
 				</header>
 
 				<div class="hero_unit__copy" itemprop="articleBody">

@@ -1,6 +1,3 @@
-<?php
-// Template name: case studies
-// ?>
 <?php get_header(); ?>
 
 	<main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
