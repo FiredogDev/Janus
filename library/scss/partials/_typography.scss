@@ -40,6 +40,17 @@ FONT FACE (IN YOUR FACE)
     font-style: normal;
 }
 
+// Tiempos Bold
+@font-face {
+    font-family: 'tiempos';
+    src: url('../fonts/tiempos/TiemposHeadlineBlack.eot');
+    src: url('../fonts/tiempos/TiemposHeadlineBlack.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tiempos/TiemposHeadlineBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /*
 Typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography

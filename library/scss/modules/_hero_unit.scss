@@ -14,12 +14,36 @@ $module: 'hero_unit';
 		margin-bottom: 1.1vh;
 	}
 	&__category_byline{
-		.hentry__byline{}
+		.hentry{
+			&__byline{
+				text-transform: uppercase;
+				color: #222222;
+				font-size: 14px;
+				font-weight: bold;
+				margin-bottom: 40px;
+				margin-bottom: 4vw;
+			}
+			&__pub_time{}
+			&__author{
+				&__label{
+					color: #555555;
+				}
+				&__title{}
+				&__location{}
+			}
+		}
 	}
 	&__title{
 		&--main{
 			font-size: 18.6vw;
 			letter-spacing: -3px;
+			.category-features &{
+				font-family: 'tiempos';
+				font-size: 14vw;
+				letter-spacing: -2px;
+				color: #222;
+				line-height: 0.9;
+			}
 		}
 	}
 	&__copy{
@@ -33,6 +57,11 @@ $module: 'hero_unit';
 			font-size: 8vw;
 			letter-spacing: -1px;
 
+		}
+		.category-features &{
+			color: #555;
+			p{}
+			strong{}
 		}
 	}
 	&__bgmedia{
@@ -74,6 +103,21 @@ $module: 'hero_unit';
 	// Module
 	.#{$module}{
 		// Child Elems
+		&__category_byline{
+			text-align: center;
+			.hentry{
+				&__byline{
+					font-size: 16px;
+				}
+				&__pub_time{}
+				&__author{
+					&__label{
+					}
+					&__title{}
+					&__location{}
+				}
+			}
+		}
 		&__title{
 			&--main{
 				font-size: 11.7vw;
@@ -89,6 +133,7 @@ $module: 'hero_unit';
 				word-spacing: 3px;
 			}
 		}
+
 	}
 }
 @include media(">tablet"){
@@ -113,11 +158,19 @@ $module: 'hero_unit';
 		&__header{
 		}
 		&__category_byline{
-			.hentry__byline{}
+			.hentry{
+				&__byline{
+					margin-bottom: 2.1vw;
+				}
+			}
 		}
 		&__title{
 			&--super{}
-			&--main{}
+			&--main{
+				.category-features &{
+					font-size: 8.3vw;
+				}
+			}
 		}
 		&__copy{
 			p{
@@ -137,6 +190,20 @@ $module: 'hero_unit';
 @include media(">desktop"){
 	.#{$module}{
 		// Child Elems
+		&__category_byline{
+			.hentry{
+				&__byline{
+					font-size: 1.28vw;
+				}
+				&__pub_time{}
+				&__author{
+					&__label{
+					}
+					&__title{}
+					&__location{}
+				}
+			}
+		}
 		&__copy{
 			p{
 				font-size: 24px;

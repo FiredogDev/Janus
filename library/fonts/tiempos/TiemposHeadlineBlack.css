@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TiemposHeadlineBlack';
+    src: url('fonts/TiemposHeadlineBlack.eot');
+    src: url('fonts/TiemposHeadlineBlack.eot') format('embedded-opentype'),
+         url('fonts/TiemposHeadlineBlack.woff2') format('woff2'),
+         url('fonts/TiemposHeadlineBlack.woff') format('woff'),
+         url('fonts/TiemposHeadlineBlack.ttf') format('truetype'),
+         url('fonts/TiemposHeadlineBlack.svg#TiemposHeadlineBlack') format('svg');
+}
