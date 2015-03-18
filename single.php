@@ -9,10 +9,13 @@
 				<header class="article-header hero_unit wrap cf">
 					<div class="hero_unit__wrapper width--full cf">
 						<div class="hero_unit__header cf">
-							<!-- Categoriszation -->
-							<div class="hero_unit__category_byline width--full cf">
-								<?php get_template_part( 'partials/hentry/part', 'byline' ); ?>
-							</div>
+							<!-- Hentry Meta -->
+							<p class="hentry__meta">
+								<?php // CATEGORY & BYLINE
+								get_template_part( 'partials/hentry/meta/meta', 'category' );
+								echo "<span class=\"hentry__meta__separator\"> | </span>";
+								get_template_part( "partials/hentry/meta/meta", 'byline' ); ?>
+							</p>
 							<h1 class="hero_unit__title text-center width--full" itemprop="headline">
 								<!-- Main title -->
 								<span class="hero_unit__title--main width--full fl"><?php the_title(); ?></span>

@@ -13,24 +13,26 @@ $hero_module: 'hero_unit';
 	&__header{
 		margin-bottom: 1.1vh;
 	}
-	&__category_byline{
-		.hentry{
-			&__byline{
-				text-transform: uppercase;
-				color: #222222;
-				font-size: 14px;
-				font-weight: bold;
-				margin-bottom: 40px;
-				margin-bottom: 4vw;
+	.hentry{
+		&__meta{
+			text-transform: uppercase;
+			color: #222222;
+			font-size: 14px;
+			font-weight: bold;
+			margin-bottom: 40px;
+			margin-bottom: 4vw;
+			&__separator{
+				color: #555555;
 			}
-			&__pub_time{}
 			&__author{
 				&__label{
 					color: #555555;
 				}
-				&__title{}
-				&__location{}
 			}
+			&__category{
+				color: #555555;
+			}
+			&__comment_count{}
 		}
 	}
 	&__title{
@@ -113,19 +115,10 @@ $hero_module: 'hero_unit';
 	// Module
 	.#{$hero_module}{
 		// Child Elems
-		&__category_byline{
-			text-align: center;
-			.hentry{
-				&__byline{
-					font-size: 16px;
-				}
-				&__pub_time{}
-				&__author{
-					&__label{
-					}
-					&__title{}
-					&__location{}
-				}
+		.hentry{
+			&__meta{
+				text-align: center;
+				font-size: 16px;
 			}
 		}
 		&__title{
@@ -165,11 +158,9 @@ $hero_module: 'hero_unit';
 		}
 		&__header{
 		}
-		&__category_byline{
-			.hentry{
-				&__byline{
-					margin-bottom: 2.1vw;
-				}
+		.hentry{
+			&__meta{
+				margin-bottom: 2.1vw;
 			}
 		}
 		&__title{
@@ -209,18 +200,9 @@ $hero_module: 'hero_unit';
 @include media(">desktop"){
 	.#{$hero_module}{
 		// Child Elems
-		&__category_byline{
-			.hentry{
-				&__byline{
-					font-size: 1.28vw;
-				}
-				&__pub_time{}
-				&__author{
-					&__label{
-					}
-					&__title{}
-					&__location{}
-				}
+		.hentry{
+			&__meta{
+				font-size: 1.28vw;
 			}
 		}
 		&__copy{
@@ -236,15 +218,7 @@ $hero_module: 'hero_unit';
 @include media(">large_desktop"){
 	.#{$hero_module}{
 		// Child Elems
-		&__wrapper{
-		}
-		&__header{
-		}
-		&__category_byline{
-			.hentry__byline{}
-		}
 		&__title{
-			&--super{}
 			&--main{
 				letter-spacing: -4px;
 				word-spacing: -1px;
@@ -254,13 +228,7 @@ $hero_module: 'hero_unit';
 			p{
   				font-size: 30px;
 			}
-			strong{
-			}
 		}
-		&__footer{}
-		&__bgmedia{
-		}
-
 		// Modifiers
 		// Fallbacks - []
 	}

@@ -6,23 +6,17 @@
 		<section id="intro" class="hero_unit wrap cf">
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'hero_unit__wrapper width--full fl cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-			
+				
+				<!-- Hentry Header -->
 				<header class="hero_unit__header cf hide">
-					<!-- Categoriszation -->
-					<div class="hero_unit__category_byline">
-						<p class="hentry__byline vcard">
-							<span class="hentry__author">
-								<span class="hentry__author__label">Feature Article | </span>
-								<span class="hentry__author__label">Words: </span>
-								<span class="hentry__author__title" itemprop="author" itemscope itemptype="http://schema.org/Person">
-									<?php the_author_posts_link() ?>, 
-								</span>
-								<span class="hentry__author__location">LDN.</span>
-							</span>
-							<?php /* the time the post was published */ ?>
-							<time class="hentry__pub_time" datetime="<?php echo get_the_time('Y-m-d'); ?>" itemprop="datePublished"><?php echo get_the_time(get_option('date_format')); ?> </time>
-						</p>
-					</div>
+
+					<!-- Hentry Meta -->
+					<p class="hentry__meta">
+						<?php // CATEGORY & BYLINE
+						get_template_part( 'partials/hentry/meta/meta', 'category' );
+						echo "<span class=\"hentry__meta__separator\"> | </span>";
+						get_template_part( "partials/hentry/meta/meta", 'byline' ); ?>
+					</p>
 					<h1 class="hero_unit__title" itemprop="headline">
 						<!-- Super title -->
 						<span class="hero_unit__title--super">Our Thinking:</span><br>
