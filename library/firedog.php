@@ -362,6 +362,21 @@ function edit_caption_shortcode($empty, $attr, $content) {
 	'</div>';
 }
 
+// Customize wp body class
+add_filter('body_class', 'firedog_body_classes');
+function firedog_body_classes($classes) {
+		global $post;
+
+		// On single post...
+		if (is_single() ) {
+			// ...add the post categories to the body.
+	        foreach((get_the_category($post->ID)) as $category) {
+				$classes[] = "category--".$category->category_nicename;
+			}
+		}
+        return $classes;
+}
+
 /****************
 CUSTOM SHORTCODES
 *****************/
