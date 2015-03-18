@@ -1751,15 +1751,17 @@ Front/Home Page
 }
 /* line 38, ../scss/page/_home.scss */
 .home .hero_unit__copy {
+  width: 100%;
+  margin: 0;
   color: #ddd;
 }
-/* line 40, ../scss/page/_home.scss */
+/* line 42, ../scss/page/_home.scss */
 .home .hero_unit__copy p {
   font-size: 3.4vw;
   letter-spacing: 0;
   word-spacing: -1px;
 }
-/* line 45, ../scss/page/_home.scss */
+/* line 47, ../scss/page/_home.scss */
 .home .hero_unit__copy strong {
   font-size: 5.8vw;
   letter-spacing: 0px;
@@ -1768,21 +1770,21 @@ Front/Home Page
 }
 
 @media (orientation: portrait) {
-  /* line 72, ../scss/page/_home.scss */
+  /* line 74, ../scss/page/_home.scss */
   .home .hero_unit__wrapper {
     padding-top: 95px;
   }
-  /* line 84, ../scss/page/_home.scss */
+  /* line 86, ../scss/page/_home.scss */
   .home .hero_unit__copy {
     color: #ddd;
   }
-  /* line 86, ../scss/page/_home.scss */
+  /* line 88, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 3.4vw;
     letter-spacing: 0;
     word-spacing: -1px;
   }
-  /* line 91, ../scss/page/_home.scss */
+  /* line 93, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 5.8vw;
     letter-spacing: 0px;
@@ -1791,12 +1793,12 @@ Front/Home Page
   }
 }
 @media (max-width: 319px) {
-  /* line 106, ../scss/page/_home.scss */
+  /* line 108, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 7vw;
     word-spacing: 0;
   }
-  /* line 110, ../scss/page/_home.scss */
+  /* line 112, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 10vw;
     word-spacing: 0px;
@@ -1804,38 +1806,38 @@ Front/Home Page
   }
 }
 @media (min-width: 601px) {
-  /* line 139, ../scss/page/_home.scss */
+  /* line 141, ../scss/page/_home.scss */
   .home .hero_unit__copy {
     color: #ddd;
   }
-  /* line 141, ../scss/page/_home.scss */
+  /* line 143, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     margin-bottom: 5.7vh;
   }
 }
 @media (min-width: 1401px) {
-  /* line 157, ../scss/page/_home.scss */
+  /* line 159, ../scss/page/_home.scss */
   .home .latest .hentry--as-block {
     width: 25%;
   }
 }
 @media (max-width: 699px) {
-  /* line 169, ../scss/page/_home.scss */
+  /* line 171, ../scss/page/_home.scss */
   .home .hero_unit br {
     display: none;
   }
 }
 @media (min-width: 701px) {
-  /* line 177, ../scss/page/_home.scss */
+  /* line 179, ../scss/page/_home.scss */
   .home .hero_unit__wrapper {
     margin-left: 4.20168%;
   }
-  /* line 184, ../scss/page/_home.scss */
+  /* line 186, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 1.72vw;
     line-height: 1.37;
   }
-  /* line 188, ../scss/page/_home.scss */
+  /* line 190, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 6.5vw;
     letter-spacing: -2px;
