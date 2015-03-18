@@ -1,0 +1,1 @@
+<span class="hentry__meta__category"><?php echo get_the_category_list(', '); ?></span>
