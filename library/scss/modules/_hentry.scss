@@ -32,15 +32,8 @@ $hentry_module: 'hentry';
 				padding-left: 15px;
 				z-index: 1;
 			}
-			&__cate,
 			&__title{
 				@include opacity(0.5);
-			}
-			&__cate{
-				line-height: 1.4;
-				padding-bottom: 5px;
-				font-size: 12px;
-				font-size: 8vw;
 			}
 			&__title{
 				@include font-size(24px);
@@ -57,21 +50,9 @@ $hentry_module: 'hentry';
 				background-size: cover;
 				background-position: center center;
 			}
-			&__byline{
-				text-transform: uppercase;
-				padding-top: 15px;
-				font-size: 10px;
-				line-height: 1.2;
-			}
-			&__author{
-				&__label{
-					color: #ddd;
-				}
-			}
 		}
 		&:hover{
 			.#{$hentry_module}{
-				&__cate,
 				&__title{
 					@include opacity(1);
 				}
@@ -221,8 +202,8 @@ $hentry_module: 'hentry';
 				&__header{
 				}
 				&__cate{
-					font-size: 20px;
-					font-size: 6vw;
+					// font-size: 20px;
+					// font-size: 6vw;
 				}
 				&__title{
 					font-size: 30px;
@@ -307,14 +288,12 @@ $hentry_module: 'hentry';
 				&__header{
 				}
 				&__cate{
-					font-size: 20px;
+					// font-size: 20px;
 				}
 				&__title{
 					font-size: 48px;
 				}
 				&__featured_image{
-				}
-				&__byline{
 				}
 			}
 		}

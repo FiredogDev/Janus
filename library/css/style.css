@@ -1266,18 +1266,11 @@ POSTS & CONTENT STYLES
   z-index: 1;
 }
 /* line 35, ../scss/modules/_hentry.scss */
-.hentry--as-block .hentry__cate, .hentry--as-block .hentry__title {
+.hentry--as-block .hentry__title {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-/* line 39, ../scss/modules/_hentry.scss */
-.hentry--as-block .hentry__cate {
-  line-height: 1.4;
-  padding-bottom: 5px;
-  font-size: 12px;
-  font-size: 8vw;
-}
-/* line 45, ../scss/modules/_hentry.scss */
+/* line 38, ../scss/modules/_hentry.scss */
 .hentry--as-block .hentry__title {
   font-size: 24px;
   font-size: 1.71429rem;
@@ -1287,7 +1280,7 @@ POSTS & CONTENT STYLES
   font-size: 20px;
   font-size: 14vw;
 }
-/* line 53, ../scss/modules/_hentry.scss */
+/* line 46, ../scss/modules/_hentry.scss */
 .hentry--as-block .hentry__featured_img {
   width: 100%;
   height: auto;
@@ -1295,98 +1288,78 @@ POSTS & CONTENT STYLES
   background-size: cover;
   background-position: center center;
 }
-/* line 60, ../scss/modules/_hentry.scss */
-.hentry--as-block .hentry__byline {
-  text-transform: uppercase;
-  padding-top: 15px;
-  font-size: 10px;
-  line-height: 1.2;
-}
-/* line 67, ../scss/modules/_hentry.scss */
-.hentry--as-block .hentry__author__label {
-  color: #ddd;
-}
-/* line 74, ../scss/modules/_hentry.scss */
-.hentry--as-block:hover .hentry__cate, .hentry--as-block:hover .hentry__title {
+/* line 56, ../scss/modules/_hentry.scss */
+.hentry--as-block:hover .hentry__title {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 139, ../scss/modules/_hentry.scss */
+/* line 120, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry--as-block .hentry__header {
   border-left-width: 6px;
   border-left-style: solid;
 }
-/* line 156, ../scss/modules/_hentry.scss */
+/* line 137, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry.type-learn .hentry__header {
   border-color: #00ff84;
 }
-/* line 169, ../scss/modules/_hentry.scss */
+/* line 150, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry.type-post .hentry__header {
   border-color: #ffff00;
 }
-/* line 182, ../scss/modules/_hentry.scss */
+/* line 163, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry.type-our_work .hentry__header {
   border-color: #ff0000;
 }
 
 @media (orientation: portrait) {
-  /* line 211, ../scss/modules/_hentry.scss */
+  /* line 192, ../scss/modules/_hentry.scss */
   .hentry--as-block {
     height: 50vh;
   }
 }
 @media (min-width: 321px) {
-  /* line 223, ../scss/modules/_hentry.scss */
-  .hentry--as-block .hentry__cate {
-    font-size: 20px;
-    font-size: 6vw;
-  }
-  /* line 227, ../scss/modules/_hentry.scss */
+  /* line 208, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 30px;
     font-size: 9vw;
   }
 }
 @media (min-width: 481px) {
-  /* line 252, ../scss/modules/_hentry.scss */
+  /* line 233, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 40px;
     font-size: 7vw;
   }
 }
 @media (min-width: 601px) {
-  /* line 268, ../scss/modules/_hentry.scss */
+  /* line 249, ../scss/modules/_hentry.scss */
   .hentry--as-block {
     width: 50%;
     height: 50vh;
   }
-  /* line 272, ../scss/modules/_hentry.scss */
+  /* line 253, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__header {
     width: 75%;
     border-left-width: 12px;
     padding-left: 30px;
   }
-  /* line 282, ../scss/modules/_hentry.scss */
+  /* line 263, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 34px;
     font-size: 5vw;
   }
-  /* line 286, ../scss/modules/_hentry.scss */
+  /* line 267, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__featured_image {
     width: 100%;
     height: auto;
   }
-  /* line 290, ../scss/modules/_hentry.scss */
+  /* line 271, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__byline {
     font-size: 13px;
   }
 }
 @media (min-width: 701px) {
-  /* line 309, ../scss/modules/_hentry.scss */
-  .hentry--as-block .hentry__cate {
-    font-size: 20px;
-  }
-  /* line 312, ../scss/modules/_hentry.scss */
+  /* line 293, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 48px;
   }
