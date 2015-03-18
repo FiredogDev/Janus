@@ -23,8 +23,8 @@ $as_entry_variants: (
 );
 
 // Module
-$module: 'hentry';
-.#{$module}{
+$hentry_module: 'hentry';
+.#{$hentry_module}{
 	// Child Elems
 	&__header{
 		color: #fff;
@@ -41,11 +41,11 @@ $module: 'hentry';
 	}
 	&__featured_image{}
 	
-	// Modifiers
+	// Modifiers -- Layout Mode
 	&--as-block{
 		width: 100%;
 		height: 100vh;
-		.#{$module}{
+		.#{$hentry_module}{
 			&__header{
 				width: 100%;
 				bottom: 10%;
@@ -90,7 +90,7 @@ $module: 'hentry';
 			}
 		}
 		&:hover{
-			.#{$module}{
+			.#{$hentry_module}{
 				&__cate,
 				&__title{
 					@include opacity(1);
@@ -98,16 +98,23 @@ $module: 'hentry';
 			}
 		}
 	}
-	&--as-entry{
-		// Themify
-		@each $theme, $map in $variants {
-			// .#{$theme} & { fill: map-get($map, fill); }
+	&--as-row{
+		.#{$hentry_module}{
+			&__header{}
+			&__title{}
+			&__excerpt{}
+			&__footer{}
+			&__meta{
+				&__category{}
+				&__comment_count{}
+			}
+			
 		}
 	}
 	// Modifiers -- Post Type
 	&.type{
 		&-learn{
-			.#{$module}{
+			.#{$hentry_module}{
 				&__header{
 				}
 				&__cate{
@@ -119,7 +126,7 @@ $module: 'hentry';
 			}
 		}
 		&-post{
-			.#{$module}{
+			.#{$hentry_module}{
 				&__header{
 				}
 				&__cate{
@@ -131,7 +138,7 @@ $module: 'hentry';
 			}
 		}
 		&-our_work{
-			.#{$module}{
+			.#{$hentry_module}{
 				&__header{
 				}
 				&__cate{
@@ -146,9 +153,9 @@ $module: 'hentry';
 	// Modifiers -- within post entries listing
 	&__listing{
 		// Hentry
-		.#{$module}{
+		.#{$hentry_module}{
 			&--as-block{
-				.#{$module}{
+				.#{$hentry_module}{
 					&__header{
 						border-left-width: 6px;
 						border-left-style: solid;
@@ -165,7 +172,7 @@ $module: 'hentry';
 			}
 			&.type{
 				&-learn{
-					.#{$module}{
+					.#{$hentry_module}{
 						&__header{
 							border-color: $green;
 						}
@@ -178,7 +185,7 @@ $module: 'hentry';
 					}
 				}
 				&-post{
-					.#{$module}{
+					.#{$hentry_module}{
 						&__header{
 							border-color: $yellow;
 						}
@@ -191,7 +198,7 @@ $module: 'hentry';
 					}
 				}
 				&-our_work{
-					.#{$module}{
+					.#{$hentry_module}{
 						&__header{
 							border-color: $red;
 						}
@@ -219,7 +226,7 @@ $module: 'hentry';
 
 // @Media
 @include media("portrait"){
-	.#{$module}{
+	.#{$hentry_module}{
 		// Modifiers
 		&--as-block{
 			height: 50vh;
@@ -227,10 +234,10 @@ $module: 'hentry';
 	}
 }
 @include media(">phone"){
-	.#{$module}{
+	.#{$hentry_module}{
 		// Modifiers
 		&--as-block{
-			.#{$module}{
+			.#{$hentry_module}{
 				&__header{
 				}
 				&__cate{
@@ -254,10 +261,10 @@ $module: 'hentry';
 	}
 }
 @include media(">phone_landscape"){
-  .#{$module}{
+  .#{$hentry_module}{
 		// Modifiers
 		&--as-block{
-			.#{$module}{
+			.#{$hentry_module}{
 				&__header{
 				}
 				&__cate{
@@ -274,12 +281,12 @@ $module: 'hentry';
 }
 
 @include media(">tablet"){
-	.#{$module}{
+	.#{$hentry_module}{
   		// Modifiers
 		&--as-block{
 			width: 50%;
 			height: 50vh;
-			.#{$module}{
+			.#{$hentry_module}{
 				&__header{
 					width: 75%;
 					border-left-width: 12px;
@@ -310,7 +317,7 @@ $module: 'hentry';
   		// Modifiers
 		&--as-block{
 			// max-width: 50%;
-			.#{$module}{
+			.#{$hentry_module}{
 				&__header{
 				}
 				&__cate{
