@@ -81,6 +81,7 @@ $module: 'hentry';
 				text-transform: uppercase;
 				padding-top: 15px;
 				font-size: 10px;
+				line-height: 1.2;
 			}
 			&__author{
 				&__label{
@@ -217,6 +218,14 @@ $module: 'hentry';
 // 	'large_desktop': 	1600px
 
 // @Media
+@include media("portrait"){
+	.#{$module}{
+		// Modifiers
+		&--as-block{
+			height: 50vh;
+		}
+	}
+}
 @include media(">phone"){
 	.#{$module}{
 		// Modifiers
@@ -263,11 +272,13 @@ $module: 'hentry';
 		}
 	}
 }
+
 @include media(">tablet"){
 	.#{$module}{
   		// Modifiers
 		&--as-block{
 			width: 50%;
+			height: 50vh;
 			.#{$module}{
 				&__header{
 					width: 75%;
@@ -315,14 +326,4 @@ $module: 'hentry';
 			}
 		}
   	}
-}
-
-// @Media height
-@include media("portrait"){
-	.#{$module}{
-		// Modifiers
-		&--as-block{
-			height: 50vh;
-		}
-	}
 }

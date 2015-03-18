@@ -616,7 +616,17 @@ body#tinymce.wp-editor .disnfy {
     font-style: normal;
   }
 }
-/* line 47, ../scss/partials/_typography.scss */
+@font-face {
+  /* line 17, ../scss/editor-style.scss */
+  body#tinymce.wp-editor {
+    font-family: 'tiempos';
+    src: url("../fonts/tiempos/TiemposHeadlineBlack.eot");
+    src: url("../fonts/tiempos/TiemposHeadlineBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/tiempos/TiemposHeadlineBlack.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+/* line 58, ../scss/partials/_typography.scss */
 body#tinymce.wp-editor p {
   padding: 0;
   margin: 0;
@@ -626,21 +636,21 @@ body#tinymce.wp-editor p {
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig";
 }
-/* line 74, ../scss/partials/_typography.scss */
+/* line 85, ../scss/partials/_typography.scss */
 body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited, body#tinymce.wp-editor a:active {
   color: inherit;
   text-decoration: none;
   /* on hover */
   /* mobile tap color */
 }
-/* line 91, ../scss/partials/_typography.scss */
+/* line 102, ../scss/partials/_typography.scss */
 body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
   text-rendering: optimizelegibility;
   font-family: "circular";
   padding: 0;
   margin: 0;
 }
-/* line 96, ../scss/partials/_typography.scss */
+/* line 107, ../scss/partials/_typography.scss */
 body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
   text-decoration: none;
 }

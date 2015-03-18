@@ -91,11 +91,18 @@ FONT FACE (IN YOUR FACE)
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'tiempos';
+  src: url("../fonts/tiempos/TiemposHeadlineBlack.eot");
+  src: url("../fonts/tiempos/TiemposHeadlineBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/tiempos/TiemposHeadlineBlack.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /*
 Typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
-/* line 47, ../scss/partials/_typography.scss */
+/* line 58, ../scss/partials/_typography.scss */
 p {
   padding: 0;
   margin: 0;
@@ -109,7 +116,7 @@ p {
 /*********************
 LINK STYLES
 *********************/
-/* line 74, ../scss/partials/_typography.scss */
+/* line 85, ../scss/partials/_typography.scss */
 a, a:visited, a:active {
   color: inherit;
   text-decoration: none;
@@ -120,14 +127,14 @@ a, a:visited, a:active {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-/* line 91, ../scss/partials/_typography.scss */
+/* line 102, ../scss/partials/_typography.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-family: "circular";
   padding: 0;
   margin: 0;
 }
-/* line 96, ../scss/partials/_typography.scss */
+/* line 107, ../scss/partials/_typography.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
 }
