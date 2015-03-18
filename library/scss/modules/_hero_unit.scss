@@ -162,8 +162,6 @@ $hero_module: 'hero_unit';
 	.#{$hero_module}{
 		// Child Elems
 		&__wrapper{
-			width: 74.78992%;
-			margin: 0 auto;
 		}
 		&__header{
 		}
@@ -179,6 +177,8 @@ $hero_module: 'hero_unit';
 			&--main{}
 		}
 		&__copy{
+			width: 74.78992%;
+			margin: 0 auto;
 			p{
 				font-size: 16px;
 			}

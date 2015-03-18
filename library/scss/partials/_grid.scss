@@ -40,10 +40,6 @@ Stylesheet: Grid Stylesheet
 @include media(">tablet"){
 	.wrap{
 		padding-left: 20px;
-	}
-}
-@include media("portrait", ">tablet"){
-	.wrap{
 		padding-right: 20px;
 	}
 }

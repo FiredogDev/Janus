@@ -23,17 +23,16 @@ $show_byline = $post_type != "our_work"; ?>
 	href="<?php the_permalink() ?>" 
 	rel="bookmark" 
 	title="<?php the_title_attribute(); ?>"
-	style="background-image: url(<?php echo $featured_image_med['0']; //Medium ?>);"
-	>
+	style="background-image: url(<?php echo $featured_image_med['0']; //Medium ?>);" >
 		<?php
 		// // Thumb ID
 		// $post_thumb_id 			= get_post_thumbnail_id($post->ID);
 		// //Get Alt...
-		// $post_thumb 			= get_post($post_thumb_id);
+		// $post_thumb 				= get_post($post_thumb_id);
 		// $post_thumb_desc 		= $post_thumb->post_content;
 		// // Sizes...
 		// $featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
-		// $featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' ); ?>
+		// $featured_image_med 		= wp_get_attachment_image_src( $post_thumb_id, 'medium' ); ?>
 		
 		<!-- <img 
 		class="hentry__featured_img fl" src="<?php echo $featured_image_small['0']; ?>" 

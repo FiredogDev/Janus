@@ -1,60 +1,41 @@
 <?php get_header(); ?>
+	
+	<?php
+	$thinking_space_id = 183;
+	$thinking_space = get_post($thinking_space_id); ?>
+	<main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+		
+		<header class="article-header hero_unit wrap cf">
+			<div class="hero_unit__wrapper width--full cf">
+				<div class="hero_unit__header cf">
+					<h1 class="hero_unit__title text-center width--full" itemprop="headline">
+						<!-- Main title -->
+						<span class="hero_unit__title--main width--full fl"><?php echo $thinking_space->post_title; ?></span>
+					</h1>
+				</div>
+				<div class="hero_unit__copy" itemprop="articleBody">
+					<?php echo apply_filters('the_content', $thinking_space->post_content); ?>
+				</div>
+			</div>
+		</header><?php // end article header ?>
 
-	<div id="content">
+		<section id="thinking_space_articles" class="hentry_listing">
+			
+			<?php
+			$args = array(
+				'post_type' => 'post',
+				'category_name' => 'news, features, work'
+			);
+			$the_query = new WP_Query( $args );
+			if ($the_query->have_posts()) : 
+				while ($the_query->have_posts()) : 
+					$the_query->the_post();
+					get_template_part('partials/hentry/hentry', 'post');
+			endwhile; 
+			endif; ?>
 
-		<div id="inner-content" class="wrap cf">
+		</section>
 
-				<main id="main" class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-						<header class="article-header">
-
-							<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							<p class="byline entry-meta vcard">
-                        		<?php printf( __( 'Posted %1$s by %2$s', 'firedog' ),
-       								/* the time the post was published */
-       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-       								/* the author of the post */
-       								'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-    							); ?>
-							</p>
-
-						</header>
-
-						<section class="entry-content cf">
-							<?php the_content(); ?>
-						</section>
-
-						<footer class="article-footer cf">
-							
-							<p class="footer-comment-count">
-								<?php comments_number( __( '<span>No</span> Comments', 'firedog' ), __( '<span>One</span> Comment', 'firedog' ), __( '<span>%</span> Comments', 'firedog' ) );?>
-							</p>
-							<?php printf( '<p class="footer-category">' . __('filed under', 'firedog' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
-							<?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'firedog' ) . '</span> ', ', ', '</p>' ); ?>
-
-						</footer>
-
-					</article>
-
-					<?php endwhile; ?>
-
-
-					<?php else : ?>
-
-							<article id="post-not-found" class="hentry cf"></article>
-
-					<?php endif; ?>
-
-				</main>
-
-			<?php get_sidebar(); ?>
-
-		</div>
-
-	</div>
+	</main>
 
 <?php get_footer(); ?>

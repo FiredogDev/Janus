@@ -967,11 +967,6 @@ Stylesheet: Grid Stylesheet
   /* line 41, ../scss/partials/_grid.scss */
   .wrap {
     padding-left: 20px;
-  }
-}
-@media (orientation: portrait) and (min-width: 601px) {
-  /* line 46, ../scss/partials/_grid.scss */
-  .wrap {
     padding-right: 20px;
   }
 }
@@ -1508,14 +1503,14 @@ Front/Home Page
   }
 }
 @media (min-width: 701px) {
-  /* line 164, ../scss/modules/_hero_unit.scss */
-  .hero_unit__wrapper {
-    width: 74.78992%;
-    margin: 0 auto;
-  }
-  /* line 172, ../scss/modules/_hero_unit.scss */
+  /* line 170, ../scss/modules/_hero_unit.scss */
   .hero_unit__category_byline .hentry__byline {
     margin-bottom: 2.1vw;
+  }
+  /* line 179, ../scss/modules/_hero_unit.scss */
+  .hero_unit__copy {
+    width: 74.78992%;
+    margin: 0 auto;
   }
   /* line 182, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
@@ -1549,7 +1544,7 @@ Front/Home Page
     font-size: 30px;
   }
 }
-/* line 4, ../scss/modules/_menu_toggle.scss */
+/* line 3, ../scss/modules/_menu_toggle.scss */
 .nav__toggle {
   width: 20px;
   height: 25px;
@@ -1560,43 +1555,43 @@ Front/Home Page
   -moz-perspective: 1000px;
   perspective: 1000px;
 }
-/* line 14, ../scss/modules/_menu_toggle.scss */
+/* line 13, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar {
   position: absolute;
   border-bottom: 2px solid #333;
   width: 100%;
 }
-/* line 18, ../scss/modules/_menu_toggle.scss */
+/* line 17, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--1 {
   top: 0;
 }
-/* line 21, ../scss/modules/_menu_toggle.scss */
+/* line 20, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--2 {
   top: 6px;
 }
-/* line 24, ../scss/modules/_menu_toggle.scss */
+/* line 23, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--3 {
   top: 12px;
 }
-/* line 31, ../scss/modules/_menu_toggle.scss */
+/* line 30, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
   top: 6px;
 }
-/* line 35, ../scss/modules/_menu_toggle.scss */
+/* line 34, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1 {
   -moz-transform: rotateZ(45deg);
   -ms-transform: rotateZ(45deg);
   -webkit-transform: rotateZ(45deg);
   transform: rotateZ(45deg);
 }
-/* line 38, ../scss/modules/_menu_toggle.scss */
+/* line 37, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--2 {
   -moz-transform: rotateY(90deg);
   -ms-transform: rotateY(90deg);
   -webkit-transform: rotateY(90deg);
   transform: rotateY(90deg);
 }
-/* line 41, ../scss/modules/_menu_toggle.scss */
+/* line 40, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--3 {
   -moz-transform: rotateZ(-45deg);
   -ms-transform: rotateZ(-45deg);
@@ -1605,27 +1600,27 @@ Front/Home Page
 }
 
 @media (orientation: portrait) {
-  /* line 76, ../scss/modules/_menu_toggle.scss */
+  /* line 75, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     margin-right: -5px;
   }
 }
 @media (min-width: 601px) {
-  /* line 88, ../scss/modules/_menu_toggle.scss */
+  /* line 87, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     width: 32px;
     margin-top: 1px;
-    margin-right: -34px;
+    margin-right: -5px;
   }
-  /* line 96, ../scss/modules/_menu_toggle.scss */
+  /* line 95, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--2 {
     top: 10px;
   }
-  /* line 99, ../scss/modules/_menu_toggle.scss */
+  /* line 98, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--3 {
     top: 20px;
   }
-  /* line 106, ../scss/modules/_menu_toggle.scss */
+  /* line 105, ../scss/modules/_menu_toggle.scss */
   .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
     top: 10px;
   }

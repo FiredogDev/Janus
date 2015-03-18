@@ -1,5 +1,4 @@
 <?php
-
 // Retrieve post as blog entry or block entry.
 global $frd_hentry_as,
 	   $number_of_posts;
@@ -22,7 +21,4 @@ if ( $the_query->have_posts() ) { ?>
 	</div>
 
 <?php
-} else {
-
-
 } // endif; ?>
