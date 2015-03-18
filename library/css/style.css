@@ -1435,113 +1435,115 @@ Front/Home Page
   font-size: 18.6vw;
   letter-spacing: -3px;
 }
-/* line 40, ../scss/modules/_hero_unit.scss */
-.category-features .hero_unit__title--main {
+/* line 43, ../scss/modules/_hero_unit.scss */
+.hero_unit__copy p {
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 2.2vh;
+}
+/* line 48, ../scss/modules/_hero_unit.scss */
+.hero_unit__copy strong {
+  line-height: 1;
+  font-size: 8vw;
+  letter-spacing: -1px;
+}
+/* line 54, ../scss/modules/_hero_unit.scss */
+.category-features .hero_unit__copy {
+  color: #555;
+}
+/* line 60, ../scss/modules/_hero_unit.scss */
+.hero_unit__bgmedia {
+  z-index: -1;
+}
+/* line 62, ../scss/modules/_hero_unit.scss */
+.hero_unit__bgmedia__video {
+  display: none;
+}
+
+/* line 76, ../scss/modules/_hero_unit.scss */
+.category--features .hero_unit__title--main {
   font-family: 'tiempos';
   font-size: 14vw;
   letter-spacing: -2px;
   color: #222;
   line-height: 0.9;
 }
-/* line 50, ../scss/modules/_hero_unit.scss */
-.hero_unit__copy p {
-  font-size: 14px;
-  line-height: 1.3;
-  margin-bottom: 2.2vh;
-}
-/* line 55, ../scss/modules/_hero_unit.scss */
-.hero_unit__copy strong {
-  line-height: 1;
-  font-size: 8vw;
-  letter-spacing: -1px;
-}
-/* line 61, ../scss/modules/_hero_unit.scss */
-.category-features .hero_unit__copy {
-  color: #555;
-}
-/* line 67, ../scss/modules/_hero_unit.scss */
-.hero_unit__bgmedia {
-  z-index: -1;
-}
-/* line 69, ../scss/modules/_hero_unit.scss */
-.hero_unit__bgmedia__video {
-  display: none;
-}
 
 @media (max-width: 479px) {
-  /* line 92, ../scss/modules/_hero_unit.scss */
+  /* line 102, ../scss/modules/_hero_unit.scss */
   .hero_unit__title {
     text-align: left;
   }
-  /* line 96, ../scss/modules/_hero_unit.scss */
+  /* line 106, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     text-align: left !important;
   }
 }
 @media (min-width: 481px) {
-  /* line 106, ../scss/modules/_hero_unit.scss */
+  /* line 116, ../scss/modules/_hero_unit.scss */
   .hero_unit__category_byline {
     text-align: center;
   }
-  /* line 109, ../scss/modules/_hero_unit.scss */
+  /* line 119, ../scss/modules/_hero_unit.scss */
   .hero_unit__category_byline .hentry__byline {
     font-size: 16px;
   }
-  /* line 122, ../scss/modules/_hero_unit.scss */
+  /* line 132, ../scss/modules/_hero_unit.scss */
   .hero_unit__title--main {
     font-size: 11.7vw;
     letter-spacing: -4px;
     word-spacing: -1px;
   }
-  /* line 131, ../scss/modules/_hero_unit.scss */
+  /* line 141, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy strong {
     font-size: 4.3vw;
     word-spacing: 3px;
   }
 }
 @media (min-width: 601px) {
-  /* line 144, ../scss/modules/_hero_unit.scss */
+  /* line 154, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 16px;
   }
 }
 @media (min-width: 701px) {
-  /* line 154, ../scss/modules/_hero_unit.scss */
+  /* line 164, ../scss/modules/_hero_unit.scss */
   .hero_unit__wrapper {
     width: 74.78992%;
     margin: 0 auto;
   }
-  /* line 162, ../scss/modules/_hero_unit.scss */
+  /* line 172, ../scss/modules/_hero_unit.scss */
   .hero_unit__category_byline .hentry__byline {
     margin-bottom: 2.1vw;
   }
-  /* line 170, ../scss/modules/_hero_unit.scss */
-  .category-features .hero_unit__title--main {
-    font-size: 8.3vw;
-  }
-  /* line 176, ../scss/modules/_hero_unit.scss */
+  /* line 182, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 16px;
   }
+
+  /* line 201, ../scss/modules/_hero_unit.scss */
+  .category--features .hero_unit__title--main {
+    font-size: 8.3vw;
+  }
 }
 @media (min-width: 1025px) {
-  /* line 195, ../scss/modules/_hero_unit.scss */
+  /* line 214, ../scss/modules/_hero_unit.scss */
   .hero_unit__category_byline .hentry__byline {
     font-size: 1.28vw;
   }
-  /* line 208, ../scss/modules/_hero_unit.scss */
+  /* line 227, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 24px;
     margin-bottom: 2.8vh;
   }
 }
 @media (min-width: 1601px) {
-  /* line 229, ../scss/modules/_hero_unit.scss */
+  /* line 248, ../scss/modules/_hero_unit.scss */
   .hero_unit__title--main {
     letter-spacing: -4px;
     word-spacing: -1px;
   }
-  /* line 235, ../scss/modules/_hero_unit.scss */
+  /* line 254, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 30px;
   }
@@ -1693,9 +1695,8 @@ HEADER STYLES
   }
 }
 /*********************
-PAGE SPECIFIC
-These sytles layout pages using the modules defined above.
-Page specific styles should sit lower down.
+PAGE/TEMPLATE SPECIFIC
+Page or template specific styles should sit down here.
 *********************/
 /*********************
 Front/Home Page
@@ -1813,6 +1814,19 @@ Front/Home Page
     line-height: 0.9;
   }
 }
+/* line 17, ../scss/page/_single.scss */
+.single.category--features {
+  background-color: #ffff81;
+}
+/* line 23, ../scss/page/_single.scss */
+.is--onBlack .single {
+  fill: #fff;
+}
+/* line 23, ../scss/page/_single.scss */
+.is--onWhite .single {
+  fill: #000;
+}
+
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

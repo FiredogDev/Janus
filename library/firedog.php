@@ -371,7 +371,7 @@ function firedog_body_classes($classes) {
 		if (is_single() ) {
 			// ...add the post categories to the body.
 	        foreach((get_the_category($post->ID)) as $category) {
-				$classes[] = "category--".$category->category_nicename;
+				$classes[] = "category--" . $category->category_nicename;
 			}
 		}
         return $classes;

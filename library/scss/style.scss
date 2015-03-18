@@ -95,11 +95,11 @@ Page specific styles should sit lower down.
 @import "layout/header";
 
 /*********************
-PAGE SPECIFIC
-These sytles layout pages using the modules defined above.
-Page specific styles should sit lower down.
+PAGE/TEMPLATE SPECIFIC
+Page or template specific styles should sit down here.
 *********************/
 @import "page/home";
+@import "page/single";
 
 /*********************
 PRINT STYLESHEET

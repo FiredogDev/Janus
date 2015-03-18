@@ -4,8 +4,8 @@ Front/Home Page
 // Color Variants
 
 // Module
-$module: 'hero_unit';
-.#{$module}{
+$hero_module: 'hero_unit';
+.#{$hero_module}{
 	// Child Elems
 	&__wrapper{
 		padding-top: 30px;
@@ -37,13 +37,6 @@ $module: 'hero_unit';
 		&--main{
 			font-size: 18.6vw;
 			letter-spacing: -3px;
-			.category-features &{
-				font-family: 'tiempos';
-				font-size: 14vw;
-				letter-spacing: -2px;
-				color: #222;
-				line-height: 0.9;
-			}
 		}
 	}
 	&__copy{
@@ -75,6 +68,23 @@ $module: 'hero_unit';
 	// Fallbacks - []
 }
 
+// Modifiers
+.category{
+	 &--features{
+	 	.#{$hero_module}{
+		 	&__title{
+				&--main{
+					font-family: 'tiempos';
+					font-size: 14vw;
+					letter-spacing: -2px;
+					color: #222;
+					line-height: 0.9;
+				}
+			}
+		}
+	}
+}
+
 // Breakpoints
 // 	'phone': 			320px,
 // 	'phone_landscape': 	480px,
@@ -87,7 +97,7 @@ $module: 'hero_unit';
 @include media(">phone"){}
 @include media("<phone_landscape"){
 	// Module
-	.#{$module}{
+	.#{$hero_module}{
 		// Child Elems
 		&__title{
 			text-align: left;
@@ -101,7 +111,7 @@ $module: 'hero_unit';
 }
 @include media(">phone_landscape"){
 	// Module
-	.#{$module}{
+	.#{$hero_module}{
 		// Child Elems
 		&__category_byline{
 			text-align: center;
@@ -138,7 +148,7 @@ $module: 'hero_unit';
 }
 @include media(">tablet"){
 	// Module
-	.#{$module}{
+	.#{$hero_module}{
 		// Child Elems
 		&__copy{
 			p{
@@ -149,7 +159,7 @@ $module: 'hero_unit';
 	}
 }
 @include media(">tablet_large"){
-	.#{$module}{
+	.#{$hero_module}{
 		// Child Elems
 		&__wrapper{
 			width: 74.78992%;
@@ -166,11 +176,7 @@ $module: 'hero_unit';
 		}
 		&__title{
 			&--super{}
-			&--main{
-				.category-features &{
-					font-size: 8.3vw;
-				}
-			}
+			&--main{}
 		}
 		&__copy{
 			p{
@@ -186,9 +192,22 @@ $module: 'hero_unit';
 		// Modifiers
 		// Fallbacks - []
 	}
+
+	// Modifiers
+	.category{
+		 &--features{
+		 	.#{$hero_module}{
+			 	&__title{
+					&--main{
+						font-size: 8.3vw;
+					}
+				}
+			}
+		}
+	}
 }
 @include media(">desktop"){
-	.#{$module}{
+	.#{$hero_module}{
 		// Child Elems
 		&__category_byline{
 			.hentry{
@@ -215,7 +234,7 @@ $module: 'hero_unit';
 	}
 }
 @include media(">large_desktop"){
-	.#{$module}{
+	.#{$hero_module}{
 		// Child Elems
 		&__wrapper{
 		}
