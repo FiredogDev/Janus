@@ -11,11 +11,20 @@ $page_single: 'single';
 .#{$page_single}{
   
   // Child Elems
-
+  .logo{
+    &--primary {
+      fill: #000;
+    }
+  }
   // Modifiers
   &.category{
     &--features{
       background-color: #ffff81;
+      .header{
+        &--page{
+          border-color: #E8E883;
+        }
+      }
     }
   }
   // Themify
@@ -27,7 +36,6 @@ $page_single: 'single';
 }
 
 // @Media
-
 // Breakpoints
 //  'phone':            320px,
 //  'phone_landscape':  480px,

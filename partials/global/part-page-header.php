@@ -1,4 +1,4 @@
-<header class="header header--page cf" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+<header class="header header--page wrap cf" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<a id="brand" class="logo logo--primary fl" itemscope itemtype="http://schema.org/Organization" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" rel="nofollow">
 		<!-- <img src="<?php echo get_template_directory_uri(); ?>/library/images/logo_firedog--white.svg" alt="<?php bloginfo('name'); ?>"> -->
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 481.521 145.618" preserveAspectRatio="xMidYMid meet">

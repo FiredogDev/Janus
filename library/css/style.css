@@ -982,33 +982,34 @@ We can break them up as much as we want or just keep them all in one.
 I mean, you can do whatever you want. The world is your oyster. Unless
 you hate oysters, then the world is your peanut butter & jelly sandwich.
 *********************/
-/* line 14, ../scss/modules/_brand.scss */
+/* line 15, ../scss/modules/_brand.scss */
 .logo--primary {
   width: 110px;
   margin-left: -10px;
   fill: #fff;
 }
-/* line 23, ../scss/modules/_brand.scss */
+/* line 24, ../scss/modules/_brand.scss */
 .is--onBlack .logo {
   fill: #fff;
 }
-/* line 23, ../scss/modules/_brand.scss */
+/* line 24, ../scss/modules/_brand.scss */
 .is--onWhite .logo {
   fill: #000;
 }
-/* line 29, ../scss/modules/_brand.scss */
+/* line 30, ../scss/modules/_brand.scss */
 .no-svg .logo svg {
   display: none;
 }
-/* line 32, ../scss/modules/_brand.scss */
+/* line 33, ../scss/modules/_brand.scss */
 .no-svg .logo.is--fallback {
   display: block;
 }
 
 @media (min-width: 601px) {
-  /* line 42, ../scss/modules/_brand.scss */
+  /* line 68, ../scss/modules/_brand.scss */
   .logo--primary {
     width: 156px;
+    margin-left: 20px;
   }
 }
 /******************************************************************
@@ -1548,52 +1549,54 @@ Front/Home Page
     font-size: 30px;
   }
 }
-/* line 2, ../scss/modules/_menu_toggle.scss */
+/* line 4, ../scss/modules/_menu_toggle.scss */
 .nav__toggle {
-  width: 32px;
+  width: 20px;
   height: 25px;
   cursor: pointer;
+  margin-top: 10px;
+  margin-right: -48px;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
   perspective: 1000px;
 }
-/* line 11, ../scss/modules/_menu_toggle.scss */
+/* line 14, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar {
   position: absolute;
-  border-bottom: 5px solid #333;
+  border-bottom: 2px solid #333;
   width: 100%;
 }
-/* line 15, ../scss/modules/_menu_toggle.scss */
+/* line 18, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--1 {
   top: 0;
 }
-/* line 18, ../scss/modules/_menu_toggle.scss */
-.nav__toggle__bar--2 {
-  top: 10px;
-}
 /* line 21, ../scss/modules/_menu_toggle.scss */
+.nav__toggle__bar--2 {
+  top: 6px;
+}
+/* line 24, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--3 {
-  top: 20px;
+  top: 12px;
 }
-/* line 28, ../scss/modules/_menu_toggle.scss */
+/* line 31, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
-  top: 8px;
+  top: 6px;
 }
-/* line 32, ../scss/modules/_menu_toggle.scss */
+/* line 35, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1 {
   -moz-transform: rotateZ(45deg);
   -ms-transform: rotateZ(45deg);
   -webkit-transform: rotateZ(45deg);
   transform: rotateZ(45deg);
 }
-/* line 35, ../scss/modules/_menu_toggle.scss */
+/* line 38, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--2 {
   -moz-transform: rotateY(90deg);
   -ms-transform: rotateY(90deg);
   -webkit-transform: rotateY(90deg);
   transform: rotateY(90deg);
 }
-/* line 38, ../scss/modules/_menu_toggle.scss */
+/* line 41, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--3 {
   -moz-transform: rotateZ(-45deg);
   -ms-transform: rotateZ(-45deg);
@@ -1601,6 +1604,32 @@ Front/Home Page
   transform: rotateZ(-45deg);
 }
 
+@media (orientation: portrait) {
+  /* line 76, ../scss/modules/_menu_toggle.scss */
+  .nav__toggle {
+    margin-right: -5px;
+  }
+}
+@media (min-width: 601px) {
+  /* line 88, ../scss/modules/_menu_toggle.scss */
+  .nav__toggle {
+    width: 32px;
+    margin-top: 1px;
+    margin-right: -34px;
+  }
+  /* line 96, ../scss/modules/_menu_toggle.scss */
+  .nav__toggle__bar--2 {
+    top: 10px;
+  }
+  /* line 99, ../scss/modules/_menu_toggle.scss */
+  .nav__toggle__bar--3 {
+    top: 20px;
+  }
+  /* line 106, ../scss/modules/_menu_toggle.scss */
+  .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
+    top: 10px;
+  }
+}
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -1677,21 +1706,26 @@ Page specific styles should sit lower down.
 /*********************
 HEADER STYLES
 *********************/
-/* line 9, ../scss/layout/_header.scss */
+/* line 6, ../scss/layout/_header.scss */
 .header {
   z-index: 3;
 }
-/* line 14, ../scss/layout/_header.scss */
+/* line 11, ../scss/layout/_header.scss */
 .header--page {
   margin-top: 15px;
-  padding: 0 25px;
+  padding-bottom: 10px;
 }
 
 @media (min-width: 601px) {
-  /* line 28, ../scss/layout/_header.scss */
+  /* line 50, ../scss/layout/_header.scss */
   .header--page {
     margin-top: 20px;
-    padding: 0 18px;
+  }
+}
+@media (max-width: 599px) {
+  /* line 58, ../scss/layout/_header.scss */
+  .header--page {
+    border-bottom: 1px solid;
   }
 }
 /*********************
@@ -1814,15 +1848,23 @@ Front/Home Page
     line-height: 0.9;
   }
 }
-/* line 17, ../scss/page/_single.scss */
+/* line 15, ../scss/page/_single.scss */
+.single .logo--primary {
+  fill: #000;
+}
+/* line 21, ../scss/page/_single.scss */
 .single.category--features {
   background-color: #ffff81;
 }
-/* line 23, ../scss/page/_single.scss */
+/* line 24, ../scss/page/_single.scss */
+.single.category--features .header--page {
+  border-color: #E8E883;
+}
+/* line 32, ../scss/page/_single.scss */
 .is--onBlack .single {
   fill: #fff;
 }
-/* line 23, ../scss/page/_single.scss */
+/* line 32, ../scss/page/_single.scss */
 .is--onWhite .single {
   fill: #000;
 }

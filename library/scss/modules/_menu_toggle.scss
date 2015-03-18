@@ -1,32 +1,35 @@
-// Color Variants
-.nav__toggle{
-	width: 32px;
-	height: 25px;
+
+// 'Single' Module
+$nav_toggle_module: 'nav__toggle';
+.#{$nav_toggle_module}{
+	width: 20px;
+  	height: 25px;
 	cursor: pointer;
+	margin-top: 10px;
+	margin-right: -48px;
 	-webkit-perspective: 1000px;
 	-moz-perspective: 1000px;
 	perspective: 1000px;
-
 	// Child Elems
     &__bar{
 		position: absolute;
-		border-bottom: 5px solid #333;
+		border-bottom: 2px solid #333;
 		width: 100%;
 		&--1{
 			top: 0;
 		}
 		&--2{
-			top: 10px;
+			top: 6px;
 		}
 		&--3{
-			top: 20px;
+			top: 12px;
 		}
 		
 		// Modifiers
 		.is--open__primary-nav &{
 			// Level Bars
 			&--1, &--3{
-				top: 8px;
+				top: 6px;
 			}
 			// Twist Bars
 			&--1{
@@ -52,6 +55,83 @@
 	}
 }
 
+
 // @Media
-@include media(">tablet"){
+// Breakpoints
+//  'phone':            320px,
+//  'phone_landscape':  480px,
+//  'tablet':           600px,
+//  'tablet_large':     800px,
+//  'desktop':          1024px,
+//  'large_desktop':    1600px
+
+// @Media
+
+// Height
+@include media(">height460"){}
+@include media(">height600"){}
+
+// Orientation
+@include media("portrait"){
+	.#{$nav_toggle_module}{
+		margin-right: -5px;
+	}
 }
+@include media("landscape"){}
+
+// Width
+@include media("<phone"){}
+@include media(">phone"){}
+@include media("<phone_landscape"){}
+@include media(">phone_landscape"){}
+@include media(">tablet"){
+	.#{$nav_toggle_module}{
+		width: 32px;
+		margin-top: 1px;
+  		margin-right: -34px;
+		// Child Elems
+	    &__bar{
+			&--1{
+			}
+			&--2{
+				top: 10px;
+			}
+			&--3{
+				top: 20px;
+			}
+			
+			// Modifiers
+			.is--open__primary-nav &{
+				// Level Bars
+				&--1, &--3{
+					top: 10px;
+				}
+				// Twist Bars
+				&--1{
+				}
+				&--2{
+				}
+				&--3{
+				}
+
+				// Fallbacks - [transform]
+			}
+
+			// Themify
+			// @each $theme, $map in $nav__toggle--variants {
+			// 	.#{$theme} & {
+			// 		border-color: map-get($map, borderColor);
+			// 	}
+			// }
+
+		}
+	}
+	  
+}
+@include media("<tablet"){}
+@include media(">tablet_large"){}
+@include media("<tablet_large"){}
+@include media(">desktop"){}
+@include media("<desktop"){}
+@include media(">large_desktop"){}
+@include media("<large_desktop"){}
