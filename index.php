@@ -19,7 +19,7 @@
 			</div>
 		</header><?php // end article header ?>
 
-		<section id="thinking_space_articles" class="hentry_listing">
+		<section id="thinking_space_articles" class="hentry_listing hentry_listing--thinking-space">
 			
 			<?php
 			$args = array(
@@ -30,7 +30,7 @@
 			if ($the_query->have_posts()) : 
 				while ($the_query->have_posts()) : 
 					$the_query->the_post();
-					get_template_part('partials/hentry/hentry', 'post');
+					get_template_part('partials/hentry/post/as', 'row');
 			endwhile; 
 			endif; ?>
 
