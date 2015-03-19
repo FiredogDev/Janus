@@ -1618,6 +1618,63 @@ Front/Home Page
 /*********************
 NAVIGATION STYLES
 *********************/
+/* line 10, ../scss/modules/_nav.scss */
+.navigation--list {
+  margin: 0;
+}
+/* line 14, ../scss/modules/_nav.scss */
+.navigation .menu-item a, .navigation .menu-item a:visited {
+  color: #fff;
+  font-size: 25px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+/* line 22, ../scss/modules/_nav.scss */
+.navigation--primary {
+  background-color: #141414;
+  right: 0;
+  top: 0;
+  padding-top: 153px;
+}
+/* line 28, ../scss/modules/_nav.scss */
+.navigation--primary .navigation--list {
+  width: 416px;
+  padding: 0 40px 0 78px;
+  margin-bottom: 86px;
+}
+/* line 34, ../scss/modules/_nav.scss */
+.navigation--primary .menu-item {
+  margin-bottom: 24px;
+}
+/* line 36, ../scss/modules/_nav.scss */
+.navigation--primary .menu-item a, .navigation--primary .menu-item a:visited {
+  word-spacing: 2px;
+}
+/* line 41, ../scss/modules/_nav.scss */
+.navigation--primary .current-menu-item a, .navigation--primary .current-menu-item a:visited {
+  border-bottom: 2px solid #fff;
+}
+/* line 45, ../scss/modules/_nav.scss */
+.navigation--primary .heading {
+  color: #555;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 40px 0 78px;
+  margin-bottom: 21px;
+  display: inline-block;
+}
+/* line 53, ../scss/modules/_nav.scss */
+.navigation--primary .list {
+  padding: 0 40px 0 78px;
+  margin: 0;
+}
+/* line 56, ../scss/modules/_nav.scss */
+.navigation--primary .list .item {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/

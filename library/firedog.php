@@ -161,7 +161,7 @@ function firedog_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'firedog' ),   // main nav in header
+			'primary-nav' => __( 'Primary Navigation', 'firedog' ),   // main nav in header
 			'footer-links' => __( 'Footer Links', 'firedog' ) // secondary nav in footer
 		)
 	);

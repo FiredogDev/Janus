@@ -47,6 +47,6 @@
 			// PAGE HEADER
 			get_template_part( 'partials/global/part' , 'page-header' );
 			// NAVIGATION
-			get_template_part( 'partials/global/part', 'page-navigation' ); ?>
+			get_template_part( 'partials/global/part', 'primary-navigation' ); ?>
 
 

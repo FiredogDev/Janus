@@ -6,11 +6,66 @@ NAVIGATION STYLES
 
 $navigation_module: 'navigation';
 .#{$navigation_module}{
-  
   // Child Elems
-  
+  &--list{
+  	margin: 0;
+  }
+  .menu-item{
+  	a, a:visited{
+  		color: #fff;
+  		font-size: 25px;
+  		line-height: 1.4;
+  		text-transform: uppercase;
+  	}
+  }
   // Modifiers
-  &--sub{}
+  &--primary{
+  	background-color: #141414;
+  	right: 0;
+  	top: 0;
+  	padding-top: 153px;
+  	.#{$navigation_module}{
+	  	&--list{
+	  		width: 416px;
+	  		padding: 0 40px 0 78px;
+	  		margin-bottom: 86px;
+	  	}
+	}
+	.menu-item{
+		margin-bottom: 24px;
+		a, a:visited{
+			word-spacing: 2px;
+		}
+	}
+	.current-menu-item{
+		a, a:visited{
+			border-bottom: 2px solid #fff;
+		}
+	}
+	.heading{
+		color: #555;
+		font-size: 18px;
+		font-weight: bold;
+		padding: 0 40px 0 78px;
+		margin-bottom: 21px;
+  		display: inline-block;
+	}
+	.list{
+		padding: 0 40px 0 78px;
+		margin: 0;
+		.item{
+			color: #555;
+			font-size: 16px;
+			margin-bottom: 6px;
+		}
+	}
+  }
+  &--sub{
+  	&--list{}
+	.menu-item{
+		a, a:visited{}
+	}
+  }
 
   // Fallbacks - []
 }
