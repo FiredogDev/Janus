@@ -93,6 +93,9 @@ These sytles layout pages using the modules defined above.
 Page specific styles should sit lower down.
 *********************/
 @import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/main";
 
 /*********************
 PAGE/TEMPLATE SPECIFIC

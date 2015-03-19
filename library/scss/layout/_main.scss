@@ -1,0 +1,14 @@
+/*********************
+MAIN STYLES
+*********************/
+
+$layout_main: 'main';
+.#{$layout_main}{
+	@include transition(transform $nav--primary__transtion_time $star_trek);
+	// Mod
+	.is--open__primary-nav &{
+		@include transform(translateX(-$nav--primary__width));
+	}
+}
+
+

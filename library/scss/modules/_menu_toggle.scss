@@ -13,9 +13,18 @@ $nav_toggle_module: 'nav__toggle';
 		position: absolute;
 		border-bottom: 2px solid #333;
 		width: 100%;
-		@include transition(all 0.5s $star_trek, border-color 0.5s $star_trek);
+		@include transition(border-color 0.5s $star_trek);
+		&--1,&--3{
+			@include transition(
+				transform $nav--primary__transtion_time $star_trek, 
+				top $nav--primary__transtion_time $star_trek
+			);
+		}
 		&--1{ top: 0; }
-		&--2{ top: 6px; @include opacity(1); }
+		&--2{
+			top: 6px; @include opacity(1);
+			@include transition(opacity $nav--primary__transtion_time $star_trek);
+		}
 		&--3{ top: 12px; }
 		
 		// Modifiers

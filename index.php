@@ -3,7 +3,7 @@
 	<?php
 	$thinking_space_id = 183;
 	$thinking_space = get_post($thinking_space_id); ?>
-	<main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+	<main id="main" class="main cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 		
 		<header class="article-header hero_unit wrap cf">
 			<div class="hero_unit__wrapper width--full cf">

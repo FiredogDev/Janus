@@ -1531,46 +1531,57 @@ Front/Home Page
   position: absolute;
   border-bottom: 2px solid #333;
   width: 100%;
-  -moz-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 /* line 17, ../scss/modules/_menu_toggle.scss */
+.nav__toggle__bar--1, .nav__toggle__bar--3 {
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: -o-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+/* line 23, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--1 {
   top: 0;
 }
-/* line 18, ../scss/modules/_menu_toggle.scss */
+/* line 24, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--2 {
   top: 6px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
+  -moz-transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-/* line 19, ../scss/modules/_menu_toggle.scss */
+/* line 28, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--3 {
   top: 12px;
 }
-/* line 22, ../scss/modules/_menu_toggle.scss */
+/* line 31, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar {
   border-color: #ff0000;
 }
-/* line 25, ../scss/modules/_menu_toggle.scss */
+/* line 34, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
   top: 6px;
 }
-/* line 29, ../scss/modules/_menu_toggle.scss */
+/* line 38, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1 {
   -moz-transform: rotateZ(45deg);
   -ms-transform: rotateZ(45deg);
   -webkit-transform: rotateZ(45deg);
   transform: rotateZ(45deg);
 }
-/* line 32, ../scss/modules/_menu_toggle.scss */
+/* line 41, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 35, ../scss/modules/_menu_toggle.scss */
+/* line 44, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--3 {
   -moz-transform: rotateZ(-45deg);
   -ms-transform: rotateZ(-45deg);
@@ -1579,27 +1590,27 @@ Front/Home Page
 }
 
 @media (orientation: portrait) {
-  /* line 62, ../scss/modules/_menu_toggle.scss */
+  /* line 71, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     margin-right: -5px;
   }
 }
 @media (min-width: 601px) {
-  /* line 74, ../scss/modules/_menu_toggle.scss */
+  /* line 83, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     width: 32px;
     margin-top: 1px;
     margin-right: -5px;
   }
-  /* line 82, ../scss/modules/_menu_toggle.scss */
+  /* line 91, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--2 {
     top: 10px;
   }
-  /* line 85, ../scss/modules/_menu_toggle.scss */
+  /* line 94, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--3 {
     top: 20px;
   }
-  /* line 92, ../scss/modules/_menu_toggle.scss */
+  /* line 101, ../scss/modules/_menu_toggle.scss */
   .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
     top: 10px;
   }
@@ -1740,6 +1751,30 @@ HEADER STYLES
     border-bottom: 1px solid;
   }
 }
+/*********************
+FOOTER STYLES
+*********************/
+/*********************
+SIDEBARS & ASIDES
+*********************/
+/*********************
+MAIN STYLES
+*********************/
+/* line 6, ../scss/layout/_main.scss */
+.main {
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: -o-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+/* line 9, ../scss/layout/_main.scss */
+.is--open__primary-nav .main {
+  -moz-transform: translateX(-416px);
+  -ms-transform: translateX(-416px);
+  -webkit-transform: translateX(-416px);
+  transform: translateX(-416px);
+}
+
 /*********************
 PAGE/TEMPLATE SPECIFIC
 Page or template specific styles should sit down here.

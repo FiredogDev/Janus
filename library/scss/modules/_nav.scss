@@ -25,10 +25,10 @@ $navigation_module: 'navigation';
 		top: 0;
 		padding-top: 153px;
 		@include transform(translateX(100%));
-		@include transition(transform 0.5s $star_trek);
+		@include transition(transform $nav--primary__transtion_time $star_trek);
 		.#{$navigation_module}{
 			&--list{
-				width: 416px;
+				width: $nav--primary__width;
 				padding: 0 40px 0 78px;
 				margin-bottom: 86px;
 			}
