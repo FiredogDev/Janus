@@ -58,8 +58,12 @@
 	</a>
 	<!-- Menu Icon -->
 	<div id="nav_toggle" class="nav__toggle fr" data-control="primary_nav">
-		<span class="nav__toggle__bar nav__toggle__bar--1 full_width disnfy"></span>
-		<span class="nav__toggle__bar nav__toggle__bar--2 full_width disnfy"></span>
-		<span class="nav__toggle__bar nav__toggle__bar--3 full_width disnfy"></span>
+		<span class="nav__toggle__bar nav__toggle__bar--1 full_width"></span>
+		<span class="nav__toggle__bar nav__toggle__bar--2 full_width"></span>
+		<span class="nav__toggle__bar nav__toggle__bar--3 full_width"></span>
 	</div>
+	
+	<?php
+	// NAVIGATION
+	get_template_part( 'partials/global/part', 'primary-navigation' ); ?>
 </header>

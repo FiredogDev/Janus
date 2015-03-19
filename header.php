@@ -45,8 +45,6 @@
 		<div id="site-container" class="container container--site width--full fl">
 			<?php
 			// PAGE HEADER
-			get_template_part( 'partials/global/part' , 'page-header' );
-			// NAVIGATION
-			get_template_part( 'partials/global/part', 'primary-navigation' ); ?>
+			get_template_part( 'partials/global/part' , 'page-header' ); ?>
 
 

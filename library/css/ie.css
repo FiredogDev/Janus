@@ -40,24 +40,6 @@ Author:
 Stylesheet: Variables
 
 ******************************************************************/
-/* line 56, ../scss/partials/_variables.scss */
-.disnfy {
-  -webkit-transition: all 500ms cubic-bezier(1, 0, 0.525, 1);
-  /* older webkit */
-  -webkit-transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  -moz-transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  -o-transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  /* custom */
-  -webkit-transition-timing-function: cubic-bezier(1, 0, 0.525, 1);
-  /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  -moz-transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  -o-transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  /* custom */
-}
-
 /******************************************************************
 Site Name:
 Author:

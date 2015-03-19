@@ -19,7 +19,7 @@
 			</div>
 		</header><?php // end article header ?>
 
-		<section id="thinking_space_articles" class="hentry_listing hentry_listing--thinking-space">
+		<section id="thinking_space_articles" class="hentry_listing hentry_listing--thinking-space cf fl width--full">
 			
 			<?php
 			$args = array(

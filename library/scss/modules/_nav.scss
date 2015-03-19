@@ -25,6 +25,7 @@ $navigation_module: 'navigation';
 		top: 0;
 		padding-top: 153px;
 		@include transform(translateX(100%));
+		@include transition(transform 0.5s $star_trek);
 		.#{$navigation_module}{
 			&--list{
 				width: 416px;

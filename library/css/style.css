@@ -549,24 +549,6 @@ Author:
 Stylesheet: Variables
 
 ******************************************************************/
-/* line 56, ../scss/partials/_variables.scss */
-.disnfy {
-  -webkit-transition: all 500ms cubic-bezier(1, 0, 0.525, 1);
-  /* older webkit */
-  -webkit-transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  -moz-transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  -o-transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  transition: all 500ms cubic-bezier(1, -0.6, 0.525, 1.49);
-  /* custom */
-  -webkit-transition-timing-function: cubic-bezier(1, 0, 0.525, 1);
-  /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  -moz-transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  -o-transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  transition-timing-function: cubic-bezier(1, -0.6, 0.525, 1.49);
-  /* custom */
-}
-
 /*************************************************************
 * Aspect Ratios
 *************************************************************/
@@ -1541,15 +1523,18 @@ Front/Home Page
   cursor: pointer;
   margin-top: 10px;
   margin-right: -48px;
-  -webkit-perspective: 1000px;
-  -moz-perspective: 1000px;
-  perspective: 1000px;
+  z-index: 3;
+  position: relative;
 }
-/* line 13, ../scss/modules/_menu_toggle.scss */
+/* line 12, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar {
   position: absolute;
   border-bottom: 2px solid #333;
   width: 100%;
+  -moz-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 /* line 17, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--1 {
@@ -1565,23 +1550,27 @@ Front/Home Page
 .nav__toggle__bar--3 {
   top: 12px;
 }
-/* line 24, ../scss/modules/_menu_toggle.scss */
+/* line 22, ../scss/modules/_menu_toggle.scss */
+.is--open__primary-nav .nav__toggle__bar {
+  border-color: #ff0000;
+}
+/* line 25, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
   top: 6px;
 }
-/* line 28, ../scss/modules/_menu_toggle.scss */
+/* line 29, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1 {
   -moz-transform: rotateZ(45deg);
   -ms-transform: rotateZ(45deg);
   -webkit-transform: rotateZ(45deg);
   transform: rotateZ(45deg);
 }
-/* line 31, ../scss/modules/_menu_toggle.scss */
+/* line 32, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 34, ../scss/modules/_menu_toggle.scss */
+/* line 35, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--3 {
   -moz-transform: rotateZ(-45deg);
   -ms-transform: rotateZ(-45deg);
@@ -1590,27 +1579,27 @@ Front/Home Page
 }
 
 @media (orientation: portrait) {
-  /* line 61, ../scss/modules/_menu_toggle.scss */
+  /* line 62, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     margin-right: -5px;
   }
 }
 @media (min-width: 601px) {
-  /* line 73, ../scss/modules/_menu_toggle.scss */
+  /* line 74, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     width: 32px;
     margin-top: 1px;
     margin-right: -5px;
   }
-  /* line 81, ../scss/modules/_menu_toggle.scss */
+  /* line 82, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--2 {
     top: 10px;
   }
-  /* line 84, ../scss/modules/_menu_toggle.scss */
+  /* line 85, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--3 {
     top: 20px;
   }
-  /* line 91, ../scss/modules/_menu_toggle.scss */
+  /* line 92, ../scss/modules/_menu_toggle.scss */
   .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
     top: 10px;
   }
@@ -1639,26 +1628,30 @@ NAVIGATION STYLES
   -ms-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: -o-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-/* line 29, ../scss/modules/_nav.scss */
+/* line 30, ../scss/modules/_nav.scss */
 .navigation--primary .navigation--list {
   width: 416px;
   padding: 0 40px 0 78px;
   margin-bottom: 86px;
 }
-/* line 35, ../scss/modules/_nav.scss */
+/* line 36, ../scss/modules/_nav.scss */
 .navigation--primary .menu-item {
   margin-bottom: 24px;
 }
-/* line 37, ../scss/modules/_nav.scss */
+/* line 38, ../scss/modules/_nav.scss */
 .navigation--primary .menu-item a, .navigation--primary .menu-item a:visited {
   word-spacing: 2px;
 }
-/* line 42, ../scss/modules/_nav.scss */
+/* line 43, ../scss/modules/_nav.scss */
 .navigation--primary .current-menu-item a, .navigation--primary .current-menu-item a:visited {
   border-bottom: 2px solid #fff;
 }
-/* line 46, ../scss/modules/_nav.scss */
+/* line 47, ../scss/modules/_nav.scss */
 .navigation--primary .heading {
   color: #555;
   font-size: 18px;
@@ -1667,18 +1660,18 @@ NAVIGATION STYLES
   margin-bottom: 21px;
   display: inline-block;
 }
-/* line 54, ../scss/modules/_nav.scss */
+/* line 55, ../scss/modules/_nav.scss */
 .navigation--primary .list {
   padding: 0 40px 0 78px;
   margin: 0;
 }
-/* line 57, ../scss/modules/_nav.scss */
+/* line 58, ../scss/modules/_nav.scss */
 .navigation--primary .list .item {
   color: #555;
   font-size: 16px;
   margin-bottom: 6px;
 }
-/* line 72, ../scss/modules/_nav.scss */
+/* line 73, ../scss/modules/_nav.scss */
 .is--open__primary-nav .navigation--primary {
   -moz-transform: translateX(0%);
   -ms-transform: translateX(0%);
