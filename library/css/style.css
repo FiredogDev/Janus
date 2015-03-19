@@ -1618,41 +1618,6 @@ Front/Home Page
 /*********************
 NAVIGATION STYLES
 *********************/
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-/* line 13, ../scss/modules/_nav.scss */
-.nav {
-  border-bottom: 0;
-  margin: 0;
-  /* end .menu li */
-  /* highlight current page */
-  /* end current highlighters */
-}
-/* line 19, ../scss/modules/_nav.scss */
-.nav li a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.75em;
-  /*
-  remember this is for mobile ONLY, so there's no need
-  to even declare hover styles here, you can do it in
-  the style.scss file where it's relevant. We want to
-  keep this file as small as possible!
-  */
-}
-/* line 45, ../scss/modules/_nav.scss */
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
-  padding-left: 30px;
-}
-
-/* end .nav */
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/

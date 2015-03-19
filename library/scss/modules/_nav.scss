@@ -2,73 +2,44 @@
 NAVIGATION STYLES
 *********************/
 
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
+// Settings
 
-.nav {
-	border-bottom: 0;
-	margin: 0;
+$navigation_module: 'navigation';
+.#{$navigation_module}{
+  
+  // Child Elems
+  
+  // Modifiers
+  &--sub{}
 
-	li {
+  // Fallbacks - []
+}
 
-		a {
-			display: block;
-			color: $white;
-			text-decoration: none;
-			padding: 0.75em;
+// Breakpoints
+//  'phone':            	320px,
+//  'phone_landscape':  	480px,
+//  'tablet':           	600px,
+//  'tablet_large':     	800px,
+//  'desktop':          	1024px,
+//  'large_desktop':    	1600px
 
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
-			}
-		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
-					padding-left: 30px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-			}
-
-		}
-
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-
-		a {}
-
-	}  /* end current highlighters */
-
-} /* end .nav */
+// @Media
+// Height
+@include media(">height460"){}
+@include media(">height600"){}
+// Orientation
+@include media("portrait"){}
+@include media("landscape"){}
+// Width
+@include media("<phone"){}
+@include media(">phone"){}
+@include media("<phone_landscape"){}
+@include media(">phone_landscape"){}
+@include media(">tablet"){}
+@include media("<tablet"){}
+@include media(">tablet_large"){}
+@include media("<tablet_large"){}
+@include media(">desktop"){}
+@include media("<desktop"){}
+@include media(">large_desktop"){}
+@include media("<large_desktop"){}
