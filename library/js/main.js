@@ -26,6 +26,14 @@ require.config({
 	}
 });
 
-require(['fastclick'], function () {
+require(['common', 'jquery', 'fastclick'], function (_c, $) {
 
+	// Common Selectors:
+	var _c_s = _c.SELECTORS;
+	
+	// Primary Navigation
+	var nav__toggle = $('.nav__toggle');
+		nav__toggle.on('click', function(){
+			_c_s.bdy.toggleClass('is--open__primary-nav');	
+		})
 });
