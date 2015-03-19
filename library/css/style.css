@@ -1516,7 +1516,7 @@ Front/Home Page
     font-size: 30px;
   }
 }
-/* line 3, ../scss/modules/_menu_toggle.scss */
+/* line 4, ../scss/modules/_menu_toggle.scss */
 .nav__toggle {
   width: 20px;
   height: 25px;
@@ -1526,28 +1526,28 @@ Front/Home Page
   z-index: 3;
   position: relative;
 }
-/* line 12, ../scss/modules/_menu_toggle.scss */
+/* line 13, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar {
   position: absolute;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #fff;
   width: 100%;
   -moz-transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   -o-transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-/* line 17, ../scss/modules/_menu_toggle.scss */
+/* line 18, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--1, .nav__toggle__bar--3 {
   -moz-transition: -moz-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   -o-transition: -o-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-/* line 23, ../scss/modules/_menu_toggle.scss */
+/* line 24, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--1 {
   top: 0;
 }
-/* line 24, ../scss/modules/_menu_toggle.scss */
+/* line 25, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--2 {
   top: 6px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -1557,31 +1557,31 @@ Front/Home Page
   -webkit-transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-/* line 28, ../scss/modules/_menu_toggle.scss */
+/* line 29, ../scss/modules/_menu_toggle.scss */
 .nav__toggle__bar--3 {
   top: 12px;
 }
-/* line 31, ../scss/modules/_menu_toggle.scss */
+/* line 32, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar {
   border-color: #ff0000;
 }
-/* line 34, ../scss/modules/_menu_toggle.scss */
+/* line 35, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
   top: 6px;
 }
-/* line 38, ../scss/modules/_menu_toggle.scss */
+/* line 39, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--1 {
   -moz-transform: rotateZ(45deg);
   -ms-transform: rotateZ(45deg);
   -webkit-transform: rotateZ(45deg);
   transform: rotateZ(45deg);
 }
-/* line 41, ../scss/modules/_menu_toggle.scss */
+/* line 42, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 44, ../scss/modules/_menu_toggle.scss */
+/* line 45, ../scss/modules/_menu_toggle.scss */
 .is--open__primary-nav .nav__toggle__bar--3 {
   -moz-transform: rotateZ(-45deg);
   -ms-transform: rotateZ(-45deg);
@@ -1590,27 +1590,27 @@ Front/Home Page
 }
 
 @media (orientation: portrait) {
-  /* line 71, ../scss/modules/_menu_toggle.scss */
+  /* line 72, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     margin-right: -5px;
   }
 }
 @media (min-width: 601px) {
-  /* line 83, ../scss/modules/_menu_toggle.scss */
+  /* line 84, ../scss/modules/_menu_toggle.scss */
   .nav__toggle {
     width: 32px;
     margin-top: 1px;
     margin-right: -5px;
   }
-  /* line 91, ../scss/modules/_menu_toggle.scss */
+  /* line 92, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--2 {
     top: 10px;
   }
-  /* line 94, ../scss/modules/_menu_toggle.scss */
+  /* line 95, ../scss/modules/_menu_toggle.scss */
   .nav__toggle__bar--3 {
     top: 20px;
   }
-  /* line 101, ../scss/modules/_menu_toggle.scss */
+  /* line 102, ../scss/modules/_menu_toggle.scss */
   .is--open__primary-nav .nav__toggle__bar--1, .is--open__primary-nav .nav__toggle__bar--3 {
     top: 10px;
   }
@@ -1780,63 +1780,160 @@ PAGE/TEMPLATE SPECIFIC
 Page or template specific styles should sit down here.
 *********************/
 /*********************
+Default Post Index
+*********************/
+/* line 6, ../scss/page/_index.scss */
+.blog {
+  background-color: #fff;
+}
+/* line 9, ../scss/page/_index.scss */
+.blog .logo--primary {
+  fill: #000;
+}
+/* line 13, ../scss/page/_index.scss */
+.blog .nav__toggle__bar {
+  border-color: #000;
+}
+/* line 16, ../scss/page/_index.scss */
+.blog.is--open__primary-nav .nav__toggle__bar {
+  border-color: #ff0000;
+}
+
+/*********************
+Archive Page
+*********************/
+/* line 7, ../scss/page/_archive.scss */
+.archive {
+  background-color: #fff;
+}
+/* line 13, ../scss/page/_archive.scss */
+.archive--features {
+  background-color: #ffff00;
+}
+/* line 17, ../scss/page/_archive.scss */
+.archive .logo--primary {
+  fill: #000;
+}
+/* line 21, ../scss/page/_archive.scss */
+.archive .nav__toggle__bar {
+  border-color: #000;
+}
+/* line 24, ../scss/page/_archive.scss */
+.archive.is--open__primary-nav .nav__toggle__bar {
+  border-color: #ff0000;
+}
+
+/*********************
+Single Post
+*********************/
+/* line 11, ../scss/page/_single.scss */
+.single .logo--primary {
+  fill: #000;
+}
+/* line 15, ../scss/page/_single.scss */
+.single .nav__toggle__bar {
+  border-color: #000;
+}
+/* line 18, ../scss/page/_single.scss */
+.single.is--open__primary-nav .nav__toggle__bar {
+  border-color: #ff0000;
+}
+/* line 24, ../scss/page/_single.scss */
+.single.category--features {
+  background-color: #ffff81;
+}
+/* line 27, ../scss/page/_single.scss */
+.single.category--features .header--page {
+  border-color: #E8E883;
+}
+
+/*********************
+Front/Home Page
+*********************/
+/* line 7, ../scss/page/_page.scss */
+.page {
+  background-color: #fff;
+}
+/* line 14, ../scss/page/_page.scss */
+.page .logo--primary {
+  fill: #000;
+}
+/* line 18, ../scss/page/_page.scss */
+.page .nav__toggle__bar {
+  border-color: #000;
+}
+/* line 21, ../scss/page/_page.scss */
+.page.is--open__primary-nav .nav__toggle__bar {
+  border-color: #ff0000;
+}
+
+/*********************
 Front/Home Page
 *********************/
 /* line 7, ../scss/page/_home.scss */
 .home {
   background-color: #141414;
 }
-/* line 17, ../scss/page/_home.scss */
+/* line 15, ../scss/page/_home.scss */
+.home .logo--primary {
+  fill: #fff;
+}
+/* line 19, ../scss/page/_home.scss */
 .home .nav__toggle__bar {
   border-color: #fff;
 }
-/* line 23, ../scss/page/_home.scss */
+/* line 22, ../scss/page/_home.scss */
+.home.is--open__primary-nav .nav__toggle__bar {
+  border-color: #ff0000;
+}
+/* line 29, ../scss/page/_home.scss */
+.home .nav__toggle__bar {
+  border-color: #fff;
+}
+/* line 35, ../scss/page/_home.scss */
 .home .hero_unit__wrapper {
   width: 91.59664%;
   float: left;
   margin-right: 0.84034%;
   padding-bottom: 30px;
 }
-/* line 27, ../scss/page/_home.scss */
+/* line 39, ../scss/page/_home.scss */
 .home .hero_unit__header {
   margin-bottom: 2.9vh;
 }
-/* line 38, ../scss/page/_home.scss */
+/* line 50, ../scss/page/_home.scss */
 .home .hero_unit__copy {
   width: 100%;
   margin: 0;
-  color: #ddd;
 }
-/* line 42, ../scss/page/_home.scss */
+/* line 53, ../scss/page/_home.scss */
 .home .hero_unit__copy p {
   font-size: 3.4vw;
   letter-spacing: 0;
   word-spacing: -1px;
+  color: #a6a6a6;
 }
-/* line 47, ../scss/page/_home.scss */
+/* line 59, ../scss/page/_home.scss */
 .home .hero_unit__copy strong {
   font-size: 5.8vw;
   letter-spacing: 0px;
   word-spacing: -1px;
   line-height: 0.8;
+  color: #ddd;
 }
 
 @media (orientation: portrait) {
-  /* line 74, ../scss/page/_home.scss */
+  /* line 87, ../scss/page/_home.scss */
   .home .hero_unit__wrapper {
     padding-top: 95px;
   }
-  /* line 86, ../scss/page/_home.scss */
-  .home .hero_unit__copy {
-    color: #ddd;
-  }
-  /* line 88, ../scss/page/_home.scss */
+  /* line 100, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 3.4vw;
     letter-spacing: 0;
     word-spacing: -1px;
   }
-  /* line 93, ../scss/page/_home.scss */
+  /* line 105, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 5.8vw;
     letter-spacing: 0px;
@@ -1845,12 +1942,12 @@ Front/Home Page
   }
 }
 @media (max-width: 319px) {
-  /* line 108, ../scss/page/_home.scss */
+  /* line 120, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 7vw;
     word-spacing: 0;
   }
-  /* line 112, ../scss/page/_home.scss */
+  /* line 124, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 10vw;
     word-spacing: 0px;
@@ -1858,38 +1955,34 @@ Front/Home Page
   }
 }
 @media (min-width: 601px) {
-  /* line 141, ../scss/page/_home.scss */
-  .home .hero_unit__copy {
-    color: #ddd;
-  }
-  /* line 143, ../scss/page/_home.scss */
+  /* line 154, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     margin-bottom: 5.7vh;
   }
 }
 @media (min-width: 1401px) {
-  /* line 159, ../scss/page/_home.scss */
+  /* line 170, ../scss/page/_home.scss */
   .home .latest .hentry--as-block {
     width: 25%;
   }
 }
 @media (max-width: 699px) {
-  /* line 171, ../scss/page/_home.scss */
+  /* line 182, ../scss/page/_home.scss */
   .home .hero_unit br {
     display: none;
   }
 }
 @media (min-width: 701px) {
-  /* line 179, ../scss/page/_home.scss */
+  /* line 190, ../scss/page/_home.scss */
   .home .hero_unit__wrapper {
     margin-left: 4.20168%;
   }
-  /* line 186, ../scss/page/_home.scss */
+  /* line 197, ../scss/page/_home.scss */
   .home .hero_unit__copy p {
     font-size: 1.72vw;
     line-height: 1.37;
   }
-  /* line 190, ../scss/page/_home.scss */
+  /* line 201, ../scss/page/_home.scss */
   .home .hero_unit__copy strong {
     font-size: 6.5vw;
     letter-spacing: -2px;
@@ -1897,27 +1990,6 @@ Front/Home Page
     line-height: 0.9;
   }
 }
-/* line 15, ../scss/page/_single.scss */
-.single .logo--primary {
-  fill: #000;
-}
-/* line 21, ../scss/page/_single.scss */
-.single.category--features {
-  background-color: #ffff81;
-}
-/* line 24, ../scss/page/_single.scss */
-.single.category--features .header--page {
-  border-color: #E8E883;
-}
-/* line 32, ../scss/page/_single.scss */
-.is--onBlack .single {
-  fill: #fff;
-}
-/* line 32, ../scss/page/_single.scss */
-.is--onWhite .single {
-  fill: #000;
-}
-
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

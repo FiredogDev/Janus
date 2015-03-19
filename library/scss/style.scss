@@ -101,9 +101,11 @@ Page specific styles should sit lower down.
 PAGE/TEMPLATE SPECIFIC
 Page or template specific styles should sit down here.
 *********************/
-@import "page/home";
-@import "page/single";
 @import "page/index";
+@import "page/archive";
+@import "page/single";
+@import "page/page";
+@import "page/home";
 
 /*********************
 PRINT STYLESHEET

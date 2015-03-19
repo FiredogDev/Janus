@@ -1,39 +1,20 @@
-.blog{
-	// Module
-	$hero_module: 'hero_unit';
-	.#{$hero_module}{
-		// Child Elems
-		&__wrapper{
-		}
-		&__header{}
-		&__category_byline{
-			.hentry{
-				&__byline{
-				}
-				&__pub_time{}
-				&__author{
-					&__label{}
-					&__title{}
-					&__location{}
-				}
-			}
-		}
-		&__title{
-			&--main{}
-		}
-		&__copy{
-			p{}
-			strong{}
-			.category-features &{
-				p{}
-				strong{}
-			}
-		}
-		&__bgmedia{
-			&__video{}
-		}
-		// Modifiers
-		// Fallbacks - []
+/*********************
+Default Post Index
+*********************/
+
+$page_index: 'blog';
+.#{$page_index}{
+	background-color: #fff;
+	.logo{
+	    &--primary {
+	      fill: #000;
+	    }
+	}
+	.nav__toggle__bar{
+		border-color: #000;
+	}
+	&.is--open__primary-nav .nav__toggle__bar{
+		border-color: $red;
 	}
 }
 

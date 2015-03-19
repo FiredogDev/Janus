@@ -1,37 +1,29 @@
 /*********************
-Single Post
+Archive Page
 *********************/
 
-// 'Single' Module
-$page_single: 'single';
-.#{$page_single}{
-  
-  // Child Elems
-  .logo{
-    &--primary {
-      fill: #000;
-    }
-  }
-  .nav__toggle__bar{
-    border-color: #000;
-  }
-  &.is--open__primary-nav .nav__toggle__bar{
-    border-color: $red;
-  }
-
-  // Modifiers
-  &.category{
-    &--features{
-      background-color: #ffff81;
-      .header{
-        &--page{
-          border-color: #E8E883;
-        }
-      }
-    }
-  }
-
-  // Fallbacks - []
+// Module
+$page_archive: 'archive';
+.#{$page_archive}{
+	// Child Elems
+	// Modifiers
+	// Fallbacks - []
+	background-color: #fff;
+	
+	&--features{
+		background-color: $yellow;
+	}
+	.logo{
+	    &--primary {
+	      fill: #000;
+	    }
+	}
+	.nav__toggle__bar{
+		border-color: #000;
+	}
+	&.is--open__primary-nav .nav__toggle__bar{
+		border-color: $red;
+	}
 }
 
 // @Media

@@ -200,6 +200,34 @@ function firedog_related_posts() {
 /****************
 CUSTOM FILTERING
 *****************/
+// Customize wp body class
+add_filter('body_class', 'firedog_body_classes');
+function firedog_body_classes($classes) {
+		global $post;
+
+		// On any single page
+		if(is_page()){
+			$classes[] = "page--" . $post->post_name;
+		}
+		// On any archive
+		else if(is_archive()){
+			$cat = get_category( get_query_var( 'cat' ) );
+			$classes[] = "archive--" . $cat->slug;
+		}
+		// On single post...
+		else if (is_single()) {
+			// ...add the post categories to the body.
+	        foreach((get_the_category($post->ID)) as $category) {
+				$classes[] = "category--" . $category->category_nicename;
+			}
+		}
+
+		
+
+
+        return $classes;
+}
+
 // Filter Gallery Output.
 add_filter( 'post_gallery', 'customize_my_gallery', 10, 4 );
 function customize_my_gallery( $output = '', $atts, $content = false, $tag = false ) {
@@ -360,21 +388,6 @@ function edit_caption_shortcode($empty, $attr, $content) {
 	do_shortcode( $content ) .
 	'<p class="attachment__caption">' . $attr['caption'] . '</p>' .
 	'</div>';
-}
-
-// Customize wp body class
-add_filter('body_class', 'firedog_body_classes');
-function firedog_body_classes($classes) {
-		global $post;
-
-		// On single post...
-		if (is_single() ) {
-			// ...add the post categories to the body.
-	        foreach((get_the_category($post->ID)) as $category) {
-				$classes[] = "category--" . $category->category_nicename;
-			}
-		}
-        return $classes;
 }
 
 /****************

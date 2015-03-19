@@ -1,37 +1,26 @@
 /*********************
-Single Post
+Front/Home Page
 *********************/
 
-// 'Single' Module
-$page_single: 'single';
-.#{$page_single}{
-  
-  // Child Elems
-  .logo{
-    &--primary {
-      fill: #000;
-    }
-  }
-  .nav__toggle__bar{
-    border-color: #000;
-  }
-  &.is--open__primary-nav .nav__toggle__bar{
-    border-color: $red;
-  }
+// Module
+$page: 'page';
+.#{$page}{
+	// Child Elems
+	// Modifiers
+	// Fallbacks - []
+	background-color: #fff;
 
-  // Modifiers
-  &.category{
-    &--features{
-      background-color: #ffff81;
-      .header{
-        &--page{
-          border-color: #E8E883;
-        }
-      }
-    }
-  }
-
-  // Fallbacks - []
+	.logo{
+	    &--primary {
+	      fill: #000;
+	    }
+	}
+	.nav__toggle__bar{
+		border-color: #000;
+	}
+	&.is--open__primary-nav .nav__toggle__bar{
+		border-color: $red;
+	}
 }
 
 // @Media

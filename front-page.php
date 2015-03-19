@@ -5,7 +5,7 @@
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<section id="intro" class="hero_unit wrap cf">
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'hero_unit__wrapper width--full fl cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			<article id="post-<?php the_ID(); ?>" class="hero_unit__wrapper width--full fl cf" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 				
 				<!-- Hentry Header -->
 				<header class="hero_unit__header cf hide">
