@@ -3,8 +3,8 @@
 	<header class="hentry__header showcase__entry__header pabs">
 		<p class="hentry__meta">
 			<?php // CATEGORY & BYLINE
-			echo "Our Thinking: ";
-			get_template_part( 'partials/hentry/meta/meta', 'category' ); ?>
+			echo "Case Study: ";
+			get_template_part( 'partials/hentry/meta/meta', 'clientname' ); ?>
 		</p>
 		<h3 class="hentry__title showcase__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 	</header>

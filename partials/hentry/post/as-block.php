@@ -8,10 +8,7 @@ $show_byline = $post_type != "our_work"; ?>
 	<header class="hentry__header pabs">
 		<p class="hentry__meta">
 			<?php // CATEGORY & BYLINE
-			echo "Our Thinking: ";
-			get_template_part( 'partials/hentry/meta/meta', 'category' );
-			echo "<span class=\"hentry__meta__separator\"> | </span>";
-			get_template_part( "partials/hentry/meta/meta", 'byline' ); ?>
+			get_template_part( 'partials/hentry/meta/meta', 'category' ); ?>
 		</p>
 		<h3 class="hentry__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 	</header>
