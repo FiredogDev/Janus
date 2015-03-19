@@ -13,7 +13,7 @@ $hentry_module: 'hentry';
 .#{$hentry_module}{
 	// Child Elems
 	&__header{
-		color: #fff;
+		
 	}
 	&__title{}
 	&__featured_image{}
@@ -31,6 +31,7 @@ $hentry_module: 'hentry';
 				bottom: 10%;
 				padding-left: 15px;
 				z-index: 1;
+				color: #fff;
 			}
 			&__title{
 				@include opacity(0.5);
@@ -62,12 +63,30 @@ $hentry_module: 'hentry';
 	&--as-row{
 		.#{$hentry_module}{
 			&__header{}
-			&__title{}
-			&__excerpt{}
+			&__title{
+				line-height: 1;
+				word-spacing: 2px;
+				letter-spacing: -2px;
+				font-size: 87px;
+  				margin-bottom: 53px;
+			}
+			&__excerpt{
+				color: #555;
+				font-size: 30px;
+				line-height: 1.25;
+				word-spacing: -3px;
+			}
 			&__footer{}
 			&__meta{
-				&__category{}
-				&__comment_count{}
+				&__category{
+					color: #555;
+					font-size: 33px;
+					margin-right: 8px;
+				}
+				&__comment_count{
+					color: #909090;
+					font-size: 33px;
+				}
 			}
 			
 		}
