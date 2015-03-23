@@ -4,9 +4,11 @@
 ## Firedog
 ############
 library/scss/.sass-cache
+library/fonts/
 node_modules/
 bower_components/
 temp/
+
 
 
 ############

@@ -1,7 +1,7 @@
 <?php
-if ($post->type = 'post') { 
+if ($post->type = 'post') {
 	$meta__post_title_prefix = "Our Thinking: ";
-}else{ 
+}else{
 	$meta__post_title_prefix = "Case Study: ";
 } ?>
 <span class="hentry__meta__category">
