@@ -58,22 +58,33 @@ $hentry_module: 'hentry';
 		}
 	}
 	&--as-row{
+		border-left: 10px solid;
+		padding-left: 15px;
+		margin-bottom: 50px;
 		.#{$hentry_module}{
-			&__header{}
+			&__header{
+				margin-bottom: 20px;
+			}
 			&__title{
-				line-height: 1;
-				word-spacing: 2px;
-				letter-spacing: -2px;
-				font-size: 87px;
-  				margin-bottom: 53px;
+				font-size: 28px;
+				line-height: 1.07;
 			}
 			&__excerpt{
-				color: #555;
-				font-size: 30px;
+				font-size: 16px;
 				line-height: 1.25;
-				word-spacing: -3px;
 			}
 			&__footer{}
+
+			.page--join-us &{
+				&__header{}
+				&__title{
+					color: #666;
+				}
+				&__excerpt{
+					color: #fff;
+				}
+				&__footer{}
+			}
 		}
 	}
 	// Modifiers -- Post Type
@@ -105,6 +116,7 @@ $hentry_module: 'hentry';
 	}
 	// Modifiers -- within post entries listing
 	&__listing{
+
 		// Hentry
 		.#{$hentry_module}{
 			&--as-block{
@@ -151,6 +163,11 @@ $hentry_module: 'hentry';
 					}
 				}
 			}
+		}
+
+		&--join-us{
+			background-color: #141414;
+			padding-top: 35px;
 		}
 	}
 	// Fallbacks - []

@@ -1,5 +1,5 @@
 <span class="hentry__meta__author">
-	<span class="hentry__meta__entry_prefix">Words: </span>
+	<span class="hentry__meta__entry_prefix">Words by </span>
 	<span class="hentry__meta__author__title" itemprop="author" itemscope itemptype="http://schema.org/Person">
 		<?php the_author_posts_link() ?>, 
 	</span>

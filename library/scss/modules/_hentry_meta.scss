@@ -33,23 +33,34 @@ HENTRY META STYLES
 	&--as-row{
 		.#{$hentry_module}{
 			&__meta{
+				font-size: 16px;
+				line-height: 1.25;
+				margin-bottom: 10px;
+				&__separator{}
+				&__entry_prefix{}
+				&__category{}
 				&__author{
 					&__title{}
 				}
-				&__entry_prefix{}
 				&__location{}
 				&__pubtime{}
+				&__comment_count{}
+			}
 
-				&__category{
-					color: #555;
-					font-size: 33px;
-					margin-right: 8px;
+			// Join us
+			.page--join-us &{
+				&__meta{
+					color: #ebebeb;
+					&__separator{}
+					&__entry_prefix{}
+					&__category{}
+					&__author{
+						&__title{}
+					}
+					&__location{}
+					&__pubtime{}
+					&__comment_count{}
 				}
-				&__comment_count{
-					color: #909090;
-					font-size: 33px;
-				}
-				&__clientname{}
 			}
 		}
 	}
