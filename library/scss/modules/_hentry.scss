@@ -100,7 +100,7 @@ $hentry_module: 'hentry';
 	}
 	// Modifiers -- within post entries listing
 	&__listing{
-
+		padding-top: 35px;
 		// Hentry
 		.#{$hentry_module}{
 			&--as-block{
@@ -116,10 +116,8 @@ $hentry_module: 'hentry';
 				}
 			}
 		}
-
 		&--join-us{
 			background-color: #141414;
-			padding-top: 35px;
 		}
 	}
 	// Fallbacks - []
@@ -200,14 +198,13 @@ $hentry_module: 'hentry';
   	}
 }
 @include media("<tablet_large"){
-	// .#{$hentry_module}{
-	// 	// Modifiers -- Layout Mode
-	// 	&--as-row{
-	// 		>.wrap{
-	// 			padding-left: 0px;
-	// 		}
-	// 	}
-	// }
+	.#{$hentry_module}{
+		&__listing{
+			>.wrap{
+				padding-left: 0px;
+			}
+		}
+	}
 }
 @include media(">tablet_large"){
   	.hentry{
