@@ -1397,11 +1397,15 @@ HENTRY META STYLES
   line-height: 1.25;
   margin-bottom: 10px;
 }
-/* line 47, ../scss/modules/_hentry_meta.scss */
+/* line 42, ../scss/modules/_hentry_meta.scss */
+.hentry--as-row .hentry__meta__category__separator {
+  display: none;
+}
+/* line 51, ../scss/modules/_hentry_meta.scss */
 .hentry--as-row .hentry__meta__comment_count {
   display: none;
 }
-/* line 54, ../scss/modules/_hentry_meta.scss */
+/* line 58, ../scss/modules/_hentry_meta.scss */
 .page--join-us .hentry--as-row .hentry__meta {
   color: #ebebeb;
 }

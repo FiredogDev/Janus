@@ -13,8 +13,9 @@ $show_byline = $post_type != "our_work"; ?>
 			<p class="hentry__meta">
 				<?php // CATEGORY, BYLINE & COMMENT COUNT
 				get_template_part( 'partials/hentry/meta/meta', 'category' );
+				get_template_part( 'partials/hentry/meta/meta', 'pub-date' );
 				get_template_part( 'partials/hentry/meta/meta', 'byline' );
-				get_template_part( 'partials/hentry/meta/meta', 'comment_count' ); ?>
+				get_template_part( 'partials/hentry/meta/meta', 'comment-count' ); ?>
 			</p>
 		</footer>
 

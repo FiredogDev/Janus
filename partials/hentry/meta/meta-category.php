@@ -9,7 +9,7 @@
 
  ?>
 <span class="hentry__meta__category">
-	<span class="hentry__meta__separator"> | </span>
+	<span class="hentry__meta__separator hentry__meta__category__separator"> | </span>
 	<span class="hentry__meta__entry_prefix"><?php echo $meta__post_type; ?></span>
 	<?php echo get_the_category_list(', '); ?>
 </span>

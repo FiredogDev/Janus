@@ -38,7 +38,11 @@ HENTRY META STYLES
 				margin-bottom: 10px;
 				&__separator{}
 				&__entry_prefix{}
-				&__category{}
+				&__category{
+					&__separator{
+						display: none;
+					}
+				}
 				&__author{
 					&__title{}
 				}
