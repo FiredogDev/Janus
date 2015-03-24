@@ -536,11 +536,6 @@ Stylesheet: Sass Functions
 /*********************
 RESPONSIVE HELPER FUNCTION
 Example:
-width: cp(650px, 1000px);
-or
-width: calc-percent(650px, 1000px);
-both compile to:
-width: 65%;
 *********************/
 /******************************************************************
 Site Name:
@@ -1389,23 +1384,29 @@ POSTS & CONTENT STYLES
     padding-left: 20px;
     margin-bottom: 105px;
   }
-  /* line 231, ../scss/modules/_hentry.scss */
+  /* line 230, ../scss/modules/_hentry.scss */
   .hentry--as-row .hentry__header {
     margin-bottom: 20px;
   }
-  /* line 234, ../scss/modules/_hentry.scss */
+  /* line 233, ../scss/modules/_hentry.scss */
   .hentry--as-row .hentry__title {
     font-size: 87px;
     font-size: 4.6vw;
   }
-  /* line 238, ../scss/modules/_hentry.scss */
+  /* line 237, ../scss/modules/_hentry.scss */
+  .hentry--as-row .hentry__excerpt {
+    font-size: 18px;
+  }
+  /* line 244, ../scss/modules/_hentry.scss */
+  .hentry__listing--rows {
+    padding-top: 90px;
+  }
+}
+@media (min-width: 1025px) {
+  /* line 256, ../scss/modules/_hentry.scss */
   .hentry--as-row .hentry__excerpt {
     font-size: 30px;
     font-size: 1.57vw;
-  }
-  /* line 247, ../scss/modules/_hentry.scss */
-  .hentry__listing--rows {
-    padding-top: 90px;
   }
 }
 /*********************
@@ -1442,7 +1443,7 @@ HENTRY META STYLES
   /* line 152, ../scss/modules/_hentry_meta.scss */
   .hentry--as-row .hentry__meta {
     font-size: 33px;
-    font-size: 1.75vw;
+    font-size: 1.71875vw;
   }
 }
 /*********************

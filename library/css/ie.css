@@ -27,11 +27,6 @@ Stylesheet: Sass Functions
 /*********************
 RESPONSIVE HELPER FUNCTION
 Example:
-width: cp(650px, 1000px);
-or
-width: calc-percent(650px, 1000px);
-both compile to:
-width: 65%;
 *********************/
 /******************************************************************
 Site Name:

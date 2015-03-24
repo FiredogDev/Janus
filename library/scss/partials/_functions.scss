@@ -12,15 +12,12 @@ Stylesheet: Sass Functions
 /*********************
 RESPONSIVE HELPER FUNCTION
 Example:
-width: cp(650px, 1000px);
-or
-width: calc-percent(650px, 1000px);
-both compile to:
-width: 65%;
 *********************/
-@function calc-percent($target, $container) {
-  @return ($target / $container) * 100%;
+
+
+
+
+@function pvw($target, $view_size) {
+	@return (($target/$view_size) * 100) + vw;
 }
-@function cp($target, $container) {
-  @return calc-percent($target, $container);
-}
+

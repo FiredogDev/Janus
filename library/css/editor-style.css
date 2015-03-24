@@ -25,11 +25,6 @@ body#tinymce.wp-editor {
   /*********************
   RESPONSIVE HELPER FUNCTION
   Example:
-  width: cp(650px, 1000px);
-  or
-  width: calc-percent(650px, 1000px);
-  both compile to:
-  width: 65%;
   *********************/
   /* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
   /* ==========================================================================
@@ -250,11 +245,6 @@ body#tinymce.wp-editor {
   /*********************
   RESPONSIVE HELPER FUNCTION
   Example:
-  width: cp(650px, 1000px);
-  or
-  width: calc-percent(650px, 1000px);
-  both compile to:
-  width: 65%;
   *********************/
   /******************************************************************
   Site Name:
