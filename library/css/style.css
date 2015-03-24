@@ -1919,21 +1919,21 @@ Single Post
 /*********************
 Front/Home Page
 *********************/
-/* line 7, ../scss/page/_page.scss */
-.page {
-  background-color: #fff;
-}
-/* line 14, ../scss/page/_page.scss */
+/* line 12, ../scss/page/_page.scss */
 .page .logo--primary {
   fill: #000;
 }
-/* line 18, ../scss/page/_page.scss */
+/* line 16, ../scss/page/_page.scss */
 .page .nav__toggle__bar {
   border-color: #000;
 }
-/* line 21, ../scss/page/_page.scss */
+/* line 19, ../scss/page/_page.scss */
 .page.is--open__primary-nav .nav__toggle__bar {
   border-color: #c70000;
+}
+/* line 25, ../scss/page/_page.scss */
+.page--join-us {
+  background-color: #141414;
 }
 
 /*********************
