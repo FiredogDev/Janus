@@ -1304,86 +1304,86 @@ POSTS & CONTENT STYLES
 .page--join-us .hentry--as-row .hentry__excerpt {
   color: #fff;
 }
-/* line 94, ../scss/modules/_hentry.scss */
+/* line 95, ../scss/modules/_hentry.scss */
 .hentry--as-row.category-features {
   border-color: #ffff00;
 }
-/* line 97, ../scss/modules/_hentry.scss */
+/* line 98, ../scss/modules/_hentry.scss */
 .hentry--as-row.category-learn {
   border-color: #00ff84;
 }
-/* line 100, ../scss/modules/_hentry.scss */
+/* line 101, ../scss/modules/_hentry.scss */
 .hentry--as-row.category-white-paper {
   border-color: #3c81ff;
 }
-/* line 139, ../scss/modules/_hentry.scss */
+/* line 140, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry--as-block .hentry__header {
   border-left-width: 6px;
   border-left-style: solid;
 }
-/* line 152, ../scss/modules/_hentry.scss */
+/* line 153, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry.type-learn .hentry__header {
   border-color: #00ff84;
 }
-/* line 162, ../scss/modules/_hentry.scss */
+/* line 163, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry.type-post .hentry__header {
   border-color: #ffff00;
 }
-/* line 172, ../scss/modules/_hentry.scss */
+/* line 173, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry.type-our_work .hentry__header {
   border-color: #c70000;
 }
-/* line 183, ../scss/modules/_hentry.scss */
+/* line 184, ../scss/modules/_hentry.scss */
 .hentry__listing--join-us {
   background-color: #141414;
   padding-top: 35px;
 }
 
 @media (orientation: portrait) {
-  /* line 203, ../scss/modules/_hentry.scss */
+  /* line 204, ../scss/modules/_hentry.scss */
   .hentry--as-block {
     height: 50vh;
   }
 }
 @media (min-width: 321px) {
-  /* line 215, ../scss/modules/_hentry.scss */
+  /* line 216, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 30px;
     font-size: 9vw;
   }
 }
 @media (min-width: 481px) {
-  /* line 232, ../scss/modules/_hentry.scss */
+  /* line 233, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 40px;
     font-size: 7vw;
   }
 }
 @media (min-width: 601px) {
-  /* line 244, ../scss/modules/_hentry.scss */
+  /* line 245, ../scss/modules/_hentry.scss */
   .hentry--as-block {
     width: 50%;
     height: 50vh;
   }
-  /* line 248, ../scss/modules/_hentry.scss */
+  /* line 249, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__header {
     width: 75%;
     border-left-width: 12px;
     padding-left: 30px;
   }
-  /* line 253, ../scss/modules/_hentry.scss */
+  /* line 254, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 34px;
     font-size: 5vw;
   }
-  /* line 257, ../scss/modules/_hentry.scss */
+  /* line 258, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__featured_image {
     width: 100%;
     height: auto;
   }
 }
 @media (min-width: 701px) {
-  /* line 273, ../scss/modules/_hentry.scss */
+  /* line 274, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 48px;
   }
@@ -1397,7 +1397,11 @@ HENTRY META STYLES
   line-height: 1.25;
   margin-bottom: 10px;
 }
-/* line 52, ../scss/modules/_hentry_meta.scss */
+/* line 47, ../scss/modules/_hentry_meta.scss */
+.hentry--as-row .hentry__meta__comment_count {
+  display: none;
+}
+/* line 54, ../scss/modules/_hentry_meta.scss */
 .page--join-us .hentry--as-row .hentry__meta {
   color: #ebebeb;
 }

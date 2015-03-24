@@ -44,7 +44,9 @@ HENTRY META STYLES
 				}
 				&__location{}
 				&__pubtime{}
-				&__comment_count{}
+				&__comment_count{
+					display: none;
+				}
 			}
 
 			// Join us
