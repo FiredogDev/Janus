@@ -98,33 +98,6 @@ $hentry_module: 'hentry';
 			}
 		}
 	}
-	// Modifiers -- Post Type
-	&.type{
-		&-learn{
-			.#{$hentry_module}{
-				&__header{}
-				&__cate{}
-				&__title{}
-				&__featured_image{}
-			}
-		}
-		&-post{
-			.#{$hentry_module}{
-				&__header{}
-				&__cate{}
-				&__title{}
-				&__featured_image{}
-			}
-		}
-		&-our_work{
-			.#{$hentry_module}{
-				&__header{}
-				&__cate{}
-				&__title{}
-				&__featured_image{}
-			}
-		}
-	}
 	// Modifiers -- within post entries listing
 	&__listing{
 
@@ -140,38 +113,6 @@ $hentry_module: 'hentry';
 					&__title{}
 					&__featured_image{}
 					&__byline{}
-				}
-			}
-			&.type{
-				&-learn{
-					.#{$hentry_module}{
-						&__header{
-							border-color: $green;
-						}
-						&__cate{}
-						&__title{}
-						&__featured_image{}
-					}
-				}
-				&-post{
-					.#{$hentry_module}{
-						&__header{
-							border-color: $yellow;
-						}
-						&__cate{}
-						&__title{}
-						&__featured_image{}
-					}
-				}
-				&-our_work{
-					.#{$hentry_module}{
-						&__header{
-							border-color: $red;
-						}
-						&__cate{}
-						&__title{}
-						&__featured_image{}
-					}
 				}
 			}
 		}

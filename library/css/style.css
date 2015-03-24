@@ -1312,74 +1312,62 @@ POSTS & CONTENT STYLES
 .hentry--as-row.category-white-paper {
   border-color: #3c81ff;
 }
-/* line 135, ../scss/modules/_hentry.scss */
+/* line 108, ../scss/modules/_hentry.scss */
 .hentry__listing .hentry--as-block .hentry__header {
   border-left-width: 6px;
   border-left-style: solid;
 }
-/* line 148, ../scss/modules/_hentry.scss */
-.hentry__listing .hentry.type-learn .hentry__header {
-  border-color: #00ff84;
-}
-/* line 158, ../scss/modules/_hentry.scss */
-.hentry__listing .hentry.type-post .hentry__header {
-  border-color: #ffff00;
-}
-/* line 168, ../scss/modules/_hentry.scss */
-.hentry__listing .hentry.type-our_work .hentry__header {
-  border-color: #c70000;
-}
-/* line 179, ../scss/modules/_hentry.scss */
+/* line 120, ../scss/modules/_hentry.scss */
 .hentry__listing--join-us {
   background-color: #141414;
   padding-top: 35px;
 }
 
 @media (orientation: portrait) {
-  /* line 199, ../scss/modules/_hentry.scss */
+  /* line 140, ../scss/modules/_hentry.scss */
   .hentry--as-block {
     height: 50vh;
   }
 }
 @media (min-width: 321px) {
-  /* line 211, ../scss/modules/_hentry.scss */
+  /* line 152, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 30px;
     font-size: 9vw;
   }
 }
 @media (min-width: 481px) {
-  /* line 228, ../scss/modules/_hentry.scss */
+  /* line 169, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 40px;
     font-size: 7vw;
   }
 }
 @media (min-width: 601px) {
-  /* line 240, ../scss/modules/_hentry.scss */
+  /* line 181, ../scss/modules/_hentry.scss */
   .hentry--as-block {
     width: 50%;
     height: 50vh;
   }
-  /* line 244, ../scss/modules/_hentry.scss */
+  /* line 185, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__header {
     width: 75%;
     border-left-width: 12px;
     padding-left: 30px;
   }
-  /* line 249, ../scss/modules/_hentry.scss */
+  /* line 190, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 34px;
     font-size: 5vw;
   }
-  /* line 253, ../scss/modules/_hentry.scss */
+  /* line 194, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__featured_image {
     width: 100%;
     height: auto;
   }
 }
 @media (min-width: 701px) {
-  /* line 279, ../scss/modules/_hentry.scss */
+  /* line 220, ../scss/modules/_hentry.scss */
   .hentry--as-block .hentry__title {
     font-size: 48px;
   }
