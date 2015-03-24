@@ -130,7 +130,7 @@ HENTRY META STYLES
 		&--as-row{
 			.#{$hentry_module}{
 				&__meta{
-					font-size: 33px;
+					font-size: 20px;
 					&__separator{}
 					&__entry_prefix{}
 					&__category{}
@@ -145,7 +145,28 @@ HENTRY META STYLES
 		}
 	}
 }
-@include media(">desktop"){}
+@include media(">desktop"){
+	.#{$hentry_module}{
+		&--as-row{
+			.#{$hentry_module}{
+				&__meta{
+					font-size: 33px;
+					font-size: 1.75vw;
+					&__separator{}
+					&__entry_prefix{}
+					&__category{}
+					&__author{
+						&__title{}
+					}
+					&__location{}
+					&__pubtime{}
+					&__comment_count{}
+				}
+			}
+		}
+	}
+
+}
 @include media("<desktop"){}
 @include media(">large_desktop"){}
 @include media("<large_desktop"){}

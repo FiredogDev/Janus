@@ -1396,12 +1396,12 @@ POSTS & CONTENT STYLES
   /* line 234, ../scss/modules/_hentry.scss */
   .hentry--as-row .hentry__title {
     font-size: 87px;
-    line-height: 1.07;
+    font-size: 4.6vw;
   }
   /* line 238, ../scss/modules/_hentry.scss */
   .hentry--as-row .hentry__excerpt {
     font-size: 30px;
-    line-height: 1.25;
+    font-size: 1.57vw;
   }
   /* line 247, ../scss/modules/_hentry.scss */
   .hentry__listing--rows {
@@ -1435,7 +1435,14 @@ HENTRY META STYLES
 @media (min-width: 701px) {
   /* line 132, ../scss/modules/_hentry_meta.scss */
   .hentry--as-row .hentry__meta {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  /* line 152, ../scss/modules/_hentry_meta.scss */
+  .hentry--as-row .hentry__meta {
     font-size: 33px;
+    font-size: 1.75vw;
   }
 }
 /*********************
