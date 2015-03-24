@@ -36,21 +36,26 @@ HENTRY META STYLES
 				font-size: 16px;
 				line-height: 1.25;
 				margin-bottom: 10px;
+				*:first-child{
+					.#{$hentry_module}{
+						&__meta{
+							&__separator{
+								display: none;
+							}
+						}
+					}
+				}
 				&__separator{}
 				&__entry_prefix{}
 				&__category{
-					&__separator{
-						display: none;
-					}
+					&__separator{}
 				}
 				&__author{
 					&__title{}
 				}
 				&__location{}
 				&__pubtime{}
-				&__comment_count{
-					display: none;
-				}
+				&__comment_count{}
 			}
 
 			// Join us
@@ -99,8 +104,47 @@ HENTRY META STYLES
 @include media(">phone_landscape"){}
 @include media(">tablet"){}
 @include media("<tablet"){}
-@include media(">tablet_large"){}
-@include media("<tablet_large"){}
+@include media("<tablet_large"){
+	.#{$hentry_module}{
+		&--as-row{
+			.#{$hentry_module}{
+				&__meta{
+					&__separator{}
+					&__entry_prefix{}
+					&__category{}
+					&__author{
+						&__title{}
+					}
+					&__location{}
+					&__pubtime{}
+					&__comment_count{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+@include media(">tablet_large"){
+	.#{$hentry_module}{
+		&--as-row{
+			.#{$hentry_module}{
+				&__meta{
+					font-size: 33px;
+					&__separator{}
+					&__entry_prefix{}
+					&__category{}
+					&__author{
+						&__title{}
+					}
+					&__location{}
+					&__pubtime{}
+					&__comment_count{}
+				}
+			}
+		}
+	}
+}
 @include media(">desktop"){}
 @include media("<desktop"){}
 @include media(">large_desktop"){}

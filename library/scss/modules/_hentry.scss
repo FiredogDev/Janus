@@ -84,7 +84,6 @@ $hentry_module: 'hentry';
 				&__footer{}
 			}
 		}
-
 		// Modifiers
 		&.category{
 			&-features{
@@ -224,11 +223,29 @@ $hentry_module: 'hentry';
 			width: span(16 of 24);
 			margin-left: auto;
 			margin-right: auto;
+			border-left-width: 7px;
+			padding-left: 20px;
+			margin-bottom: 105px;
 			.#{$hentry_module}{
-				&__header{}
-				&__title{}
-				&__excerpt{}
+
+				&__header{
+					margin-bottom: 20px;
+				}
+				&__title{
+					font-size: 87px;
+					line-height: 1.07;
+				}
+				&__excerpt{
+					font-size: 30px;
+					line-height: 1.25;
+				}
 				&__footer{}
+			}
+		}
+
+		&__listing{
+			&--rows{
+				padding-top: 90px;
 			}
 		}
   	}
