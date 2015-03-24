@@ -1478,8 +1478,16 @@ Front/Home Page
 .hero_unit__bgmedia__video {
   display: none;
 }
+/* line 49, ../scss/modules/_hero_unit.scss */
+.page--join-us .hero_unit__title {
+  color: #ddd;
+}
+/* line 53, ../scss/modules/_hero_unit.scss */
+.page--join-us .hero_unit__copy {
+  color: #a6a6a6;
+}
 
-/* line 56, ../scss/modules/_hero_unit.scss */
+/* line 67, ../scss/modules/_hero_unit.scss */
 .category--features .hero_unit__title--main {
   font-family: 'tiempos';
   font-size: 14vw;
@@ -1489,77 +1497,77 @@ Front/Home Page
 }
 
 @media (max-width: 479px) {
-  /* line 82, ../scss/modules/_hero_unit.scss */
+  /* line 93, ../scss/modules/_hero_unit.scss */
   .hero_unit__title {
     text-align: left;
   }
-  /* line 86, ../scss/modules/_hero_unit.scss */
+  /* line 97, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     text-align: left !important;
   }
 }
 @media (min-width: 481px) {
-  /* line 97, ../scss/modules/_hero_unit.scss */
+  /* line 108, ../scss/modules/_hero_unit.scss */
   .hero_unit .hentry__meta {
     text-align: center;
     font-size: 16px;
   }
-  /* line 103, ../scss/modules/_hero_unit.scss */
+  /* line 114, ../scss/modules/_hero_unit.scss */
   .hero_unit__title--main {
     font-size: 11.7vw;
     letter-spacing: -4px;
     word-spacing: -1px;
   }
-  /* line 112, ../scss/modules/_hero_unit.scss */
+  /* line 123, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy strong {
     font-size: 4.3vw;
     word-spacing: 3px;
   }
 }
 @media (min-width: 601px) {
-  /* line 125, ../scss/modules/_hero_unit.scss */
+  /* line 136, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 16px;
   }
 }
 @media (min-width: 701px) {
-  /* line 140, ../scss/modules/_hero_unit.scss */
+  /* line 151, ../scss/modules/_hero_unit.scss */
   .hero_unit .hentry__meta {
     margin-bottom: 2.1vw;
   }
-  /* line 148, ../scss/modules/_hero_unit.scss */
+  /* line 159, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy {
     width: 74.78992%;
     margin: 0 auto;
   }
-  /* line 151, ../scss/modules/_hero_unit.scss */
+  /* line 162, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 16px;
   }
 
-  /* line 170, ../scss/modules/_hero_unit.scss */
+  /* line 181, ../scss/modules/_hero_unit.scss */
   .category--features .hero_unit__title--main {
     font-size: 8.3vw;
   }
 }
 @media (min-width: 1025px) {
-  /* line 182, ../scss/modules/_hero_unit.scss */
+  /* line 193, ../scss/modules/_hero_unit.scss */
   .hero_unit .hentry__meta {
     font-size: 1.28vw;
   }
-  /* line 187, ../scss/modules/_hero_unit.scss */
+  /* line 198, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 24px;
     margin-bottom: 2.8vh;
   }
 }
 @media (min-width: 1601px) {
-  /* line 200, ../scss/modules/_hero_unit.scss */
+  /* line 211, ../scss/modules/_hero_unit.scss */
   .hero_unit__title--main {
     letter-spacing: -4px;
     word-spacing: -1px;
   }
-  /* line 206, ../scss/modules/_hero_unit.scss */
+  /* line 217, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 30px;
   }

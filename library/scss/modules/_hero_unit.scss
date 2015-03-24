@@ -44,6 +44,17 @@ $hero_module: 'hero_unit';
 		}
 	}
 
+	// Page Specific
+	.page--join-us &{
+		&__title{
+			color: #ddd;
+			&--main{}
+		}
+		&__copy{
+			color: #a6a6a6;
+		}
+	}
+
 	// Modifiers
 	// Fallbacks - []
 }
