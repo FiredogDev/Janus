@@ -20,10 +20,19 @@ $page: 'page';
 		border-color: $red;
 	}
 
-
-
 	&--join-us{
 		background-color: #141414;
+		.logo{
+		    &--primary {
+		      fill: #fff;
+		    }
+		}
+		.nav__toggle__bar{
+			border-color: #fff;
+		}
+		&.is--open__primary-nav .nav__toggle__bar{
+			border-color: $red;
+		}
 	}
 }
 

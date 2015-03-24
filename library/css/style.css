@@ -1450,57 +1450,36 @@ Front/Home Page
   margin-bottom: 1.1vh;
 }
 /* line 17, ../scss/modules/_hero_unit.scss */
-.hero_unit .hentry__meta {
-  text-transform: uppercase;
-  color: #222222;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  margin-bottom: 4vw;
-}
-/* line 24, ../scss/modules/_hero_unit.scss */
-.hero_unit .hentry__meta__separator {
-  color: #555555;
-}
-/* line 28, ../scss/modules/_hero_unit.scss */
-.hero_unit .hentry__meta__author__label {
-  color: #555555;
-}
-/* line 32, ../scss/modules/_hero_unit.scss */
-.hero_unit .hentry__meta__category {
-  color: #555555;
-}
-/* line 39, ../scss/modules/_hero_unit.scss */
 .hero_unit__title--main {
   font-size: 18.6vw;
   letter-spacing: -3px;
 }
-/* line 45, ../scss/modules/_hero_unit.scss */
+/* line 23, ../scss/modules/_hero_unit.scss */
 .hero_unit__copy p {
   font-size: 14px;
   line-height: 1.3;
   margin-bottom: 2.2vh;
 }
-/* line 50, ../scss/modules/_hero_unit.scss */
+/* line 28, ../scss/modules/_hero_unit.scss */
 .hero_unit__copy strong {
   line-height: 1;
   font-size: 8vw;
   letter-spacing: -1px;
 }
-/* line 56, ../scss/modules/_hero_unit.scss */
+/* line 34, ../scss/modules/_hero_unit.scss */
 .category-features .hero_unit__copy {
   color: #555;
 }
-/* line 62, ../scss/modules/_hero_unit.scss */
+/* line 40, ../scss/modules/_hero_unit.scss */
 .hero_unit__bgmedia {
   z-index: -1;
 }
-/* line 64, ../scss/modules/_hero_unit.scss */
+/* line 42, ../scss/modules/_hero_unit.scss */
 .hero_unit__bgmedia__video {
   display: none;
 }
 
-/* line 78, ../scss/modules/_hero_unit.scss */
+/* line 56, ../scss/modules/_hero_unit.scss */
 .category--features .hero_unit__title--main {
   font-family: 'tiempos';
   font-size: 14vw;
@@ -1510,77 +1489,77 @@ Front/Home Page
 }
 
 @media (max-width: 479px) {
-  /* line 104, ../scss/modules/_hero_unit.scss */
+  /* line 82, ../scss/modules/_hero_unit.scss */
   .hero_unit__title {
     text-align: left;
   }
-  /* line 108, ../scss/modules/_hero_unit.scss */
+  /* line 86, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     text-align: left !important;
   }
 }
 @media (min-width: 481px) {
-  /* line 119, ../scss/modules/_hero_unit.scss */
+  /* line 97, ../scss/modules/_hero_unit.scss */
   .hero_unit .hentry__meta {
     text-align: center;
     font-size: 16px;
   }
-  /* line 125, ../scss/modules/_hero_unit.scss */
+  /* line 103, ../scss/modules/_hero_unit.scss */
   .hero_unit__title--main {
     font-size: 11.7vw;
     letter-spacing: -4px;
     word-spacing: -1px;
   }
-  /* line 134, ../scss/modules/_hero_unit.scss */
+  /* line 112, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy strong {
     font-size: 4.3vw;
     word-spacing: 3px;
   }
 }
 @media (min-width: 601px) {
-  /* line 147, ../scss/modules/_hero_unit.scss */
+  /* line 125, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 16px;
   }
 }
 @media (min-width: 701px) {
-  /* line 162, ../scss/modules/_hero_unit.scss */
+  /* line 140, ../scss/modules/_hero_unit.scss */
   .hero_unit .hentry__meta {
     margin-bottom: 2.1vw;
   }
-  /* line 170, ../scss/modules/_hero_unit.scss */
+  /* line 148, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy {
     width: 74.78992%;
     margin: 0 auto;
   }
-  /* line 173, ../scss/modules/_hero_unit.scss */
+  /* line 151, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 16px;
   }
 
-  /* line 192, ../scss/modules/_hero_unit.scss */
+  /* line 170, ../scss/modules/_hero_unit.scss */
   .category--features .hero_unit__title--main {
     font-size: 8.3vw;
   }
 }
 @media (min-width: 1025px) {
-  /* line 204, ../scss/modules/_hero_unit.scss */
+  /* line 182, ../scss/modules/_hero_unit.scss */
   .hero_unit .hentry__meta {
     font-size: 1.28vw;
   }
-  /* line 209, ../scss/modules/_hero_unit.scss */
+  /* line 187, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 24px;
     margin-bottom: 2.8vh;
   }
 }
 @media (min-width: 1601px) {
-  /* line 222, ../scss/modules/_hero_unit.scss */
+  /* line 200, ../scss/modules/_hero_unit.scss */
   .hero_unit__title--main {
     letter-spacing: -4px;
     word-spacing: -1px;
   }
-  /* line 228, ../scss/modules/_hero_unit.scss */
+  /* line 206, ../scss/modules/_hero_unit.scss */
   .hero_unit__copy p {
     font-size: 30px;
   }
@@ -1931,9 +1910,21 @@ Front/Home Page
 .page.is--open__primary-nav .nav__toggle__bar {
   border-color: #c70000;
 }
-/* line 25, ../scss/page/_page.scss */
+/* line 23, ../scss/page/_page.scss */
 .page--join-us {
   background-color: #141414;
+}
+/* line 26, ../scss/page/_page.scss */
+.page--join-us .logo--primary {
+  fill: #fff;
+}
+/* line 30, ../scss/page/_page.scss */
+.page--join-us .nav__toggle__bar {
+  border-color: #fff;
+}
+/* line 33, ../scss/page/_page.scss */
+.page--join-us.is--open__primary-nav .nav__toggle__bar {
+  border-color: #c70000;
 }
 
 /*********************

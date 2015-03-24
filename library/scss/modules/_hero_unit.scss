@@ -13,28 +13,6 @@ $hero_module: 'hero_unit';
 	&__header{
 		margin-bottom: 1.1vh;
 	}
-	.hentry{
-		&__meta{
-			text-transform: uppercase;
-			color: #222222;
-			font-size: 14px;
-			font-weight: bold;
-			margin-bottom: 40px;
-			margin-bottom: 4vw;
-			&__separator{
-				color: #555555;
-			}
-			&__author{
-				&__label{
-					color: #555555;
-				}
-			}
-			&__category{
-				color: #555555;
-			}
-			&__comment_count{}
-		}
-	}
 	&__title{
 		&--main{
 			font-size: 18.6vw;
