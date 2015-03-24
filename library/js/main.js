@@ -36,4 +36,12 @@ require(['common', 'jquery', 'fastclick'], function (_c, $) {
 		nav__toggle.on('click', function(){
 			_c_s.bdy.toggleClass('is--open__primary-nav');	
 		})
+
+	console.log("/wp-json/posts?type=post");
+	$.ajax({
+	    url: '/00000_Firedog/Janus/wp-json/posts?type=post',
+	}).done(function (posts) {
+	    console.log(posts);
+	});
+
 });

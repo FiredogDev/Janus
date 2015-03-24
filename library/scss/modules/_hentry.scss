@@ -58,9 +58,12 @@ $hentry_module: 'hentry';
 		}
 	}
 	&--as-row{
-		border-left: 10px solid;
+		border-left: 10px solid $red;
 		padding-left: 15px;
 		margin-bottom: 50px;
+		>.wrap{
+			padding-left: 0px;
+		}
 		.#{$hentry_module}{
 			&__header{
 				margin-bottom: 20px;
@@ -84,6 +87,18 @@ $hentry_module: 'hentry';
 					color: #fff;
 				}
 				&__footer{}
+			}
+		}
+
+		&.category{
+			&-features{
+				border-color: $yellow;
+			}
+			&-learn{
+				border-color: $green;
+			}
+			&-white-paper{
+				border-color: $blue;
 			}
 		}
 	}

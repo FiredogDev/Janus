@@ -24,7 +24,7 @@
 			<?php
 			$args = array(
 				'post_type' => 'post',
-				'category_name' => 'news, features, work'
+				'category_name' => 'news, features, work, learn, white-paper'
 			);
 			$the_query = new WP_Query( $args );
 			if ($the_query->have_posts()) : 
