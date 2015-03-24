@@ -61,7 +61,7 @@ $hentry_module: 'hentry';
 		margin-bottom: 50px;
 		.#{$hentry_module}{
 			&__header{
-				margin-bottom: 20px;
+				
 			}
 			&__title{
 				font-size: 28px;
@@ -70,6 +70,7 @@ $hentry_module: 'hentry';
 			&__excerpt{
 				font-size: 16px;
 				line-height: 1.25;
+				margin-top: 20px;
 			}
 			&__footer{}
 
@@ -228,11 +229,10 @@ $hentry_module: 'hentry';
 			margin-bottom: 105px;
 			.#{$hentry_module}{
 				&__header{
-					margin-bottom: 20px;
 				}
 				&__title{
 					font-size: 87px;
-					font-size: 4.6vw;
+					font-size: pvw(87, 1920);
 				}
 				&__excerpt{
 					font-size: 18px;
@@ -255,7 +255,7 @@ $hentry_module: 'hentry';
 			.#{$hentry_module}{
 				&__excerpt{
 					font-size: 30px;
-					font-size: 1.57vw;
+					font-size: pvw(30, 1920);
 				}
 				&__footer{}
 			}

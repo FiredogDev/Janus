@@ -23,9 +23,14 @@ $show_byline = $post_type != "our_work"; ?>
 			<h3 class="hentry__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 		</header>
 		
-		<!-- Hentry Excerpt -->
-		<section class="hentry__excerpt cf">
-			<?php the_excerpt(); ?>
-		</section>
+		<?php
+		$entry_excerpt = get_the_excerpt();
+		if ( $my_excerpt != '' ) { ?>
+			<!-- Hentry Excerpt -->
+			<section class="hentry__excerpt cf">
+				<?php echo $my_excerpt; ?>
+			</section>
+		<?php } ?>
+		
 
 </article>

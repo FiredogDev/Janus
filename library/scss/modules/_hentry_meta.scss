@@ -131,6 +131,7 @@ HENTRY META STYLES
 			.#{$hentry_module}{
 				&__meta{
 					font-size: 20px;
+					font-size: pvw(20, 1024);
 					&__separator{}
 					&__entry_prefix{}
 					&__category{}
