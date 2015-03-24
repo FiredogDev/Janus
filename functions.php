@@ -124,22 +124,4 @@ add_action( 'after_setup_theme', 'firedog_ahoy' );
 
   // Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form' ) );
-
-  /*********************
-  WP_Util Functions
-  *********************/
-  function get_attachment_as_url($post_id = "", $size, $is_attachment = false){
-    global $post;
-  
-    // Set post id if not given.
-    if ($post_id == "") { $post_id = $post->ID; }
-  
-    if ($is_attachment) {
-      $thumb_id = $post_id;
-    }else if (has_post_thumbnail( $post_id ) ){
-      $thumb_id = get_post_thumbnail_id( $post_id );
-    }
-    $image = wp_get_attachment_image_src( $thumb_id, $size );
-    return $image[0];
-  }
 ?>
