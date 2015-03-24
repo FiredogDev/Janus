@@ -1,6 +1,6 @@
 <?php 
 $post_type = $post->post_type;
-$post_class_string = 'hentry--as-row prel fl cf';
+$post_class_string = 'hentry--as-row prel cf';
 $show_byline = $post_type != "our_work"; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class_string ); ?> role="article">

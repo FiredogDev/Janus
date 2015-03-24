@@ -207,7 +207,7 @@ $hentry_module: 'hentry';
 	}
 }
 @include media(">tablet_large"){
-  	.hentry{
+  	.#{$hentry_module}{
   		// Modifiers
 		&--as-block{
 			// max-width: 50%;
@@ -218,6 +218,17 @@ $hentry_module: 'hentry';
 					font-size: 48px;
 				}
 				&__featured_image{}
+			}
+		}
+		&--as-row{
+			width: span(16 of 24);
+			margin-left: auto;
+			margin-right: auto;
+			.#{$hentry_module}{
+				&__header{}
+				&__title{}
+				&__excerpt{}
+				&__footer{}
 			}
 		}
   	}

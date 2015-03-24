@@ -1380,6 +1380,12 @@ POSTS & CONTENT STYLES
   .hentry--as-block .hentry__title {
     font-size: 48px;
   }
+  /* line 223, ../scss/modules/_hentry.scss */
+  .hentry--as-row {
+    width: 66.38655%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 /*********************
 HENTRY META STYLES

@@ -40,7 +40,7 @@
 			</div>
 			<?php endwhile; endif; ?>
 
-			<section id="join-us__articles" class="hentry__listing hentry__listing--join-us cf fl width--full">
+			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
 				<div class="wrap cf">
 					<?php
 					$args = array(
