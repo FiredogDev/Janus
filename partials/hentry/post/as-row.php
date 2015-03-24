@@ -5,8 +5,6 @@ $show_byline = $post_type != "our_work"; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class_string ); ?> role="article">
 	
-	<div class="wrap cf">
-	
 		<!-- Hentry Footer -->
 		<footer class="hentry__footer cf">
 			<!-- Hentry Meta -->
@@ -29,9 +27,5 @@ $show_byline = $post_type != "our_work"; ?>
 		<section class="hentry__excerpt cf">
 			<?php the_excerpt(); ?>
 		</section>
-
-	</div>
-	
-	
 
 </article>

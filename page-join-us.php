@@ -41,20 +41,20 @@
 			<?php endwhile; endif; ?>
 
 			<section id="join-us__articles" class="hentry__listing hentry__listing--join-us cf fl width--full">
-			
-				<?php
-				$args = array(
-					'post_type' => 'post',
-					'category_name' => 'current-roles, graduates, insights'
-				);
-				$the_query = new WP_Query( $args );
-				if ($the_query->have_posts()) : 
-					while ($the_query->have_posts()) : 
-						$the_query->the_post();
-						get_template_part('partials/hentry/post/as', 'row');
-					endwhile; 
-				endif; ?>
-
+				<div class="wrap cf">
+					<?php
+					$args = array(
+						'post_type' => 'post',
+						'category_name' => 'current-roles, graduates, insights'
+					);
+					$the_query = new WP_Query( $args );
+					if ($the_query->have_posts()) : 
+						while ($the_query->have_posts()) : 
+							$the_query->the_post();
+							get_template_part('partials/hentry/post/as', 'row');
+						endwhile; 
+					endif; ?>
+				</div>
 			</section>
 
 			<footer class="article-footer cf"></footer>

@@ -12,9 +12,7 @@ POSTS & CONTENT STYLES
 $hentry_module: 'hentry';
 .#{$hentry_module}{
 	// Child Elems
-	&__header{
-		
-	}
+	&__header{}
 	&__title{}
 	&__featured_image{}
 	
@@ -61,9 +59,6 @@ $hentry_module: 'hentry';
 		border-left: 10px solid $red;
 		padding-left: 15px;
 		margin-bottom: 50px;
-		>.wrap{
-			padding-left: 0px;
-		}
 		.#{$hentry_module}{
 			&__header{
 				margin-bottom: 20px;
@@ -262,6 +257,16 @@ $hentry_module: 'hentry';
 			}
 		}
   	}
+}
+@include media("<tablet_large"){
+	// .#{$hentry_module}{
+	// 	// Modifiers -- Layout Mode
+	// 	&--as-row{
+	// 		>.wrap{
+	// 			padding-left: 0px;
+	// 		}
+	// 	}
+	// }
 }
 @include media(">tablet_large"){
   	.hentry{
