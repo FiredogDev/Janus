@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -11,22 +13,38 @@ module.exports = function(grunt) {
 
     // WATCH
     watch: {
-    	compass: {
+    	sass: {
         files: "library/scss/**/*.scss",
-        tasks: ['compass']
+        tasks: ['sass']
       }
     },
     // SASS
-    compass: {
-      dev: {
+    sass: {
         options: {
-          config: 'library/config.rb',
-          sassDir: 'library/scss',
-          cssDir: 'library/css',
-          require: 'susy'
+            sourceMap: true,
+        },
+        dist: {
+            files: {
+                'library/css/style.css'         : 'library/scss/style.scss',
+                'library/css/admin.css'         : 'library/scss/admin.scss',
+                'library/css/editor-style.css'  : 'library/scss/editor-style.scss',
+                'library/css/ie.css'            : 'library/scss/ie.scss',
+                'library/css/login.css'         : 'library/scss/login.scss'
+            }
         }
-      }
     },
+
+    // compass: {
+    //   dev: {
+    //     options: {
+    //       config: 'library/config.rb',
+    //       sassDir: 'library/scss',
+    //       cssDir: 'library/css',
+    //       require: 'susy'
+    //     }
+    //   }
+    // },
+    
     // BROWSER SYNC
     browserSync: {
         dev: {
@@ -54,11 +72,6 @@ module.exports = function(grunt) {
   	  }
   	}
   });
-
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   grunt.registerTask('default', ['browserSync', 'watch']);
 
