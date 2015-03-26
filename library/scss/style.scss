@@ -23,8 +23,8 @@ our mixins, functions, and variables that we'll be using across
 the whole project.
 *********************/
 
-@import "compass";
-@import "susy";
+@import "../../bower_components/compass-mixins/lib/compass";
+@import "../../bower_components/susy/sass/susy";
 
 // normalize: http://necolas.github.io/normalize.css/
 @import "partials/normalize";

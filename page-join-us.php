@@ -25,6 +25,7 @@
 					the_content(); ?>
 				</div><?php // end article section ?>
 			</div>
+
 			<?php endwhile; endif; ?>
 			
 
@@ -41,20 +42,18 @@
 			$sticky_post_query = new WP_Query( $args );
 
 			if ( $sticky_post_query->have_posts() ) { ?>
+				<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full">
 				<?php while ( $sticky_post_query->have_posts() ) {
 					$sticky_post_query->the_post();
 					$post->fd_is_featured = true; ?>
-
-					<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full">
+					
 					<?php get_template_part('partials/hentry/post/as', 'row'); ?>
-					</section>
-
-				<?php } // endwhile;
-			} // endif; ?>
-
+					
+				<?php } // endwhile; ?>
+				</section>
+			<?php } // endif; ?>
 
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
-				<div class="wrap cf">
 					<?php
 					$args = array(
 						'post_type' => 'post',
@@ -65,10 +64,9 @@
 					if ($the_query->have_posts()) : 
 						while ($the_query->have_posts()) : 
 							$the_query->the_post();
-							//get_template_part('partials/hentry/post/as', 'row');
+							get_template_part('partials/hentry/post/as', 'row');
 						endwhile; 
 					endif; ?>
-				</div>
 			</section>
 
 			<footer class="article-footer cf"></footer>

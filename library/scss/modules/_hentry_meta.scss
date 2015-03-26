@@ -72,6 +72,21 @@ HENTRY META STYLES
 					&__pubtime{}
 					&__comment_count{}
 				}
+
+				&--is-featured{
+					.hentry__meta{
+						color: #565656;
+						&__separator{}
+						&__entry_prefix{}
+						&__category{}
+						&__author{
+							&__title{}
+						}
+						&__location{}
+						&__pubtime{}
+						&__comment_count{}
+					}
+				}
 			}
 		}
 	}
