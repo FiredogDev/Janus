@@ -1,9 +1,15 @@
 <?php 
 $post_type = $post->post_type;
-$post_class_string = 'hentry--as-row prel cf';
-$show_byline = $post_type != "our_work"; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $post_class_string ); ?> role="article">
+$post_is_featured = $post->fd_is_featured;
+
+$additional_classes = 'hentry--as-row prel cf';
+
+if ($post_is_featured) {
+	$additional_classes .= " hentry--is-featured";
+} ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class( $additional_classes ); ?> role="article">
 	
 		<!-- Hentry Footer -->
 		<footer class="hentry__footer cf">
