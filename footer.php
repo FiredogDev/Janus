@@ -32,7 +32,7 @@
 
 		<script 
 		async 
-		data-main="<?php echo get_template_directory_uri(); ?>/library/js/main" 
+		data-main="<?php echo get_template_directory_uri(); ?>/library/js/main"
 		src="<?php echo get_template_directory_uri(); ?>/bower_components/requirejs/require.js">
 		</script>
 

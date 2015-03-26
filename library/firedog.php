@@ -423,19 +423,20 @@ CUSTOM SHORTCODES
 /********************
 RANDOM CLEANUP ITEMS
 *********************/
-	// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-	function firedog_filter_ptags_on_images($content){
-		return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-	}
-	// This removes the annoying […] to a Read More link
-	function firedog_excerpt_more($more){
-		global $post;
-		return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'firedog' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'firedog' ) .'</a>';
-	}
+// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
+function firedog_filter_ptags_on_images($content){
+	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'firedog_filter_ptags_on_images');
+
+// This removes the annoying […] to a Read More link
+function firedog_excerpt_more($more){
+	global $post;
+	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'firedog' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'firedog' ) .'</a>';
+}
 
 add_action('print_media_templates', 'add_caption_side_control_to_gallery');
 function add_caption_side_control_to_gallery(){ ?>
-
 	<script type="text/html" id="tmpl-caption-side-gallery-setting">
 		<label class="setting">
 			<span><?php _e('Caption Side', 'firedog'); ?></span>

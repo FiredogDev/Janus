@@ -23,10 +23,11 @@ require.config({
 		lodash: "../../bower_components/lodash/lodash",
 		fastclick: "../../bower_components/fastclick/lib/fastclick",
 		tweenmax: "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min",
+		slick: "../../bower_components/slick.js/slick/slick"
 	}
 });
 
-require(['common', 'jquery', 'fastclick'], function (_c, $) {
+require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 	// Common Selectors:
 	var _c_s = _c.SELECTORS;
@@ -34,14 +35,22 @@ require(['common', 'jquery', 'fastclick'], function (_c, $) {
 	// Primary Navigation
 	var nav__toggle = $('.nav__toggle');
 		nav__toggle.on('click', function(){
-			_c_s.bdy.toggleClass('is--open__primary-nav');	
+			_c_s.bdy.toggleClass('is--open__primary-nav');
 		})
 
-	console.log("/wp-json/posts?type=post");
-	$.ajax({
-	    url: '/00000_Firedog/Janus/wp-json/posts?type=post',
-	}).done(function (posts) {
-	    console.log(posts);
-	});
+
+	// Featured 
+	var featured_hentry_sliders = $('.hentry__listing--slider');
+	if(featured_hentry_sliders.length){
+		require(['slick'], function (s) {
+			_.forEach(featured_hentry_sliders, function(n, key) {
+				console.log(n);
+				console.log(key);
+			});
+	    });
+	}
+
+
+	
 
 });

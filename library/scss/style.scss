@@ -15,7 +15,6 @@ Helpful articles on Sass file organization:
 http://thesassway.com/advanced/modular-css-naming-conventions
 
 ******************************************************************/
-@import "compass";
 
 /*********************
 IMPORTING PARTIALS
@@ -23,6 +22,9 @@ These files are needed at the beginning so that we establish all
 our mixins, functions, and variables that we'll be using across
 the whole project.
 *********************/
+
+@import "compass";
+@import "susy";
 
 // normalize: http://necolas.github.io/normalize.css/
 @import "partials/normalize";
@@ -85,6 +87,9 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 
 // Showcase
 @import "modules/showcase";
+
+// Showcase
+@import "modules/featured_post_slider";
 
 
 /*********************

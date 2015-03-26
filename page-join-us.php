@@ -2,8 +2,6 @@
 
 	<main id="main" class="main cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-		
-
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -20,15 +18,6 @@
 							</h1>
 						</div>
 					</div>
-
-					<!-- Background Image/Video -->
-					<!-- <div class="hero_unit__bgmedia pabs pcover">
-						<video autoplay loop muted class="hero_unit__bgmedia__video pabs pcover">
-					        <source src="<?php echo get_template_directory_uri(); ?>/library/video/joinus.mp4" type="video/mp4">
-					        <source src="<?php echo get_template_directory_uri(); ?>/library/video/joinus.ogv" type="video/ogg">
-					    </video>
-					</div> -->
-
 				</header><?php // end article header ?>
 				
 				<div class="hero_unit__copy cf" itemprop="articleBody">
@@ -40,12 +29,36 @@
 			</div>
 			<?php endwhile; endif; ?>
 
+			<?php
+			$sticky_posts = get_option( 'sticky_posts' );
+			$args = array(
+				'post_type' => array('current-roles, graduates, insights'),
+				'post__in' => $sticky_posts
+			);
+
+			$sticky_post_query = new WP_Query( $args );
+
+			if ( $sticky_post_query->have_posts() ) { ?>
+					<?php while ( $sticky_post_query->have_posts() ) {
+						$sticky_post_query->the_post(); ?>
+
+						<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full">
+						<?php get_template_part('partials/hentry/post/as', 'row'); ?>
+						</section>
+
+					<?php } // endwhile;
+			} // endif; ?>
+
+
+			 ?>
+
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
 				<div class="wrap cf">
 					<?php
 					$args = array(
 						'post_type' => 'post',
-						'category_name' => 'current-roles, graduates, insights'
+						'category_name' => 'current-roles, graduates, insights',
+						'post__not_in' => $sticky
 					);
 					$the_query = new WP_Query( $args );
 					if ($the_query->have_posts()) : 
