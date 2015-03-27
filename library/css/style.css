@@ -872,8 +872,6 @@ POSTS & CONTENT STYLES
     opacity: 1; }
 .hentry--as-row {
   margin-bottom: 50px; }
-  .hentry--as-row .hentry__featured_image {
-    float: left; }
   .hentry--as-row .hentry__title_wrapper {
     margin-top: 20px; }
     .hentry--as-row .hentry__title_wrapper::before {
@@ -891,9 +889,6 @@ POSTS & CONTENT STYLES
     font-size: 16px;
     line-height: 1.25;
     margin-top: 20px; }
-  .hentry--as-row.is--featured {
-    overflow: hidden;
-    margin-bottom: 0; }
   .hentry--as-row.category-features .hentry__title_wrapper::before {
     border-color: #ffff00; }
   .hentry--as-row.category-learn .hentry__title_wrapper::before {
@@ -1005,6 +1000,16 @@ HENTRY META STYLES
   .hentry--as-row .hentry__meta {
     font-size: 33px;
     font-size: 1.71875vw; } }
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+.is--featured.hentry__featured_image {
+  float: left; }
+.is--featured.hentry--as-row {
+  overflow: hidden;
+  margin-bottom: 0;
+  height: 100vh; }
 
 /*********************
 Front/Home Page

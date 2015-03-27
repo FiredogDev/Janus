@@ -57,9 +57,7 @@ $hentry_module: 'hentry';
 		margin-bottom: 50px;
 		.#{$hentry_module}{
 			&__header{}
-			&__featured_image{
-				float: left;
-			}
+			
 			&__title_wrapper{
 				margin-top: 20px;
 				@extend .wrap;
@@ -83,10 +81,6 @@ $hentry_module: 'hentry';
 				margin-top: 20px;
 			}
 			&__footer{}
-		}
-		&.is--featured{
-			overflow: hidden;
-			margin-bottom: 0;
 		}
 		// Modifiers
 		&.category{
@@ -142,6 +136,7 @@ $hentry_module: 'hentry';
 	// Fallbacks - []
 }
 
+
 // Join us
 .page{
 	&--join-us{
@@ -187,19 +182,7 @@ $hentry_module: 'hentry';
 
 // Height
 @include media(">height460"){}
-@include media(">height600"){
-	&--as-row{
-		.#{$hentry_module}{
-			&__title_wrapper--outer{
-				position: relative;
-			}
-			&.is--featured{
-				height: inherit;
-				overflow: hidden;
-			}
-		}
-	}
-}
+@include media(">height600"){}
 
 @include media("portrait"){
 	.#{$hentry_module}{
@@ -344,4 +327,5 @@ $hentry_module: 'hentry';
   	}
 }
 // Hentry Meta
-@import "hentry_meta";
+@import "hentry/hentry_meta";
+@import "hentry/hentry_featured";
