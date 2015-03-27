@@ -19,12 +19,16 @@ var Frdg_App = Frdg_App || {};
 
 require.config({
 	paths: {
+		fastclick: "../../bower_components/fastclick/lib/fastclick",
 		jquery: "../../bower_components/jquery/dist/jquery",
 		lodash: "../../bower_components/lodash/lodash",
-		fastclick: "../../bower_components/fastclick/lib/fastclick",
-		tweenmax: "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min",
-		slick: "../../bower_components/slick.js/slick/slick"
-	}
+		qunit: "../../bower_components/qunit/qunit/qunit",
+		requirejs: "../../bower_components/requirejs/require",
+		slick: "../../bower_components/slick.js/slick/slick.min"
+	},
+	packages: [
+
+	]
 });
 
 require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
@@ -49,8 +53,4 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 			});
 	    });
 	}
-
-
-	
-
 });
