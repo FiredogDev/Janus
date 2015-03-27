@@ -35,24 +35,23 @@ module.exports = function(grunt) {
         }
     },
 
-    // compass: {
-    //   dev: {
-    //     options: {
-    //       config: 'library/config.rb',
-    //       sassDir: 'library/scss',
-    //       cssDir: 'library/css',
-    //       require: 'susy'
-    //     }
-    //   }
-    // },
+    // Bower Require WireDeps
+    bowerRequirejs: {
+      all: {
+        rjsConfig: 'library/js/main.js',
+        options: {
+          'exclude-dev': true
+        }
+      }
+    },
     
     // BROWSER SYNC
     browserSync: {
         dev: {
             bsFiles: {
                 src : [
-                    'library/css/*.css',
-                    '**/*.php'
+                  'library/css/*.css',
+                  '**/*.php'
                 ]
             },
             options: {
@@ -61,6 +60,7 @@ module.exports = function(grunt) {
             }
         }
     },
+    
     // Require Js
     requirejs: {
   	  compile: {

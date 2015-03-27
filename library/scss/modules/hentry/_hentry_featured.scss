@@ -8,11 +8,19 @@ POSTS & CONTENT STYLES
 // .person--male__hand  <-- MODIFIED__ELEMENT
 
 // Featured Hentry
-.is--featured{&.#{$hentry_module}{
-
+.is--featured.hentry{
+	height: 100vh;
+.#{$hentry_module}{
 	// Child Elems
 	&__featured_image{
-		float: left;
+		position: absolute;
+		top: 0;
+	}
+	
+	&__title_wrapper--outer{
+		padding-bottom: 10px;
+		position: absolute;
+		bottom: 0;
 	}
 
 	// Modifiers

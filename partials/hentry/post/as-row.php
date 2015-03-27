@@ -9,7 +9,10 @@ if ($post_is_featured) {
 	$additional_classes .= " is--featured";
 } ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $additional_classes ); ?> role="article">
+<article 
+	id="post-<?php the_ID(); ?>" 
+	<?php post_class( $additional_classes ); ?> 
+	role="article">
 		
 			<?php if (has_post_thumbnail()){
 				// Thumb ID
