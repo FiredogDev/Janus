@@ -57,6 +57,9 @@ $hentry_module: 'hentry';
 		margin-bottom: 50px;
 		.#{$hentry_module}{
 			&__header{}
+			&__featured_image{
+				float: left;
+			}
 			&__title_wrapper{
 				margin-top: 20px;
 				@extend .wrap;
@@ -69,9 +72,6 @@ $hentry_module: 'hentry';
 					border-left: 10px solid #c70000;
 					display: block;
 				}
-				&--outer{
-					bottom: 0;
-				}
 			}
 			&__title{
 				font-size: 28px;
@@ -83,17 +83,10 @@ $hentry_module: 'hentry';
 				margin-top: 20px;
 			}
 			&__footer{}
-
-			.page--join-us &{
-				&__header{}
-				&__title{
-					color: #666;
-				}
-				&__excerpt{
-					color: #fff;
-				}
-				&__footer{}
-			}
+		}
+		&.is--featured{
+			overflow: hidden;
+			margin-bottom: 0;
 		}
 		// Modifiers
 		&.category{
@@ -126,13 +119,7 @@ $hentry_module: 'hentry';
 			}
 		}
 	}
-	&--is-featured{
-		height: 100vh;
-		overflow: hidden;
-
-		.#{$hentry_module}{
-		}
-	}
+	
 	// Modifiers -- within post entries listing
 	&__listing{
 		padding-top: 35px;
@@ -152,17 +139,40 @@ $hentry_module: 'hentry';
 			}
 		}
 	}
+	// Fallbacks - []
+}
 
-
-	// Join us
-	.page--join-us &{
-		&__title_wrapper{
-			&--outer{
+// Join us
+.page{
+	&--join-us{
+		.#{$hentry_module}{
+			&__title_wrapper--outer{
 				background-color: #fff;
+			}
+			&__header{}
+			&__title{
+				color: #666;
+			}
+			&__excerpt{
+				color: #fff;
+			}
+			&__footer{}
+
+			&.is--featured{
+				.#{$hentry_module}{
+					&__header{}
+					&__title_wrapper{}
+					&__title{
+						color: #222;
+					}
+					&__excerpt{
+						color: #555;
+					}
+					&__footer{}
+				}
 			}
 		}
 	}
-	// Fallbacks - []
 }
 
 // Breakpoints
@@ -174,6 +184,23 @@ $hentry_module: 'hentry';
 // 	'large_desktop': 	1600px
 
 // @Media
+
+// Height
+@include media(">height460"){}
+@include media(">height600"){
+	&--as-row{
+		.#{$hentry_module}{
+			&__title_wrapper--outer{
+				position: relative;
+			}
+			&.is--featured{
+				height: inherit;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
 @include media("portrait"){
 	.#{$hentry_module}{
 		// Modifiers
@@ -210,6 +237,15 @@ $hentry_module: 'hentry';
 					font-size: 40px;
 					font-size: 7vw;
 				}
+			}
+		}
+	}
+}
+@include media("<tablet"){
+	.#{$hentry_module}{
+		&--as-row &{
+			&__excerpt{
+				display: none;
 			}
 		}
 	}

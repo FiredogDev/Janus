@@ -6,7 +6,7 @@ $post_is_featured = $post->fd_is_featured;
 $additional_classes = 'hentry--as-row prel cf';
 
 if ($post_is_featured) {
-	$additional_classes .= " hentry--is-featured";
+	$additional_classes .= " is--featured";
 } ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $additional_classes ); ?> role="article">
@@ -41,7 +41,12 @@ if ($post_is_featured) {
 			</a>
 			<?php } //end if ?>
 
-			<?php if ($post_is_featured){ ?> <div class="hentry__title_wrapper--outer fl width--full pabs"> <?php } ?>
+
+			<?php if ($post_is_featured){ ?>
+			<div class="hentry__title_wrapper--outer fl width--full">
+			<?php } ?>
+
+			
 			<div class="hentry__title_wrapper cf prel">
 
 				<!-- Hentry Footer -->
@@ -68,5 +73,11 @@ if ($post_is_featured) {
 				</section>
 
 			</div>
-			<?php if ($post_is_featured){ ?> </div> <?php } ?>
+
+
+			<?php if ($post_is_featured){ ?>
+			</div>
+			<?php } ?>
+
+
 </article>
