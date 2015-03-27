@@ -1,0 +1,51 @@
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+// .person 				<-- BLOCK
+// .person__hand		<-- ELEMENT
+// .person--male 		<-- MODIFIER
+// .person--female		<-- MODIFIER
+// .person--male__hand  <-- MODIFIED__ELEMENT
+
+// Featured Hentry
+.is--featured{&.#{$hentry_module}{
+
+	// Child Elems
+	&__featured_image{
+		float: left;
+	}
+
+	// Modifiers
+	&--as-row{
+		overflow: hidden;
+		margin-bottom: 0;
+		height: 100vh;
+	}
+	
+}}
+
+
+// Breakpoints
+// 	'phone': 			320px,
+// 	'phone_landscape': 	480px,
+// 	'tablet': 			600px,
+// 	'tablet_large': 	800px,
+// 	'desktop': 			1024px,
+// 	'large_desktop': 	1600px
+
+// @Media
+
+// Height
+@include media(">height460"){}
+@include media(">height600"){}
+
+@include media("portrait"){}
+@include media(">phone"){}
+@include media(">phone_landscape"){}
+@include media("<tablet"){}
+
+@include media(">tablet"){}
+@include media("<tablet_large"){}
+@include media(">tablet_large"){}
+
+@include media(">desktop"){}

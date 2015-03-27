@@ -56,22 +56,25 @@ FONT FACE (IN YOUR FACE)
 *********************/
 @font-face {
   font-family: 'circular';
-  src: url("../fonts/circular/Circular_Air-Book.eot");
-  src: url("../fonts/circular/Circular_Air-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/circular/Circular_Air-Book.woff") format("woff");
+  src: url('../fonts/circular/Circular_Air-Book.eot');
+  src: url('../fonts/circular/Circular_Air-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/circular/Circular_Air-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'circular';
-  src: url("../fonts/circular/Circular_Air-Bold.eot");
-  src: url("../fonts/circular/Circular_Air-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/circular/Circular_Air-Bold.woff") format("woff");
+  src: url('../fonts/circular/Circular_Air-Bold.eot');
+  src: url('../fonts/circular/Circular_Air-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/circular/Circular_Air-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal; }
+
 @font-face {
   font-family: 'tiempos';
-  src: url("../fonts/tiempos/TiemposHeadlineBlack.eot");
-  src: url("../fonts/tiempos/TiemposHeadlineBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/tiempos/TiemposHeadlineBlack.woff") format("woff");
+  src: url('../fonts/tiempos/TiemposHeadlineBlack.eot');
+  src: url('../fonts/tiempos/TiemposHeadlineBlack.eot?#iefix') format('embedded-opentype'), url('../fonts/tiempos/TiemposHeadlineBlack.woff') format('woff');
   font-weight: normal;
   font-style: normal; }
+
 /*
 Typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
@@ -99,7 +102,7 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
-  font-family: "circular";
+  font-family: 'circular';
   padding: 0;
   margin: 0; }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
@@ -139,5 +142,4 @@ Again, if you want to roll your own, just remove this junk and put
 whatever you use in here.
 
 ******************************************************************/
-
 /*# sourceMappingURL=ie.css.map */

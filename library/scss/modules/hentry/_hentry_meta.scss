@@ -57,26 +57,46 @@ HENTRY META STYLES
 				&__pubtime{}
 				&__comment_count{}
 			}
-
-			// Join us
-			.page--join-us &{
-				&__meta{
-					color: #ebebeb;
-					&__separator{}
-					&__entry_prefix{}
-					&__category{}
-					&__author{
-						&__title{}
-					}
-					&__location{}
-					&__pubtime{}
-					&__comment_count{}
-				}
-			}
 		}
 	}
 }
 
+.page{
+	// Join us
+	&--join-us{
+		.#{$hentry_module}{
+			&__meta{
+				color: #ebebeb;
+				&__separator{}
+				&__entry_prefix{}
+				&__category{}
+				&__author{
+					&__title{}
+				}
+				&__location{}
+				&__pubtime{}
+				&__comment_count{}
+			}
+			&.is--featured{
+				.#{$hentry_module}{
+					&__meta{
+						color: #565656;
+						&__separator{}
+						&__entry_prefix{}
+						&__category{}
+						&__author{
+							&__title{}
+						}
+						&__location{}
+						&__pubtime{}
+						&__comment_count{}
+					}
+				}
+			}
+		}
+		
+	}
+}
 
 // @Media
 // Breakpoints

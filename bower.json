@@ -10,6 +10,7 @@
   "devDependencies": {
     "qunit": "~1.17.1",
     "include-media": "~1.1.2",
-    "susy": "~2.2.2"
+    "susy": "~2.2.2",
+    "compass-mixins": "~1.0.2"
   }
 }

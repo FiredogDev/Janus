@@ -8,7 +8,6 @@
 			
 			<!-- PAGE HEADER -->
 			<div class="hero_unit wrap">
-			
 				<header class="article-header cf">
 					<div class="hero_unit__wrapper width--full cf">
 						<div class="hero_unit__header cf">
@@ -25,40 +24,41 @@
 					// Page Content
 					the_content(); ?>
 				</div><?php // end article section ?>
-			
 			</div>
-			<?php endwhile; endif; ?>
 
+			<?php endwhile; endif; ?>
+			
+
+			<!-- Featured Slider -->
 			<?php
 			$sticky_posts = get_option( 'sticky_posts' );
 			$args = array(
-				'post_type' => array('current-roles, graduates, insights'),
-				'post__in' => $sticky_posts
+				'posts_per_page' => -1,
+				'category_name' => 'current-roles, graduates, insights',
+				'post_type' => 'post',
+				'post__in' => $sticky_posts,
+				'ignore_sticky_posts' => 1
 			);
-
 			$sticky_post_query = new WP_Query( $args );
 
 			if ( $sticky_post_query->have_posts() ) { ?>
-					<?php while ( $sticky_post_query->have_posts() ) {
-						$sticky_post_query->the_post(); ?>
-
-						<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full">
-						<?php get_template_part('partials/hentry/post/as', 'row'); ?>
-						</section>
-
-					<?php } // endwhile;
-			} // endif; ?>
-
-
-			 ?>
+				<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full">
+				<?php while ( $sticky_post_query->have_posts() ) {
+					$sticky_post_query->the_post();
+					$post->fd_is_featured = true; ?>
+					
+					<?php get_template_part('partials/hentry/post/as', 'row'); ?>
+					
+				<?php } // endwhile; ?>
+				</section>
+			<?php } // endif; ?>
 
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
-				<div class="wrap cf">
 					<?php
 					$args = array(
 						'post_type' => 'post',
 						'category_name' => 'current-roles, graduates, insights',
-						'post__not_in' => $sticky
+						'post__not_in' => $sticky,
 					);
 					$the_query = new WP_Query( $args );
 					if ($the_query->have_posts()) : 
@@ -67,7 +67,6 @@
 							get_template_part('partials/hentry/post/as', 'row');
 						endwhile; 
 					endif; ?>
-				</div>
 			</section>
 
 			<footer class="article-footer cf"></footer>
