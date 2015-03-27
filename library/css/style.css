@@ -1004,12 +1004,19 @@ HENTRY META STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.is--featured.hentry__featured_image {
-  float: left; }
-.is--featured.hentry--as-row {
-  overflow: hidden;
-  margin-bottom: 0;
+.is--featured.hentry {
   height: 100vh; }
+  .is--featured.hentry .hentry__featured_image {
+    position: absolute;
+    top: 0; }
+  .is--featured.hentry .hentry__title_wrapper--outer {
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 0; }
+  .is--featured.hentry .hentry--as-row {
+    overflow: hidden;
+    margin-bottom: 0;
+    height: 100vh; }
 
 /*********************
 Front/Home Page
