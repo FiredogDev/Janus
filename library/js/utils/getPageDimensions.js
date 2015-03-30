@@ -23,7 +23,8 @@ define([
 			t.setDocWidth();
 			t.viewHeight = t.docelem.clientHeight;
 			t.viewWidth = t.docelem.clientWidth;
-		}.throttle(200));
+			console.log("Resize!");
+		}.throttle(100));
 	}
 
 	PageDimensions.prototype.doc = null;
@@ -47,6 +48,6 @@ define([
 		);
 	}
 
-	return PageDimensions;
+	return new PageDimensions();
 
 });

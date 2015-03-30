@@ -2,7 +2,7 @@
 
 $args = array(
 	'post_type' => array('our_work'),
-	'posts_per_page' => 5
+	'posts_per_page' => 6
 );
 $the_query = new WP_Query( $args );
 
