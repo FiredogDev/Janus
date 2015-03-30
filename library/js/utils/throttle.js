@@ -1,5 +1,4 @@
-define([
-], function (_, _c, $, current_page_class){
+define([], function (){
 
     Function.prototype.throttle = function (milliseconds, context) {
         var baseFunction = this,
