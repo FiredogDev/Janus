@@ -23,7 +23,6 @@ define([
 			t.setDocWidth();
 			t.viewHeight = t.docelem.clientHeight;
 			t.viewWidth = t.docelem.clientWidth;
-			console.log("Resize!");
 		}.throttle(100));
 	}
 

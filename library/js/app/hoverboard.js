@@ -3,12 +3,11 @@ define([
 	// deps
 	'jquery',
 	'common',
-	'lodash',
 	'utils/getPageDimensions',
 	'gsap',
 	'utils/throttle',
 
-], function($, _c, _, PageDimensions) {
+], function($, _c, PageDimensions) {
 
 	/** ______________________
 	 *** Hoverboard Constructor
