@@ -24,7 +24,8 @@ require.config({
 		lodash: "../../bower_components/lodash/lodash",
 		qunit: "../../bower_components/qunit/qunit/qunit",
 		requirejs: "../../bower_components/requirejs/require",
-		slick: "../../bower_components/slick.js/slick/slick.min"
+		slick: "../../bower_components/slick.js/slick/slick.min",
+		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax"
 	},
 	packages: [
 
@@ -44,13 +45,44 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 
 	// Featured 
-	var featured_hentry_sliders = $('.hentry__listing--slider');
-	if(featured_hentry_sliders.length){
+	var $featured_hentry_sliders = $('.hentry__listing--slider');
+	if($featured_hentry_sliders.length){
 		require(['slick'], function (s) {
-			_.forEach(featured_hentry_sliders, function(n, key) {
+			_.forEach($featured_hentry_sliders, function(n, key) {
 				console.log(n);
 				console.log(key);
 			});
 	    });
 	}
+
+
+	// Hoverboard
+	var $hoverboard = $(".hoverboard");
+	if($hoverboard.length){
+		require(['app/hoverboard'], function (hoverboard) {
+
+			_.forEach($hoverboard, function(board, key){
+				new hoverboard($(board));
+			});
+
+		});
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

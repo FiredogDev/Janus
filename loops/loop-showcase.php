@@ -12,7 +12,7 @@ if ( $the_query->have_posts() ) { ?>
 		<?php while ( $the_query->have_posts() ) {
 			
 			$the_query->the_post();
-			get_template_part('partials/hentry/showcase' , 'post');
+			get_template_part('partials/hentry/post/as' , 'showcase');
 
 		} // endwhile; ?>
 	</div>

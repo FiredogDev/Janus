@@ -17,7 +17,11 @@ module.exports = function(grunt) {
     	sass: {
         files: "library/scss/**/*.scss",
         tasks: ['sass']
-      }
+      },
+      gruntfile: {
+        files: 'Gruntfile.js',
+        tasks: ['grunt'],
+      },
     },
     // SASS
     sass: {
@@ -51,12 +55,13 @@ module.exports = function(grunt) {
             bsFiles: {
                 src : [
                   'library/css/*.css',
+                  'library/js/**/*.js',
                   '**/*.php'
                 ]
             },
             options: {
                 watchTask: true,
-                proxy: "http://localhost/janus/"
+                proxy: "http://localhost:8888/janus/"
             }
         }
     },
