@@ -35,7 +35,7 @@ define([
 			// ...get x position of cursor...
 			t.cursor_x_position = e.pageX;
 			//...pan board.
-			TweenMax.to(t.board, 0.8, {x: -t.get_move_to_value(), ease: Power3.easeOut});
+			TweenMax.to(t.board, 1, {x: -t.get_move_to_value(), ease: Power3.easeOut});
 		}.throttle(mouse_move_throttle_limit));
 
 	}
