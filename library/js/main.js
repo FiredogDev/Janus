@@ -45,12 +45,18 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 
 	// Featured 
-	var $featured_hentry_sliders = $('.hentry__listing--slider');
+	var $featured_hentry_sliders = $('.js-slick--featured-posts');
 	if($featured_hentry_sliders.length){
 		require(['slick'], function (s) {
-			_.forEach($featured_hentry_sliders, function(n, key) {
-				console.log(n);
-				console.log(key);
+			_.forEach($featured_hentry_sliders, function(slider, key) {
+				$(slider).slick({
+				  infinite: true,
+				  speed: 300,
+				  slidesToShow: 1,
+				  slidesToScroll: 1,
+				  adaptiveHeight: true
+				});
+								
 			});
 	    });
 	}

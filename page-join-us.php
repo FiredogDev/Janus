@@ -42,7 +42,7 @@
 			$sticky_post_query = new WP_Query( $args );
 
 			if ( $sticky_post_query->have_posts() ) { ?>
-				<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full">
+				<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full js-slick--featured-posts">
 				<?php while ( $sticky_post_query->have_posts() ) {
 					$sticky_post_query->the_post();
 					$post->fd_is_featured = true; ?>
