@@ -994,7 +994,7 @@ HENTRY META STYLES
 @media (min-width: 701px) {
   .hentry--as-row .hentry__meta {
     font-size: 20px;
-    font-size: 1.95312vw; } }
+    font-size: 1.95313vw; } }
 
 @media (min-width: 1025px) {
   .hentry--as-row .hentry__meta {
@@ -1005,14 +1005,11 @@ HENTRY META STYLES
 POSTS & CONTENT STYLES
 *********************/
 .is--featured.hentry {
-  height: 100vh; }
+  margin-bottom: 0; }
   .is--featured.hentry .hentry__featured_image {
-    position: absolute;
-    top: 0; }
+    float: left; }
   .is--featured.hentry .hentry__title_wrapper--outer {
-    padding-bottom: 10px;
-    position: absolute;
-    bottom: 0; }
+    padding-bottom: 10px; }
   .is--featured.hentry .hentry--as-row {
     overflow: hidden;
     margin-bottom: 0;
