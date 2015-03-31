@@ -18,10 +18,10 @@ module.exports = function(grunt) {
         files: "library/scss/**/*.scss",
         tasks: ['sass']
       },
-      gruntfile: {
-        files: 'Gruntfile.js',
-        tasks: ['grunt'],
-      },
+      // gruntfile: {
+      //   files: 'Gruntfile.js',
+      //   tasks: ['grunt'],
+      // },
     },
     // SASS
     sass: {
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
             },
             options: {
                 watchTask: true,
-                proxy: "http://localhost:8888/janus/"
+                proxy: "http://localhost/janus/"
             }
         }
     },

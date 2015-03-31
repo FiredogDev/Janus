@@ -994,7 +994,7 @@ HENTRY META STYLES
 @media (min-width: 701px) {
   .hentry--as-row .hentry__meta {
     font-size: 20px;
-    font-size: 1.95312vw; } }
+    font-size: 1.95313vw; } }
 
 @media (min-width: 1025px) {
   .hentry--as-row .hentry__meta {
