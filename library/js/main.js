@@ -44,18 +44,6 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 		})
 
 
-	// Featured 
-	var $featured_hentry_sliders = $('.hentry__listing--slider');
-	if($featured_hentry_sliders.length){
-		require(['slick'], function (s) {
-			_.forEach($featured_hentry_sliders, function(n, key) {
-				console.log(n);
-				console.log(key);
-			});
-	    });
-	}
-
-
 	// Hoverboard
 	var $hoverboard = $(".hoverboard");
 	if($hoverboard.length){
@@ -71,13 +59,21 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 
 
-
-
-
-
-
-
-
+	$.ajax({
+		url: '/janus/wp-json/posts',
+		dataType: 'json',
+		// data: {category_name: 'insights'},
+	})
+	.done(function(res) {
+		console.log(res);
+		console.log("success");
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
 
 
 
