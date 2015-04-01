@@ -49,13 +49,13 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	if($featured_hentry_sliders.length){
 		require(['slick'], function (s) {
 			_.forEach($featured_hentry_sliders, function(slider, key) {
-				// $(slider).slick({
-				//   infinite: true,
-				//   speed: 300,
-				//   slidesToShow: 1,
-				//   slidesToScroll: 1,
-				//   adaptiveHeight: true
-				// });
+				$(slider).slick({
+				  infinite: true,
+				  speed: 300,
+				  slidesToShow: 1,
+				  slidesToScroll: 1,
+				  adaptiveHeight: true
+				});
 			});
 	    });
 	}
