@@ -8,31 +8,23 @@ POSTS & CONTENT STYLES
 // .person--male__hand  <-- MODIFIED__ELEMENT
 
 // Featured Hentry
-.is--featured.hentry{
-	margin-bottom: 0;
+.is--featured{
 	.#{$hentry_module}{
 		// Child Elems
 		&__featured_image{
-			// position: absolute;
-			// top: 0;
 			float: left;
 		}
 		
 		&__title_wrapper--outer{
 			padding-bottom: 10px;
-			// position: absolute;
-			// bottom: 0;
-		}
-
-		// Modifiers
-		&--as-row{
-			overflow: hidden;
-			margin-bottom: 0;
-			height: 100vh;
 		}
 	}
+	// Modifiers
+	&.#{$hentry_module}--as-row{
+		overflow: hidden;
+		margin-bottom: 0;
+	}
 }
-
 
 // Breakpoints
 // 	'phone': 			320px,
@@ -43,18 +35,22 @@ POSTS & CONTENT STYLES
 // 	'large_desktop': 	1600px
 
 // @Media
-
 // Height
 @include media(">height460"){}
 @include media(">height600"){}
-
+// Orientation
 @include media("portrait"){}
+@include media("landscape","<tablet"){}
+// Width
+@include media("<phone"){}
 @include media(">phone"){}
+@include media("<phone_landscape"){}
 @include media(">phone_landscape"){}
-@include media("<tablet"){}
-
 @include media(">tablet"){}
-@include media("<tablet_large"){}
+@include media("<tablet"){}
 @include media(">tablet_large"){}
-
+@include media("<tablet_large"){}
 @include media(">desktop"){}
+@include media("<desktop"){}
+@include media(">large_desktop"){}
+@include media("<large_desktop"){}
