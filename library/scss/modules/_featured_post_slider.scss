@@ -1,1 +1,41 @@
 @import '../../../bower_components/slick.js/slick/slick';
+
+.slider{
+	&__control{
+		background: none;
+  		border: none;
+		.icon{
+			color: $red;
+		}
+		.text{
+			display: none;
+		}
+		&--next{
+			float: right;
+			.icon{}
+			.text{}
+		}
+		&--prev{
+			float: left;
+			.icon{}
+			.text{}
+		}
+	}
+}
+
+.slick-dots{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	li{
+		display: none;
+	}
+	.slick-active{
+		display: block;
+		text-align: center;
+  		width: 100%;
+	}
+}
+
+

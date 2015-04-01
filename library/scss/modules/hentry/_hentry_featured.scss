@@ -15,14 +15,23 @@ POSTS & CONTENT STYLES
 			float: left;
 		}
 		
-		&__title_wrapper--outer{
-			padding-bottom: 10px;
-		}
+		&__title_wrapper--outer{}
 	}
 	// Modifiers
 	&.#{$hentry_module}--as-row{
 		overflow: hidden;
 		margin-bottom: 0;
+	}
+	&.slick-slide{
+		.#{$hentry_module}{
+			// Child Elems
+			&__featured_image{
+			}
+			
+			&__title_wrapper--outer{
+				padding-bottom: 40px;
+			}
+		}
 	}
 }
 

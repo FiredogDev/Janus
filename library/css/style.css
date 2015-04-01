@@ -1006,11 +1006,11 @@ POSTS & CONTENT STYLES
 *********************/
 .is--featured .hentry__featured_image {
   float: left; }
-.is--featured .hentry__title_wrapper--outer {
-  padding-bottom: 10px; }
 .is--featured.hentry--as-row {
   overflow: hidden;
   margin-bottom: 0; }
+.is--featured.slick-slide .hentry__title_wrapper--outer {
+  padding-bottom: 40px; }
 
 /*********************
 Front/Home Page
@@ -1309,6 +1309,30 @@ PAGE NAVI STYLES
     display: block;
     height: auto;
     border: 1px solid transparent; }
+
+.slider__control {
+  background: none;
+  border: none; }
+  .slider__control .icon {
+    color: #c70000; }
+  .slider__control .text {
+    display: none; }
+  .slider__control--next {
+    float: right; }
+  .slider__control--prev {
+    float: left; }
+
+.slick-dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0; }
+  .slick-dots li {
+    display: none; }
+  .slick-dots .slick-active {
+    display: block;
+    text-align: center;
+    width: 100%; }
 
 /*********************
 PAGE LAYOUTS
