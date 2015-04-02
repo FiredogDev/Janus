@@ -1317,6 +1317,62 @@ PAGE NAVI STYLES
     border: 1px solid transparent; }
 
 /*********************
+VIEWMORE BTN STYLES
+*********************/
+.viewmore {
+  margin: 20px auto 0;
+  background-color: #363636;
+  float: left;
+  width: 100%;
+  position: relative; }
+  .viewmore__mask {
+    position: absolute;
+    width: 15%;
+    background-color: #141414;
+    height: 48%; }
+    .viewmore__mask--1 {
+      left: 0px;
+      top: 0; }
+    .viewmore__mask--2 {
+      left: 0px;
+      bottom: 0; }
+    .viewmore__mask--3 {
+      right: 0px;
+      top: 0; }
+    .viewmore__mask--4 {
+      right: 0px;
+      bottom: 0; }
+  .viewmore__fill {
+    background-color: #fff;
+    width: 0;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0; }
+  .viewmore__btn {
+    width: 70%;
+    margin: 4px auto;
+    padding: 0 4px;
+    position: relative;
+    cursor: pointer; }
+    .viewmore__btn__label {
+      font-size: 16px;
+      padding: 10px;
+      color: #666;
+      text-align: center;
+      background-color: #141414; }
+
+@media (min-width: 701px) {
+  .viewmore__mask {
+    width: 37.5%; }
+  .viewmore__btn {
+    width: 24.9%; }
+    .viewmore__btn__label {
+      font-size: 35px;
+      padding: 27px; } }
+
+/*********************
 PAGE LAYOUTS
 These sytles layout pages using the modules defined above.
 Page specific styles should sit lower down.

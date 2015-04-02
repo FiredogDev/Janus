@@ -29,33 +29,10 @@
 			<?php endwhile; endif; ?>
 			
 
-			<!-- Featured Slider -->
-			<?php
-			$sticky_posts = get_option( 'sticky_posts' );
-			$args = array(
-				'posts_per_page' => -1,
-				'category_name' => 'current-roles, graduates, insights',
-				'post_type' => 'post',
-				'post__in' => $sticky_posts,
-				'ignore_sticky_posts' => 1
-			);
-			$sticky_post_query = new WP_Query( $args );
-
-			if ( $sticky_post_query->have_posts() ) { ?>
-				<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--slider hentry__listing--join-us cf fl width--full">
-				<?php while ( $sticky_post_query->have_posts() ) {
-					$sticky_post_query->the_post();
-					$post->fd_is_featured = true; ?>
-					
-					<?php get_template_part('partials/hentry/post/as', 'row'); ?>
-					
-				<?php } // endwhile; ?>
-				</section>
-			<?php } // endif; ?>
-
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
 					<?php
 					$args = array(
+						'posts_per_page' => 1,
 						'post_type' => 'post',
 						'category_name' => 'current-roles, graduates, insights',
 						'post__not_in' => $sticky,
@@ -64,10 +41,22 @@
 					if ($the_query->have_posts()) : 
 						while ($the_query->have_posts()) : 
 							$the_query->the_post();
+							print_r($post->fd_is_featured);
 							get_template_part('partials/hentry/post/as', 'row');
 						endwhile; 
 					endif; ?>
 			</section>
+
+			<div class="viewmore">
+				<div class="viewmore__fill"></div>
+				<div class="viewmore__mask viewmore__mask--1"></div>
+				<div class="viewmore__mask viewmore__mask--2"></div>
+				<div class="viewmore__btn">
+					<div class="viewmore__btn__label">MORE THOUGHTS</div>
+				</div>
+				<div class="viewmore__mask viewmore__mask--3"></div>
+				<div class="viewmore__mask viewmore__mask--4"></div>
+			</div>
 
 			<footer class="article-footer cf"></footer>
 

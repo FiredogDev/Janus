@@ -14,7 +14,7 @@ if ($post_is_featured) {
 	<?php post_class( $additional_classes ); ?> 
 	role="article">
 		
-			<?php if (has_post_thumbnail()){
+			<?php if (has_post_thumbnail() && $post_is_featured){
 				// Thumb ID
 				$post_thumb_id 			= get_post_thumbnail_id($post->ID);
 				// Sizes...
