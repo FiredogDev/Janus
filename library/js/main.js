@@ -41,19 +41,7 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	var nav__toggle = $('.nav__toggle');
 		nav__toggle.on('click', function(){
 			_c_s.bdy.toggleClass('is--open__primary-nav');
-		})
-
-
-	// Featured 
-	var $featured_hentry_sliders = $('.hentry__listing--slider');
-	if($featured_hentry_sliders.length){
-		require(['slick'], function (s) {
-			_.forEach($featured_hentry_sliders, function(n, key) {
-				console.log(n);
-				console.log(key);
-			});
-	    });
-	}
+		});
 
 
 	// Hoverboard
