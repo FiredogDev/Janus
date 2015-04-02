@@ -1,4 +1,5 @@
 $module: 'showcase';
+
 .#{$module}{
 	height: 100vh;
 	width: 100%;
@@ -13,9 +14,22 @@ $module: 'showcase';
 			padding: 0 32px;
 		}
 		&__featured_image{
+			z-index: -1;
 			background-size: 100%;
 			background-size: cover;
 			background-position: center center;
+			@include opacity(0);
+			@include transition(opacity .6s $star_trek .3s);
+		}
+		&.is--active{
+			.#{$module}{
+				&__entry{
+					&__featured_image{
+						@include opacity(1);
+						@include transition(opacity .6s $star_trek);
+					}
+				}
+			}
 		}
 	}
 	&__title{

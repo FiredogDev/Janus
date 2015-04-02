@@ -11,7 +11,9 @@ $layout_header: 'header';
 	&--page{
 		margin-top: 15px;
 		padding-bottom: 10px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
 	}
   &--alternative{}
   

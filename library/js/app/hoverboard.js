@@ -38,6 +38,12 @@ define([
 			TweenMax.to(t.board, 1, {x: -t.get_move_to_value(), ease: Power3.easeOut});
 		}.throttle(mouse_move_throttle_limit));
 
+		$(t.board_entries[0]).addClass('is--active');
+		t.board_entries.on('mouseenter', function(){
+			var $t = $(this);
+			t.board_entries.removeClass('is--active');
+			$t.addClass('is--active');
+		});
 	}
 
 	/**
