@@ -1230,33 +1230,44 @@ PAGE NAVI STYLES
 ******************************************************************/
 .showcase {
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  background-color: #1a1a1a; }
   .showcase__entry {
     width: 400px;
     height: 100vh; }
+    .showcase__entry__permalink {
+      z-index: 1; }
     .showcase__entry__header {
       color: #fff;
       top: 23%;
-      padding: 0 32px; }
+      padding: 0 32px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+      opacity: 0.3;
+      -webkit-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+      -moz-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+      -o-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+      transition: opacity .6s cubic-bezier(0.77, 0, 0.175, 1); }
     .showcase__entry__featured_image {
-      z-index: -1;
       background-size: 100%;
       background-size: cover;
       background-position: center center;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
       opacity: 0;
       -webkit-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-      -webkit-transition-delay: 0.3s;
-      -moz-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
-      -o-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
-      transition: opacity .6s cubic-bezier(0.77, 0, 0.175, 1) .3s; }
-    .showcase__entry.is--active .showcase__entry__featured_image {
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.4s;
+      -o-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.4s;
+      transition: opacity .6s cubic-bezier(0.77, 0, 0.175, 1) .4s; }
+      .showcase__entry__featured_image.is--active {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        -webkit-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        transition: opacity .6s cubic-bezier(0.77, 0, 0.175, 1); }
+    .showcase__entry.is--active .showcase__entry__header {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-      opacity: 1;
-      -webkit-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-      -moz-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-      -o-transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-      transition: opacity .6s cubic-bezier(0.77, 0, 0.175, 1); }
+      opacity: 1; }
   .showcase__title {
     font-size: 48px; }
   .showcase__cate {

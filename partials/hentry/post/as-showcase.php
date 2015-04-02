@@ -4,14 +4,22 @@
 	// Sizes...
 	$featured_image_large 	= wp_get_attachment_image_src( $post_thumb_id, 'large' );
 }
- //end if ?>
+//end if ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( "showcase__entry hoverboard__entry full_height prel fl" ); ?> role="article">
-	<div class="showcase__entry__featured_image pfix pcover" style="background-image: url(<?php echo $featured_image_large['0']; //Large ?>);"></div>
+<article id="post-<?php the_ID(); ?>"
+<?php post_class( "showcase__entry hoverboard__entry full_height prel fl" ); ?> 
+role="article"
+data-id="<?php the_ID(); ?>">
+
+<div class="showcase__entry__featured_image hoverboard__entry__featured_image pfix pcover" 
+	style="background-image: url(<?php echo $featured_image_large['0']; //Large ?>);"
+	data-bgid="<?php the_ID(); ?>">
+</div>
+
 	<a 	href="<?php the_permalink(); ?>"
 		rel="bookmark" 
 		title="<?php the_title_attribute(); ?>" 
-		class="pabs pcover showcase__entry__featured_image" >
+		class="pabs pcover showcase__entry__permalink">
 	</a>
 
 	<header class="hentry__header showcase__entry__header pabs">
@@ -22,4 +30,5 @@
 		</p>
 		<h3 class="hentry__title showcase__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 	</header>
+
 </article>

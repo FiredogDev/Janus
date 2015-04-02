@@ -3,32 +3,36 @@ $module: 'showcase';
 .#{$module}{
 	height: 100vh;
 	width: 100%;
+	background-color: #1a1a1a;
 	&__wall{
 	}
 	&__entry{
 		width: 400px;
 		height: 100vh;
+		&__permalink{
+			z-index: 1;
+		}
 		&__header{
 			color: #fff;
 			top: 23%;
 			padding: 0 32px;
+			@include opacity(.3);
+			@include transition(opacity .6s $star_trek);
 		}
 		&__featured_image{
-			z-index: -1;
 			background-size: 100%;
 			background-size: cover;
 			background-position: center center;
 			@include opacity(0);
-			@include transition(opacity .6s $star_trek .3s);
+			@include transition(opacity .6s $star_trek .4s);
+			&.is--active{
+				@include opacity(1);
+				@include transition(opacity .6s $star_trek);
+			}
 		}
-		&.is--active{
-			.#{$module}{
-				&__entry{
-					&__featured_image{
-						@include opacity(1);
-						@include transition(opacity .6s $star_trek);
-					}
-				}
+		&.is--active &{
+			&__header{
+				@include opacity(1);
 			}
 		}
 	}
@@ -41,7 +45,6 @@ $module: 'showcase';
 	}
 }
 
-
 // Breakpoints
 // 	'phone': 			320px,
 // 	'phone_landscape': 	480px,
@@ -53,3 +56,5 @@ $module: 'showcase';
 // @Media
 @include media(">phone_landscape"){}
 @include media(">tablet"){}
+
+
