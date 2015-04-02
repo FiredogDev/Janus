@@ -24,10 +24,10 @@ $module: 'showcase';
 			background-size: cover;
 			background-position: center center;
 			@include opacity(0);
-			@include transition(opacity .6s $star_trek .4s);
+			@include transition(opacity .5s $star_trek .4s);
 			&.is--active{
 				@include opacity(1);
-				@include transition(opacity .6s $star_trek);
+				@include transition(opacity .5s $star_trek);
 			}
 		}
 		&.is--active &{
