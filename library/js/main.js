@@ -67,32 +67,4 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	    });
 	}
 
-
-	// Hoverboard
-	var $hoverboard = $(".hoverboard");
-	if($hoverboard.length){
-		require(['app/hoverboard'], function (hoverboard) {
-			_.forEach($hoverboard, function(board, key){
-				new hoverboard($(board));
-			});
-		});
-
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
