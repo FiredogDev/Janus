@@ -45,18 +45,21 @@
 							get_template_part('partials/hentry/post/as', 'row');
 						endwhile; 
 					endif; ?>
+
+					<div class="viewmore">
+						<div class="viewmore__fill"></div>
+						<div class="viewmore__mask viewmore__mask--1"></div>
+						<div class="viewmore__mask viewmore__mask--2"></div>
+						<div class="viewmore__btn">
+							<div class="viewmore__btn__label">MORE THOUGHTS</div>
+						</div>
+						<div class="viewmore__mask viewmore__mask--3"></div>
+						<div class="viewmore__mask viewmore__mask--4"></div>
+					</div>
+					
 			</section>
 
-			<div class="viewmore">
-				<div class="viewmore__fill"></div>
-				<div class="viewmore__mask viewmore__mask--1"></div>
-				<div class="viewmore__mask viewmore__mask--2"></div>
-				<div class="viewmore__btn">
-					<div class="viewmore__btn__label">MORE THOUGHTS</div>
-				</div>
-				<div class="viewmore__mask viewmore__mask--3"></div>
-				<div class="viewmore__mask viewmore__mask--4"></div>
-			</div>
+			
 
 			<footer class="article-footer cf"></footer>
 

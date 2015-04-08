@@ -25,7 +25,8 @@ require.config({
 		qunit: "../../bower_components/qunit/qunit/qunit",
 		requirejs: "../../bower_components/requirejs/require",
 		slick: "../../bower_components/slick.js/slick/slick.min",
-		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax"
+		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax",
+		"text": "../../bower_components/requirejs-text/text"
 	},
 	packages: [
 
