@@ -9,6 +9,7 @@ $module: 'showcase';
 	&__entry{
 		width: 400px;
 		height: 100vh;
+		@include transition(background-color .2s ease-out);
 		&__permalink{
 			z-index: 1;
 		}
@@ -17,22 +18,27 @@ $module: 'showcase';
 			top: 23%;
 			padding: 0 32px;
 			@include opacity(.3);
-			@include transition(opacity .6s $star_trek);
+			@include transition(opacity .4s $star_trek);
 		}
 		&__featured_image{
 			background-size: 100%;
 			background-size: cover;
 			background-position: center center;
 			@include opacity(0);
-			@include transition(opacity .5s $star_trek .4s);
+			@include transition(opacity .6s $star_trek .3s);
 			&.is--active{
 				@include opacity(1);
-				@include transition(opacity .5s $star_trek);
+				@include transition(opacity .6s $star_trek);
 			}
 		}
-		&.is--active &{
-			&__header{
-				@include opacity(1);
+		&.is--active {
+			background-color: rgba(0,0,0, 0.3);
+			.#{$module}{
+				&__entry{
+					&__header{
+						@include opacity(1);
+					}
+				}
 			}
 		}
 	}
@@ -42,6 +48,35 @@ $module: 'showcase';
 	&__cate{
 		font-size: 18px;
 		margin-bottom: 20px;
+	}
+}
+
+
+.overlay_panel{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	z-index: 10;
+	background-color: #1a1a1a;
+	max-width: 76%;
+	padding-top: 178px;
+	padding-left: 4.9%;
+	padding-right: 10%;
+	@include transform(translateX(-100%));
+	&__header{
+		margin-bottom: 10px;
+	}
+	&__title{
+		color: #9a9a9a;
+		font-size: 33px;
+		font-weight: normal;
+	}
+	&__copy{
+		color: #e0e0e0;
+		font-size: 86px;
+		font-family: $font__family--headings;
+		line-height: 1.02;
 	}
 }
 

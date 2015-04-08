@@ -4,7 +4,7 @@ HEADER STYLES
 
 $layout_header: 'header';
 .#{$layout_header}{
-  z-index: 3;
+  z-index: 100;
   // Child Elems
  	
 	// Modifiers

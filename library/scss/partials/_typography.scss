@@ -40,6 +40,23 @@ FONT FACE (IN YOUR FACE)
     font-style: normal;
 }
 
+// Maison
+@font-face {
+    font-family: 'maison-neue';
+    src:  url('../fonts/maison/maisonneue-medium-web.ttf'),
+          url('../fonts/maison/maisonneue-medium-web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// Maison Bold
+@font-face {
+    font-family: 'maison-neue';
+    src:  url('../fonts/maison/maisonneue-bold-web.ttf'),
+          url('../fonts/maison/maisonneue-bold-web.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
 // Tiempos Bold
 @font-face {
     font-family: 'tiempos';
