@@ -1418,12 +1418,17 @@ VIEWMORE BTN STYLES
       bottom: 0; }
   .viewmore__fill {
     background-color: #fff;
-    width: 0;
     float: left;
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0; }
+    bottom: 0;
+    width: 100%;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%); }
   .viewmore__btn {
     width: 70%;
     margin: 4px auto;

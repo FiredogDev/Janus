@@ -21,12 +21,13 @@ $viewmore_btn: 'viewmore';
   }
   &__fill{
     background-color: #fff;
-    width: 0;
     float: left;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
+    width: 100%;
+    @include transform(translateX(-100%));
   }
   &__btn{
     width: 70%;
