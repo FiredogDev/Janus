@@ -41,11 +41,7 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	var nav__toggle = $('.nav__toggle');
 		nav__toggle.on('click', function(){
 			_c_s.bdy.toggleClass('is--open__primary-nav');
-<<<<<<< HEAD
-		})
-=======
 		});
->>>>>>> master
 
 
 	// Hoverboard
@@ -62,26 +58,15 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	}
 
 
-
-	$.ajax({
-		url: '/janus/wp-json/posts',
-		dataType: 'json',
-		// data: {category_name: 'insights'},
-	})
-	.done(function(res) {
-		console.log(res);
-		console.log("success");
-	})
-	.fail(function() {
-		console.log("error");
-	})
-	.always(function() {
-		console.log("complete");
-	});
-
-
-
-
+	// Viewmore Posts Button
+	var $viewmoreButtons = $(".viewmore");
+	if($viewmoreButtons.length){
+		require(['app/viewmore'], function (viewmore) {
+			_.forEach($viewmoreButtons, function(button, key){
+				new viewmore($(button));
+			});
+		});
+	}
 
 
 
