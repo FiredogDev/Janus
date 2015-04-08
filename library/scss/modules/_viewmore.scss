@@ -11,7 +11,7 @@ $viewmore_btn: 'viewmore';
   position: relative;
   &__mask{
     position: absolute;
-    width: 15%;
+    width: 7.5%;
     background-color: #141414;
     height: 48%;
     &--1{left: 0px; top: 0;}
@@ -30,7 +30,7 @@ $viewmore_btn: 'viewmore';
     @include transform(translateX(-100%));
   }
   &__btn{
-    width: 70%;
+    width: 85%;
     margin: 4px auto;
     padding: 0 4px;
     position: relative;
@@ -55,15 +55,14 @@ $viewmore_btn: 'viewmore';
 @include media("landscape"){}
 // Width
 @include media("<phone"){}
-@include media(">phone"){}
+@include media(">phone"){
+  
+}
 @include media("<phone_landscape"){}
-@include media(">phone_landscape"){}
-@include media(">tablet"){}
-@include media("<tablet"){}
-@include media(">tablet_large"){
+@include media(">phone_landscape"){
   .#{$viewmore_btn}{
     &__mask{
-      width: 37.5%;
+      width: 25%;
       &--1{}
       &--2{}
       &--3{}
@@ -71,10 +70,43 @@ $viewmore_btn: 'viewmore';
     }
     &__fill{}
     &__btn{
-      width: 24.9%;
+      width: 50%;
+      &__label{}
+    }
+  }
+}
+@include media(">tablet"){
+  .#{$viewmore_btn}{
+    &__mask{
+      
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      
+      &__label{}
+    }
+  }
+}
+@include media("<tablet"){}
+@include media(">tablet_large"){
+  .#{$viewmore_btn}{
+    &__mask{
+      width: 35%;
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      width: 30%;
       &__label{
-        font-size: 35px;
-        padding: 27px;
+        font-size: 20px;
+        padding: 16px;
       }
     }
   }

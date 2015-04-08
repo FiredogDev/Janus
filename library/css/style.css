@@ -563,6 +563,9 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+html {
+  overflow-y: scroll; }
+
 body {
   font-family: 'circular';
   font-size: 14px;
@@ -1401,7 +1404,7 @@ VIEWMORE BTN STYLES
   position: relative; }
   .viewmore__mask {
     position: absolute;
-    width: 15%;
+    width: 7.5%;
     background-color: #141414;
     height: 48%; }
     .viewmore__mask--1 {
@@ -1430,7 +1433,7 @@ VIEWMORE BTN STYLES
     -o-transform: translateX(-100%);
     transform: translateX(-100%); }
   .viewmore__btn {
-    width: 70%;
+    width: 85%;
     margin: 4px auto;
     padding: 0 4px;
     position: relative;
@@ -1442,14 +1445,20 @@ VIEWMORE BTN STYLES
       text-align: center;
       background-color: #141414; }
 
+@media (min-width: 481px) {
+  .viewmore__mask {
+    width: 25%; }
+  .viewmore__btn {
+    width: 50%; } }
+
 @media (min-width: 701px) {
   .viewmore__mask {
-    width: 37.5%; }
+    width: 35%; }
   .viewmore__btn {
-    width: 24.9%; }
+    width: 30%; }
     .viewmore__btn__label {
-      font-size: 35px;
-      padding: 27px; } }
+      font-size: 20px;
+      padding: 16px; } }
 
 /*********************
 PAGE LAYOUTS
