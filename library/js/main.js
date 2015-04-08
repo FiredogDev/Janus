@@ -41,7 +41,11 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	var nav__toggle = $('.nav__toggle');
 		nav__toggle.on('click', function(){
 			_c_s.bdy.toggleClass('is--open__primary-nav');
+<<<<<<< HEAD
 		})
+=======
+		});
+>>>>>>> master
 
 
 	// Hoverboard

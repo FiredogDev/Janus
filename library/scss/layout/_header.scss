@@ -4,14 +4,16 @@ HEADER STYLES
 
 $layout_header: 'header';
 .#{$layout_header}{
-  z-index: 3;
+  z-index: 100;
   // Child Elems
  	
 	// Modifiers
 	&--page{
 		margin-top: 15px;
 		padding-bottom: 10px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
 	}
   &--alternative{}
   
