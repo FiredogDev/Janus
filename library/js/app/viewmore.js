@@ -4,10 +4,11 @@ define([
 	'jquery',
 	'common',
 	'lodash',
+	'moment',
 	'text!templates/hentry-post--as-row.html',
 	'gsap',
 
-], function($, _c, _, post_as_row_tmpl) {
+], function($, _c, _, moment, post_as_row_tmpl) {
 
 	/**  ____________________
 	 *** Viewmore Constructor
@@ -128,10 +129,8 @@ define([
 	Viewmore.prototype.whenRequestSucceeded = function(results){
 		// The result of the ajax request.
 		this.incoming_posts = results;
-		// console.log(result)
 		var html = "",
 			compiled_tmpl = _.template(post_as_row_tmpl);
-		console.log("test");
 		// Append the compiled templates to the pages.
 		this.appendCompiledTemplate(compiled_tmpl);
 	}
@@ -139,10 +138,11 @@ define([
 	 * On failed requests
 	 */
 	Viewmore.prototype.whenRequestFailed = function(){
-
 	}
 
-	
+	/**
+	 * On request completed
+	 */
 	Viewmore.prototype.whenRequestComplete = function(){
 		var that = this,
 			tmln = new TimelineMax();
@@ -154,8 +154,8 @@ define([
 				.to(that.button, 0.6, {opacity: 0, ease: Power3.easeOut,
 					onComplete: function(){
 						// Appeand html before the viewmore button.
-						// that.button.before(that.incoming_posts_html);
-						// that.incoming_posts_html = "";
+						that.button.before(that.incoming_posts_html);
+						that.incoming_posts_html = "";
 						// on css state reset, re-attach button event listener.
 						that.setup_button_event_handlers();
 						// On animation complete remove will change property.
@@ -164,7 +164,25 @@ define([
 				}, "move_to_end+=0.65")
 				.to(that.button_fill, 0, {x: "-100%", opacity: 1, })
 				.to(that.button, 0, {opacity: 1, });
-	}
+	},
+
+	/**
+	 * Make changes to the returned post object.
+	 * @param  {Object} post A single post JSON object.
+	 * @return {Object}      The filtered post.
+	 */
+	Viewmore.prototype.filterPost = function(post){
+		// ...check for a featured image...
+		if(post.featured_image)
+		{ post.hasPostThumb = "has-post-thumbnail"; }
+		else
+		{ post.hasPostThumb = ""; }
+
+		// Date formatting...
+		post.displayDate = moment(post.date, moment.ISO_8601).format("D.M.YY"); // 14.3.15
+
+		return post;
+	},
 
 	/**
 	 * Append compiled templates to page.
@@ -172,18 +190,11 @@ define([
 	Viewmore.prototype.appendCompiledTemplate = function(compiled){
 
 		var that = this;
-		console.log(this.incoming_posts);
 		// For each post/result...
-		// _.forEach(this.incoming_posts, function(post, key, posts){
-		// 	console.log(post);
-		// 	// ...check for a featured image...
-		// 	post.hasPostThumb = "no-post-thumbnail";
-		// 	if(post.featured_image){
-		// 		post.hasPostThumb = "has-post-thumbnail";
-		// 	}
-		// 	// ...concat compiled html from lodash template.
-		// 	that.incoming_posts_html += compiled(post);
-		// });
+		_.forEach(this.incoming_posts, function(post, key, posts){
+			// ...concat compiled html from lodash template.
+			that.incoming_posts_html += compiled(that.filterPost(post));
+		});
 
 	}
 

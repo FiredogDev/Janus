@@ -26,7 +26,9 @@ require.config({
 		requirejs: "../../bower_components/requirejs/require",
 		slick: "../../bower_components/slick.js/slick/slick.min",
 		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax",
-		"text": "../../bower_components/requirejs-text/text"
+		text: "../../bower_components/requirejs-text/text",
+		moment: "../../bower_components/moment/moment",
+		"requirejs-text": "../../bower_components/requirejs-text/text"
 	},
 	packages: [
 
