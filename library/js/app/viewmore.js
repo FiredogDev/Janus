@@ -18,12 +18,14 @@ define([
 			_c_s = _c.SELECTORS;
 
 			// The button, it's label and it's fill layer
-			that.button = button;
-			that.button_label = that.button.find('.viewmore__btn__label');
-			that.button_fill = that.button.find('.viewmore__fill');
+			this.button = button;
+			this.button_label = this.button.find('.viewmore__btn__label');
+			this.button_fill = this.button.find('.viewmore__fill');
+
+			this.build_parameter_string(that.button.data('args'));
 
 			// Setup 
-			that.setup_button_event_handlers();
+			this.setup_button_event_handlers();
 	}
 
 	/**
@@ -46,15 +48,34 @@ define([
 	 * @type {String}
 	 */
 	Viewmore.prototype.incoming_posts_html = "";
-
 	/**
 	 * The current XHR ready state.
 	 * @type {Number}
 	 */
 	Viewmore.prototype.current_ready_state = 0;
-
-
-
+	/**
+	 * Current Page
+	 * @type {Number}
+	 */
+	Viewmore.prototype.current_page_number = 1;
+	/**
+	 * Build the parameter string for wp query.
+	 * @param  {Object} args The arguments of the query
+	 */
+	Viewmore.prototype.build_parameter_string = function(args){
+		var that = this;
+		this.query_param_string = "";
+		_.forEach(args, function(argument, key, collection){
+			that.query_param_string += "filter["+key+"]="+argument+"&";
+		});
+	}
+	/**
+	 * Return the next page number
+	 */
+	Viewmore.prototype.get_next_page_number = function(){
+		this.current_page_number++
+		return this.current_page_number;
+	}
 	/**
 	 * Add click event listent to our button
 	 */
@@ -76,9 +97,8 @@ define([
 
 		// Ajax call for next page.
 		$.ajax({
-			url: '/janus/wp-json/posts',
+			url: '/janus/wp-json/posts?'+that.query_param_string+"page="+that.get_next_page_number(),
 			dataType: 'json',
-			data: {category_name: 'insights'},
 			beforeSend: that.onBeforeSend(that),
 			xhrFields: {
 				onprogress: function (XHRProgressEvnt) {
@@ -188,14 +208,12 @@ define([
 	 * Append compiled templates to page.
 	 */
 	Viewmore.prototype.appendCompiledTemplate = function(compiled){
-
 		var that = this;
 		// For each post/result...
 		_.forEach(this.incoming_posts, function(post, key, posts){
 			// ...concat compiled html from lodash template.
 			that.incoming_posts_html += compiled(that.filterPost(post));
 		});
-
 	}
 
 	return Viewmore;

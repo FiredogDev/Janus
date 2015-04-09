@@ -32,7 +32,7 @@
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
 					<?php
 					$args = array(
-						'posts_per_page' => 1,
+						'posts_per_page' => 5,
 						'post_type' => 'post',
 						'category_name' => 'current-roles, graduates, insights',
 						'post__not_in' => $sticky,
@@ -46,7 +46,13 @@
 						endwhile; 
 					endif; ?>
 
-					<div class="viewmore">
+					<div class="viewmore" data-args='{
+					"posts_per_page":"5",
+					"post_type":"post",
+					"category_name":"[current-roles,graduates,insights]",
+					"post_status":"publish",
+					"orderby":"date",
+					"order":"desc" }'>
 						<div class="viewmore__fill"></div>
 						<div class="viewmore__mask viewmore__mask--1"></div>
 						<div class="viewmore__mask viewmore__mask--2"></div>
