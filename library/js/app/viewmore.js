@@ -79,7 +79,6 @@ define([
 			that.query_param_string += "filter["+key+"]="+argument+"&";
 		});
 	}
-
 	/**
 	 * Return the next page number
 	 */
@@ -87,7 +86,6 @@ define([
 		this.current_page_number++
 		return this.current_page_number;
 	}
-
 	/**
 	 * Add click event listent to our button
 	 */
@@ -99,7 +97,6 @@ define([
 			that.get_next_page_of_posts();
 		});
 	}
-
 	/**
 	 * Request the next page of posts.
 	 */
@@ -266,15 +263,13 @@ define([
 		return post;
 	}
 
-
-
-
+	/**
+	 * Removing the button when there are no more posts.
+	 */
 	Viewmore.prototype.noMorePosts = function(){
-		console.log("no more posts!");
 		var that = this;
 		TweenMax.to(that.button, 0.8, {opacity: 0, ease:Power3.easeOut, 
 			onComplete: function(){
-				console.log("Complete!");
 				that.button_fill.css('will-change', '');
 				that.button.css('display', 'none');
 			}
