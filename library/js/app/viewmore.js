@@ -138,7 +138,9 @@ define([
 		// Attach will-cahnge property to our fill layer.
 		that.button_fill.css('will-change', 'transform');
 		// Animate to 15% to indicate waiting for progress.
-		TweenMax.to(that.button_fill, 10, {x: "15%", ease: Power3.easeOut});
+		var tmln = new TimelineMax();
+		tmln.to(that.button_fill, 0.8, {opacity: 1, ease: Power3.easeOut}, "start_fill")
+			.to(that.button_fill, 20, {x: "15%", ease: Power3.easeOut}, "start_fill-=0.1");
 	}
 
 	/**
@@ -198,11 +200,11 @@ define([
 							that.button_fill.css('will-change', '');
 						}
 					}, "move_to_end+=0.65")
-					.to(that.button_fill, 0, {x: "-100%", opacity: 1, })
+					.to(that.button_fill, 0, {x: "-100%", opacity: 0, })
 					.to(that.button, 0, {opacity: 1, });
 			}else{
 				// Animate fill position and color to indicate last page/error
-				tmln.to(that.button_fill, 0.8, {x: "-40%", backgroundColor: "red", ease: Power3.easeOut, 
+				tmln.to(that.button_fill, 0.8, {x: "-30%", backgroundColor: "red", ease: Power3.easeOut, 
 						onStart: function(){
 							that.button_label.text("END OF THE LINE!").css('cursor', 'default');
 							// that.button_label;

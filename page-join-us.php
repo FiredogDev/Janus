@@ -45,7 +45,7 @@
 						endwhile; 
 					endif; ?>
 
-					<div class="viewmore" data-args='{
+					<div class="viewmore cf" data-args='{
 					"posts_per_page":"6",
 					"post_type":"post",
 					"category_name":"[current-roles,graduates,insights]",

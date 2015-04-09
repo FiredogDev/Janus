@@ -6,9 +6,9 @@ $viewmore_btn: 'viewmore';
 .#{$viewmore_btn}{
   margin: 20px auto 0;
   background-color: #363636;
-  float: left;
   width: 100%;
   position: relative;
+  overflow: hidden;
   &__mask{
     position: absolute;
     width: 7.5%;
@@ -27,6 +27,7 @@ $viewmore_btn: 'viewmore';
     left: 0;
     bottom: 0;
     width: 100%;
+    @include opacity(0);
     @include transform(translateX(-100%));
   }
   &__btn{
@@ -78,7 +79,6 @@ $viewmore_btn: 'viewmore';
 @include media(">tablet"){
   .#{$viewmore_btn}{
     &__mask{
-      
       &--1{}
       &--2{}
       &--3{}
@@ -86,24 +86,6 @@ $viewmore_btn: 'viewmore';
     }
     &__fill{}
     &__btn{
-      
-      &__label{}
-    }
-  }
-}
-@include media("<tablet"){}
-@include media(">tablet_large"){
-  .#{$viewmore_btn}{
-    &__mask{
-      width: 35%;
-      &--1{}
-      &--2{}
-      &--3{}
-      &--4{}
-    }
-    &__fill{}
-    &__btn{
-      width: 30%;
       &__label{
         font-size: 20px;
         padding: 16px;
@@ -111,8 +93,47 @@ $viewmore_btn: 'viewmore';
     }
   }
 }
+@include media("<tablet"){}
+@include media(">tablet_large"){
+  .#{$viewmore_btn}{
+    width: span(16 of 24);
+    &__mask{
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      &__label{
+      }
+    }
+  }
+
+}
 @include media("<tablet_large"){}
-@include media(">desktop"){}
+@include media(">desktop"){
+  
+}
 @include media("<desktop"){}
-@include media(">large_desktop"){}
+@include media(">large_desktop"){
+  .#{$viewmore_btn}{
+    &__mask{
+      width: 30%;
+      height: 48%;
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      width: 40%;
+      &__label{
+        font-size: 35px;
+        padding: 27px;
+      }
+    }
+  }
+}
 @include media("<large_desktop"){}
