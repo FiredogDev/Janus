@@ -32,7 +32,7 @@
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
 					<?php
 					$args = array(
-						'posts_per_page' => 5,
+						'posts_per_page' => 6,
 						'post_type' => 'post',
 						'category_name' => 'current-roles, graduates, insights',
 						'post__not_in' => $sticky,
@@ -41,13 +41,12 @@
 					if ($the_query->have_posts()) : 
 						while ($the_query->have_posts()) : 
 							$the_query->the_post();
-							print_r($post->fd_is_featured);
 							get_template_part('partials/hentry/post/as', 'row');
 						endwhile; 
 					endif; ?>
 
 					<div class="viewmore" data-args='{
-					"posts_per_page":"5",
+					"posts_per_page":"6",
 					"post_type":"post",
 					"category_name":"[current-roles,graduates,insights]",
 					"post_status":"publish",
