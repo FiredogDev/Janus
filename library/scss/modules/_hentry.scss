@@ -117,6 +117,7 @@ $hentry_module: 'hentry';
 	// Modifiers -- within post entries listing
 	&__listing{
 		padding-top: 35px;
+		position: relative;
 		// Hentry
 		.#{$hentry_module}{
 			&--as-block{

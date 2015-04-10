@@ -78,6 +78,11 @@ if ($post_is_featured) {
 
 
 			<?php if ($post_is_featured){ ?>
+			<button type="button" data-role="none" class="slider__control slider__control--next slider__control--in_slide">
+			<span class="text">Next <span class="extended">Feature</span></span>
+			<span class="icon icon-arrow--right"></span></button>
+			<button type="button" data-role="none" class="slider__control slider__control--prev slider__control--in_slide">
+			<span class="text">Prev <span class="extended">Feature</span></span><span class="icon icon-arrow--left"></span></button>
 			</div>
 			<?php } ?>
 

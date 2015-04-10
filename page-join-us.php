@@ -50,8 +50,8 @@
 						<?php get_template_part('partials/hentry/post/as', 'row'); ?>
 					<?php } // endwhile; ?>
 					</div>
-					<button type="button" data-role="none" class="slider__control slider__control--next"><span class="text">Next</span><span class="icon">&gt;</span></button>
-					<button type="button" data-role="none" class="slider__control slider__control--prev"><span class="text">Prev</span><span class="icon">&lt;</span></button>
+					<button type="button" data-role="none" class="slider__control slider__control--next slider__control--global"><span class="text">Next</span><span class="icon icon-arrow--right"></span></button>
+					<button type="button" data-role="none" class="slider__control slider__control--prev slider__control--global"><span class="text">Prev</span><span class="icon icon-arrow--left"></span></button>
 				</section>
 			<?php } // endif; ?>
 

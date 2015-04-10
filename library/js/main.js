@@ -54,13 +54,12 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 					speed: 300,
 					slidesToShow: 1,
 					slidesToScroll: 1,
-					// adaptiveHeight: true,
+					adaptiveHeight: true,
 					prevArrow: ".slider__control--prev",
 					nextArrow: ".slider__control--next",
 					dots: true,
 					customPaging: function(slider, i) {
-						
-						return  (i + 1) + '/' + slider.slideCount;
+						return  "<span class=\"count_text\">" + (i + 1) + ' of ' + slider.slideCount + "</span>";
 					},
 				});
 			});

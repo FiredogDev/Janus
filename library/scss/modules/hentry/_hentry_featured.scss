@@ -22,14 +22,22 @@ POSTS & CONTENT STYLES
 		overflow: hidden;
 		margin-bottom: 0;
 	}
-	&.slick-slide{
-		.#{$hentry_module}{
-			// Child Elems
-			&__featured_image{
+	&.slick{
+		&-slide{
+			.#{$hentry_module}{
+				// Child Elems
+				&__featured_image{}
+				&__title_wrapper--outer{
+					padding-bottom: 50px;
+					position: relative;
+				}
 			}
-			
-			&__title_wrapper--outer{
-				padding-bottom: 40px;
+		}
+		&-active{
+			.slider{
+				&__control--in_slide{
+					@include opacity(1);
+				}
 			}
 		}
 	}
