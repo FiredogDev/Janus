@@ -8,7 +8,7 @@ library/fonts/
 node_modules/
 bower_components/
 temp/
-
+library/css/*.map
 
 
 ############

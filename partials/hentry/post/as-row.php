@@ -14,6 +14,7 @@ if ($post_is_featured) {
 	<?php post_class( $additional_classes ); ?> 
 	role="article">
 		
+
 			<?php if (has_post_thumbnail() && $post_is_featured){
 				// Thumb ID
 				$post_thumb_id 			= get_post_thumbnail_id($post->ID);
@@ -21,6 +22,7 @@ if ($post_is_featured) {
 				$featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
 				$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' );
 			?>
+
 			<a  class="cf width--full" 
 				href="<?php the_permalink() ?>" 
 				rel="bookmark" 
@@ -33,14 +35,19 @@ if ($post_is_featured) {
 				$post_thumb_desc 		= $post_thumb->post_content;
 				// Sizes...
 				$featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
-				$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' ); ?>
+				$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' );
+				$featured_image_lrg 	= wp_get_attachment_image_src( $post_thumb_id, 'large' );
+				$featured_image_full 	= wp_get_attachment_image_src( $post_thumb_id, 'full' ); ?>
 				
 				<img 
-				class="hentry__featured_image width--full" src="<?php echo $featured_image_med['0']; ?>" 
+				class="hentry__featured_image width--full" 
+				src="<?php echo $featured_image_small['0']; ?>" 
 				alt="<?php echo $post_thumb_desc; ?>"
-				sizes="(min-width: 800px) 60vw, 100vw"
-				srcset="<?php echo $featured_image_small['0']; //Small ?> 600w,
-						<?php echo $featured_image_med['0']; //Medium ?> 800w">
+				srcset="<?php echo $featured_image_small['0']; 	//Small ?> 	400w,
+						<?php echo $featured_image_med['0']; 	//Medium ?> 800w,
+						<?php echo $featured_image_lrg['0']; 	//Large ?> 	1200w,
+						<?php echo $featured_image_full['0']; 	//Full ?> 	1600w"
+				>
 			</a>
 			<?php } //end if ?>
 
@@ -79,6 +86,11 @@ if ($post_is_featured) {
 
 
 			<?php if ($post_is_featured){ ?>
+			<button type="button" data-role="none" class="slider__control slider__control--next slider__control--in_slide">
+			<span class="text">Next <span class="extended">Feature</span></span>
+			<span class="icon icon-arrow--right"></span></button>
+			<button type="button" data-role="none" class="slider__control slider__control--prev slider__control--in_slide">
+			<span class="text">Prev <span class="extended">Feature</span></span><span class="icon icon-arrow--left"></span></button>
 			</div>
 			<?php } ?>
 

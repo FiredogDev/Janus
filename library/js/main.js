@@ -44,6 +44,27 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 			_c_s.bdy.toggleClass('is--open__primary-nav');
 		});
 
+	// Featured 
+	var $featured_hentry_sliders = $('.js-slick--featured-posts');
+	if($featured_hentry_sliders.length){
+		require(['slick'], function (s) {
+			_.forEach($featured_hentry_sliders, function(slider, key) {
+				$(slider).slick({
+					infinite: true,
+					speed: 300,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					adaptiveHeight: true,
+					prevArrow: ".slider__control--prev",
+					nextArrow: ".slider__control--next",
+					dots: true,
+					customPaging: function(slider, i) {
+						return  "<span class=\"count_text\">" + (i + 1) + ' of ' + slider.slideCount + "</span>";
+					},
+				});
+			});
+	    });
+	}
 
 	// Hoverboard
 	var $hoverboard = $(".hoverboard");
@@ -58,7 +79,6 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 	}
 
-
 	// Viewmore Posts Button
 	var $viewmoreButtons = $(".viewmore");
 	if($viewmoreButtons.length){
@@ -68,7 +88,6 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 			});
 		});
 	}
-
 
 
 });

@@ -700,6 +700,34 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
     text-decoration: none; }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/janus/janus-icons.eot?cg580n');
+  src: url('../fonts/janus/janus-icons.eot?#iefixcg580n') format('embedded-opentype'), url('../fonts/janus/janus-icons.woff?cg580n') format('woff'), url('../fonts/janus/janus-icons.ttf?cg580n') format('truetype'), url('../fonts/janus/janus-icons.svg?cg580n#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-search:before {
+  content: "\e600"; }
+
+.icon-arrow--left:before {
+  content: "\e601"; }
+
+.icon-arrow--right:before {
+  content: "\e602"; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -1025,19 +1053,26 @@ HENTRY META STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.is--featured.hentry {
-  height: 100vh; }
-  .is--featured.hentry .hentry__featured_image {
-    position: absolute;
-    top: 0; }
-  .is--featured.hentry .hentry__title_wrapper--outer {
-    padding-bottom: 10px;
-    position: absolute;
-    bottom: 0; }
-  .is--featured.hentry .hentry--as-row {
-    overflow: hidden;
-    margin-bottom: 0;
+.is--featured .hentry__featured_image {
+  float: left; }
+.is--featured.hentry--as-row {
+  overflow: hidden;
+  margin-bottom: 0; }
+.is--featured.slick-slide .hentry__title_wrapper--outer {
+  padding-bottom: 50px;
+  position: relative; }
+.is--featured.slick-active .slider__control--in_slide {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1; }
+
+@media (min-width: 1025px) {
+  .is--featured .hentry__featured_image {
+    position: absolute; }
+  .is--featured.hentry--as-row {
     height: 100vh; }
+  .is--featured.slick-slide .hentry__title_wrapper--outer {
+    position: absolute;
+    bottom: 0; } }
 
 /*********************
 Front/Home Page
@@ -1398,6 +1433,151 @@ PAGE NAVI STYLES
     display: block;
     height: auto;
     border: 1px solid transparent; }
+
+.slick-slider {
+  background-color: #fff; }
+
+.slider__control {
+  background: none;
+  border: none;
+  position: absolute;
+  bottom: 17px;
+  width: 30%; }
+  .slider__control:focus {
+    outline: none; }
+  .slider__control .icon {
+    color: #c70000; }
+  .slider__control .text {
+    display: none; }
+  .slider__control--next {
+    right: 12px; }
+    .slider__control--next .icon {
+      float: right; }
+  .slider__control--prev {
+    left: 12px; }
+    .slider__control--prev .icon {
+      float: left; }
+  .slider__control--in_slide {
+    display: none !important; }
+
+.slick-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  margin: 0; }
+  .slick-dots li {
+    display: none; }
+  .slick-dots .slick-active {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 16px; }
+    .slick-dots .slick-active .count_text {
+      color: #555;
+      border-bottom: 2px solid #555; }
+
+@media (orientation:landscape) and (max-width: 599px) {
+  .slider__control {
+    bottom: 14%;
+    width: auto; }
+    .slider__control--global {
+      display: none !important; }
+    .slider__control--in_slide {
+      display: block !important;
+      height: 100%;
+      bottom: 0;
+      -webkit-transition: 0.2s opacity ease-out;
+      -moz-transition: 0.2s opacity ease-out;
+      -o-transition: 0.2s opacity ease-out;
+      transition: .2s opacity ease-out;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+      opacity: 0; }
+    .slider__control--next .text {
+      display: block !important;
+      color: #555;
+      border-bottom: 2px solid #555;
+      text-transform: uppercase;
+      position: absolute;
+      left: -33px;
+      font-size: 16px;
+      top: 50%;
+      margin-top: -50%;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+      .slider__control--next .text .extended {
+        display: none; }
+    .slider__control--prev {
+      display: none !important; }
+  .slick-dots {
+    display: none !important; } }
+
+@media (min-width: 701px) {
+  .slider__control {
+    bottom: 20%;
+    width: auto; }
+    .slider__control .text {
+      display: block !important;
+      color: #555;
+      border-bottom: 2px solid #555;
+      text-transform: uppercase;
+      position: absolute;
+      font-size: 16px;
+      top: 50%;
+      margin-top: -50%;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+      .slider__control .text .extended {
+        display: none; }
+    .slider__control--global {
+      display: none !important; }
+    .slider__control--in_slide {
+      display: block !important;
+      height: 100%;
+      bottom: 0;
+      -webkit-transition: 0.6s opacity 0.2s;
+      -webkit-transition-delay: ease-out;
+      -moz-transition: 0.6s opacity 0.2s ease-out;
+      -o-transition: 0.6s opacity 0.2s ease-out;
+      transition: .6s opacity .2s ease-out;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+      opacity: 0; }
+    .slider__control--next .text {
+      left: -30px; }
+    .slider__control--prev {
+      display: none !important; }
+  .slick-dots {
+    display: none !important; } }
+
+@media (min-width: 1025px) {
+  .slider__control .icon {
+    display: block;
+    font-size: 20px;
+    margin-top: 90px;
+    position: absolute; }
+  .slider__control .text {
+    white-space: nowrap;
+    display: inline;
+    font-size: 20px; }
+    .slider__control .text .extended {
+      display: inline; }
+  .slider__control--in_slide {
+    display: block !important; }
+  .slider__control--next .icon {
+    left: -7px; }
+  .slider__control--next .text {
+    left: -68px; }
+  .slider__control--prev {
+    left: 38px; }
+    .slider__control--prev .icon {
+      right: -7px; }
+    .slider__control--prev .text {
+      right: -68px; } }
 
 /*********************
 VIEWMORE BTN STYLES

@@ -1,1 +1,270 @@
 @import '../../../bower_components/slick.js/slick/slick';
+
+.slick-slider{
+  background-color: #fff;
+}
+
+.slider{
+	&__control{
+		background: none;
+  		border: none;
+  		position: absolute;
+  		bottom: 17px;
+  		width: 30%;
+  		&:focus{
+  			outline: none;
+  		}
+		.icon{
+			color: $red;
+		}
+		.text{
+			display: none;
+		}
+		&--next{
+			right: 12px;
+			.icon{
+				float: right;
+			}
+			.text{}
+		}
+		&--prev{
+			left: 12px;
+			.icon{
+				float: left;
+			}
+			.text{}
+		}
+
+		&--global{}
+		&--in_slide{
+			display: none !important;
+		}
+	}
+}
+
+.slick-dots{
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	margin: 0;
+	li{
+		display: none;
+	}
+	.slick-active{
+		display: block;
+		text-align: center;
+  		width: 100%;
+  		font-size: 16px;
+  		.count_text{
+  			color: #555;
+  			border-bottom: 2px solid #555;
+  		}
+	}
+}
+
+// Breakpoints
+// 	'phone': 			320px,
+// 	'phone_landscape': 	480px,
+// 	'tablet': 			600px,
+// 	'tablet_large': 	800px,
+// 	'desktop': 			1024px,
+// 	'large_desktop': 	1600px
+
+// @Media
+// Height
+@include media(">height460"){}
+@include media(">height600"){}
+// Orientation
+@include media("portrait"){}
+@include media("landscape", "<tablet"){
+	.slick-slider{}
+	.slider{
+		&__control{
+			bottom: 14%;
+			width: auto;
+			.icon{
+			}
+			.text{
+			}
+			&--global{
+				display: none !important;
+			}
+			&--in_slide{
+				display: block !important;
+				height: 100%;
+				bottom: 0;
+				@include transition(.2s opacity ease-out);
+				@include opacity(0);
+			}
+			&--next{
+				.icon{}
+				.text{
+					display: block !important;
+					color: #555;
+  					border-bottom: 2px solid #555;
+  					text-transform: uppercase;
+					position: absolute;
+					left: -33px;
+					font-size: 16px;
+					top: 50%;
+					margin-top: -50%;
+  					@include transform(rotate(-90deg));
+  					.extended{
+  						display: none;
+  					}
+				}
+			}
+			&--prev{
+				display: none !important;
+				.icon{}
+				.text{}
+			}
+			
+		}
+	}
+	.slick-dots{
+		display: none !important;
+		li{}
+		.slick-active{}
+	}
+}
+// Width
+@include media("<phone"){}
+@include media(">phone"){}
+
+@include media(">phone_landscape"){}
+@include media(">tablet"){
+	
+}
+@include media("<tablet"){}
+@include media(">tablet_large"){
+	.slick-slider{}
+	.slider{
+		&__control{
+			bottom: 20%;
+			width: auto;
+			.icon{
+			}
+			.text{
+				display: block !important;
+				color: #555;
+				border-bottom: 2px solid #555;
+				text-transform: uppercase;
+				position: absolute;
+				font-size: 16px;
+				top: 50%;
+				margin-top: -50%;
+				@include transform(rotate(-90deg));
+				.extended{
+					display: none;
+				}
+			}
+			&--global{
+				display: none !important;
+			}
+			&--in_slide{
+				display: block !important;
+				height: 100%;
+				bottom: 0;
+				@include transition(.6s opacity .2s ease-out);
+				@include opacity(0);
+			}
+			&--next{
+				.icon{}
+				.text{
+					left: -30px;
+				}
+			}
+			&--prev{
+				display: none !important;
+				.icon{}
+				.text{
+				}
+			}
+		}
+	}
+	.slick-dots{
+		display: none !important;
+		li{}
+		.slick-active{}
+	}
+}
+@include media("<tablet_large"){}
+@include media(">desktop"){
+	.slick-slider{}
+	.slider{
+		&__control{
+			.icon{
+				display: block;
+				font-size: 20px;
+				margin-top: 90px;
+				position: absolute;
+			}
+			.text{
+				white-space: nowrap;
+				display: inline;
+				font-size: 20px;
+				.extended{
+					display: inline;
+				}
+			}
+			&--global{
+			}
+			&--in_slide{
+				display: block !important;
+			}
+			&--next{
+				.icon{
+					left: -7px;
+				}
+				.text{
+					left: -68px;
+				}
+			}
+			&--prev{
+				left: 38px;
+				.icon{
+					right: -7px;
+				}
+				.text{
+					right: -68px;
+				}
+			}
+			
+		}
+	}
+	.slick-dots{
+		li{}
+		.slick-active{}
+	}
+}
+@include media("<desktop"){}
+@include media(">large_desktop"){
+	.slick-slider{}
+	.slider{
+		&__control{
+			.icon{
+			}
+			.text{
+			}
+			&--global{}
+			&--in_slide{}
+			&--next{
+				.icon{}
+				.text{
+  					.extended{}
+				}
+			}
+			&--prev{
+				.icon{}
+				.text{}
+			}
+			
+		}
+	}
+	.slick-dots{
+		li{}
+		.slick-active{}
+	}
+}
+@include media("<large_desktop"){}
