@@ -67,7 +67,39 @@ POSTS & CONTENT STYLES
 @include media("<tablet"){}
 @include media(">tablet_large"){}
 @include media("<tablet_large"){}
-@include media(">desktop"){}
+@include media(">desktop"){
+	// Featured Hentry
+	.is--featured{
+		.#{$hentry_module}{
+			// Child Elems
+			&__featured_image{
+				position: absolute;
+			}
+			&__title_wrapper--outer{}
+		}
+		// Modifiers
+		&.#{$hentry_module}--as-row{
+			height: 100vh;
+		}
+		&.slick{
+			&-slide{
+				.#{$hentry_module}{
+					// Child Elems
+					&__featured_image{}
+					&__title_wrapper--outer{
+						position: absolute;
+						bottom: 0;
+					}
+				}
+			}
+			&-active{
+				.slider{
+					&__control--in_slide{}
+				}
+			}
+		}
+	}
+}
 @include media("<desktop"){}
 @include media(">large_desktop"){}
 @include media("<large_desktop"){}

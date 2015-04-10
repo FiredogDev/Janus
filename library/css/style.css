@@ -1045,6 +1045,15 @@ POSTS & CONTENT STYLES
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
 
+@media (min-width: 1025px) {
+  .is--featured .hentry__featured_image {
+    position: absolute; }
+  .is--featured.hentry--as-row {
+    height: 100vh; }
+  .is--featured.slick-slide .hentry__title_wrapper--outer {
+    position: absolute;
+    bottom: 0; } }
+
 /*********************
 Front/Home Page
 *********************/
