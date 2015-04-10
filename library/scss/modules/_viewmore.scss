@@ -1,0 +1,171 @@
+/*********************
+VIEWMORE BTN STYLES
+*********************/
+
+$viewmore_btn: 'viewmore';
+.#{$viewmore_btn}{
+  margin: 20px auto 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  // Elements
+  &__mask{
+    position: absolute;
+    width: 7.5%;
+    height: 47%;
+    &--1{left: 0px; top: 0;}
+    &--2{left: 0px; bottom: 0;}
+    &--3{right: 0px; top: 0;}
+    &--4{right: 0px; bottom: 0;}
+  }
+  &__fill{
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    @include opacity(0);
+    @include transform(translateX(-100%));
+  }
+  &__btn{
+    width: 85%;
+    margin: 4px auto;
+    padding: 0 4px;
+    position: relative;
+    cursor: pointer;
+    &__label{
+      font-size: 16px;
+      padding: 10px;
+      color: #666;
+      text-align: center;
+    }
+  }
+
+  // Modifiers - Color Options
+  &--black{
+    background-color: #363636;
+    .#{$viewmore_btn}{
+      &__mask{
+        background-color: #141414;
+      }
+      &__fill{
+        background-color: #fff;
+      }
+      &__btn{
+        &__label{
+          background-color: #141414;
+        }
+      }
+    }
+  }
+  &--white{
+    background-color: #e3e3e3;
+    .#{$viewmore_btn}{
+      &__mask{
+        background-color: #fff;
+      }
+      &__fill{
+        background-color: #000;
+      }
+      &__btn{
+        &__label{
+          background-color: #fff;
+          color: #1e1e1e;
+        }
+      }
+    }
+  }
+}
+
+
+// @Media
+// Height
+@include media(">height460"){}
+@include media(">height600"){}
+// Orientation
+@include media("portrait"){}
+@include media("landscape"){}
+// Width
+@include media("<phone"){}
+@include media(">phone"){
+  
+}
+@include media("<phone_landscape"){}
+@include media(">phone_landscape"){
+  .#{$viewmore_btn}{
+    &__mask{
+      width: 25%;
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      width: 50%;
+      &__label{}
+    }
+  }
+}
+@include media(">tablet"){
+  .#{$viewmore_btn}{
+    &__mask{
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      &__label{
+        font-size: 20px;
+        padding: 16px;
+      }
+    }
+  }
+}
+@include media("<tablet"){}
+@include media(">tablet_large"){
+  .#{$viewmore_btn}{
+    width: span(16 of 24);
+    &__mask{
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      &__label{
+      }
+    }
+  }
+
+}
+@include media("<tablet_large"){}
+@include media(">desktop"){
+  
+}
+@include media("<desktop"){}
+@include media(">large_desktop"){
+  .#{$viewmore_btn}{
+    &__mask{
+      width: 30%;
+      height: 48%;
+      &--1{}
+      &--2{}
+      &--3{}
+      &--4{}
+    }
+    &__fill{}
+    &__btn{
+      width: 40%;
+      &__label{
+        font-size: 35px;
+        padding: 27px;
+      }
+    }
+  }
+}
+@include media("<large_desktop"){}

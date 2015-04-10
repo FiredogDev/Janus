@@ -19,6 +19,9 @@ html,
 body{
 }
 
+html{
+	overflow-y: scroll;
+}
 body {
 	font-family: $font__family--body;
 	font-size: $font__size--body;

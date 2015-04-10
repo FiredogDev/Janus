@@ -25,10 +25,11 @@ require.config({
 		qunit: "../../bower_components/qunit/qunit/qunit",
 		requirejs: "../../bower_components/requirejs/require",
 		slick: "../../bower_components/slick.js/slick/slick.min",
-		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax"
+		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax",
+		text: "../../bower_components/requirejs-text/text",
+		moment: "../../bower_components/moment/moment",
 	},
 	packages: [
-
 	]
 });
 
@@ -58,18 +59,15 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+	// Viewmore Posts Button
+	var $viewmoreButtons = $(".viewmore");
+	if($viewmoreButtons.length){
+		require(['app/viewmore'], function (viewmore) {
+			_.forEach($viewmoreButtons, function(button, key){
+				new viewmore($(button));
+			});
+		});
+	}
 
 
 
