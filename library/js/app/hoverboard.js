@@ -3,11 +3,12 @@ define([
 	// deps
 	'jquery',
 	'common',
+	'lodash',
 	'utils/getPageDimensions',
 	'gsap',
 	'utils/throttle',
 
-], function($, _c, PageDimensions) {
+], function($, _c, _, PageDimensions) {
 
 	/** ______________________
 	 *** Hoverboard Constructor
@@ -19,6 +20,7 @@ define([
 		// Init vars
 		t.board 				= board;
 		t.board_entries 		= t.board.find(".hoverboard__entry");
+		t.board_entry_bgs 		= t.board_entries.find(".hoverboard__entry__featured_image");
 		t.board_entry_width 	= t.board_entries.outerWidth();
 		t.board_entries_count 	= t.board_entries.length;
 		t.board_width 			= (t.board_entry_width * t.board_entries_count);
@@ -38,6 +40,23 @@ define([
 			TweenMax.to(t.board, 1, {x: -t.get_move_to_value(), ease: Power3.easeOut});
 		}.throttle(mouse_move_throttle_limit));
 
+		$(t.board_entries[0]).addClass('is--active');
+		$(t.board_entry_bgs[0]).addClass('is--active');
+
+		var board_entry_bgs = t.board_entry_bgs.detach();
+		t.board.before(board_entry_bgs);
+
+		t.board_entries.on('mouseenter', _.debounce(function(){
+			var $t = $(this),
+				bgid = $t.data('id'),
+				filter_featured_image = t.board_entry_bgs.filter("[data-bgid=\""+bgid+"\"]");
+
+			t.board_entries.removeClass('is--active');
+			t.board_entry_bgs.removeClass('is--active');
+
+			$t.addClass('is--active');
+			filter_featured_image.addClass('is--active');
+		}, 200));
 	}
 
 	/**
