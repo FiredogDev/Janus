@@ -133,6 +133,10 @@ $hentry_module: 'hentry';
 				}
 			}
 		}
+
+		&--rows{
+			margin-bottom: 80px;
+		}
 	}
 	// Fallbacks - []
 }
@@ -237,6 +241,11 @@ $hentry_module: 'hentry';
 
 @include media(">tablet"){
 	.#{$hentry_module}{
+		&__listing{
+			&--rows{
+				margin-bottom: 120px;
+			}
+		}
   		// Modifiers
 		&--as-block{
 			width: 50%;
@@ -308,6 +317,7 @@ $hentry_module: 'hentry';
 		&__listing{
 			&--rows{
 				padding-top: 90px;
+  				margin-bottom: 220px;
 			}
 		}
   	}

@@ -80,5 +80,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['browserSync', 'watch']);
+  grunt.registerTask('brjs', ['bowerRequirejs', 'default']);
 
 };

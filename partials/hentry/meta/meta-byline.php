@@ -2,7 +2,7 @@
 	<span class="hentry__meta__separator hentry__meta__author__separator"> | </span>
 	<span class="hentry__meta__entry_prefix">Words by </span>
 	<span class="hentry__meta__author__title" itemprop="author" itemscope itemptype="http://schema.org/Person">
-		<?php the_author_posts_link() ?>
+		<?php the_author_posts_link() ?> 
 	</span>
 	<!-- 
 	Deprecated - 24/03/2014 - 10:05

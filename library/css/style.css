@@ -563,6 +563,9 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+html {
+  overflow-y: scroll; }
+
 body {
   font-family: 'circular';
   font-size: 14px;
@@ -941,6 +944,8 @@ POSTS & CONTENT STYLES
   .hentry__listing .hentry--as-block .hentry__header {
     border-left-width: 6px;
     border-left-style: solid; }
+  .hentry__listing--rows {
+    margin-bottom: 80px; }
 
 .page--join-us .hentry__title_wrapper--outer {
   background-color: #fff; }
@@ -972,6 +977,8 @@ POSTS & CONTENT STYLES
     display: none; } }
 
 @media (min-width: 601px) {
+  .hentry__listing--rows {
+    margin-bottom: 120px; }
   .hentry--as-block {
     width: 50%;
     height: 50vh; }
@@ -986,7 +993,7 @@ POSTS & CONTENT STYLES
       width: 100%;
       height: auto; } }
 
-@media (min-width: 701px) {
+@media (min-width: 801px) {
   .hentry--as-block .hentry__title {
     font-size: 48px; }
   .hentry--as-row {
@@ -1006,7 +1013,8 @@ POSTS & CONTENT STYLES
     .hentry--as-row .hentry__excerpt {
       font-size: 18px; }
   .hentry__listing--rows {
-    padding-top: 90px; } }
+    padding-top: 90px;
+    margin-bottom: 220px; } }
 
 @media (min-width: 1025px) {
   .hentry--as-row .hentry__excerpt {
@@ -1028,11 +1036,11 @@ HENTRY META STYLES
 .page--join-us .hentry.is--featured .hentry__meta {
   color: #565656; }
 
-@media (max-width: 699px) {
+@media (max-width: 799px) {
   .hentry--as-row .hentry__meta__comment_count {
     display: none; } }
 
-@media (min-width: 701px) {
+@media (min-width: 801px) {
   .hentry--as-row .hentry__meta {
     font-size: 20px;
     font-size: 1.95313vw; } }
@@ -1124,7 +1132,7 @@ Front/Home Page
   .hero_unit__copy p {
     font-size: 16px; } }
 
-@media (min-width: 701px) {
+@media (min-width: 801px) {
   .hero_unit .hentry__meta {
     margin-bottom: 2.1vw; }
   .hero_unit__copy {
@@ -1572,6 +1580,98 @@ PAGE NAVI STYLES
       right: -68px; } }
 
 /*********************
+VIEWMORE BTN STYLES
+*********************/
+.viewmore {
+  margin: 20px auto 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
+  .viewmore__mask {
+    position: absolute;
+    width: 7.5%;
+    height: 47%; }
+    .viewmore__mask--1 {
+      left: 0px;
+      top: 0; }
+    .viewmore__mask--2 {
+      left: 0px;
+      bottom: 0; }
+    .viewmore__mask--3 {
+      right: 0px;
+      top: 0; }
+    .viewmore__mask--4 {
+      right: 0px;
+      bottom: 0; }
+  .viewmore__fill {
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  .viewmore__btn {
+    width: 85%;
+    margin: 4px auto;
+    padding: 0 4px;
+    position: relative;
+    cursor: pointer; }
+    .viewmore__btn__label {
+      font-size: 16px;
+      padding: 10px;
+      color: #666;
+      text-align: center; }
+  .viewmore--black {
+    background-color: #363636; }
+    .viewmore--black .viewmore__mask {
+      background-color: #141414; }
+    .viewmore--black .viewmore__fill {
+      background-color: #fff; }
+    .viewmore--black .viewmore__btn__label {
+      background-color: #141414; }
+  .viewmore--white {
+    background-color: #e3e3e3; }
+    .viewmore--white .viewmore__mask {
+      background-color: #fff; }
+    .viewmore--white .viewmore__fill {
+      background-color: #000; }
+    .viewmore--white .viewmore__btn__label {
+      background-color: #fff;
+      color: #1e1e1e; }
+
+@media (min-width: 481px) {
+  .viewmore__mask {
+    width: 25%; }
+  .viewmore__btn {
+    width: 50%; } }
+
+@media (min-width: 601px) {
+  .viewmore__btn__label {
+    font-size: 20px;
+    padding: 16px; } }
+
+@media (min-width: 801px) {
+  .viewmore {
+    width: 66.3865546218%; } }
+
+@media (min-width: 1601px) {
+  .viewmore__mask {
+    width: 30%;
+    height: 48%; }
+  .viewmore__btn {
+    width: 40%; }
+    .viewmore__btn__label {
+      font-size: 35px;
+      padding: 27px; } }
+
+/*********************
 PAGE LAYOUTS
 These sytles layout pages using the modules defined above.
 Page specific styles should sit lower down.
@@ -1744,11 +1844,11 @@ Front/Home Page
   .home .latest .hentry--as-block {
     width: 25%; } }
 
-@media (max-width: 699px) {
+@media (max-width: 799px) {
   .home .hero_unit br {
     display: none; } }
 
-@media (min-width: 701px) {
+@media (min-width: 801px) {
   .home .hero_unit__wrapper {
     margin-left: 4.2016806723%; }
   .home .hero_unit__copy p {

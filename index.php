@@ -19,20 +19,37 @@
 			</div>
 		</header><?php // end article header ?>
 
-		<section id="thinking-space__articles" class="hentry__listing hentry__listing--thinking-space cf fl width--full">
+		<section id="thinking-space__articles" class="hentry__listing hentry__listing--rows hentry__listing--thinking-space cf fl width--full">
 			
 			<?php
+			$sticky = get_option( 'sticky_posts' );
 			$args = array(
+				'posts_per_page' => 8,
 				'post_type' => 'post',
-				'category_name' => 'news, features, work, learn, white-paper'
+				'category_name' => 'news, features, work, learn, white-paper',
+				'post__not_in' => $sticky,
 			);
 			$the_query = new WP_Query( $args );
 			if ($the_query->have_posts()) : 
 				while ($the_query->have_posts()) : 
 					$the_query->the_post();
 					get_template_part('partials/hentry/post/as', 'row');
-			endwhile; 
+				endwhile; 
 			endif; ?>
+
+			<div class="viewmore viewmore--white cf" data-args='{"posts_per_page":"8","category_name":"[news,features,work,learn,white-paper]","post_status":"publish","orderby":"date","order":"desc"}'>
+				<script id="query_arguments">
+					var sticky_posts = <?php echo json_encode($sticky); ?>;
+				</script>
+				<div class="viewmore__fill"></div>
+				<div class="viewmore__mask viewmore__mask--1"></div>
+				<div class="viewmore__mask viewmore__mask--2"></div>
+				<div class="viewmore__btn">
+					<div class="viewmore__btn__label">MORE THOUGHTS</div>
+				</div>
+				<div class="viewmore__mask viewmore__mask--3"></div>
+				<div class="viewmore__mask viewmore__mask--4"></div>
+			</div>
 
 		</section>
 

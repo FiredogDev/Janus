@@ -14,7 +14,15 @@ if ($post_is_featured) {
 	<?php post_class( $additional_classes ); ?> 
 	role="article">
 		
-			<?php if (has_post_thumbnail() && $post_is_featured ){ ?>
+
+			<?php if (has_post_thumbnail() && $post_is_featured){
+				// Thumb ID
+				$post_thumb_id 			= get_post_thumbnail_id($post->ID);
+				// Sizes...
+				$featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
+				$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' );
+			?>
+
 			<a  class="cf width--full" 
 				href="<?php the_permalink() ?>" 
 				rel="bookmark" 
