@@ -5,14 +5,13 @@ VIEWMORE BTN STYLES
 $viewmore_btn: 'viewmore';
 .#{$viewmore_btn}{
   margin: 20px auto 0;
-  background-color: #363636;
   width: 100%;
   position: relative;
   overflow: hidden;
+  // Elements
   &__mask{
     position: absolute;
     width: 7.5%;
-    background-color: #141414;
     height: 47%;
     &--1{left: 0px; top: 0;}
     &--2{left: 0px; bottom: 0;}
@@ -20,7 +19,6 @@ $viewmore_btn: 'viewmore';
     &--4{right: 0px; bottom: 0;}
   }
   &__fill{
-    background-color: #fff;
     float: left;
     position: absolute;
     top: 0;
@@ -41,7 +39,41 @@ $viewmore_btn: 'viewmore';
       padding: 10px;
       color: #666;
       text-align: center;
-      background-color: #141414;
+    }
+  }
+
+  // Modifiers - Color Options
+  &--black{
+    background-color: #363636;
+    .#{$viewmore_btn}{
+      &__mask{
+        background-color: #141414;
+      }
+      &__fill{
+        background-color: #fff;
+      }
+      &__btn{
+        &__label{
+          background-color: #141414;
+        }
+      }
+    }
+  }
+  &--white{
+    background-color: #e3e3e3;
+    .#{$viewmore_btn}{
+      &__mask{
+        background-color: #fff;
+      }
+      &__fill{
+        background-color: #000;
+      }
+      &__btn{
+        &__label{
+          background-color: #fff;
+          color: #1e1e1e;
+        }
+      }
     }
   }
 }

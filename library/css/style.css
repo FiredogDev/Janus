@@ -1404,14 +1404,12 @@ VIEWMORE BTN STYLES
 *********************/
 .viewmore {
   margin: 20px auto 0;
-  background-color: #363636;
   width: 100%;
   position: relative;
   overflow: hidden; }
   .viewmore__mask {
     position: absolute;
     width: 7.5%;
-    background-color: #141414;
     height: 47%; }
     .viewmore__mask--1 {
       left: 0px;
@@ -1426,7 +1424,6 @@ VIEWMORE BTN STYLES
       right: 0px;
       bottom: 0; }
   .viewmore__fill {
-    background-color: #fff;
     float: left;
     position: absolute;
     top: 0;
@@ -1450,8 +1447,24 @@ VIEWMORE BTN STYLES
       font-size: 16px;
       padding: 10px;
       color: #666;
-      text-align: center;
+      text-align: center; }
+  .viewmore--black {
+    background-color: #363636; }
+    .viewmore--black .viewmore__mask {
       background-color: #141414; }
+    .viewmore--black .viewmore__fill {
+      background-color: #fff; }
+    .viewmore--black .viewmore__btn__label {
+      background-color: #141414; }
+  .viewmore--white {
+    background-color: #e3e3e3; }
+    .viewmore--white .viewmore__mask {
+      background-color: #fff; }
+    .viewmore--white .viewmore__fill {
+      background-color: #000; }
+    .viewmore--white .viewmore__btn__label {
+      background-color: #fff;
+      color: #1e1e1e; }
 
 @media (min-width: 481px) {
   .viewmore__mask {

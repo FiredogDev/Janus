@@ -28,10 +28,8 @@ require.config({
 		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax",
 		text: "../../bower_components/requirejs-text/text",
 		moment: "../../bower_components/moment/moment",
-		"requirejs-text": "../../bower_components/requirejs-text/text"
 	},
 	packages: [
-
 	]
 });
 

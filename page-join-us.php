@@ -7,24 +7,22 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!-- PAGE HEADER -->
-			<div class="hero_unit wrap">
-				<header class="article-header cf">
-					<div class="hero_unit__wrapper width--full cf">
-						<div class="hero_unit__header cf">
-							<h1 class="hero_unit__title text-center width--full" itemprop="headline">
-								<!-- Main title -->
-								<span class="hero_unit__title--main"><?php the_title(); ?><span id="join-us-easter-egg">?</span></span>
-							</h1>
-						</div>
+			<header class="article-header hero_unit wrap cf">
+				<div class="hero_unit__wrapper width--full cf">
+					<div class="hero_unit__header cf">
+						<h1 class="hero_unit__title text-center width--full" itemprop="headline">
+							<!-- Main title -->
+							<span class="hero_unit__title--main"><?php the_title(); ?><span id="join-us-easter-egg">?</span></span>
+						</h1>
 					</div>
-				</header><?php // end article header ?>
-				
-				<div class="hero_unit__copy cf" itemprop="articleBody">
-					<?php
-					// Page Content
-					the_content(); ?>
-				</div><?php // end article section ?>
-			</div>
+				</div>
+			</header><?php // end article header ?>
+			
+			<div class="hero_unit__copy cf" itemprop="articleBody">
+				<?php
+				// Page Content
+				the_content(); ?>
+			</div><?php // end article section ?>
 
 			<?php endwhile; endif; ?>
 			
@@ -33,20 +31,20 @@
 					<?php
 					$sticky = get_option( 'sticky_posts' );
 					$args = array(
-						'posts_per_page' => 10,
+						'posts_per_page' => 8,
 						'post_type' => 'post',
 						'category_name' => 'current-roles, graduates, insights',
 						'post__not_in' => $sticky,
 					);
 					$the_query = new WP_Query( $args );
-
 					if ($the_query->have_posts()) : 
 						while ($the_query->have_posts()) : 
 							$the_query->the_post();
 							get_template_part('partials/hentry/post/as', 'row');
 						endwhile; 
 					endif; ?>
-					<div class="viewmore cf" data-args='{"posts_per_page":"10","category_name":"[current-roles,graduates,insights]","post_status":"publish","orderby":"date","order":"desc"}'>
+
+					<div class="viewmore viewmore--black cf" data-args='{"posts_per_page":"8","category_name":"[current-roles,graduates,insights]","post_status":"publish","orderby":"date","order":"desc"}'>
 						<script id="query_arguments">
 							var sticky_posts = <?php echo json_encode($sticky); ?>;
 						</script>
