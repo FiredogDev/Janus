@@ -21,11 +21,14 @@ define([
 			this.button = button;
 			this.button_label = this.button.find('.viewmore__btn__label');
 			this.button_fill = this.button.find('.viewmore__fill');
+			
+			// WP Query Args
 			this.query_args = this.button.data('args');
+			// Posts to exclude;
+			this.posts_to_exclude = sticky_posts;
 
 			// Build the parameter string
-			this.build_parameter_string(this.query_args);
-
+			this.build_parameter_string();
 			// Setup event handlers
 			this.setup_button_event_handlers();
 	}
@@ -70,22 +73,30 @@ define([
 
 	/**
 	 * Build the parameter string for wp query.
-	 * @param  {Object} args The arguments of the query
 	 */
-	Viewmore.prototype.build_parameter_string = function(args){
+	Viewmore.prototype.build_parameter_string = function(){
 		var that = this;
 		this.query_param_string = "";
-		_.forEach(args, function(argument, key, collection){
+
+		// Add arguments tot param string...
+		_.forEach(this.query_args, function(argument, key, collection){
 			that.query_param_string += "filter["+key+"]="+argument+"&";
 		});
+
+		if(sticky_posts.length > 0){
+			// Build the 'exclude posts' list.
+			this.build_exclude_array();	
+		}
 	}
-	/**
-	 * Return the next page number
-	 */
-	Viewmore.prototype.get_next_page_number = function(){
-		this.current_page_number++
-		return this.current_page_number;
+
+	Viewmore.prototype.build_exclude_array = function(){
+		var that = this;
+		_.forEach(this.posts_to_exclude, function(value, key){
+			that.query_param_string += "filter[post__not_in][]="+value+"&";
+		});
 	}
+
+
 	/**
 	 * Add click event listent to our button
 	 */
@@ -102,11 +113,13 @@ define([
 	 */
 	Viewmore.prototype.get_next_page_of_posts = function(){
 		var that = this,
-			_c_s = _c.SELECTORS;
-
+			_c_s = _c.SELECTORS,
+			query_url = '/janus/wp-json/posts?' + this.query_param_string +
+						"page=" + that.get_next_page_number();
+		
 		// Ajax call for next page.
 		$.ajax({
-			url: '/janus/wp-json/posts?'+that.query_param_string+"page="+that.get_next_page_number(),
+			url: query_url,
 			dataType: 'json',
 			beforeSend: that.onBeforeSend(that),
 			xhrFields: {
@@ -124,6 +137,14 @@ define([
 		.always(function() {
 			that.whenRequestComplete();
 		});
+	}
+
+	/**
+	 * Return the next page number
+	 */
+	Viewmore.prototype.get_next_page_number = function(){
+		this.current_page_number++
+		return this.current_page_number;
 	}
 
 	/**
@@ -161,63 +182,89 @@ define([
 	Viewmore.prototype.whenRequestSucceeded = function(results){
 		// The result of the ajax request.
 		this.incoming_posts = results;
-		console.log(this.postsRemaining());
+
+		// If there are more results to come...
 		if(this.postsRemaining()){
 			// Append the compiled templates to the pages.
 			this.appendCompiledTemplate(_.template(post_as_row_tmpl));
+			this.successfulCompletionAnimation();
+		// If there are no more posts after this page...
+		}else{
+			// ... indicate last page then hide button.
+			this.unsuccessfulCompletionAnimation("END OF THE LINE!", true);
 		}
 	}
 
 	/**
 	 * On failed requests
 	 */
-	Viewmore.prototype.whenRequestFailed = function(){}
+	Viewmore.prototype.whenRequestFailed = function(){
+		this.unsuccessfulCompletionAnimation("Something's gone horribly wrong! I'm outta here.");
+	}
 
 	/**
 	 * On request completed
 	 */
-	Viewmore.prototype.whenRequestComplete = function(){
+	Viewmore.prototype.whenRequestComplete = function(){}
+
+	/**
+	 * The button animation to occur when request is successfully completed	 
+	 */
+	Viewmore.prototype.successfulCompletionAnimation = function(){
 		var that = this,
 			tmln = new TimelineMax();
+		// Animate fill move to end then fade out before reseting.
+		tmln.to(that.button_fill, 0.8, {x: "0%", ease: Power3.easeOut}, "move_to_end")
+			// ...fade out fill...
+			.to(that.button_fill, 0.8, {opacity: 0, ease: Power3.easeOut}, "move_to_end+=0.2")
+			/// ...fade out entire button...
+			.to(that.button, 0.6, {opacity: 0, ease: Power3.easeOut,
+				onComplete: function(){
+					// Appeand html before the viewmore button.
+					that.button.before(that.incoming_posts_html);
+					that.incoming_posts_html = "";
+					// on css state reset, re-attach button event listener.
+					that.setup_button_event_handlers();
+					// On animation complete remove will change property.
+					that.button_fill.css('will-change', '');
+				}
+			}, "move_to_end+=0.65")
+			.to(that.button_fill, 0, {x: "-100%", opacity: 0, })
+			.to(that.button, 0, {opacity: 1, });
+	}
+	
+	/**
+	 * The button animation to occur when request is unsuccessfully completed.
+	 * @param  {String} reason                  The message to appear explaining the failure.
+	 * @param  {Boolean} button_should_disappear Should this button dissappear after the message.
+	 */
+	Viewmore.prototype.unsuccessfulCompletionAnimation = function(reason, button_should_disappear){
 
-			if(this.postsRemaining()){
-				// Animate fill move to end then fade out before reseting.
-				tmln.to(that.button_fill, 0.8, {x: "0%", ease: Power3.easeOut}, "move_to_end")
-					// ...fade out fill...
-					.to(that.button_fill, 0.8, {opacity: 0, ease: Power3.easeOut}, "move_to_end+=0.2")
-					/// ...fade out entire button...
-					.to(that.button, 0.6, {opacity: 0, ease: Power3.easeOut,
-						onComplete: function(){
-							// Appeand html before the viewmore button.
-							that.button.before(that.incoming_posts_html);
-							that.incoming_posts_html = "";
-							// on css state reset, re-attach button event listener.
-							that.setup_button_event_handlers();
-							// On animation complete remove will change property.
-							that.button_fill.css('will-change', '');
-						}
-					}, "move_to_end+=0.65")
-					.to(that.button_fill, 0, {x: "-100%", opacity: 0, })
-					.to(that.button, 0, {opacity: 1, });
-			}else{
-				// Animate fill position and color to indicate last page/error
-				tmln.to(that.button_fill, 0.8, {x: "-30%", backgroundColor: "red", ease: Power3.easeOut, 
-						onStart: function(){
-							that.button_label.text("END OF THE LINE!").css('cursor', 'default');
-							// that.button_label;
-						}
-					}, "no_posts")
-					// ...fade out fill...
-					.to(that.button_fill, 0.8, {x: "-100%", opacity: 0, ease: Power3.easeOut}, "no_posts+=0.4")
-					/// ...fade out entire button...
-					.to(that.button, 0.8, {opacity: 0, ease: Power3.easeOut,
-						onComplete: function(){
-							// On animation complete remove will change property.
-							that.button_fill.css('will-change', '');
-							that.button.css('display', 'none');
-						}
-					}, "+2");
-			}
+		var that = this,
+			button_should_disappear = button_should_disappear || false,
+			tmln = new TimelineMax();
+		// Animate fill position and color to indicate last page/error
+		tmln.to(that.button_fill, 0.8, {x: "-30%", backgroundColor: "red", ease: Power3.easeOut, 
+				onStart: function(){
+					that.button_label.text(reason).css('cursor', 'default');
+					// that.button_label;
+				}
+			}, "no_posts")
+			// ...fade out fill...
+			.to(that.button_fill, 0.8, {x: "-100%", opacity: 0, ease: Power3.easeOut}, "no_posts+=0.4");
+
+		if(button_should_disappear){
+			// ...fade out entire button...
+			tmln.to(that.button, 0.8, {opacity: 0, ease: Power3.easeOut,
+					onComplete: function(){
+						// On animation complete remove will change property.
+						that.button_fill.css('will-change', '');
+						that.button.css('display', 'none');
+					}
+				}, "+2");
+		}else{
+			// Do something else...
+		}
 	}
 
 	/**
@@ -226,10 +273,7 @@ define([
 	 */
 	Viewmore.prototype.postsRemaining = function(){
 		var numberOfPosts = this.incoming_posts.length;
-		if(numberOfPosts < this.query_args.posts_per_page)
-			{ return false; }
-		else
-			{ return true; }
+		return (numberOfPosts == 0) ? false : true;
 	}
 
 	/**

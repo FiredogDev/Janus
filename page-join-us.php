@@ -31,27 +31,25 @@
 
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
 					<?php
+					$sticky = get_option( 'sticky_posts' );
 					$args = array(
-						'posts_per_page' => 6,
+						'posts_per_page' => 10,
 						'post_type' => 'post',
 						'category_name' => 'current-roles, graduates, insights',
 						'post__not_in' => $sticky,
 					);
 					$the_query = new WP_Query( $args );
+
 					if ($the_query->have_posts()) : 
 						while ($the_query->have_posts()) : 
 							$the_query->the_post();
 							get_template_part('partials/hentry/post/as', 'row');
 						endwhile; 
 					endif; ?>
-
-					<div class="viewmore cf" data-args='{
-					"posts_per_page":"6",
-					"post_type":"post",
-					"category_name":"[current-roles,graduates,insights]",
-					"post_status":"publish",
-					"orderby":"date",
-					"order":"desc" }'>
+					<div class="viewmore cf" data-args='{"posts_per_page":"10","category_name":"[current-roles,graduates,insights]","post_status":"publish","orderby":"date","order":"desc"}'>
+						<script id="query_arguments">
+							var sticky_posts = <?php echo json_encode($sticky); ?>;
+						</script>
 						<div class="viewmore__fill"></div>
 						<div class="viewmore__mask viewmore__mask--1"></div>
 						<div class="viewmore__mask viewmore__mask--2"></div>

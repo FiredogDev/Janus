@@ -222,9 +222,6 @@ function firedog_body_classes($classes) {
 			}
 		}
 
-		
-
-
         return $classes;
 }
 
@@ -389,6 +386,16 @@ function edit_caption_shortcode($empty, $attr, $content) {
 	'<p class="attachment__caption">' . $attr['caption'] . '</p>' .
 	'</div>';
 }
+
+// Make post__not_in public
+add_filter( 'query_vars', function( $vars ){
+
+    $vars[] = 'post__in';
+    $vars[] = 'post__not_in';
+
+    return $vars;
+});
+
 
 /****************
 CUSTOM SHORTCODES
