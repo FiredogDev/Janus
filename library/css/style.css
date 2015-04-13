@@ -1060,15 +1060,12 @@ POSTS & CONTENT STYLES
 .is--featured .hentry__title_wrapper--outer {
   bottom: 0;
   min-height: 207px; }
-.is--featured .hentry__title_wrapper {
-  margin-bottom: 20px; }
 .is--featured.hentry--as-row {
   overflow: hidden;
   margin-bottom: 0;
   height: 100vh; }
 .is--featured.slick-slide .hentry__title_wrapper--outer {
-  padding-bottom: 50px;
-  position: relative; }
+  padding-bottom: 50px; }
 .is--featured.slick-active .slider__control--in_slide {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1; }
@@ -1449,9 +1446,6 @@ PAGE NAVI STYLES
     display: block;
     height: auto;
     border: 1px solid transparent; }
-
-.slick-slider {
-  background-color: #fff; }
 
 .slider__control {
   background: none;
