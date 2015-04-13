@@ -12,7 +12,7 @@ function firedog_flush_rewrite_rules() {
 // let's create the function for the custom type
 function firedog_custom_post_types() { 
 	// creating (registering) the custom type 
-	register_post_type( 'our_work', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+	register_post_type( 'our_work',
 		// let's now add all the options for this post type
 		array( 'labels' => array(
 			'name' => __( 'Our Work', 'firedogtheme' ), /* This is the Title of the Group */
@@ -47,7 +47,7 @@ function firedog_custom_post_types() {
 	); /* end of register post type */
 	
 	/* this adds your post categories to your custom post type */
-	register_taxonomy_for_object_type( 'category', 'our_work' );
+	// register_taxonomy_for_object_type( 'category', 'our_work' );
 	/* this adds your post tags to your custom post type */
 	register_taxonomy_for_object_type( 'post_tag', 'our_work' );
 

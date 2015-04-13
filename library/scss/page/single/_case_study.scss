@@ -3,33 +3,12 @@ Single Post
 *********************/
 
 // 'Single' Module
-$page_single: 'single';
-.#{$page_single}{
+$single_case_study: 'single';
+.#{$single_case_study}{
   
   // Child Elems
-  .logo{
-    &--primary {
-      fill: #000;
-    }
-  }
-  .nav__toggle__bar{
-    border-color: #000;
-  }
-  &.is--open__primary-nav .nav__toggle__bar{
-    border-color: $red;
-  }
 
   // Modifiers
-  &.category{
-    &--features{
-      background-color: #ffff81;
-      .header{
-        &--page{
-          border-color: #E8E883;
-        }
-      }
-    }
-  }
 
   // Fallbacks - []
 }
@@ -66,5 +45,3 @@ $page_single: 'single';
 @include media("<desktop"){}
 @include media(">large_desktop"){}
 @include media("<large_desktop"){}
-
-@import "single/case_study";

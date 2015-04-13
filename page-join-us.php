@@ -15,14 +15,14 @@
 							<span class="hero_unit__title--main"><?php the_title(); ?><span id="join-us-easter-egg">?</span></span>
 						</h1>
 					</div>
+
+					<div class="hero_unit__copy cf" itemprop="articleBody">
+						<?php
+						// Page Content
+						the_content(); ?>
+					</div><?php // end article section ?>
 				</div>
 			</header><?php // end article header ?>
-			
-			<div class="hero_unit__copy cf" itemprop="articleBody">
-				<?php
-				// Page Content
-				the_content(); ?>
-			</div><?php // end article section ?>
 
 			<?php endwhile; endif; ?>
 			
@@ -40,16 +40,15 @@
 
 			if ( $sticky_post_query->have_posts() ) { ?>
 				<section id="join-us__articles--featured" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
-					<div class="js-slick--featured-posts">
+					<!-- <div class="js-slick--featured-posts"> -->
 					<?php while ( $sticky_post_query->have_posts() ) {
 						$sticky_post_query->the_post();
 						$post->fd_is_featured = true; ?>
 						<?php get_template_part('partials/hentry/post/as', 'row'); ?>
 					<?php } // endwhile; ?>
-					</div>
-					<button type="button" data-role="none" class="slider__control slider__control--next slider__control--global"><span class="text">Next</span><span class="icon icon-arrow--right"></span></button>
-					<button type="button" data-role="none" class="slider__control slider__control--prev slider__control--global"><span class="text">Prev</span><span class="icon icon-arrow--left"></span></button>
-				</section>
+					<!-- </div> -->
+					<!-- <button type="button" data-role="none" class="slider__control slider__control--next slider__control--global"><span class="text">Next</span><span class="icon icon-arrow--right"></span></button>
+					<button type="button" data-role="none" class="slider__control slider__control--prev slider__control--global"><span class="text">Prev</span><span class="icon icon-arrow--left"></span></button> -->				</section>
 			<?php } // endif; ?>
 
 			<section id="join-us__articles" class="hentry__listing hentry__listing--rows hentry__listing--join-us cf fl width--full">
@@ -70,9 +69,7 @@
 					endif; ?>
 
 					<div class="viewmore viewmore--black cf" data-args='{"posts_per_page":"8","category_name":"[current-roles,graduates,insights]","post_status":"publish","orderby":"date","order":"desc"}'>
-						<script id="query_arguments">
-							var sticky_posts = <?php echo json_encode($sticky); ?>;
-						</script>
+						<script>var sticky_posts = <?php echo json_encode($sticky); ?>;</script>
 						<div class="viewmore__fill"></div>
 						<div class="viewmore__mask viewmore__mask--1"></div>
 						<div class="viewmore__mask viewmore__mask--2"></div>
