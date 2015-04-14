@@ -1514,7 +1514,7 @@ PAGE NAVI STYLES
   .slick-dots {
     display: none !important; } }
 
-@media (min-width: 701px) {
+@media (min-width: 801px) {
   .slider__control {
     bottom: 20%;
     width: auto; }
