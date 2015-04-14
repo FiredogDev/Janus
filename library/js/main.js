@@ -65,7 +65,6 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 				});
 
 				_c_s.windo.on('resize', function(){
-					console.log("setPosition")
 					slider.slick('setPosition');
 				});
 			});

@@ -13,10 +13,6 @@ Stylesheet: Sass Functions
 RESPONSIVE HELPER FUNCTION
 Example:
 *********************/
-
-
-
-
 @function pvw($target, $view_size) {
 	@return (($target/$view_size) * 100) + vw;
 }
