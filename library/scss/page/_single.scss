@@ -66,5 +66,3 @@ $page_single: 'single';
 @include media("<desktop"){}
 @include media(">large_desktop"){}
 @include media("<large_desktop"){}
-
-@import "single/case_study";
