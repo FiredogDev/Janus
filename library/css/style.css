@@ -382,12 +382,12 @@ table {
   white-space: nowrap;
   overflow: hidden; }
 
-.clearfix, .cf {
+.clearfix, .cf, .attachment--aligncenter {
   zoom: 1; }
-  .clearfix:before, .clearfix:after, .cf:before, .cf:after {
+  .clearfix:before, .clearfix:after, .cf:before, .attachment--aligncenter:before, .cf:after, .attachment--aligncenter:after {
     content: "";
     display: table; }
-  .clearfix:after, .cf:after {
+  .clearfix:after, .cf:after, .attachment--aligncenter:after {
     clear: both; }
 
 /*
@@ -440,13 +440,13 @@ Stylesheet: Variables
 /*************************************************************
 * Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/
 *************************************************************/
-.cf:before, .cf:after {
+.cf:before, .attachment--aligncenter:before, .cf:after, .attachment--aligncenter:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.cf:after {
+.cf:after, .attachment--aligncenter:after {
   clear: both; }
 
 /*************
@@ -1049,6 +1049,57 @@ HENTRY META STYLES
   .hentry--as-row .hentry__meta {
     font-size: 33px;
     font-size: 1.71875vw; } }
+
+/*********************
+Attachment Styles
+*********************/
+.attachment {
+  margin-bottom: 80px;
+  padding-right: 10px;
+  padding-left: 10px; }
+  .attachment--has-caption .attachment__image {
+    width: 100%; }
+  .attachment--alignnone {
+    float: left; }
+  .attachment--alignleft {
+    float: left; }
+  .attachment--alignright {
+    float: right; }
+  .attachment--aligncenter {
+    float: none;
+    margin: 0 auto 80px; }
+  .attachment--thumbnail, .attachment--w-600 {
+    width: 33.33%; }
+  .attachment--medium, .attachment--w-800 {
+    width: 50%; }
+  .attachment--large, .attachment--w-1200 {
+    width: 66.66%; }
+  .attachment--w-full-width, .attachment--full {
+    max-width: 100%; }
+  .attachment--full-span {
+    margin-bottom: 60px; }
+    .attachment--full-span__image {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background-size: 100%;
+      background-size: cover;
+      background-repeat: no-repeat; }
+  .attachment__image {
+    height: auto;
+    float: left; }
+  .attachment__caption {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: normal;
+    color: #555;
+    padding: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+    margin-top: 30px;
+    float: left;
+    word-spacing: -1px;
+    padding-right: 20px; }
 
 /*********************
 POSTS & CONTENT STYLES
@@ -1761,6 +1812,9 @@ Single Post
   .single.category--features .header--page {
     border-color: #E8E883; }
 
+/*********************
+Single Post
+*********************/
 /*********************
 Front/Home Page
 *********************/

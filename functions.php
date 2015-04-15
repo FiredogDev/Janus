@@ -63,23 +63,17 @@ function firedog_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'firedog_ahoy' );
 
-/************* OEMBED SIZE OPTIONS *************/
-// if ( ! isset( $content_width ) ) {
-//   $content_width = 640;
-// }
-
 /************* THUMBNAIL SIZE OPTIONS *************/
 
-// // Thumbnail sizes
-// add_image_size( 'firedog-half-width', 600, 9999, false );
+// Thumbnail sizes
+add_image_size( 'firedog-one-third', 540, 9999, false );
 
-// // 
-// add_filter( 'image_size_names_choose', 'firedog_custom_image_sizes' );
-// function firedog_custom_image_sizes( $sizes ) {
-//   return array_merge( $sizes, array(
-//       'firedog-half-width' => __('Half Width'),
-//   ));
-// }
+add_filter( 'image_size_names_choose', 'firedog_custom_image_sizes' );
+function firedog_custom_image_sizes( $sizes ) {
+  return array_merge( $sizes, array(
+      'firedog-one-third' => __('One Third'),
+  ));
+}
 
 /************* ACTIVE SIDEBARS ********************/
 

@@ -6,7 +6,7 @@
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'width--full cf case_study' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 				<?php get_template_part('partials/case_study/part', 'header'); ?>
-				<?php //the_content(); ?>
+				<?php the_content(); ?>
 			</article>
 
 		<?php endwhile; endif; ?>
