@@ -10,13 +10,9 @@ Stylesheet: Sass Functions
 @import '../../../bower_components/include-media/dist/include-media';
 
 /*********************
-RESPONSIVE HELPER FUNCTION
-Example:
+Pixel to vw with context
+Example: font-size: pvw(88, 1600);
 *********************/
-
-
-
-
 @function pvw($target, $view_size) {
 	@return (($target/$view_size) * 100) + vw;
 }

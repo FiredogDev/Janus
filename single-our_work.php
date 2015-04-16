@@ -30,7 +30,7 @@
 				
 				<?php get_template_part('partials/case_study/part', 'header'); ?>
 				
-				<div class="article__body case_study__body">
+				<div class="article__body case_study__body wrap cf">
 					<?php the_content(); ?>
 				</div>
 

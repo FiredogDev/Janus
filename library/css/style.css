@@ -406,8 +406,8 @@ Stylesheet: Sass Functions
 
 ******************************************************************/
 /*********************
-RESPONSIVE HELPER FUNCTION
-Example:
+Pixel to vw with context
+Example: font-size: pvw(88, 1600);
 *********************/
 /******************************************************************
 Site Name:
@@ -1901,8 +1901,11 @@ Single Post
     .case_study__header {
       max-width: 85%;
       margin: 0 auto; }
+      .case_study__header p {
+        max-width: 78%; }
     .case_study__title--sub {
       font-size: 45px;
+      font-size: 5.5vw;
       word-spacing: 1px;
       max-width: 78%; } }
 
@@ -1925,7 +1928,8 @@ Single Post
         font-size: 30px;
         line-height: 36px;
         padding-left: 0;
-        margin-bottom: 40px; }
+        margin-bottom: 40px;
+        max-width: 75%; }
     .case_study__title {
       font-size: 34px;
       line-height: 1;

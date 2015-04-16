@@ -25,8 +25,8 @@ Stylesheet: Sass Functions
 
 ******************************************************************/
 /*********************
-RESPONSIVE HELPER FUNCTION
-Example:
+Pixel to vw with context
+Example: font-size: pvw(88, 1600);
 *********************/
 /******************************************************************
 Site Name:
