@@ -7,4 +7,5 @@
 	<?php the_excerpt(); ?>
 
 	<!-- Social Media Share -->
+	<?php get_template_part('partials/global/part', 'social-sharing-icons'); ?>
 </header>

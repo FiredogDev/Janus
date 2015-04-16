@@ -3,21 +3,19 @@
 	<main id="main" class="main cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			
 			<?php 
 			// Thumb ID
-			$post_thumb_id 			= get_post_thumbnail_id($post->ID);
+			$post_thumb_id 				= 	get_post_thumbnail_id($post->ID);
 
 			if ($post_thumb_id) {
-
 				//Get Alt...
-				$post_thumb 			= get_post($post_thumb_id);
-				$post_thumb_desc 		= $post_thumb->post_content;
+				$post_thumb 			= 	get_post($post_thumb_id);
+				$post_thumb_desc 		= 	$post_thumb->post_content;
 				// Sizes...
-				$featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
-				$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' );
-				$featured_image_lrg 	= wp_get_attachment_image_src( $post_thumb_id, 'large' );
-				$featured_image_full 	= wp_get_attachment_image_src( $post_thumb_id, 'full' ); ?>
+				$featured_image_small 	= 	wp_get_attachment_image_src( $post_thumb_id );
+				$featured_image_med 	= 	wp_get_attachment_image_src( $post_thumb_id, 'medium' );
+				$featured_image_lrg 	= 	wp_get_attachment_image_src( $post_thumb_id, 'large' );
+				$featured_image_full 	= 	wp_get_attachment_image_src( $post_thumb_id, 'full' ); ?>
 
 			<img class="case_study__featured_image width--full" 
 			src="<?php echo $featured_image_small['0']; ?>" 
@@ -27,6 +25,7 @@
 					<?php echo $featured_image_lrg['0']; 	//Large ?> 	1200w,
 					<?php echo $featured_image_full['0']; 	//Full ?> 	1600w" >
 			<?php } ?>
+
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'width--full cf article case_study' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 				
 				<?php get_template_part('partials/case_study/part', 'header'); ?>
