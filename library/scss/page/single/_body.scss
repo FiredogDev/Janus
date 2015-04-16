@@ -183,6 +183,7 @@
 @include media("<large_desktop"){}
 @include media(">large_desktop"){
 	.article__body{
+		max-width: 1600px;
 		// Copy Styles
 		// Direct body/child copy styles.
 		> {

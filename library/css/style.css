@@ -1066,57 +1066,6 @@ HENTRY META STYLES
     font-size: 1.71875vw; } }
 
 /*********************
-Attachment Styles
-*********************/
-.attachment {
-  margin-bottom: 80px;
-  padding-right: 10px;
-  padding-left: 10px; }
-  .attachment--has-caption .attachment__image {
-    width: 100%; }
-  .attachment--alignnone {
-    float: left; }
-  .attachment--alignleft {
-    float: left; }
-  .attachment--alignright {
-    float: right; }
-  .attachment--aligncenter {
-    float: none;
-    margin: 0 auto 80px; }
-  .attachment--thumbnail, .attachment--w-600 {
-    width: 33.33%; }
-  .attachment--medium, .attachment--w-800 {
-    width: 50%; }
-  .attachment--large, .attachment--w-1200 {
-    width: 66.66%; }
-  .attachment--w-full-width, .attachment--full {
-    max-width: 100%; }
-  .attachment--full-span {
-    margin-bottom: 60px; }
-    .attachment--full-span__image {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      background-size: 100%;
-      background-size: cover;
-      background-repeat: no-repeat; }
-  .attachment__image {
-    height: auto;
-    float: left; }
-  .attachment__caption {
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: normal;
-    color: #555;
-    padding: 0;
-    letter-spacing: 0;
-    word-spacing: 0;
-    margin-top: 30px;
-    float: left;
-    word-spacing: -1px;
-    padding-right: 20px; }
-
-/*********************
 POSTS & CONTENT STYLES
 *********************/
 .is--featured .hentry__featured_image {
@@ -1907,24 +1856,258 @@ Single Post
       padding-bottom: 21px; } }
 
 @media (min-width: 1601px) {
-  .article__body > h2, .article__body > .h2, .article__body > p, .article__body > .para {
-    max-width: 960px; }
-  .article__body > p:nth-of-type(1) {
-    font-size: 39px;
-    padding-bottom: 30px; }
-  .article__body h2, .article__body .h2 {
-    font-size: 30px;
-    line-height: 1;
+  .article__body {
+    max-width: 1600px; }
+    .article__body > h2, .article__body > .h2, .article__body > p, .article__body > .para {
+      max-width: 960px; }
+    .article__body > p:nth-of-type(1) {
+      font-size: 39px;
+      padding-bottom: 30px; }
+    .article__body h2, .article__body .h2 {
+      font-size: 30px;
+      line-height: 1;
+      word-spacing: -1px;
+      letter-spacing: -1px;
+      padding-top: 25px;
+      margin-bottom: 25px; }
+    .article__body p {
+      font-size: 20px;
+      line-height: 30px;
+      word-spacing: 1px;
+      letter-spacing: -1px;
+      padding-bottom: 21px; } }
+
+/*********************
+Attachment Styles
+*********************/
+.attachment {
+  padding-right: 10px;
+  padding-left: 10px; }
+  .attachment--has-caption .attachment__image {
+    width: 100%;
+    padding: 0; }
+  .attachment--alignnone {
+    float: left; }
+  .attachment--alignleft {
+    float: left; }
+  .attachment--alignright {
+    float: right; }
+  .attachment--aligncenter {
+    float: none;
+    margin: 0 auto 80px; }
+  .attachment--firedog-one-third, .attachment--w-540 {
+    width: 33.33%; }
+  .attachment--medium, .attachment--w-675 {
+    width: 50%; }
+  .attachment--large, .attachment--w-1200 {
+    width: 66.66%; }
+  .attachment--w-full-width, .attachment--full {
+    max-width: 100%; }
+  .attachment--full-span {
+    margin-bottom: 60px; }
+    .attachment--full-span__image {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background-size: 100%;
+      background-size: cover;
+      background-repeat: no-repeat; }
+  .attachment__image {
+    height: auto;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 14px; }
+  .attachment__caption {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: normal;
+    color: #555;
+    padding: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+    margin-top: 30px;
+    float: left;
     word-spacing: -1px;
-    letter-spacing: -1px;
-    padding-top: 25px;
-    margin-bottom: 25px; }
-  .article__body p {
-    font-size: 20px;
-    line-height: 30px;
-    word-spacing: 1px;
-    letter-spacing: -1px;
-    padding-bottom: 21px; } }
+    padding-right: 20px; }
+
+.quote {
+  width: 50%;
+  position: relative;
+  margin-bottom: 30px; }
+  .quote:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 45px;
+    bottom: 0;
+    border-left: 7px solid; }
+  .quote p {
+    font-size: 40px;
+    line-height: 1.14;
+    font-weight: bold;
+    font-style: normal;
+    color: #555;
+    letter-spacing: -2px; }
+  .quote__cite {
+    font-family: 'circular';
+    font-size: 25px;
+    line-height: 0.9;
+    font-weight: normal;
+    font-style: normal;
+    color: #c70000; }
+  .quote--block:before {
+    border-left-color: #c70000; }
+  .quote--block p:nth-child(1)::before {
+    content: "\201C";
+    position: absolute;
+    left: -26px; }
+  .quote--left {
+    float: left;
+    margin-left: 12.2%;
+    padding-right: 2.5%;
+    max-width: 520px; }
+  .quote--right {
+    float: right;
+    margin-right: 12.2%;
+    margin-left: 4.1%;
+    max-width: 520px; }
+  .quote--center {
+    width: 100%;
+    background-color: #fff; }
+    .quote--center p {
+      font-size: 40px;
+      max-width: 50%;
+      text-align: center; }
+
+@media (min-width: 1601px) {
+  .quote {
+    width: 50%;
+    position: relative;
+    margin-bottom: 30px; }
+    .quote:before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 45px;
+      bottom: 0;
+      border-left: 7px solid; }
+    .quote p {
+      font-size: 40px;
+      line-height: 1.14;
+      font-weight: bold;
+      font-style: normal;
+      color: #555;
+      letter-spacing: -2px; }
+    .quote__cite {
+      font-family: 'circular';
+      font-size: 25px;
+      line-height: 0.9;
+      font-weight: normal;
+      font-style: normal;
+      color: #c70000; }
+    .quote--block:before {
+      border-left-color: #c70000; }
+    .quote--block p:nth-child(1)::before {
+      content: "\201C";
+      position: absolute;
+      left: -26px; }
+    .quote--left {
+      float: left;
+      margin-left: 12.2%;
+      padding-right: 2.5%;
+      max-width: 520px; }
+    .quote--right {
+      float: right;
+      margin-right: 12.2%;
+      margin-left: 4.1%;
+      max-width: 520px; }
+    .quote--center {
+      width: 100%;
+      background-color: #fff; }
+      .quote--center p {
+        font-size: 40px;
+        max-width: 50%;
+        text-align: center; } }
+
+.gallery {
+  height: 100%;
+  overflow-y: hidden;
+  margin: 20px 0 40px; }
+  .gallery__wrapper {
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    -webkit-box-shadow: 0 -7px 50px 30px #fff;
+    -moz-box-shadow: 0 -7px 50px 30px #fff;
+    box-shadow: 0 -7px 50px 30px #fff; }
+  .gallery__items {
+    width: 82.25%;
+    height: 100%;
+    left: 0;
+    position: absolute !important;
+    z-index: 999; }
+  .gallery__item {
+    width: 100%;
+    height: 100%; }
+    .gallery__item img {
+      display: none !important; }
+    .gallery__item__image {
+      background-repeat: none;
+      background-size: 100%;
+      background-size: cover;
+      background-position: center center; }
+  .gallery dd {
+    display: none; }
+  .gallery__captions {
+    width: 17.75%;
+    height: 100%;
+    position: absolute !important;
+    right: 0;
+    color: #fff;
+    background-color: #000;
+    padding: 124px 22px 0;
+    font-size: 16px;
+    font-family: 'circular';
+    line-height: 1.4;
+    padding-bottom: 60px;
+    z-index: 999; }
+  .gallery__caption {
+    background-color: #000; }
+  .gallery__control {
+    top: 0;
+    position: absolute;
+    width: 50%;
+    background: none;
+    border-color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    font-family: 'circular';
+    margin: 39px 0;
+    padding: 0 8px; }
+    .gallery__control:focus {
+      outline: none; }
+    .gallery__control .icon {
+      position: absolute;
+      width: 11px;
+      height: 21px;
+      top: -2px;
+      background-image: url('../images/red-arrows.png'); }
+    .gallery__control--prev {
+      left: 0;
+      text-align: right;
+      border-right: 1px solid; }
+      .gallery__control--prev .icon {
+        background-position: 0 0;
+        left: 22px; }
+    .gallery__control--next {
+      right: 0;
+      text-align: left;
+      border-left: 1px solid; }
+      .gallery__control--next .icon {
+        background-position: 11px 0;
+        right: 22px; }
 
 /*********************
 Single Post

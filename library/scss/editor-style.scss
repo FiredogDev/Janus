@@ -219,6 +219,7 @@ body#tinymce.wp-editor {
 		//
 		&-item{
 			width: 25%;
+			min-height: 317px;
 		}
 		br{
 			display: none;
@@ -308,6 +309,45 @@ body#tinymce.wp-editor {
 		}
 	}
 
+
+	.wp-caption{
+		float: left;
+		background-color: transparent;
+		border: none;
+		&[style="width: 550px;"]{
+			width: 33.33% !important;
+		}
+		&[style="width: 685px;"]{
+			width: 50% !important;
+		}
+		&[style="width: 1210px;"]{
+			width: 66.66% !important;
+		}
+		&-dt{
+			float: left;
+			width: 100%;
+		}
+		&-dd{
+			font-family: 'circular';
+			float: left;
+			width: 80%;
+			font-size: 16px;
+			line-height: 1.4;
+			font-weight: normal;
+			color: #555;
+			padding: 0;
+			letter-spacing: 0;
+			word-spacing: 0;
+			margin-top: 0px;
+			padding-right: 20px;
+			word-spacing: -1px;
+			text-align: left;
+			padding: 0 10px;
+		}
+		img{
+			width: 100%;
+		}
+	}
 
 	/*********************
 	LARGER MOBILE DEVICES
