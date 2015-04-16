@@ -154,4 +154,25 @@ Again, if you want to roll your own, just remove this junk and put
 whatever you use in here.
 
 ******************************************************************/
+.icon-twitter-with-circle {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe603;'); }
+
+.icon-linkedin-with-circle {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe604;'); }
+
+.icon-google-with-circle {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe605;'); }
+
+.icon-facebook-with-circle {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe606;'); }
+
+.icon-search {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe600;'); }
+
+.icon-arrow--left {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe601;'); }
+
+.icon-arrow--right {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe602;'); }
+
 /*# sourceMappingURL=ie.css.map */
