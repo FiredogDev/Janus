@@ -12,30 +12,31 @@ http://codex.wordpress.org/Editor_Style
 
 ******************************************************************/
 
+@import "../../bower_components/compass-mixins/lib/compass";
+
+@import "partials/functions"; // import functions
+	
+// normalize: http://necolas.github.io/normalize.css/
+@import "partials/normalize";
+
+// Sass variables
+@import "partials/variables";
+
+// typography
+@import "partials/typography";
+
+// Sass functions
+@import "partials/functions";
+
+// import mixins
+@import "partials/mixins";
+
 /* Wrap the entire post style inside the TinyMCE selector, as suggested
 here http://codex.wordpress.org/Function_Reference/add_editor_style */
 body#tinymce.wp-editor {
-	
-	@import "partials/functions"; // import functions
-	
-	// normalize: http://necolas.github.io/normalize.css/
-	@import "partials/normalize";
 
-	// Sass variables
-	@import "partials/variables";
-
-	// typography
-	@import "partials/typography";
-
-	// Sass functions
-	@import "partials/functions";
-
-	// import mixins
-	@import "partials/mixins";
-
-	font-size: 100%;
-	line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+	padding-top: 30px !important;
+	padding-bottom: 30px !important;
 
   /*********************
 	LINK STYLES
@@ -61,116 +62,279 @@ body#tinymce.wp-editor {
 	/******************************************************************
 	H1, H2, H3, H4, H5 STYLES
 	******************************************************************/
-
-	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	
+	.h2, h3, p{
 		text-rendering: optimizelegibility;
-		font-weight: 500;
+		font-family: 'circular';
+		a {
+			color: inherit;
+		}
+	}
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+		font-weight: bold;
 		a {
 			text-decoration: none;
 		}
 	}
 
-	h1, .h1 {
-		font-size: 2.5em;
-		line-height: 1.333em;
-	}
-
 	h2, .h2 {
-		font-size: 1.75em;
-		line-height: 1.4em;
-		margin-bottom: 0.375em;
+		font-size: 30px;
+		line-height: 1;
+		
+		color: #555;
+
+		word-spacing: -1px;
+		letter-spacing: -1px;
+
+		padding-top: 25px;
+		margin-bottom: 25px;
+	}
+	
+	p {
+		font-family: 'circular';
+		font-size: 20px;
+		line-height: 30px;
+		
+		color: #555;
+		
+		word-spacing: 1px;
+		letter-spacing: -1px;
+
+		padding-bottom: 21px;
+
 	}
 
-	h3, .h3 {
-		font-size: 1.125em;
-	}
-
-	h4, .h4 {
-		font-size: 1.1em;
-		font-weight: 700;
-	}
-
-	h5, .h5 {
-		font-size: 0.846em;
-		line-height: 2.09em;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-	}
-
-	padding: 1.5em 1.5em 0;
-
-		p {
-			margin: 0 0 1.5em;
+	> {
+		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p, .wpview-wrap[data-wpview-type="gallery"]{
+			margin: 0 auto;
+			max-width: 928px;
 		}
-
-		blockquote {
-			margin: 0 0 1.5em 0.75em;
-			padding: 0 0 0 0.75em;
-			border-left: 3px solid;
-			font-style: italic;
-
-			&:before {}
-
-		}
-
-		dd {
-			margin-left: 0;
-			font-size: 0.9em;
-			color: #787878;
-			margin-bottom: 1.5em;
-		}
-
-		img {
-			margin: 0 0 1.5em 0;
-			max-width: 100%;
-			height: auto;
-		}
-
-		.size-auto,
-		.size-full,
-		.size-large,
-		.size-medium,
-		.size-thumbnail {
-			max-width: 100%;
-			height: auto;
-		}
-
-		pre {
-			background: $black;
-			font-size: 0.9em;
-			padding: 1.5em;
-			margin: 0 0 1.5em;
-			border-radius: 3px;
-		}
-
-		/*********************
-		LARGER MOBILE DEVICES
-		This is for devices like the Galaxy Note or something that's
-		larger than an iPhone but smaller than a tablet. Let's call them
-		tweeners.
-		*********************/
-		@media only screen and (min-width: 481px) {
-
-			/* at this larger size, we can start to align images */
-			.alignleft, img.alignleft {
-				margin-right: 1.5em;
-				display: inline;
-				float: left;
+		p{
+			&:before,
+			&:after {
+			    content: " "; /* 1 */
+			    display: table; /* 2 */
 			}
-			.alignright, img.alignright {
-				margin-left: 1.5em;
-				display: inline;
-				float: right;
+			&:after {
+			    clear: both;
 			}
-			.aligncenter, img.aligncenter {
-				margin-right: auto;
-				margin-left: auto;
-				display: block;
+			
+			// First Paragraph
+			&:nth-of-type(1){
+				font-size: 39px;
+				font-weight: bold;
+				line-height: 1.07;
+				
+				letter-spacing: -1px;
+				word-spacing: -1px;
+
+				padding-bottom: 30px;
+				
 				clear: both;
 			}
+		}
+	}
 
+	// Blockquotes
+	.quote{
+		width: 50%;
+
+		position: relative;
+		
+		margin-bottom: 30px;
+		&:before{
+			content: "";
+			position: absolute;
+			left: -25px;
+			top: 45px;
+			bottom: 0;
+			border-left: 7px solid;
+		}
+		// Elements
+		p{
+			font-size: 40px;
+			line-height: 1.14;
+			font-weight: bold;
+			font-style: normal;
+
+			color: #555;
+			
+			letter-spacing: -2px;
 		}
 
+		&__cite{
+			font-family: 'circular';
+			font-size: 25px;
+			line-height: 0.9;
+			font-weight: normal;
+			font-style: normal;
+
+			color: $red;
+		}
+
+		// Modifiers
+		&--block{
+			&:before{
+				border-left-color: $red;
+			}
+			p:nth-child(1)::before{
+				content: $blockquote_marks;
+				position: absolute;
+				left: -26px;
+			}
+		}
+
+		&--left{
+			float: left;
+			margin-left: 12.20%;
+			padding-right: 2.5%;
+			max-width: 520px;
+		}
+		&--right{
+			float: right;
+			margin-right: 12.20%;
+			margin-left: 4.1%;
+			max-width: 520px;
+		}
+		&--center{
+			width: 100%;
+
+			background-color: #fff;
+
+			p{
+				font-size: 40px;
+
+				max-width: 50%;
+				text-align: center;
+			}
+		}
+	}
+	
+	// Gallery
+	.gallery{
+		height: 100%;
+		overflow-y: hidden;
+		margin: 20px 0 40px;
+		//
+		&-item{
+			width: 25%;
+		}
+		br{
+			display: none;
+		}
+	}
+
+	// Attachment
+	
+	$attach_module: 'attachment';
+	.#{$attach_module}{
+		margin-bottom: 80px;
+		padding-right: 10px;
+		padding-left: 10px;
+
+		// Has caption?
+		&--has-caption{
+			.#{$attach_module}{
+				&__image{ width: 100%; }
+			}
+		}
+
+		// Alignment
+		&--alignnone{
+			float: left;
+		}
+		&--alignleft{
+			float: left;
+		}
+		&--alignright{
+			float: right;
+		}
+		&--aligncenter{
+			float: none;
+			margin: 0 auto 80px;
+			@extend .cf;
+		}
+
+		//Sizes
+		&--firedog-one-third,
+		&--w-600{
+			width: 33.33%;
+		}
+		&--medium,
+		&--w-800{
+			width: 50%;
+		}
+		&--large,
+		&--w-1200{
+			width: 66.66%;
+		}
+		&--w-full-width,
+		&--full{
+			max-width: 100%;
+		}
+
+		&--full-span{
+			margin-bottom: 60px;
+			&__image{
+				position: absolute;
+				left: 0;
+				width: 100%;
+				background-size: 100%;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
+
+		//img
+		&__image{
+			height: auto;
+			float: left;
+			margin-bottom: 20px;
+			padding: 0 10px;
+		}
+		&__caption{
+			font-size: 16px;
+			line-height: 1.4;
+			font-weight: normal;
+			color: #555;
+			padding: 0;
+			letter-spacing: 0;
+			word-spacing: 0;
+			margin-top: 30px;
+			float: left;
+			word-spacing: -1px;
+			padding-right: 20px;
+		}
+	}
+
+
+	/*********************
+	LARGER MOBILE DEVICES
+	This is for devices like the Galaxy Note or something that's
+	larger than an iPhone but smaller than a tablet. Let's call them
+	tweeners.
+	*********************/
+	@media only screen and (min-width: 481px) {
+
+		/* at this larger size, we can start to align images */
+		.alignleft, img.alignleft {
+			margin-right: 1.5em;
+			display: inline;
+			float: left;
+		}
+		.alignright, img.alignright {
+			margin-left: 1.5em;
+			display: inline;
+			float: right;
+		}
+		.aligncenter, img.aligncenter {
+			margin-right: auto;
+			margin-left: auto;
+			display: block;
+			clear: both;
+		}
+
+	}
 
 }
 
