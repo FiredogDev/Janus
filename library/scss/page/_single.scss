@@ -68,4 +68,6 @@ $page_single: 'single';
 @include media("<large_desktop"){}
 
 
+// @import "single/header";
+@import "single/body";
 @import "single/case_study";

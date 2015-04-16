@@ -400,32 +400,93 @@ add_filter( 'query_vars', function( $vars ){
 /****************
 CUSTOM SHORTCODES
 *****************/
-// function firedog_full_width_image( $atts, $content = null ) {
-// 	extract( shortcode_atts( array('url' => ''), $atts ) );
-//    	return '<div class="full-width-image"><div style="background-image: url(' . $url . ');"></div></div>';
-// }
+function firedog_full_width_image( $atts, $content = null ) {
+	extract( shortcode_atts( array('url' => ''), $atts ) );
+   	return '<div class="full-width-image"><div style="background-image: url(' . $url . ');"></div></div>';
+}
 
-// add_action( 'init', 'firedog_register_shortcodes');
-// function firedog_register_shortcodes(){
-//    add_shortcode('full_width_image', 'firedog_full_width_image');
-// }
+add_action( 'init', 'firedog_register_shortcodes');
+function firedog_register_shortcodes(){
+   add_shortcode('full_width_image', 'firedog_full_width_image');
+}
 
-// // Add Shortcode Controls to MCE
-// add_action( 'init', 'firedog_buttons' );
-// function firedog_buttons() {
-//     add_filter( "mce_external_plugins", "firedog_add_buttons" );
-//     add_filter( 'mce_buttons', 'firedog_register_buttons' );
-// }
+// Add Shortcode Controls to MCE
+add_action( 'init', 'firedog_buttons' );
+function firedog_buttons() {
+	add_filter( 'mce_buttons', 'firedog_register_buttons' );
+    add_filter( "mce_external_plugins", "firedog_add_buttons" );
+}
 
-// function firedog_add_buttons( $plugin_array ) {
-//     $plugin_array['firedog_btns'] = get_template_directory_uri() . '/library/js/plugins/wp_custom_tinyMCE_controls.js';
-//     return $plugin_array;
-// }
+function firedog_register_buttons( $buttons ) {
+    array_push( $buttons, 'full_width_image', 'styleselect' );
+    return $buttons;
+}
+function firedog_add_buttons( $plugin_array ) {
+    $plugin_array['firedog_btns'] = get_template_directory_uri() . '/library/js/plugins/wp_custom_tinyMCE_controls.js';
+    return $plugin_array;
+}
 
-// function firedog_register_buttons( $buttons ) {
-//     array_push( $buttons, 'full_width_image' );
-//     return $buttons;
-// }
+/*
+ * Modifying TinyMCE editor to remove unused items.
+ */
+add_filter('tiny_mce_before_init', 'firedog_define_wysiwyg_settings' );
+function firedog_define_wysiwyg_settings($settings) {
+	
+	$settings['block_formats'] = 'Heading=h2;Paragraph=p;';
+	$settings['wpautop'] = "false";
+	$settings['verify_html'] = "false";
+	$settings['forced_root_block '] = "false";
+    $settings['force_p_newlines'] = "false";
+    $settings['remove_linebreaks'] = "false";
+    $settings['force_br_newlines'] = "true";
+    $settings['remove_trailing_nbsp'] = "false";
+    $settings['toolbar2']= "styleselect,formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help,fullscreen";
+
+    $style_formats = array(
+    	array(
+        	'title' => 'Quote Citation',
+        	'block' => 'cite',
+        	'classes' => 'quote__cite',
+        ),
+    	array(
+    		'title' => 'Blockquote Left',
+    		'block' => 'blockquote',
+    		'classes' => 'quote quote--block quote--left',
+    		'wrapper' => true
+    	),
+    	array(
+    		'title' => 'Blockquote Center',
+    		'block' => 'blockquote',
+    		'classes' => 'quote quote--block quote--center',
+    		'wrapper' => true
+    	),
+    	array(
+    		'title' => 'Blockquote Right',
+    		'block' => 'blockquote',
+    		'classes' => 'quote quote--block quote--right',
+    		'wrapper' => true
+    	),
+    );
+
+    $settings['style_formats'] = json_encode( $style_formats );
+
+
+
+
+
+	return $settings;
+}
+
+
+function get_attachment_as_url($size){
+  global $post;
+
+  if (has_post_thumbnail( $post->ID ) ){
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size );
+    return $image[0];
+  }
+}
+
 
 /********************
 RANDOM CLEANUP ITEMS
@@ -467,3 +528,4 @@ function add_caption_side_control_to_gallery(){ ?>
   	</script>
 
 <?php } ?>
+
