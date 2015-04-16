@@ -96,18 +96,17 @@ $case_study: 'case_study';
   			margin: 0 auto;
 			// Intro
 			p{
-				max-width: 78%;
+				max-width: 76%;
 			}
 		}
 		&__title{
 			
 			&--sub{
 				font-size: 45px;
-				font-size: pvw(88, 1600);
 
 				word-spacing: 1px;
 
-				max-width: 78%;
+				max-width: 76%;
 			}
 		}
 		// Pagination
@@ -146,7 +145,9 @@ $case_study: 'case_study';
 		}
 		&__title{
 
-			&--sub{}
+			&--sub{
+				font-size: pvw(88, 1600);
+			}
 		}
 		// Pagination
 		// Attachments

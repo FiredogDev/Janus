@@ -29,8 +29,7 @@ require.config({
 		text: "../../bower_components/requirejs-text/text",
 		moment: "../../bower_components/moment/moment",
 	},
-	packages: [
-	]
+	packages: []
 });
 
 require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {

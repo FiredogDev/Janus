@@ -571,7 +571,8 @@ body#tinymce.wp-editor {
     letter-spacing: -1px;
     padding-bottom: 21px; }
   body#tinymce.wp-editor > h1, body#tinymce.wp-editor > .h1, body#tinymce.wp-editor > h2, body#tinymce.wp-editor > .h2, body#tinymce.wp-editor > h3, body#tinymce.wp-editor > .h3, body#tinymce.wp-editor > h4, body#tinymce.wp-editor > .h4, body#tinymce.wp-editor > h5, body#tinymce.wp-editor > .h5, body#tinymce.wp-editor > p, body#tinymce.wp-editor > .wpview-wrap[data-wpview-type="gallery"] {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 928px; }
   body#tinymce.wp-editor > p:before, body#tinymce.wp-editor > p:after {
     content: " ";

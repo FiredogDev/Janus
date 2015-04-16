@@ -1827,46 +1827,104 @@ Single Post
   .single.category--features .header--page {
     border-color: #E8E883; }
 
-.article__body h2 a, .article__body .h2 a, .article__body p a, .article__body .para a {
-  color: inherit; }
-.article__body > h2, .article__body > .h2, .article__body > p, .article__body > .para {
-  margin: 0 auto;
-  max-width: 928px; }
-.article__body > p:before, .article__body > p:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-.article__body > p:after {
-  clear: both; }
-.article__body > p:nth-of-type(1) {
-  font-size: 39px;
-  font-weight: bold;
-  line-height: 1.07;
-  letter-spacing: -1px;
-  word-spacing: -1px;
-  padding-bottom: 30px;
-  clear: both; }
 .article__body h1, .article__body .h1, .article__body h2, .article__body .h2, .article__body h3, .article__body .h3, .article__body h4, .article__body .h4, .article__body h5, .article__body .h5 {
   font-weight: bold; }
   .article__body h1 a, .article__body .h1 a, .article__body h2 a, .article__body .h2 a, .article__body h3 a, .article__body .h3 a, .article__body h4 a, .article__body .h4 a, .article__body h5 a, .article__body .h5 a {
     text-decoration: none; }
+.article__body p a, .article__body .para a {
+  color: #c70000;
+  text-decoration: underline; }
+.article__body > p:before, .article__body > p:after, .article__body > .para:before, .article__body > .para:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+.article__body > p:after, .article__body > .para:after {
+  clear: both; }
+.article__body > p:nth-of-type(1), .article__body > .para:nth-of-type(1) {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.33;
+  padding-bottom: 37px;
+  clear: both; }
 .article__body h2, .article__body .h2 {
-  font-size: 30px;
+  font-size: 19px;
   line-height: 1;
   color: #555;
-  word-spacing: -1px;
+  word-spacing: 1px;
   letter-spacing: -1px;
-  padding-top: 25px;
-  margin-bottom: 25px; }
-.article__body p {
-  font-family: 'circular';
-  font-size: 20px;
-  line-height: 30px;
+  padding-top: 11px;
+  margin-bottom: 22px; }
+.article__body p, .article__body .para {
+  font-size: 14px;
+  line-height: 1.43;
   color: #555;
   word-spacing: 1px;
   letter-spacing: -1px;
   padding-bottom: 21px; }
+
+@media (min-width: 601px) {
+  .article__body {
+    max-width: 85%;
+    margin: 0 auto; }
+    .article__body > p:nth-of-type(1) {
+      font-size: 20px;
+      line-height: 1.18;
+      padding-bottom: 16px; }
+    .article__body h2, .article__body .h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      padding-top: 2px; }
+    .article__body p, .article__body .para {
+      font-size: 14px;
+      line-height: 1.33;
+      padding-bottom: 18px; } }
+
+@media (min-width: 801px) {
+  .article__body {
+    max-width: 580px; } }
+
+@media (min-width: 1025px) {
+  .article__body {
+    max-width: 100%; }
+    .article__body > h2, .article__body > .h2, .article__body > p, .article__body > .para {
+      margin: 0 auto;
+      max-width: 700px; }
+    .article__body > p:nth-of-type(1) {
+      font-size: 30px;
+      font-size: 2.14286vw;
+      line-height: 1.07;
+      padding-bottom: 24px; }
+    .article__body h2, .article__body .h2 {
+      font-size: 30px;
+      font-size: 2.14286vw;
+      line-height: 1;
+      padding-top: 25px;
+      margin-bottom: 25px; }
+    .article__body p, .article__body .para {
+      font-size: 15px;
+      line-height: 1.47;
+      padding-bottom: 21px; } }
+
+@media (min-width: 1601px) {
+  .article__body > h2, .article__body > .h2, .article__body > p, .article__body > .para {
+    max-width: 960px; }
+  .article__body > p:nth-of-type(1) {
+    font-size: 39px;
+    padding-bottom: 30px; }
+  .article__body h2, .article__body .h2 {
+    font-size: 30px;
+    line-height: 1;
+    word-spacing: -1px;
+    letter-spacing: -1px;
+    padding-top: 25px;
+    margin-bottom: 25px; }
+  .article__body p {
+    font-size: 20px;
+    line-height: 30px;
+    word-spacing: 1px;
+    letter-spacing: -1px;
+    padding-bottom: 21px; } }
 
 /*********************
 Single Post
@@ -1902,17 +1960,18 @@ Single Post
       max-width: 85%;
       margin: 0 auto; }
       .case_study__header p {
-        max-width: 78%; }
+        max-width: 76%; }
     .case_study__title--sub {
       font-size: 45px;
-      font-size: 5.5vw;
       word-spacing: 1px;
-      max-width: 78%; } }
+      max-width: 76%; } }
 
 @media (min-width: 1025px) {
   .case_study {
     position: absolute;
-    top: 45vw; } }
+    top: 45vw; }
+    .case_study__title--sub {
+      font-size: 5.5vw; } }
 
 @media (min-width: 1601px) {
   .case_study {

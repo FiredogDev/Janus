@@ -1,14 +1,19 @@
 .article__body{
 	
-	h2, .h2, p, .para{
-		a { color: inherit; }
+	// Copy Styles
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+		font-weight: bold;
+		a { text-decoration: none; }
 	}
-	> {
-		h2, .h2, p, .para{
-			margin: 0 auto;
-			max-width: 928px;
+	p, .para{
+		a { 
+			color: $red;
+			text-decoration: underline;
 		}
-		p{
+	}
+	// Direct body/child copy styles.
+	> {
+		p, .para{
 			&:before,
 			&:after {
 			    content: " "; /* 1 */
@@ -20,44 +25,33 @@
 			
 			// First Paragraph
 			&:nth-of-type(1){
-				font-size: 39px;
+				font-size: 18px;
 				font-weight: bold;
-				line-height: 1.07;
-				
-				letter-spacing: -1px;
-				word-spacing: -1px;
+				line-height: 1.33;
 
-				padding-bottom: 30px;
+				padding-bottom: 37px;
 				
 				clear: both;
 			}
 		}
 	}
 
-	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-		font-weight: bold;
-		a {
-			text-decoration: none;
-		}
-	}
-
 	h2, .h2 {
-		font-size: 30px;
+		font-size: 19px;
 		line-height: 1;
 		
 		color: #555;
 
-		word-spacing: -1px;
+		word-spacing: 1px;
 		letter-spacing: -1px;
 
-		padding-top: 25px;
-		margin-bottom: 25px;
+		padding-top: 11px;
+		margin-bottom: 22px;
 	}
 
-	p {
-		font-family: 'circular';
-		font-size: 20px;
-		line-height: 30px;
+	p, .para {
+		font-size: 14px;
+		line-height: 1.43;
 		
 		color: #555;
 		
@@ -68,3 +62,165 @@
 
 	}
 }
+
+
+// @Media
+// Breakpoints
+//  'phone':            320px,
+//  'phone_landscape':  480px,
+//  'tablet':           600px,
+//  'tablet_large':     800px,
+//  'desktop':          1024px,
+//  'large_desktop':    1600px
+
+// @Media
+
+// Height
+@include media(">height460"){}
+@include media(">height600"){}
+
+// Orientation
+@include media("portrait"){}
+@include media("landscape"){}
+
+// Width
+@include media("<phone"){}
+@include media(">phone"){}
+@include media("<phone_landscape"){}
+@include media(">phone_landscape"){}
+@include media(">tablet"){
+	.article__body{
+		max-width: 85%;
+  		margin: 0 auto;
+		// Copy Styles
+		> { // Direct body/child copy styles.
+			p{
+				// First Paragraph
+				&:nth-of-type(1){
+					font-size: 20px;
+					line-height: 1.18;
+
+					padding-bottom: 16px;
+				}
+			}
+		}
+
+		h2, .h2 {
+			font-size: 20px;
+
+			margin-bottom: 12px;
+			padding-top: 2px;
+		}
+
+		p, .para {
+			font-size: 14px;
+			line-height: 1.33;
+
+			padding-bottom: 18px;
+		}
+	}
+}
+@include media("<tablet"){}
+@include media(">tablet_large"){
+	.article__body{
+		max-width: 580px;
+		// Copy Styles
+		> { // Direct body/child copy styles.
+			p{
+				// First Paragraph
+				&:nth-of-type(1){
+
+				}
+			}
+		}
+		h2, .h2 {}
+		p, .para {}
+	}
+}
+@include media("<tablet_large"){}
+@include media("<desktop"){}
+@include media(">desktop"){
+	.article__body{
+		max-width: 100%;
+		// Copy Styles
+		> {// Direct body/child copy styles.
+			h2, .h2, p, .para{
+				margin: 0 auto;
+				max-width: 700px;
+			}
+			p{
+				// First Paragraph
+				&:nth-of-type(1){
+					font-size: 30px;
+					font-size: pvw(30, 1400);
+
+					line-height: 1.07;
+					
+					padding-bottom: 24px;
+				}
+			}
+		}
+
+		h2, .h2 {
+			font-size: 30px;
+			font-size: pvw(30, 1400);
+
+			line-height: 1;
+
+			padding-top: 25px;
+			margin-bottom: 25px;
+		}
+
+		p, .para {
+			font-size: 15px;
+			line-height: 1.47;
+
+			padding-bottom: 21px;
+
+		}
+	}
+}
+@include media("<large_desktop"){}
+@include media(">large_desktop"){
+	.article__body{
+		// Copy Styles
+		// Direct body/child copy styles.
+		> {
+			h2, .h2, p, .para{
+				max-width: 960px;
+			}
+			p{
+				// First Paragraph
+				&:nth-of-type(1){
+					font-size: 39px;
+
+					padding-bottom: 30px;
+					
+				}
+			}
+		}
+
+		h2, .h2 {
+			font-size: 30px;
+			line-height: 1;
+			
+			word-spacing: -1px;
+			letter-spacing: -1px;
+
+			padding-top: 25px;
+			margin-bottom: 25px;
+		}
+
+		p {
+			font-size: 20px;
+			line-height: 30px;
+			
+			word-spacing: 1px;
+			letter-spacing: -1px;
+
+			padding-bottom: 21px;
+
+		}
+	}
+}
+
