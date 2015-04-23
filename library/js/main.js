@@ -88,5 +88,15 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 		});
 	}
 
+	// Gallery
+	var $gallery = $(".gallery");
+	if($gallery.length){
+		require(['modules/gallery'], function (gallery) {
+			_.forEach($gallery, function(gallery_container, key){
+				new gallery($(gallery_container));
+			});
+		});
+	}
+
 
 });

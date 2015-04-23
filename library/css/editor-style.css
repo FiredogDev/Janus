@@ -555,6 +555,14 @@ body#tinymce.wp-editor {
     body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
       text-decoration: none; }
   body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
+    font-size: 39px;
+    line-height: 1;
+    color: #555;
+    word-spacing: -1px;
+    letter-spacing: -1px;
+    padding-top: 25px;
+    margin-bottom: 25px; }
+  body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
     font-size: 30px;
     line-height: 1;
     color: #555;
@@ -646,6 +654,9 @@ body#tinymce.wp-editor {
       min-height: 317px; }
     body#tinymce.wp-editor .gallery br {
       display: none; }
+  body#tinymce.wp-editor .mceTemp {
+    max-width: 90%;
+    margin: 0 auto; }
   body#tinymce.wp-editor .attachment {
     margin-bottom: 80px;
     padding-right: 10px;
@@ -701,7 +712,7 @@ body#tinymce.wp-editor {
     border: none; }
     body#tinymce.wp-editor .wp-caption[style="width: 550px;"] {
       width: 33.33% !important; }
-    body#tinymce.wp-editor .wp-caption[style="width: 685px;"] {
+    body#tinymce.wp-editor .wp-caption[style="width: 810px;"] {
       width: 50% !important; }
     body#tinymce.wp-editor .wp-caption[style="width: 1210px;"] {
       width: 66.66% !important; }

@@ -144,7 +144,7 @@
 		max-width: 100%;
 		// Copy Styles
 		> {// Direct body/child copy styles.
-			h2, .h2, p, .para{
+			h2, .h2, h3, .h3, p, .para{
 				margin: 0 auto;
 				max-width: 700px;
 			}
@@ -187,7 +187,7 @@
 		// Copy Styles
 		// Direct body/child copy styles.
 		> {
-			h2, .h2, p, .para{
+			h2, .h2, h3, .h3, p, .para{
 				max-width: 960px;
 			}
 			p{
@@ -202,14 +202,26 @@
 		}
 
 		h2, .h2 {
-			font-size: 30px;
+			font-size: 39px;
 			line-height: 1;
 			
 			word-spacing: -1px;
 			letter-spacing: -1px;
 
 			padding-top: 25px;
-			margin-bottom: 25px;
+			margin-bottom: 15px;
+		}
+		h3, .h3 {
+			font-size: 30px;
+			line-height: 1;
+			
+			color: #555;
+
+			word-spacing: 1px;
+			letter-spacing: -1px;
+
+			padding-top: 11px;
+			margin-bottom: 22px;
 		}
 
 		p {

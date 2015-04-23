@@ -5,6 +5,8 @@
  * URL: http://firedog.co.uk
 */
 
+require_once( 'utils.php' );
+
 /*********************
 WP_HEAD GOODNESS
 *********************/
@@ -304,6 +306,7 @@ function get_my_gallery_content($attr){
 
 	$columns = intval( $atts['columns'] );
 	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+	
 	$float = is_rtl() ? 'right' : 'left';
 
 	$selector = "gallery-{$instance}";
@@ -314,30 +317,64 @@ function get_my_gallery_content($attr){
 	$gallery_side = 'right';
 	if ($attr['caption_side']) { $gallery_side = $attr['caption_side']; }
 
-	$output = "<div id='$selector' class='gallery gallery--cols-{$columns} gallery--size-{$size_class} gallery--caption-side-{$gallery_side}'>";
+	if (count($attachments) > 1) {
 
-	$i = 0;
-	foreach ( $attachments as $id => $attachment ) {
+		$output = "<div id='$selector' class='gallery gallery--cols-{$columns} gallery--size-{$size_class} gallery--caption-side-{$gallery_side}'>";
+		
+		foreach ( $attachments as $id => $attachment ) {
 
-	  	$image_url_output 		= get_attachment_as_url( $id, $atts['size'], true);
-	  	$image_html_output 		= wp_get_attachment_image( $id, $atts['size'], true );
-	  	$image_meta  			= wp_get_attachment_metadata( $id );
+		  	$image_url_output	= get_attachment_as_url( $id, 'full');
 
-	  	if ( $captiontag && trim($attachment->post_excerpt) ) {
-	  		$captions .= "<div class='gallery__caption'>" . wptexturize($attachment->post_excerpt) . "</div>";
+		  	$image_html_output 	= wp_get_attachment_image( $id, 'full' );
+		  	$image_meta  		= wp_get_attachment_metadata( $id );
+
+		  	$caption_title = wptexturize($attachment->post_excerpt);
+		  	$caption_text = wptexturize($attachment->post_content);
+
+		  	if ( $captiontag && trim($attachment->post_excerpt) ) {
+		  		$captions .= "<div class='gallery__caption'><span class=\"gallery__caption__title\">".$caption_title.": </span>".$caption_text."</div>";
+			}
+
+			$items .= "<div class=\"gallery__item\">";
+		 	$items .= "<dt class=\"gallery__item__image\" style=\"background-image: url('$image_url_output')\"><dfn>$image_html_output</dfn></dt>";
+		  	$items .= "<dd>" . wptexturize($attachment->post_excerpt) . "</dd>";
+		  	$items .= "</div>";
 		}
 
-		$items .= "<div class=\"gallery__item\">";
-	 	$items .= "<dt class=\"gallery__item__image\" style=\"background-image: url('$image_url_output')\"><dfn>$image_html_output</dfn></dt>";
-	  	$items .= "<dd>" . wptexturize($attachment->post_excerpt) . "</dd>";
-	  	$items .= "</div>";
+	}else{
+
+		$output = "<div id='$selector' class='full_span_image'>";
+
+		foreach ( $attachments as $id => $attachment ) {
+
+		  	$image_url_output	= get_attachment_as_url( $id, 'full');
+
+		  	$image_html_output 	= wp_get_attachment_image( $id, 'full' );
+		  	$image_meta  		= wp_get_attachment_metadata( $id );
+
+		  	$caption_title = wptexturize($attachment->post_excerpt);
+		  	$caption_text = wptexturize($attachment->post_content);
+
+		  	if ( $captiontag && trim($attachment->post_excerpt) ) {
+		  		$captions .= "<div class='gallery__caption'><span class=\"gallery__caption__title\">".$caption_title.": </span>".$caption_text."</div>";
+			}
+
+			$items .= "<div class=\"gallery__item\">";
+		 	$items .= "<dt class=\"gallery__item__image\" style=\"background-image: url('$image_url_output')\"><dfn>$image_html_output</dfn></dt>";
+		  	$items .= "<dd>" . wptexturize($attachment->post_excerpt) . "</dd>";
+		  	$items .= "</div>";
+		}
+
 	}
 
-	$output .= "<dl class=\"gallery__items\">$items</dl>
-	<div class=\"gallery__captions\">$captions
-		<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--prev\"><span class=\"icon icon--prev\"></span>Prev</button>
-		<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--next\">Next<span class=\"icon icon--next\"></span></button>
-	</div>";
+	$output .= 
+	"<div class=\"gallery__full_span_wrapper\">" .
+		"<dl class=\"gallery__items\">" . $items . "</dl>" .
+		"<div class=\"gallery__captions\">" . $captions .
+			"<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--prev\"><span class=\"icon icon-arrow--left\"></span>Prev</button>" .
+			"<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--next\">Next<span class=\"icon icon-arrow--right\"></span></button>" .
+		"</div>" .
+	"</div>";
 	$output .= "</div>\n";
 	
 	return $output;
@@ -432,7 +469,7 @@ function firedog_add_buttons( $plugin_array ) {
 add_filter('tiny_mce_before_init', 'firedog_define_wysiwyg_settings' );
 function firedog_define_wysiwyg_settings($settings) {
 	
-	$settings['block_formats'] = 'Heading=h2;Paragraph=p;';
+	$settings['block_formats'] = 'Heading 2=h2;Heading 3=h3;Paragraph=p;';
 	$settings['wpautop'] = "false";
 	$settings['verify_html'] = "false";
 	$settings['forced_root_block '] = "false";
@@ -470,23 +507,8 @@ function firedog_define_wysiwyg_settings($settings) {
 
     $settings['style_formats'] = json_encode( $style_formats );
 
-
-
-
-
 	return $settings;
 }
-
-
-function get_attachment_as_url($size){
-  global $post;
-
-  if (has_post_thumbnail( $post->ID ) ){
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size );
-    return $image[0];
-  }
-}
-
 
 /********************
 RANDOM CLEANUP ITEMS

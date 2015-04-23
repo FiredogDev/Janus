@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 
-	<main id="main" class="main cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+<?php
+	$terms = wp_get_post_terms( $post->ID, 'levels');
+	foreach ($terms as $term) { 
+		$template_slug = $term->slug;
+	}
+?>
+	<main id="main" class="main cf template--<?php echo $template_slug; ?>" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php 

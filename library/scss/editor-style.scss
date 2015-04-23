@@ -78,6 +78,19 @@ body#tinymce.wp-editor {
 	}
 
 	h2, .h2 {
+		font-size: 39px;
+		line-height: 1;
+		
+		color: #555;
+
+		word-spacing: -1px;
+		letter-spacing: -1px;
+
+		padding-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	h2, .h2 {
 		font-size: 30px;
 		line-height: 1;
 		
@@ -227,7 +240,10 @@ body#tinymce.wp-editor {
 	}
 
 	// Attachment
-	
+	.mceTemp{
+		max-width: 90%;
+		margin: 0 auto;
+	}
 	$attach_module: 'attachment';
 	.#{$attach_module}{
 		margin-bottom: 80px;
@@ -317,7 +333,7 @@ body#tinymce.wp-editor {
 		&[style="width: 550px;"]{
 			width: 33.33% !important;
 		}
-		&[style="width: 685px;"]{
+		&[style="width: 810px;"]{
 			width: 50% !important;
 		}
 		&[style="width: 1210px;"]{

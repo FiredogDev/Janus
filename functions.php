@@ -10,7 +10,6 @@ sidebars, comments, ect.
 
 // LOAD firedog CORE (if you remove this, the theme will break)
 require_once( 'library/firedog.php' );
-
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
@@ -28,7 +27,7 @@ function firedog_ahoy() {
   load_theme_textdomain( 'firedog', get_template_directory() . '/library/translation' );
 
   // CUSTOM POST TYPES
-  require_once('library/custom-post-types.php');
+  // require_once('library/custom-post-types.php');
 
   // launching operation cleanup
   add_action( 'init', 'firedog_head_cleanup' );
