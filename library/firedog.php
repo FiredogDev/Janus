@@ -142,21 +142,6 @@ function firedog_theme_support() {
 	// rss thingy
 	add_theme_support('automatic-feed-links');
 
-	// adding post format support
-	// add_theme_support( 'post-formats',
-	// 	array(
-	// 		'aside',             // title less blurb
-	// 		'gallery',           // gallery of images
-	// 		'link',              // quick link to other site
-	// 		'image',             // an image
-	// 		'quote',             // a quick quote
-	// 		'status',            // a Facebook like status update
-	// 		'video',             // video
-	// 		'audio',             // audio
-	// 		'chat'               // chat transcript
-	// 	)
-	// );
-
 	// wp menus
 	add_theme_support( 'menus' );
 
@@ -480,6 +465,11 @@ function firedog_define_wysiwyg_settings($settings) {
     $settings['toolbar2']= "styleselect,formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help,fullscreen";
 
     $style_formats = array(
+    	array(
+        	'title' => 'Center Image',
+        	'block' => 'div',
+        	'classes' => 'body_align',
+        ),
     	array(
         	'title' => 'Quote Citation',
         	'block' => 'cite',

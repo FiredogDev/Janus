@@ -1783,12 +1783,15 @@ Single Post
 .article__body p a, .article__body .para a {
   color: #c70000;
   text-decoration: underline; }
-.article__body > p:before, .article__body > p:after, .article__body > .para:before, .article__body > .para:after {
+.article__body .body_align img {
+  padding: 0;
+  width: 100%; }
+.article__body > p:before, .article__body > p:after, .article__body > .para:before, .article__body > .para:after, .article__body > .body_align:before, .article__body > .body_align:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
-.article__body > p:after, .article__body > .para:after {
+.article__body > p:after, .article__body > .para:after, .article__body > .body_align:after {
   clear: both; }
 .article__body > p:nth-of-type(1), .article__body > .para:nth-of-type(1) {
   font-size: 18px;
@@ -1836,7 +1839,7 @@ Single Post
 @media (min-width: 1025px) {
   .article__body {
     max-width: 100%; }
-    .article__body > h2, .article__body > .h2, .article__body > h3, .article__body > .h3, .article__body > p, .article__body > .para {
+    .article__body > h2, .article__body > .h2, .article__body > h3, .article__body > .h3, .article__body > p, .article__body > .para, .article__body > .body_align {
       margin: 0 auto;
       max-width: 700px; }
     .article__body > p:nth-of-type(1) {
@@ -1858,7 +1861,7 @@ Single Post
 @media (min-width: 1601px) {
   .article__body {
     max-width: 1600px; }
-    .article__body > h2, .article__body > .h2, .article__body > h3, .article__body > .h3, .article__body > p, .article__body > .para {
+    .article__body > h2, .article__body > .h2, .article__body > h3, .article__body > .h3, .article__body > p, .article__body > .para, .article__body > .body_align {
       max-width: 960px; }
     .article__body > p:nth-of-type(1) {
       font-size: 39px;

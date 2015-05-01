@@ -11,9 +11,15 @@
 			text-decoration: underline;
 		}
 	}
+	.body_align{
+		img{
+			padding: 0;
+			width: 100%;
+		}
+	}
 	// Direct body/child copy styles.
 	> {
-		p, .para{
+		p, .para, .body_align{
 			&:before,
 			&:after {
 			    content: " "; /* 1 */
@@ -22,7 +28,8 @@
 			&:after {
 			    clear: both;
 			}
-			
+		}
+		p, .para{
 			// First Paragraph
 			&:nth-of-type(1){
 				font-size: 18px;
@@ -144,7 +151,7 @@
 		max-width: 100%;
 		// Copy Styles
 		> {// Direct body/child copy styles.
-			h2, .h2, h3, .h3, p, .para{
+			h2, .h2, h3, .h3, p, .para, .body_align{
 				margin: 0 auto;
 				max-width: 700px;
 			}
@@ -187,7 +194,7 @@
 		// Copy Styles
 		// Direct body/child copy styles.
 		> {
-			h2, .h2, h3, .h3, p, .para{
+			h2, .h2, h3, .h3, p, .para, .body_align{
 				max-width: 960px;
 			}
 			p{
