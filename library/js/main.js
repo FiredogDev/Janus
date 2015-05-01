@@ -48,7 +48,8 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	if($featured_hentry_sliders.length){
 		require(['slick'], function (s) {
 			_.forEach($featured_hentry_sliders, function(slider, key) {
-				$(slider).slick({
+				var slider = $(slider);
+				slider.slick({
 					infinite: true,
 					speed: 300,
 					slidesToShow: 1,
@@ -61,7 +62,14 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 						return  "<span class=\"count_text\">" + (i + 1) + ' of ' + slider.slideCount + "</span>";
 					},
 				});
+
+				_c_s.windo.on('resize', function(){
+					slider.slick('setPosition');
+				});
 			});
+
+		
+
 	    });
 	}
 

@@ -15,7 +15,26 @@ $hentry_module: 'hentry';
 	&__header{}
 	&__title{}
 	&__featured_image{}
-	
+
+	// Post entries listing
+	&__listing{
+		padding-top: 35px;
+		position: relative;
+		.#{$hentry_module}{
+			&--as-block{
+				.#{$hentry_module}{
+					&__header{
+						border-left-width: 6px;
+						border-left-style: solid;
+					}
+				}
+			}
+		}
+
+		&--rows{
+			margin-bottom: 80px;
+		}
+	}
 	// Modifiers -- Layout Mode
 	&--as-block{
 		width: 100%;
@@ -114,30 +133,7 @@ $hentry_module: 'hentry';
 		}
 	}
 	
-	// Modifiers -- within post entries listing
-	&__listing{
-		padding-top: 35px;
-		position: relative;
-		// Hentry
-		.#{$hentry_module}{
-			&--as-block{
-				.#{$hentry_module}{
-					&__header{
-						border-left-width: 6px;
-						border-left-style: solid;
-					}
-					&__cate{}
-					&__title{}
-					&__featured_image{}
-					&__byline{}
-				}
-			}
-		}
-
-		&--rows{
-			margin-bottom: 80px;
-		}
-	}
+	
 	// Fallbacks - []
 }
 
@@ -340,3 +336,4 @@ $hentry_module: 'hentry';
 // Hentry Meta
 @import "hentry/hentry_meta";
 @import "hentry/hentry_featured";
+@import "hentry/hentry_featured_slider";

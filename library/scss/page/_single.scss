@@ -67,7 +67,6 @@ $page_single: 'single';
 @include media(">large_desktop"){}
 @include media("<large_desktop"){}
 
-
 // @import "single/header";
 @import "single/body";
 @import "single/attachments";
@@ -75,3 +74,4 @@ $page_single: 'single';
 @import "single/gallery";
 @import "single/full_span_image";
 @import "single/case_study";
+

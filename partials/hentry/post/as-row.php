@@ -15,45 +15,37 @@ if ($post_is_featured) {
 	role="article">
 		
 
-			<?php if (has_post_thumbnail() && $post_is_featured){
-				// Thumb ID
-				$post_thumb_id 			= get_post_thumbnail_id($post->ID);
-				// Sizes...
-				$featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
-				$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' );
-			?>
-
-			<a  class="cf width--full" 
-				href="<?php the_permalink() ?>" 
-				rel="bookmark" 
-				title="<?php the_title_attribute(); ?>">
-				<?php
-				// Thumb ID
-				$post_thumb_id 			= get_post_thumbnail_id($post->ID);
-				//Get Alt...
-				$post_thumb 			= get_post($post_thumb_id);
-				$post_thumb_desc 		= $post_thumb->post_content;
-				// Sizes...
-				$featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
-				$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' );
-				$featured_image_lrg 	= wp_get_attachment_image_src( $post_thumb_id, 'large' );
-				$featured_image_full 	= wp_get_attachment_image_src( $post_thumb_id, 'full' ); ?>
-				
-				<img 
-				class="hentry__featured_image width--full" 
-				src="<?php echo $featured_image_small['0']; ?>" 
-				alt="<?php echo $post_thumb_desc; ?>"
-				srcset="<?php echo $featured_image_small['0']; 	//Small ?> 	400w,
-						<?php echo $featured_image_med['0']; 	//Medium ?> 800w,
-						<?php echo $featured_image_lrg['0']; 	//Large ?> 	1200w,
-						<?php echo $featured_image_full['0']; 	//Full ?> 	1600w"
-				>
-			</a>
+			<?php if (has_post_thumbnail() && $post_is_featured){ ?>
+				<a  class="cf width--full" 
+					href="<?php the_permalink() ?>" 
+					rel="bookmark" 
+					title="<?php the_title_attribute(); ?>">
+					<?php
+					// Thumb ID
+					$post_thumb_id 			= get_post_thumbnail_id($post->ID);
+					//Get Alt...
+					$post_thumb 			= get_post($post_thumb_id);
+					$post_thumb_desc 		= $post_thumb->post_content;
+					// Sizes...
+					$featured_image_small 	= wp_get_attachment_image_src( $post_thumb_id );
+					$featured_image_med 	= wp_get_attachment_image_src( $post_thumb_id, 'medium' );
+					$featured_image_lrg 	= wp_get_attachment_image_src( $post_thumb_id, 'large' );
+					$featured_image_full 	= wp_get_attachment_image_src( $post_thumb_id, 'full' ); ?>
+					
+					<img 
+					class="hentry__featured_image width--full" 
+					src="<?php echo $featured_image_small['0']; ?>" 
+					alt="<?php echo $post_thumb_desc; ?>"
+					srcset="<?php echo $featured_image_small['0']; 	//Small ?> 	320w,
+							<?php echo $featured_image_med['0']; 	//Medium ?> 800w,
+							<?php echo $featured_image_lrg['0']; 	//Large ?> 	1200w,
+							<?php echo $featured_image_full['0']; 	//Full ?> 	1600w">
+				</a>
 			<?php } //end if ?>
 
 
 			<?php if ($post_is_featured){ ?>
-			<div class="hentry__title_wrapper--outer fl width--full">
+				<div class="hentry__title_wrapper--outer fl width--full">
 			<?php } ?>
 
 			
@@ -86,11 +78,15 @@ if ($post_is_featured) {
 
 
 			<?php if ($post_is_featured){ ?>
-			<button type="button" data-role="none" class="slider__control slider__control--next slider__control--in_slide">
-			<span class="text">Next <span class="extended">Feature</span></span>
-			<span class="icon icon-arrow--right"></span></button>
-			<button type="button" data-role="none" class="slider__control slider__control--prev slider__control--in_slide">
-			<span class="text">Prev <span class="extended">Feature</span></span><span class="icon icon-arrow--left"></span></button>
+				<button type="button" data-role="none" 
+				class="slider__control slider__control--next slider__control--in_slide slider__control--in_slide--next">
+					<span class="slider__control__text">Next</span>
+					<span class="slider__control__icon icon-arrow--right"></span>
+				</button>
+				<button type="button" data-role="none" class="slider__control slider__control--prev slider__control--in_slide slider__control--in_slide--prev">
+					<span class="slider__control__text">Prev</span>
+					<span class="slider__control__icon icon-arrow--left"></span>
+				</button>
 			</div>
 			<?php } ?>
 

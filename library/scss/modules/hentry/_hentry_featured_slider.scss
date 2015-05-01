@@ -1,0 +1,284 @@
+@import '../../../../bower_components/slick.js/slick/slick';
+
+$slider_module: 'slider';
+
+.hentry__listing{
+	.#{$slider_module}{
+		&__control{
+			background: none;
+	  		border: none;
+	  		position: absolute;
+	  		&:focus{
+	  			outline: none;
+	  		}
+			&__icon{
+				color: $red;
+			}
+			&__text{
+				display: none;
+			}
+			&--global{
+				bottom: 17px;
+	  			width: 30%;
+				&--next{
+					right: 12px;
+					.#{$slider_module}{
+						&__icon{
+							float: right;
+						}
+					}
+				}
+				&--prev{
+					left: 12px;
+					.#{$slider_module}{
+						&__icon{
+							float: left;
+						}
+					}
+				}
+			}
+			&--in_slide{
+				display: none !important;
+			}
+		}
+	}
+	.slick-dots{
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		margin: 0;
+		li{
+			display: none;
+		}
+		.slick-active{
+			display: block;
+			text-align: center;
+	  		width: 100%;
+	  		font-size: 16px;
+	  		.count_text{
+	  			color: #555;
+	  			border-bottom: 2px solid #555;
+	  		}
+		}
+	}
+}
+
+// Breakpoints
+// 	'phone': 			320px,
+// 	'phone_landscape': 	480px,
+// 	'tablet': 			600px,
+// 	'tablet_large': 	800px,
+// 	'desktop': 			1024px,
+// 	'large_desktop': 	1600px
+
+// @Media
+// Height
+@include media(">height460"){}
+@include media(">height600"){}
+// Orientation
+@include media("portrait"){}
+@include media("landscape", "<tablet"){
+	.hentry__listing{
+		.#{$slider_module}{
+			&__control{
+				&__text{
+					font-size: 16px;
+					color: #555;
+					text-transform: uppercase;
+				}
+				&--global{
+					display: none !important;
+				}
+				&--in_slide{
+					display: block !important;
+					height: 100%;
+					width: 15%;
+					bottom: 0;
+					@include transition(.2s opacity ease-out);
+					@include opacity(0);
+					&--next{
+						right: 0;
+					}
+					&--prev{
+						display: none !important;
+					}
+				}
+			}
+			
+			// Text rotation
+			// display: block !important;
+			// border-bottom: 2px solid #555;
+			// position: absolute;
+			// white-space: nowrap;
+			// transform-origin: 0%;
+			// @include transform(rotate(-90deg) translateX(-50%));
+		}
+		.slick-dots{
+			display: none !important;
+		}
+	}
+}
+// Width
+@include media("<phone"){}
+@include media(">phone"){}
+
+@include media(">phone_landscape"){}
+@include media(">tablet"){
+	
+}
+@include media("<tablet"){}
+@include media(">tablet_large"){
+	.slick-slider{}
+	.slider{
+		&__control{
+			bottom: 20%;
+			width: auto;
+			.icon{
+			}
+			.text{
+				display: block !important;
+				color: #555;
+				border-bottom: 2px solid #555;
+				text-transform: uppercase;
+				position: absolute;
+				font-size: 16px;
+				top: 50%;
+				margin-top: -50%;
+				@include transform(rotate(-90deg));
+				.extended{
+					display: none;
+				}
+			}
+			&--global{
+				display: none !important;
+			}
+			&--in_slide{
+				display: block !important;
+				height: 100%;
+				width: 15%;
+				bottom: 0;
+				@include transition(.2s opacity ease-out);
+				@include opacity(0);
+				&.slider__control{
+					.icon{}
+					.text{
+						display: block !important;
+						color: #555;
+	  					border-bottom: 2px solid #555;
+	  					text-transform: uppercase;
+						position: absolute;
+						font-size: 16px;
+						white-space: nowrap;
+	  					@include transform(rotate(-90deg) translateX(-50%));
+	  					transform-origin: 0%;
+	  					.extended{
+	  						display: none;
+	  					}
+					}
+					&--next{
+						right: 0;
+						.text{
+							right: -10px;
+						}
+					}
+					&--prev{}
+				}
+			}
+			&--next{
+				.icon{}
+				.text{
+				}
+			}
+			&--prev{
+				display: none !important;
+				.icon{}
+				.text{
+				}
+			}
+		}
+	}
+	.slick-dots{
+		display: none !important;
+		li{}
+		.slick-active{}
+	}
+}
+@include media("<tablet_large"){}
+@include media(">desktop"){
+	.slick-slider{}
+	.slider{
+		&__control{
+			.icon{
+				display: block;
+				font-size: 20px;
+				margin-top: 90px;
+				position: absolute;
+			}
+			.text{
+				white-space: nowrap;
+				display: inline;
+				font-size: 20px;
+				.extended{
+					display: inline;
+				}
+			}
+			&--global{
+			}
+			&--in_slide{
+				display: block !important;
+			}
+			&--next{
+				.icon{
+					left: -7px;
+				}
+				.text{
+					left: -68px;
+				}
+			}
+			&--prev{
+				left: 38px;
+				.icon{
+					right: -7px;
+				}
+				.text{
+					right: -68px;
+				}
+			}
+			
+		}
+	}
+	.slick-dots{
+		li{}
+		.slick-active{}
+	}
+}
+@include media("<desktop"){}
+@include media(">large_desktop"){
+	.slick-slider{}
+	.slider{
+		&__control{
+			.icon{
+			}
+			.text{
+			}
+			&--global{}
+			&--in_slide{}
+			&--next{
+				.icon{}
+				.text{
+  					.extended{}
+				}
+			}
+			&--prev{
+				.icon{}
+				.text{}
+			}
+			
+		}
+	}
+	.slick-dots{
+		li{}
+		.slick-active{}
+	}
+}
+@include media("<large_desktop"){}
