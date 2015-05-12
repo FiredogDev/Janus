@@ -19,7 +19,7 @@
 	}
 	// Direct body/child copy styles.
 	> {
-		p, .para, .body_align{
+		p, .para, .body_align, .centered_wrapper{
 			&:before,
 			&:after {
 			    content: " "; /* 1 */
@@ -155,6 +155,10 @@
 				margin: 0 auto;
 				max-width: 700px;
 			}
+			.centered_wrapper{
+				margin: 0 auto;
+				max-width: 720px;
+			}
 			p{
 				// First Paragraph
 				&:nth-of-type(1){
@@ -196,6 +200,9 @@
 		> {
 			h2, .h2, h3, .h3, p, .para, .body_align{
 				max-width: 960px;
+			}
+			.centered_wrapper{
+				max-width: 980px;
 			}
 			p{
 				// First Paragraph

@@ -97,7 +97,7 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 	}
 
 	// Gallery
-	var $gallery = $(".gallery");
+	var $gallery = $(".js-gallery");
 	if($gallery.length){
 		require(['modules/gallery'], function (gallery) {
 			_.forEach($gallery, function(gallery_container, key){

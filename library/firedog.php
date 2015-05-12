@@ -290,77 +290,107 @@ function get_my_gallery_content($attr){
 	}
 
 	$columns = intval( $atts['columns'] );
-	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+	if ($columns == 1) {
+		$js_gallery_class = "js-gallery";
 	
-	$float = is_rtl() ? 'right' : 'left';
+		$float = is_rtl() ? 'right' : 'left';
 
-	$selector = "gallery-{$instance}";
+		$selector = "gallery-{$instance}";
 
-	$gallery_style = '';
+		$gallery_style = '';
 
-	$size_class = sanitize_html_class( $atts['size'] );
-	$gallery_side = 'right';
-	if ($attr['caption_side']) { $gallery_side = $attr['caption_side']; }
+		$size_class = sanitize_html_class( $atts['size'] );
+		$gallery_side = 'right';
+		if ($attr['caption_side']) { $gallery_side = $attr['caption_side']; }
 
-	if (count($attachments) > 1) {
+		if (count($attachments) > 1) {
 
-		$output = "<div id='$selector' class='gallery gallery--cols-{$columns} gallery--size-{$size_class} gallery--caption-side-{$gallery_side}'>";
-		
-		foreach ( $attachments as $id => $attachment ) {
+			$output = "<div id='$selector' class='gallery gallery--cols-{$columns} gallery--size-{$size_class} gallery--caption-side-{$gallery_side} {$js_gallery_class}'>";
+			
+			foreach ( $attachments as $id => $attachment ) {
 
-		  	$image_url_output	= get_attachment_as_url( $id, 'full');
+			  	$image_url_output	= get_attachment_as_url( $id, 'full');
 
-		  	$image_html_output 	= wp_get_attachment_image( $id, 'full' );
-		  	$image_meta  		= wp_get_attachment_metadata( $id );
+			  	$image_html_output 	= wp_get_attachment_image( $id, 'full' );
+			  	$image_meta  		= wp_get_attachment_metadata( $id );
 
-		  	$caption_title = wptexturize($attachment->post_excerpt);
-		  	$caption_text = wptexturize($attachment->post_content);
+			  	$caption_title = wptexturize($attachment->post_excerpt);
+			  	$caption_text = wptexturize($attachment->post_content);
 
-		  	if ( $captiontag && trim($attachment->post_excerpt) ) {
-		  		$captions .= "<div class='gallery__caption'><span class=\"gallery__caption__title\">".$caption_title.": </span>".$caption_text."</div>";
+			  	if ( $captiontag && trim($attachment->post_excerpt) ) {
+			  		$captions .= "<div class='gallery__caption'><span class=\"gallery__caption__title\">".$caption_title.": </span>".$caption_text."</div>";
+				}
+
+				$items .= "<div class=\"gallery__item\">";
+			 	$items .= "<dt class=\"gallery__item__image\" style=\"background-image: url('$image_url_output')\"><dfn>$image_html_output</dfn></dt>";
+			  	$items .= "<dd>" . wptexturize($attachment->post_excerpt) . "</dd>";
+			  	$items .= "</div>";
 			}
 
-			$items .= "<div class=\"gallery__item\">";
-		 	$items .= "<dt class=\"gallery__item__image\" style=\"background-image: url('$image_url_output')\"><dfn>$image_html_output</dfn></dt>";
-		  	$items .= "<dd>" . wptexturize($attachment->post_excerpt) . "</dd>";
-		  	$items .= "</div>";
+		}else{
+
+			$output = "<div id='$selector' class='full_span_image'>";
+
+			foreach ( $attachments as $id => $attachment ) {
+
+			  	$image_url_output	= get_attachment_as_url( $id, 'full');
+
+			  	$image_html_output 	= wp_get_attachment_image( $id, 'full' );
+			  	$image_meta  		= wp_get_attachment_metadata( $id );
+
+			  	$caption_title = wptexturize($attachment->post_excerpt);
+			  	$caption_text = wptexturize($attachment->post_content);
+
+			  	if ( $captiontag && trim($attachment->post_excerpt) ) {
+			  		$captions .= "<div class='gallery__caption'><span class=\"gallery__caption__title\">".$caption_title.": </span>".$caption_text."</div>";
+				}
+
+				$items .= "<div class=\"gallery__item\">";
+			 	$items .= "<dt class=\"gallery__item__image\" style=\"background-image: url('$image_url_output')\"><dfn>$image_html_output</dfn></dt>";
+			  	$items .= "<dd>" . wptexturize($attachment->post_excerpt) . "</dd>";
+			  	$items .= "</div>";
+			}
+
 		}
+
+		$output .= 
+		"<div class=\"gallery__full_span_wrapper\">" .
+			"<dl class=\"gallery__items\">" . $items . "</dl>" .
+			"<div class=\"gallery__captions\">" . $captions .
+				"<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--prev\"><span class=\"icon icon-arrow--left\"></span>Prev</button>" .
+				"<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--next\">Next<span class=\"icon icon-arrow--right\"></span></button>" .
+			"</div>" .
+		"</div>";
+		$output .= "</div>\n";
+
 
 	}else{
+		$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
 
-		$output = "<div id='$selector' class='full_span_image'>";
+		if (count($attachments) > 1) {
+			foreach ( $attachments as $id => $attachment ) {
 
-		foreach ( $attachments as $id => $attachment ) {
+			  	$image_url_output	= get_attachment_as_url( $id, 'full');
 
-		  	$image_url_output	= get_attachment_as_url( $id, 'full');
+			  	$image_html_output 	= wp_get_attachment_image( $id, 'full' );
+			  	$image_meta  		= wp_get_attachment_metadata( $id );
 
-		  	$image_html_output 	= wp_get_attachment_image( $id, 'full' );
-		  	$image_meta  		= wp_get_attachment_metadata( $id );
+			  	$caption_title = wptexturize($attachment->post_excerpt);
+			  	$caption_text = wptexturize($attachment->post_content);
 
-		  	$caption_title = wptexturize($attachment->post_excerpt);
-		  	$caption_text = wptexturize($attachment->post_content);
-
-		  	if ( $captiontag && trim($attachment->post_excerpt) ) {
-		  		$captions .= "<div class='gallery__caption'><span class=\"gallery__caption__title\">".$caption_title.": </span>".$caption_text."</div>";
+			  	$items .= "<div class=\"attachment attachment--has-caption attachment--alignnone\" style=\"width: {$itemwidth}%;\">";
+			  	$items .= "<img class=\"attachment__image attachment__image--{$id} attachment--left\" src=\"{$image_url_output}\" alt=\"{$caption_title}\" >";
+			  	if ( $captiontag && trim($attachment->post_excerpt) ) {
+				  	$items .= "<p class=\"attachment__caption\">{$caption_text}</p>";
+				}
+			  	$items .= "</div>";
 			}
-
-			$items .= "<div class=\"gallery__item\">";
-		 	$items .= "<dt class=\"gallery__item__image\" style=\"background-image: url('$image_url_output')\"><dfn>$image_html_output</dfn></dt>";
-		  	$items .= "<dd>" . wptexturize($attachment->post_excerpt) . "</dd>";
-		  	$items .= "</div>";
 		}
+		$output .= "<div class=\"centered_wrapper\">"
+					. $items .
+					"</div>";
 
 	}
-
-	$output .= 
-	"<div class=\"gallery__full_span_wrapper\">" .
-		"<dl class=\"gallery__items\">" . $items . "</dl>" .
-		"<div class=\"gallery__captions\">" . $captions .
-			"<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--prev\"><span class=\"icon icon-arrow--left\"></span>Prev</button>" .
-			"<button type=\"button\" data-role=\"none\" class=\"gallery__control gallery__control--next\">Next<span class=\"icon icon-arrow--right\"></span></button>" .
-		"</div>" .
-	"</div>";
-	$output .= "</div>\n";
 	
 	return $output;
 }
