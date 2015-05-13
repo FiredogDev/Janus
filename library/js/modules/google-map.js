@@ -26,17 +26,16 @@ define([
 		// Set map options
 		this.FIREDOG_MAPTYPE = 'firedog_map_style';
 		this.map_options = {
+			backgroundColor:"#1f1f1f",
           	center: this.lnglat,
           	zoom: 17,
-          	minZoom: 10,
+          	minZoom: 13,
           	disableDefaultUI: true,
           	mapTypeControlOptions: {
 			  mapTypeIds: [google.maps.MapTypeId.ROADMAP, that.FIREDOG_MAPTYPE]
 			},
 			mapTypeId: that.FIREDOG_MAPTYPE
         };
-
-
 
         // Init Map & Street View
         this.initialize();
@@ -116,20 +115,38 @@ define([
 		this.style_map();
 
 		var marker = new google.maps.Marker({
-		      position: this.lnglat,
-		      title: this.map_title,
-		      icon: this.marker_icon
-		  });
+		    position: this.lnglat,
+		    title: this.map_title,
+		    icon: this.marker_icon
+		});
 
-         marker.setMap(this.map);
+        marker.setMap(this.map);
     }
 
     /**
      * Init street view
      */
     GoogleMap.prototype.initialize_street_view = function() {
+    	var that = this;
+
+    	var directionsService = new google.maps.DirectionsService(),
+    		directionsDisplay = new google.maps.DirectionsRenderer({
+    			preserveViewport: true,
+    			suppressMarkers: true,
+    			polylineOptions: {
+			      strokeColor: "#c70000",
+			      strokeOpacity: 0.5,
+			      strokeWeight: 6
+			    }
+    		});
+
+    	directionsDisplay.setMap(this.map);
+    		
 		this.street_view_options = {
-			disableDefaultUI: true,
+			enableCloseButton: false,
+			addressControl:false,
+			panControl: true,
+			zoomControl: false,
 			position: this.lnglat,
 			pov: {
 				heading: 180,
@@ -139,8 +156,22 @@ define([
 		};
   		this.street_view = new google.maps.StreetViewPanorama(document.getElementById('street-view-canvas'), this.street_view_options);
   		this.street_view.setVisible(true);
-	}
 
+  		google.maps.event.addListener(this.street_view, 'position_changed', function() {
+		    var request = {
+			      origin: that.street_view.getPosition(),
+			      destination: that.lnglat,
+			      travelMode: google.maps.TravelMode.WALKING,
+			      optimizeWaypoints: true,
+			};
+
+			directionsService.route(request, function(response, status) {
+			    if (status == google.maps.DirectionsStatus.OK) {
+			      directionsDisplay.setDirections(response);
+			    }
+			});
+		});
+	}
 
 	return GoogleMap;
 
