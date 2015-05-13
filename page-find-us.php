@@ -8,33 +8,38 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf prel' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 			
-			<div class="white-box wrap">
+			<div class="prel">
 
-				<header class="article-header hero_unit cf">
-					<div class="hero_unit__wrapper width--full cf">
-						<div class="hero_unit__header cf">
-							<h1 class="hero_unit__title width--full" itemprop="headline">
-								<!-- Main title -->
-								<span class="hero_unit__title--main fl"><?php the_title(); ?></span>
-							</h1>
+				<div class="white-box wrap">
+
+					<header class="article-header hero_unit cf">
+						<div class="hero_unit__wrapper width--full cf">
+							<div class="hero_unit__header cf">
+								<h1 class="hero_unit__title width--full" itemprop="headline">
+									<!-- Main title -->
+									<span class="hero_unit__title--main fl"><?php the_title(); ?></span>
+								</h1>
+							</div>
 						</div>
-					</div>
-				</header><?php // end article header ?>
+					</header><?php // end article header ?>
 
-				<section class="entry-content cf" itemprop="articleBody">
+					<section class="entry-content cf" itemprop="articleBody">
 
-						<?php
-						// the content
-						the_content(); ?>
-					
-				</section><?php // end article section ?>
+							<?php
+							// the content
+							the_content(); ?>
+						
+					</section><?php // end article section ?>
+
+				</div>
+
+				<!-- Street View -->
+				<div class="street-view"></div>
 
 			</div>
-			
-			<!-- Street View -->
-			<div class="street-view">
-				
-			</div>
+
+			<!-- Map View -->
+			<div class="map-view"></div>
 
 		</article>
 
