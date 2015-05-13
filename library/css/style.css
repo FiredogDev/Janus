@@ -382,12 +382,12 @@ table {
   white-space: nowrap;
   overflow: hidden; }
 
-.clearfix, .cf, .attachment--aligncenter {
+.clearfix, .cf, .attachment--aligncenter, .attachment__image.aligncenter {
   zoom: 1; }
-  .clearfix:before, .clearfix:after, .cf:before, .attachment--aligncenter:before, .cf:after, .attachment--aligncenter:after {
+  .clearfix:before, .clearfix:after, .cf:before, .attachment--aligncenter:before, .attachment__image.aligncenter:before, .cf:after, .attachment--aligncenter:after, .attachment__image.aligncenter:after {
     content: "";
     display: table; }
-  .clearfix:after, .cf:after, .attachment--aligncenter:after {
+  .clearfix:after, .cf:after, .attachment--aligncenter:after, .attachment__image.aligncenter:after {
     clear: both; }
 
 /*
@@ -440,13 +440,13 @@ Stylesheet: Variables
 /*************************************************************
 * Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/
 *************************************************************/
-.cf:before, .attachment--aligncenter:before, .cf:after, .attachment--aligncenter:after {
+.cf:before, .attachment--aligncenter:before, .attachment__image.aligncenter:before, .cf:after, .attachment--aligncenter:after, .attachment__image.aligncenter:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.cf:after, .attachment--aligncenter:after {
+.cf:after, .attachment--aligncenter:after, .attachment__image.aligncenter:after {
   clear: both; }
 
 /*************
@@ -1800,7 +1800,7 @@ Single Post
   text-decoration: underline; }
 .article__body .body_align img {
   padding: 0;
-  width: 100%; }
+  max-width: 100%; }
 .article__body > p:before, .article__body > p:after, .article__body > .para:before, .article__body > .para:after, .article__body > .body_align:before, .article__body > .body_align:after, .article__body > .centered_wrapper:before, .article__body > .centered_wrapper:after {
   content: " ";
   /* 1 */
@@ -1949,6 +1949,15 @@ Attachment Styles
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 14px; }
+    .attachment__image.alignnone {
+      float: left; }
+    .attachment__image.alignleft {
+      float: left; }
+    .attachment__image.alignright {
+      float: right; }
+    .attachment__image.aligncenter {
+      float: none;
+      margin: 0 auto 80px; }
   .attachment__caption {
     font-size: 16px;
     line-height: 1.4;
@@ -2184,6 +2193,11 @@ Attachment Styles
       float: left; }
   .full_span_image .gallery__control {
     display: none !important; }
+  .full_span_image .gallery__full_span_wrapper {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0; }
 
 /*********************
 Single Post
