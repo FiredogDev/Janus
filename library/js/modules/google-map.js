@@ -49,14 +49,46 @@ define([
 	 * @type {Object}
 	 */
 	GoogleMap.prototype.map_canvas = null;
-	GoogleMap.prototype.map = null;
-	GoogleMap.prototype.street_view = null;
-	GoogleMap.prototype.lnglat = {};
-	GoogleMap.prototype.map_styles = [];
-	GoogleMap.prototype.styled_map_options = {};
+	/**
+	 * Google map options
+	 * @type {Object}
+	 */
 	GoogleMap.prototype.map_options = {}
+	/**
+	 * The google map object
+	 * @type {Object}
+	 */
+	GoogleMap.prototype.map = null;
+	/**
+	 * Google street view options
+	 * @type {Object}
+	 */
 	GoogleMap.prototype.street_view_options = {}
+	/**
+	 * The google street view object
+	 * @type {Object}
+	 */
+	GoogleMap.prototype.street_view = null;
+	/**
+	 * The Longitude & Latitude
+	 * @type {Object}
+	 */
+	GoogleMap.prototype.lnglat = {};
+	/**
+	 * Map styles
+	 * @type {Array}
+	 */
+	GoogleMap.prototype.map_styles = [];
+	/**
+	 * Styled map options
+	 * @type {Object}
+	 */
+	GoogleMap.prototype.styled_map_options = {};
+	
 
+	/**
+	 * Set map styles.
+	 */
 	GoogleMap.prototype.style_map = function() {
 		
 		// Map styles - from http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html
@@ -72,14 +104,16 @@ define([
 		var custom_styled_map_type = new google.maps.StyledMapType(this.map_styles, this.styled_map_options);
 		this.map.mapTypes.set(this.FIREDOG_MAPTYPE, custom_styled_map_type);
 	}
+
+	/**
+	 * Init google map
+	 */
 	GoogleMap.prototype.initialize = function() {
         this.map = new google.maps.Map(this.map_canvas[0], this.map_options);
         this.map.panBy(-300,0);
 
         // Set custom map styles
 		this.style_map();
-
-		console.log(this.marker_icon);
 
 		var marker = new google.maps.Marker({
 		      position: this.lnglat,
@@ -90,6 +124,9 @@ define([
          marker.setMap(this.map);
     }
 
+    /**
+     * Init street view
+     */
     GoogleMap.prototype.initialize_street_view = function() {
 		this.street_view_options = {
 			disableDefaultUI: true,
