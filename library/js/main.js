@@ -36,13 +36,20 @@ require.config({
 require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 	// Common Selectors:
-	var _c_s = _c.SELECTORS;
+	var _c_s = _c.SELECTORS,
+		hash = location.hash;
 	
 	// Primary Navigation
 	var nav__toggle = $('.nav__toggle');
 		nav__toggle.on('click', function(){
 			_c_s.bdy.toggleClass('is--open__primary-nav');
 		});
+
+		$('.navigation--primary .menu-item.find-us-reveal').on('click', function(event){
+			event.preventDefault();
+			_c_s.bdy.addClass('is--open__menu_panel');
+		});
+
 
 	// Featured 
 	var $featured_hentry_sliders = $('.js-slick--featured-posts');
@@ -106,8 +113,6 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 			});
 		});
 	}
-
-
 
 	var map_views = $('.map-view');
 	if(map_views.length){

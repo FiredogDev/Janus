@@ -11,4 +11,8 @@ $layout_main: 'main';
 	}
 }
 
+.is--open__menu_panel{
+	@include transform(translateX(-100%));
+}
+
 

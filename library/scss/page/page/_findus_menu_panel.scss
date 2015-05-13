@@ -1,0 +1,17 @@
+.find-us{
+	&__menu_panel{
+		width: 100vw;
+		height: 100vh;
+
+		background-color: red;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+
+		.is--open__menu_panel &{
+			@include transform(translateX(0%));
+		}
+	}
+}

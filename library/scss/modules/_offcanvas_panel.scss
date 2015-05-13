@@ -1,0 +1,4 @@
+.offcanvas-panel{
+	@include transform(translateX(100%));
+	@include transition(transform $nav--primary__transtion_time $star_trek);
+}

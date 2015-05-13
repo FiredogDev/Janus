@@ -67,5 +67,5 @@
 	// NAVIGATION
 	get_template_part( 'partials/global/part', 'primary-navigation' ); ?>
 
-	<section id="find-us" class=""></section>
+	<section id="find-us" class="find-us__menu_panel offcanvas-panel"></section>
 </header>
