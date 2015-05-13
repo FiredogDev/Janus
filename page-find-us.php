@@ -39,7 +39,7 @@
 			</div>
 
 			<!-- Map View -->
-			<div id="map-canvas" class="map-view" data-lng="-0.08073" data-lat="51.527284" data-title="Firedog Creative" data-marketiconurl="<?php echo get_template_directory_uri(); ?>/library/images/google-map-icon.jpg"></div>
+			<div id="map-canvas" class="map-view" data-lng="-0.080719" data-lat="51.527295" data-title="Firedog Creative" data-marketiconurl="<?php echo get_template_directory_uri(); ?>/library/images/google-map-icon.jpg"></div>
 
 		</article>
 

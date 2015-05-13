@@ -25,10 +25,11 @@ define([
 
 		// Set map options
 		this.FIREDOG_MAPTYPE = 'firedog_map_style';
-		this.mapOptions = {
+		this.map_options = {
           	center: this.lnglat,
           	zoom: 17,
           	minZoom: 10,
+          	disableDefaultUI: true,
           	mapTypeControlOptions: {
 			  mapTypeIds: [google.maps.MapTypeId.ROADMAP, that.FIREDOG_MAPTYPE]
 			},
@@ -37,8 +38,9 @@ define([
 
 
 
-        // Init Map
+        // Init Map & Street View
         this.initialize();
+        this.initialize_street_view();
 
 	}
 
@@ -48,10 +50,12 @@ define([
 	 */
 	GoogleMap.prototype.map_canvas = null;
 	GoogleMap.prototype.map = null;
+	GoogleMap.prototype.street_view = null;
 	GoogleMap.prototype.lnglat = {};
 	GoogleMap.prototype.map_styles = [];
 	GoogleMap.prototype.styled_map_options = {};
-	GoogleMap.prototype.mapOptions = {}
+	GoogleMap.prototype.map_options = {}
+	GoogleMap.prototype.street_view_options = {}
 
 	GoogleMap.prototype.style_map = function() {
 		
@@ -69,7 +73,7 @@ define([
 		this.map.mapTypes.set(this.FIREDOG_MAPTYPE, custom_styled_map_type);
 	}
 	GoogleMap.prototype.initialize = function() {
-        this.map = new google.maps.Map(this.map_canvas[0], this.mapOptions);
+        this.map = new google.maps.Map(this.map_canvas[0], this.map_options);
         this.map.panBy(-300,0);
 
         // Set custom map styles
@@ -85,6 +89,21 @@ define([
 
          marker.setMap(this.map);
     }
+
+    GoogleMap.prototype.initialize_street_view = function() {
+		this.street_view_options = {
+			disableDefaultUI: true,
+			position: this.lnglat,
+			pov: {
+				heading: 180,
+				pitch: 10
+			},
+			zoom: 1
+		};
+  		this.street_view = new google.maps.StreetViewPanorama(document.getElementById('street-view-canvas'), this.street_view_options);
+  		this.street_view.setVisible(true);
+	}
+
 
 	return GoogleMap;
 
