@@ -34,12 +34,12 @@
 				</div>
 
 				<!-- Street View -->
-				<div class="street-view"></div>
+				<div id="street-view-canvas" class="street-view"></div>
 
 			</div>
 
 			<!-- Map View -->
-			<div class="map-view"></div>
+			<div id="map-canvas" class="map-view" data-lng="-0.08073" data-lat="51.527284" data-title="Firedog Creative" data-marketiconurl="<?php echo get_template_directory_uri(); ?>/library/images/google-map-icon.jpg"></div>
 
 		</article>
 

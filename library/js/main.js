@@ -28,6 +28,7 @@ require.config({
 		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax",
 		text: "../../bower_components/requirejs-text/text",
 		moment: "../../bower_components/moment/moment",
+		async: "../../bower_components/requirejs-plugins/src/async",
 	},
 	packages: []
 });
@@ -102,6 +103,24 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 		require(['modules/gallery'], function (gallery) {
 			_.forEach($gallery, function(gallery_container, key){
 				new gallery($(gallery_container));
+			});
+		});
+	}
+
+
+
+	var map_views = $('.map-view');
+	if(map_views.length){
+		require(['modules/google-map'], function (GoogleMap) {
+			_.forEach(map_views, function(map_view){
+				var map_view = $(map_view),
+					longitude = map_view.data('lng'),
+					latitude = map_view.data('lat'),
+					title = map_view.data('title'),
+					marker_icon = map_view.data('marketiconurl');
+				
+				new GoogleMap(map_view, {lng: longitude, lat:latitude }, title, marker_icon);
+
 			});
 		});
 	}
