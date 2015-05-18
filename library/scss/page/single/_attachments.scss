@@ -64,6 +64,21 @@ $attach_module: 'attachment';
 		padding-left: 10px;
 		padding-right: 10px;
 		margin-bottom: 14px;
+		// Alignment
+		&.alignnone{
+			float: left;
+		}
+		&.alignleft{
+			float: left;
+		}
+		&.alignright{
+			float: right;
+		}
+		&.aligncenter{
+			float: none;
+			margin: 0 auto 80px;
+			@extend .cf;
+		}
 	}
 	&__caption{
 		font-size: 16px;

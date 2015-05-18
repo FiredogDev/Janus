@@ -29,5 +29,13 @@ $gallery_module: 'gallery';
 		&__control{
 			display: none !important;
 		}
+		&__full_span_wrapper{
+			height: 100vh;
+			width: 100%;
+
+			position: absolute;
+			left: 0;
+
+		}
 	}
 }
