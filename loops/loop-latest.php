@@ -3,6 +3,7 @@
 $args = array(
 	'post_type' => array('post', 'learn', 'our_work'),
 	'posts_per_page' => 4
+
 );
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) { ?>
