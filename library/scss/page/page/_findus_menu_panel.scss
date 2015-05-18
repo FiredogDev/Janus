@@ -3,15 +3,19 @@
 		width: 100vw;
 		height: 100vh;
 
-		background-color: red;
+		background-color: $red;
 		
-		position: absolute;
+		position: fixed;
 		
-		left: 0;
+		left: 20%;
 		top: 0;
-
-		.is--open__menu_panel &{
+		.is--open__findus_panel &{
 			@include transform(translateX(0%));
 		}
 	}
+}
+
+.is--open__findus_panel{
+	height: 100vh;
+	overflow: hidden;
 }

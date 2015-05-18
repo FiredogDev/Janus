@@ -47,7 +47,7 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 		$('.navigation--primary .menu-item.find-us-reveal').on('click', function(event){
 			event.preventDefault();
-			_c_s.bdy.addClass('is--open__menu_panel');
+			_c_s.bdy.addClass('is--open__findus_panel');
 		});
 
 

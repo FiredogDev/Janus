@@ -7,12 +7,9 @@ $layout_main: 'main';
 	@include transition(transform $nav--primary__transtion_time $star_trek);
 	// Mod
 	.is--open__primary-nav &{
-		@include transform(translateX(-$nav--primary__width));
+		@include transform(translateX(-22%));
+	}
+	.is--open__findus_panel &{
+		@include transform(translateX(-100%));
 	}
 }
-
-.is--open__menu_panel{
-	@include transform(translateX(-100%));
-}
-
-

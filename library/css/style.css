@@ -1485,9 +1485,10 @@ NAVIGATION STYLES
   background-color: #141414;
   right: 0;
   top: 0;
-  padding-top: 153px; }
+  padding-top: 153px;
+  width: 22%; }
   .navigation--primary .navigation--list {
-    width: 416px;
+    width: 100%;
     padding: 0 40px 0 78px;
     margin-bottom: 86px; }
   .navigation--primary .menu-item {
@@ -1510,12 +1511,14 @@ NAVIGATION STYLES
       color: #555;
       font-size: 16px;
       margin-bottom: 6px; }
-.is--open__primary-nav .navigation--primary {
-  -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
-  transform: translateX(0%); }
+  .is--open__primary-nav .navigation--primary {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%); }
+  .is--open__findus_panel .navigation--primary {
+    right: 80%; }
 
 .offcanvas-panel {
   -webkit-transform: translateX(100%);
@@ -1523,10 +1526,10 @@ NAVIGATION STYLES
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  -moz-transition: -moz-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition: -o-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -1743,18 +1746,17 @@ MAIN STYLES
   -o-transition: -o-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
   .is--open__primary-nav .main {
-    -webkit-transform: translateX(-416px);
-    -moz-transform: translateX(-416px);
-    -ms-transform: translateX(-416px);
-    -o-transform: translateX(-416px);
-    transform: translateX(-416px); }
-
-.is--open__menu_panel {
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transform: translateX(-100%); }
+    -webkit-transform: translateX(-22%);
+    -moz-transform: translateX(-22%);
+    -ms-transform: translateX(-22%);
+    -o-transform: translateX(-22%);
+    transform: translateX(-22%); }
+  .is--open__findus_panel .main {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%); }
 
 /*********************
 PAGE/TEMPLATE SPECIFIC
@@ -2443,16 +2445,20 @@ Find Us/Contact Page
 .find-us__menu_panel {
   width: 100vw;
   height: 100vh;
-  background-color: red;
-  position: absolute;
-  left: 0;
+  background-color: #c70000;
+  position: fixed;
+  left: 20%;
   top: 0; }
-  .is--open__menu_panel .find-us__menu_panel {
+  .is--open__findus_panel .find-us__menu_panel {
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
     -ms-transform: translateX(0%);
     -o-transform: translateX(0%);
     transform: translateX(0%); }
+
+.is--open__findus_panel {
+  height: 100vh;
+  overflow: hidden; }
 
 /*********************
 Front/Home Page
@@ -2461,10 +2467,6 @@ Front/Home Page
   background-color: #141414; }
   .home .logo--primary {
     fill: #fff; }
-  .home .nav__toggle__bar {
-    border-color: #fff; }
-  .home.is--open__primary-nav .nav__toggle__bar {
-    border-color: #c70000; }
   .home .nav__toggle__bar {
     border-color: #fff; }
   .home .hero_unit__wrapper {
