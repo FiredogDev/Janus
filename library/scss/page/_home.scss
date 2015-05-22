@@ -16,12 +16,6 @@ $page: 'home';
 	      fill: #fff;
 	    }
 	}
-	.nav__toggle__bar{
-		border-color: #fff;
-	}
-	&.is--open__primary-nav .nav__toggle__bar{
-		border-color: $red;
-	}
 
 	// Homepage Navigation Toggle
 	.nav__toggle{

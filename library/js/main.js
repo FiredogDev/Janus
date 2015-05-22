@@ -28,6 +28,7 @@ require.config({
 		gsap: "../../bower_components/gsap/src/uncompressed/TweenMax",
 		text: "../../bower_components/requirejs-text/text",
 		moment: "../../bower_components/moment/moment",
+		async: "../../bower_components/requirejs-plugins/src/async",
 	},
 	packages: []
 });
@@ -35,13 +36,20 @@ require.config({
 require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 
 	// Common Selectors:
-	var _c_s = _c.SELECTORS;
+	var _c_s = _c.SELECTORS,
+		hash = location.hash;
 	
 	// Primary Navigation
 	var nav__toggle = $('.nav__toggle');
 		nav__toggle.on('click', function(){
 			_c_s.bdy.toggleClass('is--open__primary-nav');
 		});
+
+		$('.navigation--primary .menu-item.find-us-reveal').on('click', function(event){
+			event.preventDefault();
+			_c_s.bdy.addClass('is--open__findus_panel');
+		});
+
 
 	// Featured 
 	var $featured_hentry_sliders = $('.js-slick--featured-posts');
@@ -102,6 +110,22 @@ require(['common', 'jquery', 'lodash', 'fastclick'], function (_c, $, _) {
 		require(['modules/gallery'], function (gallery) {
 			_.forEach($gallery, function(gallery_container, key){
 				new gallery($(gallery_container));
+			});
+		});
+	}
+
+	var map_views = $('.map-view');
+	if(map_views.length){
+		require(['modules/google-map'], function (GoogleMap) {
+			_.forEach(map_views, function(map_view){
+				var map_view = $(map_view),
+					longitude = map_view.data('lng'),
+					latitude = map_view.data('lat'),
+					title = map_view.data('title'),
+					marker_icon = map_view.data('marketiconurl');
+				
+				new GoogleMap(map_view, {lng: longitude, lat:latitude }, title, marker_icon);
+
 			});
 		});
 	}

@@ -2,8 +2,6 @@
 NAVIGATION STYLES
 *********************/
 
-// Settings
-
 $navigation_module: 'navigation';
 .#{$navigation_module}{
 	// Child Elems
@@ -24,11 +22,10 @@ $navigation_module: 'navigation';
 		right: 0;
 		top: 0;
 		padding-top: 153px;
-		@include transform(translateX(100%));
-		@include transition(transform $nav--primary__transtion_time $star_trek);
+		width: 22%;
 		.#{$navigation_module}{
 			&--list{
-				width: $nav--primary__width;
+				width: 100%;
 				padding: 0 40px 0 78px;
 				margin-bottom: 86px;
 			}
@@ -61,6 +58,12 @@ $navigation_module: 'navigation';
 				margin-bottom: 6px;
 			}
 		}
+		.is--open__primary-nav &{
+			@include transform(translateX(0%));
+		}
+		.is--open__findus_panel &{
+			right: 80%;
+		}
 	}
 	&--sub{
 		&--list{}
@@ -69,11 +72,7 @@ $navigation_module: 'navigation';
 		}
 	}
 
-	.is--open__primary-nav &{
-		&--primary{
-			@include transform(translateX(0%));
-		}
-	}
+	
 
   // Fallbacks - []
 }

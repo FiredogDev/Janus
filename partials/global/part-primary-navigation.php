@@ -1,4 +1,4 @@
-<nav id="primary_nav" class="navigation navigation--primary height--full pfix" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+<nav id="primary_nav" class="navigation navigation--primary offcanvas-panel height--full pfix" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	<?php wp_nav_menu(array(
 		'container' => false,                           	// remove nav container
 		'menu' => __( 'Primary Navigation', 'firedog' ),  	// nav name
