@@ -435,7 +435,7 @@ function edit_caption_shortcode($empty, $attr, $content) {
 	return '<div ' . $attr['id'] .
 	'class="attachment attachment--has-caption attachment--' . esc_attr( $attr['align'] ) . ' attachment--w-' . $caption_width . ' ">' .
 	do_shortcode( $content ) .
-	'<p class="attachment__caption">' . $attr['caption'] . '</p>' .
+	'<p class="attachment__caption"><strong>'.$attr['caption'].'</strong>' . $attr['description'] . '</p>' .
 	'</div>';
 }
 
